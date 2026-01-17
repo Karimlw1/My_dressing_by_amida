@@ -229,8 +229,12 @@ button {
 
     .product {
         width: 400px;
+        display: flex;
+        gap: 5px;
         flex-direction: column;
-
+    }
+    .product button{
+        align-self: right;
     }
 
 }
