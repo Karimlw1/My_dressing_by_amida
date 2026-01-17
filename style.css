@@ -128,9 +128,26 @@ body {
     padding: 15px;
 }
 
+.categories:nth-child(1){
+    background: url("https://i.pinimg.com/1200x/90/d2/7b/90d27bf408fb13f255ed7887fd414feb.jpg")
+}
+.categories:nth-child(2){
+    background: url("https://i.pinimg.com/736x/84/49/fb/8449fbfa668a4b5d238661db5fdd8afb.jpg")
+}
+.categories:nth-child(3){
+    background: url("https://i.pinimg.com/736x/ac/f5/5a/acf55a486d831d8dcf40a986c4460829.jpg")
+}
+.categories:nth-child(4){
+    background: url("https://i.pinimg.com/1200x/90/d2/7b/90d27bf408fb13f255ed7887fd414feb.jpg")
+}
+.categories:nth-child(5){
+    background: url("https://i.pinimg.com/1200x/90/d2/7b/90d27bf408fb13f255ed7887fd414feb.jpg")
+}
+
 .categories h3 {
     margin-bottom: 10px;
 }
+
 
 .grid {
     display: grid;

@@ -4,43 +4,49 @@ const dots = document.querySelectorAll('.dot');
 
 let index = 0;
 
+// update slide position
 function update() {
     slides.style.transform = `translateX(-${index * 100}%)`;
     dots.forEach(d => d.classList.remove('active'));
     dots[index].classList.add('active');
 }
 
-function goNext() {
+// auto
+let auto = setInterval(() => {
     index = (index + 1) % slideItems.length;
     update();
-}
+}, 3500);
 
-let auto = setInterval(goNext, 4000);
-
-// manual via dots
+// dots
 dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
         index = i;
         update();
-        clearInterval(auto);
-        auto = setInterval(goNext, 4000);
+        restartAuto();
     });
 });
 
+// touch
 let startX = 0;
-let endX = 0;
 
 slides.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
 });
 
 slides.addEventListener('touchend', e => {
-    endX = e.changedTouches[0].clientX;
-    let diff = endX - startX;
+    let diff = e.changedTouches[0].clientX - startX;
 
-    if (Math.abs(diff) > 50) {
-        if (diff < 0 && index < slideItems.length - 1) index++;
-        if (diff > 0 && index > 0) index--;
-        update();
-    }
+    if (diff < -50 && index < slideItems.length - 1) index++;
+    if (diff > 50 && index > 0) index--;
+
+    update();
+    restartAuto();
 });
+
+function restartAuto() {
+    clearInterval(auto);
+    auto = setInterval(() => {
+        index = (index + 1) % slideItems.length;
+        update();
+    }, 3500);
+}
