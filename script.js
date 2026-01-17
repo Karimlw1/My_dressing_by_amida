@@ -1,4 +1,4 @@
-let slides = document.querySelectorAll('.slide');
+let slides = document.querySelectorAll('.slides');
 let dots = document.querySelectorAll('.dot');
 
 let index = 0;
