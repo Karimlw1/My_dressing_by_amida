@@ -1,0 +1,404 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+
+body {
+
+    background: #f6f6f6;
+
+    color: #333;
+
+}
+
+
+
+/* NAVBAR */
+
+.navbar {
+
+    height: 60px;
+
+    background: #2f3e4e;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+}
+
+
+
+.navbar h1 {
+
+    font-size: 18px;
+
+}
+
+
+
+.menu {
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+}
+
+
+
+.cart {
+
+    position: relative;
+
+    font-size: 20px;
+
+}
+
+
+
+.badge {
+
+    position: absolute;
+
+    top: -6px;
+
+    right: -8px;
+
+    background: orange;
+
+    color: white;
+
+    font-size: 12px;
+
+    padding: 2px 6px;
+
+    border-radius: 50%;
+
+}
+
+
+
+/* CAROUSEL */
+
+.carousel {
+
+    width: 100%;
+
+    height: 240px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background: #000;
+
+}
+
+
+
+.slides {
+
+    display: flex;
+
+    height: 100%;
+
+}
+
+
+
+.slide {
+
+    min-width: 100%;
+
+    position: relative;
+
+    display: none;
+
+}
+
+
+
+.slide.active {
+
+    display: block;
+
+}
+
+
+
+.slide img {
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+}
+
+
+
+.caption {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 20px;
+
+    color: white;
+
+}
+
+
+
+.caption h2 {
+
+    font-size: 22px;
+
+}
+
+
+
+.caption p {
+
+    font-size: 14px;
+
+}
+
+
+
+/* DOTS */
+
+.dots {
+
+    position: absolute;
+
+    bottom: 10px;
+
+    width: 100%;
+
+    text-align: center;
+
+}
+
+
+
+.dot {
+
+    display: inline-block;
+
+    width: 8px;
+
+    height: 8px;
+
+    margin: 0 4px;
+
+    background: #bbb;
+
+    border-radius: 50%;
+
+}
+
+
+
+.dot.active {
+
+    background: orange;
+
+}
+
+
+
+/* CATEGORIES */
+
+.categories {
+
+    padding: 15px;
+
+}
+
+
+
+.categories h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+
+
+.category {
+
+    background: white;
+
+    height: 90px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 26px;
+
+    cursor: pointer;
+
+}
+
+
+
+.category p {
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+
+/* PRODUCT */
+
+.products {
+
+    padding: 15px;
+
+}
+
+
+
+.product {
+
+    background: white;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    overflow: hidden;
+
+}
+
+
+
+.product img {
+
+    width: 120px;
+
+    height: 140px;
+
+    object-fit: cover;
+
+}
+
+
+
+.info {
+
+    padding: 10px;
+
+    flex: 1;
+
+}
+
+
+
+.price {
+
+    color: orange;
+
+    font-weight: bold;
+
+    margin: 8px 0;
+
+}
+
+
+
+button {
+
+    background: orange;
+
+    border: none;
+
+    color: white;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+}
+
+
+
+/* DESKTOP */
+
+@media (min-width: 768px) {
+
+    .carousel {
+
+        height: 350px;
+
+    }
+
+
+
+    .slide img {
+
+        height: 350px;
+
+    }
+
+
+
+    .grid {
+
+        grid-template-columns: repeat(6, 1fr);
+
+    }
+
+
+
+    .product {
+
+        width: 400px;
+
+    }
+
+}
+
