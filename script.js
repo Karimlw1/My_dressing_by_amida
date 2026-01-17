@@ -27,12 +27,20 @@ dots.forEach((dot, i) => {
     });
 });
 
-// optional: manual via swipe (tiny version)
 let startX = 0;
-slides.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+let endX = 0;
+
+slides.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+});
+
 slides.addEventListener('touchend', e => {
-    let diff = e.changedTouches[0].clientX - startX;
-    if (diff < -50 && index < slideItems.length - 1) index++;
-    if (diff >  50 && index > 0) index--;
-    update();
+    endX = e.changedTouches[0].clientX;
+    let diff = endX - startX;
+
+    if (Math.abs(diff) > 50) {
+        if (diff < 0 && index < slideItems.length - 1) index++;
+        if (diff > 0 && index > 0) index--;
+        update();
+    }
 });
