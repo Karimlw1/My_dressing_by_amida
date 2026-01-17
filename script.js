@@ -1,58 +1,75 @@
-let slides = document.querySelectorAll('.slides');
-let dots = document.querySelectorAll('.dot');
+const slides = document.querySelector('.slides');
+const slideItems = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
 
 let index = 0;
 let startX = 0;
 let currentX = 0;
 let isDragging = false;
+let slideWidth = slideItems[0].offsetWidth;
 
-/* SHOW SLIDE */
-function showSlide(i) {
-slides.forEach(slide => slide.classList.remove('active'));
+/* UPDATE POSITION */
+function updateSlide() {
+slides.style.transition = 'transform 0.35s ease';
+slides.style.transform = `translateX(${-index * slideWidth}px)`;
+
 dots.forEach(dot => dot.classList.remove('active'));
-
-slides[i].classList.add('active');
-dots[i].classList.add('active');
+dots[index].classList.add('active');
 }
 
-/* START DRAG */
+/* START */
 function startDrag(x) {
 startX = x;
 isDragging = true;
+slides.style.transition = 'none';
 }
 
-/* MOVE DRAG */
+/* MOVE */
 function moveDrag(x) {
 if (!isDragging) return;
 currentX = x - startX;
+slides.style.transform =
+`translateX(${currentX - index * slideWidth}px)`;
 }
 
-/* END DRAG */
+/* END */
 function endDrag() {
 if (!isDragging) return;
 isDragging = false;
 
-if (currentX < -50 && index < slides.length - 1) {
-index++;
-} else if (currentX > 50 && index > 0) {
-index--;
-}
+if (currentX < -50 && index < slideItems.length - 1) index++;
+if (currentX > 50 && index > 0) index--;
 
 currentX = 0;
-showSlide(index);
+updateSlide();
 }
 
 /* TOUCH EVENTS */
-slides.forEach(slide => {
-slide.addEventListener('touchstart', e => startDrag(e.touches[0].clientX));
-slide.addEventListener('touchmove', e => moveDrag(e.touches[0].clientX));
-slide.addEventListener('touchend', endDrag);
+slides.addEventListener('touchstart', e =>
+startDrag(e.touches[0].clientX)
+);
+slides.addEventListener('touchmove', e =>
+moveDrag(e.touches[0].clientX)
+);
+slides.addEventListener('touchend', endDrag);
 
 /* MOUSE EVENTS */
-slide.addEventListener('mousedown', e => startDrag(e.clientX));
-});
-
-window.addEventListener('mousemove', e => moveDrag(e.clientX));
+slides.addEventListener('mousedown', e =>
+startDrag(e.clientX)
+);
+window.addEventListener('mousemove', e =>
+moveDrag(e.clientX)
+);
 window.addEventListener('mouseup', endDrag);
 
-/* AUTO SLIDE */
+/* AUTO PLAY */
+setInterval(() => {
+index = (index + 1) % slideItems.length;
+updateSlide();
+}, 4000);
+
+/* RESIZE FIX */
+window.addEventListener('resize', () => {
+slideWidth = slideItems[0].offsetWidth;
+updateSlide();
+});
