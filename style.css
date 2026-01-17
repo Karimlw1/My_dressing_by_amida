@@ -79,8 +79,6 @@ body {
     object-fit: cover;
     -webkit-user-drag: none;
     pointer-events: none;
-
-
 }
 
 .caption {
@@ -143,7 +141,7 @@ body {
 }
 
 .category {
-    height: 90px;
+    height: 100px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
