@@ -51,21 +51,22 @@ body {
     overflow: hidden;
     position: relative;
     background: #000;
+    touch-action: pan-y;
 }
 
 .slides {
     display: flex;
+    transition: transform 0.4s ease-in-out;
     height: 100%;
 }
 
 .slide {
     min-width: 100%;
-    position: relative;
-    display: none;
-}
-
-.slide.active {
-    display: block;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease-in-out;
 }
 
 .slide img {
@@ -155,6 +156,7 @@ body {
 .products {
     padding: 15px;
     display:grid;
+    align-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
@@ -166,6 +168,7 @@ body {
     border-radius: 12px;
     display: flex;
     overflow: hidden;
+    width: 50%;
 }
 
 
