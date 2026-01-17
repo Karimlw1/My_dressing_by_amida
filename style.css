@@ -204,10 +204,10 @@ body {
     background: white;
     border-radius: 12px;
     display: flex;
+    flex-direction:column;
     overflow: hidden;
     overflow: hidden;
 }
-
 
 
 .product img {
@@ -221,6 +221,8 @@ body {
 .info {
     padding: 10px;
     flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
 }
 
