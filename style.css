@@ -173,7 +173,7 @@ body {
     border-radius: 12px;
     display: flex;
     overflow: hidden;
-    width: 50%;
+    overflow: hidden;
 }
 
 
