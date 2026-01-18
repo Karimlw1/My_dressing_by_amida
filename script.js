@@ -50,3 +50,16 @@ function restartAuto() {
         update();
     }, 3500);
 }
+
+/* reveal */
+
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".welcome-box").forEach(box => {
+    const rect = box.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 800) {
+      box.classList.add("visible");
+    } else {
+      box.classList.remove("visible");
+    }
+  });
+});
