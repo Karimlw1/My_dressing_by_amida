@@ -124,6 +124,7 @@ body {
 .categories {
     margin-top: 20px;
     padding: 15px;
+    background: linear-gradient(rgba(150, 101, 27, 0.363), rgba(124, 87, 87, 0.5));
 }
 
 
