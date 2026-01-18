@@ -204,6 +204,7 @@ body {
 
 
 .product {
+    width: 250px;
     background: white;
     border-radius: 12px;
     display: flex;
@@ -215,7 +216,6 @@ body {
 .product img {
     width: 100%;
     height: 300px;
-    object-fit: contain;
     border-radius: 16px 16px 0 0;
 }
 
