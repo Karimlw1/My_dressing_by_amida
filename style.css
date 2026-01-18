@@ -20,8 +20,11 @@ body {
     padding: 0 15px;
 }
 
-.navbar h1 {
-    font-size: 18px;
+.navbar img {
+    height: 50px;
+    width: 70px;
+    border-radius: 10px;
+    justify-self: center;
 }
 
 .menu {
