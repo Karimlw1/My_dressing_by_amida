@@ -193,7 +193,7 @@ body {
 .products {
     padding: 15px;
     display:grid;
-    grid-template-columns: repeat(2. 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     align-items: center;
     justify-self: center;
@@ -204,7 +204,7 @@ body {
 
 
 .product {
-    width: 250px;
+    width: 95%;
     background: white;
     border-radius: 12px;
     display: flex;
