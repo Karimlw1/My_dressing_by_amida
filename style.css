@@ -264,6 +264,7 @@ button {
     font-size: 1.3rem;
     line-height: 40px;
     color: rgb(127, 166, 192);
+    margin-bottom: 20px;
 }
 .texts div{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
