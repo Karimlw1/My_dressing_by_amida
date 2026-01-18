@@ -299,6 +299,7 @@ footer{
     backgroung-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    box-shadow: 1px 5px 15px rgba(0 , 0, 3, 0.8);
 }
 
 /* phone */
