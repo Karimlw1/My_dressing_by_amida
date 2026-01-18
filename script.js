@@ -53,13 +53,16 @@ function restartAuto() {
 
 /* reveal */
 
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".welcome-box").forEach(box => {
-    const rect = box.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 400) {
-      box.classList.add("visible");
-    } else {
-      box.classList.remove("visible");
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry =>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+    else{
+      entry.target.classList.remove("visible");
     }
   });
 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
