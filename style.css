@@ -193,9 +193,12 @@ body {
 .products {
     padding: 15px;
     display:grid;
-    align-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    align-items: center;
+    justify-self: center;
+    margin-top: 32px;
+    font-variant-numeric: oldstyle-nums;
 }
 
 
@@ -206,14 +209,14 @@ body {
     display: flex;
     flex-direction:column;
     overflow: hidden;
-    overflow: hidden;
 }
 
 
 .product img {
-    width: 120px;
-    height: 140px;
-    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 16px 16px 0 0;
 }
 
 
