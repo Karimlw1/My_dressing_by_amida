@@ -5,7 +5,7 @@
     font-family: Arial, sans-serif;
 }
 body {
-    background: #f6f6f6;
+    background: aliceblue;
     color: #333;
 }
 /* NAVBAR */
@@ -47,7 +47,7 @@ body {
 
 .carousel {
     width: 100%;
-    height: 260px;
+    height: 300px;
     overflow: hidden;
     position: relative;
     background: #000;
@@ -71,11 +71,12 @@ body {
     position:relative;
     justify-content: center;
     transition: transform 0.4s ease-in-out;
+    
 }
 
 .slide img {
     width: 100%;
-    height: 260px;
+    height: 300px;
     object-fit: cover;
     -webkit-user-drag: none;
     pointer-events: none;
@@ -86,6 +87,7 @@ body {
     bottom: 20px;
     left: 20px;
     color: white;
+    box-shadow: inset 10px 5px 15px rgba(194, 190, 190, 0.473);
 }
 
 .caption h2 {
@@ -123,9 +125,9 @@ body {
 
 .categories {
     margin-top: 20px;
-    padding: 15px;
     background: linear-gradient(rgba(247, 237, 222, 0.363), rgba(177, 127, 127, 0.5));
     border-radius: 0 0 10px 10px;
+    padding: 15px 10%;
 }
 
 
@@ -139,11 +141,14 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
+    justify-self: center;
+    width: 80%;
 
 }
 
 .category {
-    height: 100px;
+    max-width: 300px;
+    height: 150px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -152,7 +157,7 @@ body {
     font-size: 26px;
     cursor: pointer;
     font-weight: bolder;
-    color: darkgray;
+    color: rgb(255, 255, 255);
     box-shadow: 1px 5px 15px rgba(0 , 0, 0, 0.8);
 }
 .category:nth-child(1){
@@ -169,6 +174,7 @@ body {
     background: url("https://i.pinimg.com/736x/a6/ae/37/a6ae37f870f0ef327d31c2f399aadafb.jpg");
     background-size: cover;
     background-repeat: round;
+   
 }
 .category:nth-child(4){
     background: url("https://i.pinimg.com/736x/35/1f/31/351f317f8c6d4cb2b178120794c4650b.jpg");
@@ -184,6 +190,7 @@ body {
     background: url("https://i.pinimg.com/736x/20/0f/70/200f7043ce70f244a18b8b580852e138.jpg");
     background-size: cover;
     background-repeat: round;
+    color: grey;
 }
 .category p {
     font-size: 13px;
@@ -202,6 +209,7 @@ body {
     justify-self: center;
     margin-top: 32px;
     font-variant-numeric: oldstyle-nums;
+    background-color: #ffffff;
 }
 
 
@@ -219,7 +227,7 @@ body {
 .product img {
     width: 100%;
     height: 250px;
-    border-radius: 16px 16px 0 0;
+    border-radius: 12px 12px 0 0;
 }
 
 
@@ -250,45 +258,68 @@ button {
     cursor: pointer;
 
 }
-.welcome-box {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .8s ease, transform .8s ease;
-  max-width: 500px;
-  margin: 50px auto 30px auto;
-  padding: 24px 32px;
-  border-radius: 12px;
-  text-align: center;
-  backdrop-filter: blur(4px);
-  background: url("https://raw.githubusercontent.com/Karimlw1/alminaArt/main/images/habitbg.jpg") center/cover;
-  color: white;
+.texts{
+    height: max-content;
+    padding: 10px;
+    font-size: 1.5rem;
+    line-height: 40px;
+    color: rgb(127, 166, 192);
+}
+.texts div{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+.reveal{
+    opacity: 0;
+    transition: transform 5s ease, opacity 4s ease;
+}
+.slide-from-left{
+    border-top: solid 1px rgba(128, 128, 128, 0.397);
+}
+.slide-from-left:nth-child(1) { transform: translateX(-50px); }
+.slide-from-left:nth-child(2) { transform: translateX(-200px); }
+.slide-from-left:nth-child(3) { transform: translateX(-350px); }
+.slide-from-left:nth-child(4) { transform: translateX(-400px); }
+
+.reveal.visible{
+    opacity: 1;
+    transform: translateX(0) translateY(0);
 }
 
-.welcome-box.visible {
-  opacity: 1;
-  transform: translateY(0);
+footer{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #2f3e4e;
 }
-/* DESKTOP */
 
-@media (min-width: 768px) {
+/* phone */
+
+@media (max-width: 768px) {
+    body{
+        background-color: #ffffff;
+    }
     .product{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .carousel {
-        height: 350px;
+        height: 370px;
     }
 
     .slide img {
-        height: 350px;
+        height: 370px;
 
     }
-
+    .categories{
+        padding: 15px;
+    }
     .grid {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
     }
 
     .product {
-        width: 400px;
         display: flex;
         gap: 5px;
         flex-direction: column;
@@ -296,6 +327,6 @@ button {
     .product button{
         align-self: right;
     }
-
+    
 }
 
