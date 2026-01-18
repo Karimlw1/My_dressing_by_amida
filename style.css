@@ -247,7 +247,10 @@ button {
     cursor: pointer;
 
 }
-
+.welcome-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* DESKTOP */
 
 @media (min-width: 768px) {
