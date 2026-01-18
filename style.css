@@ -290,12 +290,15 @@ button {
 }
 
 footer{
-    height: 100px;
+    height: 200px;
     width: 100%;
     position: absolute;
     left: 0;
     right: 0;
-    background-image: url("");
+    background-image: url("https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/images/footerBG-img.png");
+    backgroung-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 /* phone */
