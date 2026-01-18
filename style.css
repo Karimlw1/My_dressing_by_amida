@@ -261,7 +261,7 @@ button {
 .texts{
     height: max-content;
     padding: 10px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 40px;
     color: rgb(127, 166, 192);
 }
@@ -277,8 +277,8 @@ button {
 }
 .slide-from-left:nth-child(1) { transform: translateX(-50px); }
 .slide-from-left:nth-child(2) { transform: translateX(-200px); }
-.slide-from-left:nth-child(3) { transform: translateX(-350px); }
-.slide-from-left:nth-child(4) { transform: translateX(-400px); }
+.slide-from-left:nth-child(3) { transform: translateX(-300px); }
+.slide-from-left:nth-child(4) { transform: translateX(-350px); }
 
 .reveal.visible{
     opacity: 1;
