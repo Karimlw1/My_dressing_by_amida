@@ -56,7 +56,7 @@ function restartAuto() {
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".welcome-box").forEach(box => {
     const rect = box.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 800) {
+    if (rect.top < window.innerHeight - 600) {
       box.classList.add("visible");
     } else {
       box.classList.remove("visible");
