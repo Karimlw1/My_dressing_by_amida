@@ -299,6 +299,7 @@ footer{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    background-color: white;
     box-shadow: 1px 5px 15px rgba(0 , 0, 3, 0.8);
 }
 
