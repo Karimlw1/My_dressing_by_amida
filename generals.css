@@ -1,44 +1,51 @@
-html {
-    max-width: 1000px;
-}
+ :root {
+     --fa-style-family-brands: "Font Awesome 6 Brands";
+     --fa-font-brands: normal 400 1em / 1 "Font Awesome 6 Brands";
+     background-color: black;
+ }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Cormorant Garamond', serif;
-}
+ html {
+     max-width: 700px;
+     justify-self: center;
+ }
 
-body {
-    background: aliceblue;
-    color: #333;
-    font-size: 1.3rem;
-    font-family: 'Cormorant Garamond', serif;
-}
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Cormorant Garamond', serif;
+ }
 
-.info {
-    padding: 10px;
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+ body {
+     background: aliceblue;
+     color: #333;
+     font-size: 1.3rem;
+     font-family: 'Cormorant Garamond', serif;
+ }
 
-}
+ .info {
+     padding: 10px;
+     flex: 1;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+
+ }
 
 
 
-.price {
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    margin: 8px 0;
+ .price {
+     color: rgb(0, 0, 0);
+     font-weight: bold;
+     margin: 8px 0;
 
-}
+ }
 
-button {
-    background: rgb(66, 66, 66);
-    border: none;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
+ button {
+     background: rgb(66, 66, 66);
+     border: none;
+     color: white;
+     padding: 8px 12px;
+     border-radius: 6px;
+     cursor: pointer;
 
-}
+ }
