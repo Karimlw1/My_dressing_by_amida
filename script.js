@@ -72,4 +72,5 @@ function showMenu(){
 }
 
 /* copyright */
-document.getElementById('year').textContent = Date().getFullYear();
+
+document.getElementById('year').textContent = new Date().getFullYear();
