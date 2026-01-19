@@ -27,14 +27,14 @@ body {
 
 
 .price {
-    color: orange;
+    color: rgb(0, 0, 0);
     font-weight: bold;
     margin: 8px 0;
 
 }
 
 button {
-    background: orange;
+    background: rgb(66, 66, 66);
     border: none;
     color: white;
     padding: 8px 12px;

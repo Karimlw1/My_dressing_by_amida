@@ -27,8 +27,7 @@
 }
 
 .category img {
-    border;
-    -radius: 20px;
+    border-radius: 20px;
     width: 80%;
     height: 80%;
 }
