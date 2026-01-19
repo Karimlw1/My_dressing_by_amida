@@ -70,3 +70,6 @@ function showMenu(){
     const menuContent = document.querySelector(".socials");
     menuContent.classList.toggle("visible");
 }
+
+/* copyright */
+document.getElementById('year').textContent = Date().getFullYear();
