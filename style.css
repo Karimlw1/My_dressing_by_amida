@@ -98,10 +98,13 @@ body {
 
 .caption h2 {
     font-size: 22px;
+    color: darkgoldenrod;
+    display: ruby-text;
+    font-variant-caps: small-caps;
 }
 
 .caption p {
-    font-size: 14px;
+    font-size: xx-large;
 }
 
 /* DOTS */
@@ -201,6 +204,9 @@ body {
 .category p {
     font-size: 13px;
     margin-top: 5px;
+    font-size: x-large;
+    margin-top: 5px;
+    text-align: center;
 
 }
 
