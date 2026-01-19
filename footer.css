@@ -13,4 +13,5 @@ footer {
     align-content: end;
     text-align: center;
     color: grey;
+    justify-self: center;
 }
