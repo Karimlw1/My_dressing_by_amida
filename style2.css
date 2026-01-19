@@ -62,9 +62,13 @@
 .category-active {
     border: 2px solid rgb(255, 251, 245);
     border-radius: 25px;
-    height: 75px;
+    height: 70px;
     box-shadow: 1px 5px 15px rgba(32, 32, 31, 0.226);
     background-color: rgb(88, 88, 88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #pTrie {
