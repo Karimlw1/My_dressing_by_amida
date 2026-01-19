@@ -1,16 +1,17 @@
 .categories {
     height: max-content;
     width: 100%;
-    margin: 20px;
+    margin: 40px 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 20px;
+    justify-content: center;
+    font-size: 13px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .category {
@@ -27,4 +28,22 @@
     border-radius: 20px;
     width: 80%;
     height: 80%;
+}
+
+.products {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.product {
+    width: 400px;
+    height: 450px;
+}
+
+.product img {
+    width: 100%;
+    height: 100%;
 }
