@@ -51,6 +51,7 @@ body {
 }
 div.socials.visible{
     visibility: visible;
+    position: fixed;
 }
 .menu h2{
     color: #000000a6;
