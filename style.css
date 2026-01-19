@@ -394,6 +394,9 @@ footer{
     background-position: center;
     background-color: white;
     box-shadow: 1px 5px 15px rgba(0 , 0, 3, 0.8);
+    align-content: end;
+    text-align: center;
+    color: grey;
 }
 
 /* phone */
