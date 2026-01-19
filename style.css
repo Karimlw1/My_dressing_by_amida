@@ -79,8 +79,8 @@ div.socials.visible{
     box-shadow: 1px 5px 15px rgba(62, 124, 26, 0.8)
 }
 .socials a:nth-child(3){
-    background: linear-gradient(rgba(155, 16, 16, 0.623), rgba(93, 55, 119, 0.726), rgb(15, 15, 119));
-    color: whitesmoke;
+    color: linear-gradient(rgba(155, 16, 16, 0.623), rgba(93, 55, 119, 0.726), rgb(15, 15, 119));
+    background-color: rgb(255, 255, 255);
     box-shadow: 1px 5px 15px rgba(155, 10, 10, 0.377)
 }
 .socials a:nth-child(4){background-color: rgb(0, 0, 0);
