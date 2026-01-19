@@ -62,8 +62,9 @@
 .category-active {
     border: 2px solid rgb(255, 251, 245);
     border-radius: 25px;
-    height: max-content;
+    height: 75px;
     box-shadow: 1px 5px 15px rgba(32, 32, 31, 0.226);
+    background-color: rgb(88, 88, 88);
 }
 
 #pTrie {
