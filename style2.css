@@ -68,10 +68,7 @@
     height: 70px;
     box-shadow: 1px 5px 15px rgba(32, 32, 31, 0.226);
     background-color: rgb(88, 88, 88);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    padding-top: 10px;
 }
 
 #pTrie {
