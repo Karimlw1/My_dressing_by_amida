@@ -34,6 +34,36 @@ body {
     font-size: 22px;
     cursor: pointer;
 }
+.menu .socials{
+    position: absolute;
+    z-index: 1;
+    background: white;
+    color: darkgoldenrod;
+    display: flex;
+    flex-direction: column;
+    padding: 35px 15px;
+    left: 0;
+    top: 60px;
+    gap: 10px;
+}
+.menu .socials a{
+    background: #c8a44b;;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+a i{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.socials a:hover {
+  color: #916c27;
+}
 .cart {
     position: relative;
    font-size: 20px;
