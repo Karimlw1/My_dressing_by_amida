@@ -51,6 +51,7 @@ body {
     align-items: center;
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.7);
     visibility: hidden;   
+    transition: visibility 0.4s ease-in-out;
 }
 div.socials.visible{
     visibility: visible;
