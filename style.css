@@ -37,7 +37,7 @@ body {
 .menu .socials{
     position: absolute;
     z-index: 1;
-    background: linear-gradient(335deg, black, #e9c773c9);
+    background: linear-gradient(335deg, rgb(196, 222, 240), #e9e9e9c9);
     display: flex;
     flex-direction: column;
     padding: 35px 15px;
