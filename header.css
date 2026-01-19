@@ -23,6 +23,7 @@
 
 .menu .socials {
     position: absolute;
+    z-index: 1;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     background: rgb(255 144 25 / 11%);

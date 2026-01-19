@@ -52,3 +52,9 @@
     width: 100%;
     height: 80%;
 }
+
+.invisible {
+    position: absolute;
+    visibility: hidden;
+    right: 10000px;
+}

@@ -53,20 +53,20 @@ function restartAuto() {
 
 /* reveal */
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry =>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-    }
-    else{
-      entry.target.classList.remove("visible");
-    }
-  });
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+        else {
+            entry.target.classList.remove("visible");
+        }
+    });
 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-function showMenu(){
+function showMenu() {
     const menuContent = document.querySelector(".socials");
     menuContent.classList.toggle("visible");
 }
@@ -74,3 +74,14 @@ function showMenu(){
 /* copyright */
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+//* Filter */
+const haut = document.querySelectorAll('.haut');
+const bas = document.querySelectorAll('.bas');
+const chaussure = document.querySelectorAll('.chaussure');
+const accessoires = document.querySelectorAll('.accessoires');
+function filterHaut() {
+    bas.classList.toggle("invisible");
+    chaussure.classList.toggle("invisible");
+    accessoires.classList.toggle("invisible");
+}
