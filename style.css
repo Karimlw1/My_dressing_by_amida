@@ -26,7 +26,8 @@ body {
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
     color:#a07018c7;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    -webkit-text-stroke-width: medium;
 }
 
 .menu {
