@@ -68,8 +68,5 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 function showMenu(){
     const menuContent = document.querySelector(".socials");
-    menuContent.classList.add("visible");
-    if(menuContent.classList == "visible"){
-        menuContent.classList.remove("visible")
-    }
+    menuContent.classList.toggle("visible");
 }
