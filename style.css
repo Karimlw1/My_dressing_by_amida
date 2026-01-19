@@ -42,7 +42,7 @@ body {
     z-index: 1;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    background: rgba(255,255,255,0.12);
+    background: rgb(255 144 25 / 11%);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
