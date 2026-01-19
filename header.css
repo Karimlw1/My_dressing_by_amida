@@ -37,13 +37,11 @@
     width: -webkit-fill-available;
     align-items: center;
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    transition: visibility 0.4s ease-in-out;
+    visibility: hidden;
 }
 
 div.socials.visible {
-    z-index: 1;
-    opacity: 1;
+    visibility: visible;
     position: fixed;
 }
 
