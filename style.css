@@ -47,6 +47,7 @@ body {
     width: -webkit-fill-available;
     align-items: center;
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.7);
+    visibility: hidden;   
 }
 .menu h2{
     color: #000000a6;
