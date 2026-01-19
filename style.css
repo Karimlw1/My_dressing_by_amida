@@ -64,6 +64,7 @@ a i{
     height: 40px;
     border-radius: 50%;
     font-size: 18px;
+    text-decoration: none;
 }
 .fa-brands, .fab {
     font-family: "Font Awesome 6 Brands";
