@@ -4,7 +4,8 @@
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+
 }
 
 .grid {
@@ -13,7 +14,8 @@
 }
 
 .category {
-    width: 50px;
+    width: 70px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -23,5 +25,6 @@
 
 .category img {
     border-radius: 20px;
-    width: 90%;
+    width: 100%;
+    height: 100%;
 }
