@@ -15,3 +15,9 @@ footer {
     color: grey;
     justify-self: center;
 }
+
+@media (max-width : 700px) {
+    footer {
+        width: 100%;
+    }
+}
