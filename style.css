@@ -53,6 +53,11 @@ body {
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
+    width: 400px;
+    display: flex;
+    text-decoration: none;
+    align-items: anchor-center;
+    justify-content: space-evenly;
 }
 a i{
     width: 40px;
@@ -60,7 +65,10 @@ a i{
     border-radius: 50%;
     font-size: 18px;
 }
-
+.fa-brands, .fab {
+    font-family: "Font Awesome 6 Brands";
+    display: contents;
+}
 .socials a:hover {
   color: #916c27;
 }
