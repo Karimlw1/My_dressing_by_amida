@@ -58,3 +58,22 @@
     visibility: hidden;
     right: 10000px;
 }
+
+.category-active {
+    border: 2px solid rgb(255, 251, 245);
+    border-radius: 25px;
+    height: max-content;
+    box-shadow: 1px 5px 15px rgba(32, 32, 31, 0.226);
+}
+
+#pTrie {
+    margin-left: 30px;
+    font-size: 18px;
+    color: #555151;
+}
+
+p#trieMessage {
+    font-size: 18px;
+    margin-left: 10px;
+    color: #555151;
+}
