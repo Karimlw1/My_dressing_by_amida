@@ -204,7 +204,7 @@
     padding: 10px;
     font-size: 1.3rem;
     line-height: 40px;
-    color: rgb(127, 166, 192);
+    color: rgb(0, 0, 0);
     margin-bottom: 20px;
 }
 
@@ -281,6 +281,11 @@
 
     .product button {
         align-self: right;
+    }
+
+    .texts {
+        color: rgb(125, 163, 189);
+
     }
 
     footer {
