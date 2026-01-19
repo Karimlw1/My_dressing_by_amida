@@ -283,4 +283,7 @@
         align-self: right;
     }
 
+    footer {
+        width: 100%;
+    }
 }
