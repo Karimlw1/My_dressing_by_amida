@@ -49,6 +49,9 @@ body {
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.7);
     visibility: hidden;   
 }
+.socials .visible{
+    visibility: visible;
+}
 .menu h2{
     color: #000000a6;
     margin: 20px;
