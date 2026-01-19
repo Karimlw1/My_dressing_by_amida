@@ -1,0 +1,44 @@
+html {
+    max-width: 1000px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+body {
+    background: aliceblue;
+    color: #333;
+    font-size: 1.3rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.info {
+    padding: 10px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+
+
+.price {
+    color: orange;
+    font-weight: bold;
+    margin: 8px 0;
+
+}
+
+button {
+    background: orange;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+
+}

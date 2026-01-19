@@ -1,0 +1,16 @@
+footer {
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: url("https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/images/footerBG.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: white;
+    box-shadow: 1px 5px 15px rgba(0, 0, 3, 0.8);
+    align-content: end;
+    text-align: center;
+    color: grey;
+}
