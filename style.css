@@ -37,7 +37,10 @@ body {
 .menu .socials{
     position: absolute;
     z-index: 1;
-    background: linear-gradient(335deg, rgb(196, 222, 240), #e9e9e9c9);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     padding: 35px 15px;
