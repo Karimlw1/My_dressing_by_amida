@@ -66,3 +66,7 @@ const observer = new IntersectionObserver((entries)=>{
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+function showMenu(){
+    const menuContent = document.querySelector(".socials");
+    menuContent.classList.add("visible");
+}
