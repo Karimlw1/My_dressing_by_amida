@@ -76,12 +76,3 @@ function showMenu() {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 //* Filter */
-const haut = document.querySelectorAll('.haut');
-const bas = document.querySelectorAll('.bas');
-const chaussure = document.querySelectorAll('.chaussure');
-const accessoires = document.querySelectorAll('.accessoires');
-function filterHaut() {
-    bas.classList.toggle("invisible");
-    chaussure.classList.toggle("invisible");
-    accessoires.classList.toggle("invisible");
-}
