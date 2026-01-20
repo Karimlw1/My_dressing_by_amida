@@ -23,14 +23,30 @@
   <body>
     <header class="navbar">
       <div class="menu">
-        <strong onclick="location.href='/my_dressing_by_amida'"><i class="fa fa-home"></i></strong>
+        <strong onclick="location.href = 'index.html'"
+          ><i class="fa fa-home"></i><br
+        /></strong>
+
+        <div class="socials">
+          <h2>Nos Comptes :</h2>
+          <a href="#" class="wa"
+            ><i class="fa-brands fa-whatsapp"></i> whatsapp</a
+          >
+          <a href="#" class="ig"
+            ><i class="fa-brands fa-instagram"></i> instagram</a
+          >
+          <a href="#" class="tt"><i class="fa-brands fa-tiktok"></i> tiktok</a>
+          <a href="#" class="fb"
+            ><i class="fa-brands fa-facebook"></i> facebook</a
+          >
+        </div>
       </div>
       <h3><strong>HOMME</strong></h3>
       <div class="cart">🛒 <span class="badge">..</span></div>
     </header>
 
     <div class="categories">
-      <div class="grid">
+      <div class="flex">
         <div class="category" id="haut" style="cursor: pointer">
           <img
             src="https://i.pinimg.com/1200x/64/41/b4/6441b4ed993e3463e9628ec7a52d2649.jpg"
@@ -43,7 +59,7 @@
             src="https://i.pinimg.com/736x/b9/9e/98/b99e98d5823dc425d69a603ab149de93.jpg"
             alt=""
           />
-          <p id="bas">Bas</p>
+          <p>Bas</p>
         </div>
         <div class="category" id="chaussure" style="cursor: pointer">
           <img
@@ -59,12 +75,27 @@
           />
           <p>Accessoires</p>
         </div>
+        <div class="category" id="habitmuslim" style="cursor: pointer">
+          <img
+            src="https://i.pinimg.com/1200x/0e/e8/9b/0ee89bebbde9f82c4b5027e797737fed.jpg"
+            alt=""
+          />
+          <p>Habit muslim</p>
+        </div>
+        <div class="category" id="complet" style="cursor: pointer">
+          <img
+            src="https://i.pinimg.com/1200x/0e/e8/9b/0ee89bebbde9f82c4b5027e797737fed.jpg"
+            alt=""
+          />
+          <p>Complet</p>
+        </div>
       </div>
     </div>
 
     <p id="pTrie">
       Trier : <strong id="trieMessage"> Tout les arcticle </strong>
     </p>
+
     <section class="products">
       <div class="product haut" id="haut">
         <img
