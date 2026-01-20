@@ -230,9 +230,12 @@
 }
 
 .slide-from-left:nth-child(3) {
-    transform: translateX(-300px);
+    transform: translateX(-250px);
 }
 
+.slide-from-left:nth-child(4) {
+    transform: translateX(-300px);
+}
 .slide-from-left:nth-child(4) {
     transform: translateX(-350px);
 }
