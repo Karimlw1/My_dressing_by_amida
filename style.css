@@ -185,7 +185,7 @@
 
 .product {
     width: 95%;
-    background: white;
+    background: rgb(241, 241, 241);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
