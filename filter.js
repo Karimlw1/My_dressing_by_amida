@@ -1,3 +1,7 @@
+/* =====================================
+   CATEGORY SELECTION SYSTEM (Beginner Friendly)
+   Works for both pages automatically
+===================================== */
 // 0. show acutal stock available
  const messageBox = document.getElementById("trieMessage");
  messageBox.innerHTML = "Total :" + [` ${document.querySelectorAll('.product').length}` + " articles disponibles" ];
@@ -115,18 +119,28 @@ const oldMsg = document.getElementById("emptyStock");
 }
 
 // Example: attach to a category with no products
-const emptyCategories = {
-    haut: categories.haut.length === 0 ? boxes.haut : null,
-    bas: categories.bas.length === 0 ? boxes.bas : null,
-    chaussure: categories.chaussure.length === 0 ? boxes.chaussure : null,
-    accessoires: categories.accessoires.length === 0 ? boxes.accessoire : null,
-    complet: categories.complet.length === 0 ? boxes.complet : null,
-};
-if (emptyCategories.complet) {
-    emptyCategories.complet.onclick = emptyCategories.complet.style.opacity = "0.3";
-    emptyCategories.complet.onclick = emptyStockMessage;
-  
-}
+
+Object.keys(categories).forEach(emptyCat => {
+  const catBox = boxes[emptyCat];
+  const catItems = categories[emptyCat];
+
+  // If category exists on page
+  if (catBox) {
+    // Check if category has no products
+    if (catItems.length === 0) {
+      catBox.style.opacity = "0.3";       // semi-disabled look
+      catBox.style.cursor = "not-allowed"; // show disabled cursor
+      catBox.onclick = emptyStockMessage;  // show empty stock message
+    } else {
+      // Normal clickable categories
+      catBox.onclick = () => {
+        catBox.classList.toggle("category-active");
+        updateView();
+      };
+    }
+  }
+});
+
 /* 7c. Show all products */
 
 
