@@ -20,6 +20,7 @@
     />
     <title>MD femme</title>
   </head>
+
   <body>
     <header class="navbar">
       <div class="menu">
@@ -33,6 +34,13 @@
 
     <div class="categories">
       <div class="flex">
+        <div class="category" id="complet" style="cursor: pointer">
+          <img
+            src="https://i.pinimg.com/1200x/0e/e8/9b/0ee89bebbde9f82c4b5027e797737fed.jpg"
+            alt=""
+          />
+          <p>Complet</p>
+        </div>
         <div class="category" id="haut" style="cursor: pointer">
           <img
             src="https://i.pinimg.com/1200x/4b/86/de/4b86de51b3a3dd30390ed2dfbc79e37c.jpg"
@@ -45,7 +53,7 @@
             src="https://i.pinimg.com/736x/d3/a1/59/d3a159741b4cb38ca501c71bdf09ebae.jpg"
             alt=""
           />
-          <p id="bas">Bas</p>
+          <p>Bas</p>
         </div>
         <div class="category" id="chaussure" style="cursor: pointer">
           <img
@@ -68,18 +76,10 @@
           />
           <p>Abaya</p>
         </div>
-        <div class="category" id="complet" style="cursor: pointer">
-          <img
-            src="https://i.pinimg.com/1200x/0e/e8/9b/0ee89bebbde9f82c4b5027e797737fed.jpg"
-            alt=""
-          />
-          <p>Complet</p>
-        </div>
       </div>
     </div>
-    <p id="pTrie">
-      Trier : <strong id="trieMessage"> Tout les arcticle </strong>
-    </p>
+    <p id="pTrie">Trier : <strong id="trieMessage"> </strong></p>
+    <p id="articlesDisponible"></p>
     <section class="products">
       <div class="product haut" id="haut">
         <img
@@ -263,6 +263,17 @@
         />
         <div class="info">
           <div class="price">$55</div>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product abaya">
+        <img
+          src="https://i.pinimg.com/1200x/10/6d/ab/106dab35d4d5e5e24b03dcb2413c1d27.jpg"
+          alt=""
+        />
+        <div class="info">
+          <div class="price">$1950</div>
           <button>Add to Cart</button>
         </div>
       </div>
