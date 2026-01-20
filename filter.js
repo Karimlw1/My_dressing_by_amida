@@ -1,7 +1,3 @@
-/* =====================================
-   CATEGORY SELECTION SYSTEM (Beginner Friendly)
-   Works for both pages automatically
-===================================== */
 // 0. show acutal stock available
  const messageBox = document.getElementById("trieMessage");
  messageBox.innerHTML = "Total :" + [` ${document.querySelectorAll('.product').length}` + " articles disponibles" ];
