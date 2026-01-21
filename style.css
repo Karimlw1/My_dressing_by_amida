@@ -250,6 +250,13 @@
 /* phone */
 
 @media (max-width: 768px) {
+     :root {
+     --fa-style-family-brands: "Font Awesome 6 Brands";
+     --fa-font-brands: normal 400 1em / 1 "Font Awesome 6 Brands";
+     background-color: rgb(0, 0, 0);
+     width: 100%;
+
+    }
     body {
         background-color: #ffffff;
     }
