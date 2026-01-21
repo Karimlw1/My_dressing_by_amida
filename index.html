@@ -1,36 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My dressing by amida Home</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="generals.css">
-    <link rel="stylesheet" href="footer.css">
-    
-    <link rel="icon" type="image/png" href="images/MDamida-logo.png">
-    <link rel="shortcut icon" href="images/MDamida-logo.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="generals.css" />
+    <link rel="stylesheet" href="footer.css" />
+
+    <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
+    <link rel="shortcut icon" href="images/MDamida-logo.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
 
   <body>
     <header class="navbar">
-      <div class="menu"> <strong onclick="showMenu()">&#9776;</strong>
-        
-        <div class="socials">
-          <h2> Nos Comptes :</h2>
-            <a href="https://wa.me/243986007232" class="wa"><i class="fa-brands fa-whatsapp"></i> whatsapp</a>
-            <a href="https://www.instagram.com/md_by_amida?igsh=N3czZGdnaTAwZ2w4" class="ig"><i class="fa-brands fa-instagram"></i> instagram</a>
-            <a href="https://www.tiktok.com/@mdbyamida?_r=1&_t=ZM-93F4nEYisCB" class="tt"><i class="fa-brands fa-tiktok"></i> tiktok</a>
-            <a href="#" class="fb"><i class="fa-brands fa-facebook"></i> facebook</a>
-        </div>
+      <div class="menu">
+        <strong onclick="showMenu()">&#9776;</strong>
 
+        <div class="socials">
+          <h2>Nos Comptes :</h2>
+          <a href="#" class="wa"
+            ><i class="fa-brands fa-whatsapp"></i> whatsapp</a
+          >
+          <a href="#" class="ig"
+            ><i class="fa-brands fa-instagram"></i> instagram</a
+          >
+          <a href="#" class="tt"><i class="fa-brands fa-tiktok"></i> tiktok</a>
+          <a href="#" class="fb"
+            ><i class="fa-brands fa-facebook"></i> facebook</a
+          >
+        </div>
       </div>
-       <h3><strong>My dressing by amida</strong></h3>
-      <div class="cart">🛒 <span class="badge">..</span></div>
+      <h3><strong>My dressing by amida</strong></h3>
+      <div class="cart" onclick="location.href = 'cart.html'">
+        🛒 <span class="badge" id="cartCount"></span>
+      </div>
     </header>
 
     <section class="carousel">
@@ -91,27 +104,36 @@
     <section class="categories">
       <h3>Categories</h3>
       <div class="grid">
-        <div class="category" onclick="location.href='/My_dressing_by_amida/FashionH.html'">
+        <div
+          class="category"
+          onclick="
+            location.href =
+              'C:/Users/alvin/Desktop/My_dressing_by_amida-main/My_dressing_by_amida-main/FashionH.html'
+          "
+        >
           <p>Fashion Homme</p>
         </div>
 
-        <div class="category" onclick="location.href='/My_dressing_by_amida/FashionF.html'">
+        <div class="category">
           <p>Fashion Femme</p>
         </div>
 
-        <div class="category" onclick="location.href='/My_dressing_by_amida/beaute.html'">
-          <p>beauté & <br> Skin care</p>
+        <div class="category">
+          <p>
+            beauté & <br />
+            Skin care
+          </p>
         </div>
 
-        <div class="category" onclick="location.href='/My_dressing_by_amida/gift.html'">
+        <div class="category">
           <p>Cadeau</p>
         </div>
 
-        <div class="category" onclick="location.href='/My_dressing_by_amida/accessories.html'">
+        <div class="category">
           <p>Accessoires</p>
         </div>
 
-        <div class="category" onclick="location.href='/My_dressing_by_amida/stationery.html'">
+        <div class="category">
           <p>Fournitures</p>
         </div>
       </div>
@@ -126,7 +148,13 @@
         />
         <div class="info">
           <div class="price">$150</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="talon rouge maron"
+            data-price="150$"
+            data-category="Femme(soulier)"
+          >
+            Ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -137,7 +165,13 @@
         />
         <div class="info">
           <div class="price">$80</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="tricot maron homme"
+            data-price="80$"
+            data-category="Homme(haut)"
+          >
+            Ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -148,7 +182,13 @@
         />
         <div class="info">
           <div class="price">$100</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="centella"
+            data-price="100$"
+            data-category="skin care"
+          >
+            Ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -159,7 +199,13 @@
         />
         <div class="info">
           <div class="price">$350</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="robe complet femme"
+            data-price="350$"
+            data-category="Femme(complet)"
+          >
+            Ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -170,7 +216,13 @@
         />
         <div class="info">
           <div class="price">$200/P</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="chaise"
+            data-price="250$"
+            data-category="Fourniture"
+          >
+            Ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -181,14 +233,19 @@
         />
         <div class="info">
           <div class="price">$210</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="lunette Celine"
+            data-price="210$"
+            data-category="Femme(accessoire)"
+          >
+            Ajouter au panier
+          </button>
         </div>
       </div>
     </section>
 
     <div class="texts">
-      <div class="slide-from-left reveal">Jusqu’à -10% sur vos achats</div>
-      <div class="slide-from-left reveal">livraison : <br> Kinshasa, Goma, Lubumbasi </div>
+      <div class="slide-from-left reveal">Jusqu’à -30% sur vos achats</div>
       <div class="slide-from-left reveal">Stock disponible immédiatement</div>
       <div class="slide-from-left reveal">
         Des milliers de clients satisfaits
@@ -197,9 +254,13 @@
     </div>
 
     <footer>
-      <p>© <span id="year"></span> My Dressing by Amida. <br> All rights reserved.</p>
+      <p>
+        © <span id="year"></span> My Dressing by Amida. <br />
+        All rights reserved.
+      </p>
     </footer>
 
     <script src="script.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>
