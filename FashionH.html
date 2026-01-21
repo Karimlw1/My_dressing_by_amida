@@ -42,7 +42,9 @@
         </div>
       </div>
       <h3><strong>HOMME</strong></h3>
-      <div class="cart">🛒 <span class="badge">..</span></div>
+      <div class="cart" onclick="location.href = 'cart.html'">
+        🛒 <span class="badge" id="cartCount"></span>
+      </div>
     </header>
 
     <div class="categories">
@@ -84,7 +86,7 @@
         </div>
         <div class="category" id="complet" style="cursor: pointer">
           <img
-            src="https://i.pinimg.com/1200x/dc/e7/1d/dce71dd0ce24ea22ad2679d0ebe4e14e.jpg"
+            src="https://i.pinimg.com/1200x/0e/e8/9b/0ee89bebbde9f82c4b5027e797737fed.jpg"
             alt=""
           />
           <p>Complet</p>
@@ -104,18 +106,13 @@
         />
         <div class="info">
           <div class="price">$150</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product complet" id="complet">
-        <img
-          src="https://i.pinimg.com/1200x/cc/8d/2f/cc8d2f75991af12e70d2e32fec3d1bde.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$150</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="chemise ZARA"
+            data-price="150$"
+            data-category="Homme(haut)"
+          >
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -126,7 +123,13 @@
         />
         <div class="info">
           <div class="price">$40</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="Montre"
+            data-price="40$"
+            data-category="Homme(accessoire)"
+          >
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -137,18 +140,13 @@
         />
         <div class="info">
           <div class="price">$35</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product complet" id="complet">
-        <img
-          src="https://i.pinimg.com/736x/a8/cc/e5/a8cce5cf0bcb3f12f824f9ffc7ae4312.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$100</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="Culotte de sport noir"
+            data-price="35$"
+            data-category="Homme(Bas)"
+          >
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -159,51 +157,13 @@
         />
         <div class="info">
           <div class="price">$80</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product haut">
-        <img
-          src="https://i.pinimg.com/1200x/31/6b/21/316b213fa7308fead0f0bc92b6db8b77.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$100</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product complet" id="complet">
-        <img
-          src="https://i.pinimg.com/736x/31/56/b2/3156b260ed47db3bafd28b8bc1a44a43.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$50</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product haut">
-        <img
-          src="https://i.pinimg.com/736x/82/53/0e/82530e541101c01897a76076576792d6.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$350</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product complet" id="complet">
-        <img
-          src="https://i.pinimg.com/736x/e0/98/c4/e098c486cbeb7c99bcd48dabe8eb7136.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$80</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="tricot marron"
+            data-price="80$"
+            data-category="Homme(Haut)"
+          >
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -214,18 +174,9 @@
         />
         <div class="info">
           <div class="price">$40</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product haut">
-        <img
-          src="https://i.pinimg.com/736x/c7/cf/25/c7cf259cf5ce72d5d98e68b2e5869bc7.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$200/P</div>
-          <button>Add to Cart</button>
+          <button data-name="" data-price="" data-category="homme(accessoire)">
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -236,18 +187,9 @@
         />
         <div class="info">
           <div class="price">$30</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product haut">
-        <img
-          src="https://i.pinimg.com/736x/b3/5b/55/b35b5503fd7a4cf1aa0084f9473c9fed.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$210</div>
-          <button>Add to Cart</button>
+          <button data-name="" data-price="" data-category="homme(accessoire)">
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -258,29 +200,13 @@
         />
         <div class="info">
           <div class="price">$50</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product haut">
-        <img
-          src="https://i.pinimg.com/1200x/8a/83/2b/8a832b0593cb923d029fa5cf534a8539.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$75</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product haut">
-        <img
-          src="https://i.pinimg.com/736x/3f/35/3c/3f353c38b5567d6a28592dc79efe6e1c.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$50</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="4 culotte"
+            data-price="50$"
+            data-category="homme(accessoire)"
+          >
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -290,8 +216,14 @@
           alt=""
         />
         <div class="info">
-          <div class="price">$170</div>
-          <button>Add to Cart</button>
+          <div class="price">$20</div>
+          <button
+            data-name="sac noir"
+            data-price="20"
+            data-category="homme(accessoire)"
+          >
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -302,7 +234,13 @@
         />
         <div class="info">
           <div class="price">$55</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="sandale dior"
+            data-price="55$"
+            data-category="homme(chaussure)"
+          >
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -313,7 +251,13 @@
         />
         <div class="info">
           <div class="price">$80</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="sandale hermes"
+            data-price="80"
+            data-category="homme(chausssure)"
+          >
+            ajouter au panier
+          </button>
         </div>
       </div>
 
@@ -324,18 +268,13 @@
         />
         <div class="info">
           <div class="price">$200</div>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="product chaussure">
-        <img
-          src="https://i.pinimg.com/736x/67/45/81/67458142b93ac81070007743306568f2.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$130</div>
-          <button>Add to Cart</button>
+          <button
+            data-name="chaussure tom ford"
+            data-price="200$"
+            data-category="homme(chausssure)"
+          >
+            ajouter au panier
+          </button>
         </div>
       </div>
     </section>
@@ -347,5 +286,6 @@
       </p>
     </footer>
     <script src="filter.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>
