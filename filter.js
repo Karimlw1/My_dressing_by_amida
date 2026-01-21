@@ -106,6 +106,22 @@ function updateView() {
   trieMessage.textContent = anyVisible ? formatMessage(selected) : "Aucun article disponible";
 }
 
+// select one category at a time
+let lastSelectedBox = null;
+Object.keys(boxes).forEach(name => {
+  const box = boxes[name];
+  if (!box) return;
+    box.onclick = () => {
+        if (lastSelectedBox && lastSelectedBox !== box) {
+            lastSelectedBox.classList.remove("category-active");
+        }
+        box.classList.toggle("category-active");
+        lastSelectedBox = box.classList.contains("category-active") ? box : null;
+        updateView();
+    };
+});
+
+
 // 7. Helper functions
 
 function showOrHide(list, show) {
