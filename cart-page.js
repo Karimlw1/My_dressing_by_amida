@@ -63,7 +63,7 @@ function sendToWhatsApp() {
   message += "%0A📎 *Veuillez joindre le PDF téléchargé*";
   message += "%0A%0AMerci 🙏";
 
-  const phone = "243982932331";
+  const phone = "256788064469";
   window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 }
 
