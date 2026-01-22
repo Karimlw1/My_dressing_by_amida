@@ -1,5 +1,3 @@
-/*LOAD CART*/
-
 function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -8,47 +6,39 @@ function saveCart(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-/*DISPLAY CART */
-
 function renderCart() {
   const container = document.getElementById("cartContainer");
   const cart = getCart();
-
   container.innerHTML = "";
 
   if (cart.length === 0) {
-    container.innerHTML = `<p class="empty">Votre panier est vide</p>`;
+    container.innerHTML = "<p>Votre panier est vide</p>";
     return;
   }
 
   let total = 0;
 
   cart.forEach((item, index) => {
-    const priceNumber = parseFloat(item.price);
-    total += priceNumber * item.qty;
+    total += item.price * item.qty;
 
     const div = document.createElement("div");
     div.className = "cart-item";
 
     div.innerHTML = `
+      <img src="${item.image}" width="70">
       <div>
         <strong>${item.name}</strong><br>
         <small>${item.category}</small><br>
-        <small>${item.price} × ${item.qty}</small>
+        <small>${item.price}$ × ${item.qty}</small>
       </div>
-      <span class="remove" onclick="removeItem(${index})">✕</span>
+      <span onclick="removeItem(${index})">✕</span>
     `;
 
     container.appendChild(div);
   });
 
-  const totalDiv = document.createElement("div");
-  totalDiv.className = "total";
-  totalDiv.textContent = "Total : $" + total;
-  container.appendChild(totalDiv);
+  container.innerHTML += `<h3>Total : ${total}$</h3>`;
 }
-
-/* REMOVE ITEM */
 
 function removeItem(index) {
   const cart = getCart();
@@ -57,7 +47,8 @@ function removeItem(index) {
   renderCart();
 }
 
-/*   WHATSAPP MESSAGE */
+document.addEventListener("DOMContentLoaded", renderCart);
+
 
 function sendToWhatsApp() {
   const cart = getCart();
@@ -66,14 +57,13 @@ function sendToWhatsApp() {
   let message = "🛍️ *Commande My Dressing by Amida*%0A%0A";
 
   cart.forEach(item => {
-    message += `• ${item.name} (${item.category}) - ${item.price} × ${item.qty}%0A`;
+    message += `• ${item.name} (${item.category}) - ${item.price} x ${item.qty}%0A`;
   });
 
-  message += `%0AMerci 🙏`;
+  message += "%0A📎 *Veuillez joindre le PDF téléchargé*";
+  message += "%0A%0AMerci 🙏";
 
-  const phone = "243982932331"; 
+  const phone = "243982932331";
   window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 }
 
-
-document.addEventListener("DOMContentLoaded", renderCart);
