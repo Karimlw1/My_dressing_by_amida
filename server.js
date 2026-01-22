@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 const ORDERS_FILE = "orders.json";
 
@@ -114,6 +114,10 @@ app.get("/cart", (req, res) => {
   res.send(html);
 });
 
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`Serveur lancé sur http://localhost:${PORT}`);
