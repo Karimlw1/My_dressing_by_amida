@@ -25,11 +25,11 @@ function renderCart() {
     div.className = "cart-item";
 
     div.innerHTML = `
-      <img src="${item.image}" width="70">
+      <img src="${item.image}" width="70"  alt=" image place">
       <div>
         <strong>${item.name}</strong><br>
-        <small>${item.category}</small><br>
-        <small>${item.price}$ × ${item.qty}</small>
+        type :<small>${item.category}</small><br>
+        Prix : <small> ${item.price}$ × ${item.qty}</small>
       </div>
       <span onclick="removeItem(${index})">✕</span>
     `;
