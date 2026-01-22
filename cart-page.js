@@ -49,21 +49,36 @@ function removeItem(index) {
 
 document.addEventListener("DOMContentLoaded", renderCart);
 
-
-function sendToWhatsApp() {
+function sendCartToAdmin() {
   const cart = getCart();
-  if (cart.length === 0) return;
 
-  let message = "🛍️ *Commande My Dressing by Amida*%0A%0A";
+  if (cart.length === 0) {
+    alert("Votre panier est vide");
+    return;
+  }
 
-  cart.forEach(item => {
-    message += `• ${item.name} (${item.category}) - ${item.price} x ${item.qty}%0A`;
-  });
+  fetch("http://localhost:3000/create-order", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ cart })
+  })
+    .then(res => res.json())
+    .then(data => {
+      const orderLink = `http://localhost:3000/order/${data.orderId}`;
 
-  message += "%0A📎 *Veuillez joindre le PDF téléchargé*";
-  message += "%0A%0AMerci 🙏";
+      const phone = "256788064469";
+      const whatsappLink =
+        `https://wa.me/${phone}?text=` +
+        encodeURIComponent(
+          "🛍️ Nouvelle commande My Dressing by Amida\n\n" +
+          orderLink
+        );
 
-  const phone = "256788064469";
-  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+      window.open(whatsappLink, "_blank");
+    })
+    .catch(() => {
+      alert("Erreur lors de l'envoi de la commande");
+    });
 }
+
 

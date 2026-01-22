@@ -1,46 +1,48 @@
 const express = require("express");
 const fs = require("fs");
-const cors = require("cors");
+const path = require("path");
 
 const app = express();
-app.use(cors());
+const PORT = 3000;
+
 app.use(express.json());
+app.use(express.static("public"));
 
-const DB_FILE = "./orders.json";
+const ORDERS_FILE = "orders.json";
 
-function readOrders() {
-return JSON.parse(fs.readFileSync(DB_FILE, "utf-8"));
+// créer le fichier s'il n'existe pas
+if (!fs.existsSync(ORDERS_FILE)) {
+  fs.writeFileSync(ORDERS_FILE, JSON.stringify({}));
 }
 
-function saveOrders(data) {
-fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
-}
+// créer une commande
+app.post("/create-order", (req, res) => {
+  const cart = req.body.cart;
+  const orderId = Date.now().toString();
 
-app.post("/order", (req, res) => {
-const orders = readOrders();
-const id = Date.now().toString();
+  const orders = JSON.parse(fs.readFileSync(ORDERS_FILE));
+  orders[orderId] = cart;
 
-orders[id] = {
-createdAt: new Date().toISOString(),
-cart: req.body
-};
+  fs.writeFileSync(ORDERS_FILE, JSON.stringify(orders, null, 2));
 
-saveOrders(orders);
-res.json({ orderId: id });
+  res.json({ orderId });
 });
 
+// voir une commande
 app.get("/order/:id", (req, res) => {
-const orders = readOrders();
-const order = orders[req.params.id];
+  const orders = JSON.parse(fs.readFileSync(ORDERS_FILE));
+  const order = orders[req.params.id];
 
-if (!order) {
-return res.status(404).json({ error: "Commande introuvable" });
-}
+  if (!order) {
+    return res.send("Commande introuvable");
+  }
 
-res.json(order);
+  res.send(`
+    <h2>Panier reçu</h2>
+    <pre>${JSON.stringify(order, null, 2)}</pre>
+  `);
 });
 
-app.listen(3000, () => {
-console.log("Serveur lancé sur http://localhost:3000");
+app.listen(PORT, () => {
+  console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
-
