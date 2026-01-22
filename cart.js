@@ -1,5 +1,3 @@
-/* 1. CART STORAGE */
-
 function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -8,11 +6,9 @@ function saveCart(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-/* 2. UPDATE CART BADGE*/
-
 function updateCartBadge() {
   const cart = getCart();
-  const count = cart.reduce((total, item) => total + item.qty, 0);
+  const count = cart.reduce((t, i) => t + i.qty, 0);
 
   const badge = document.getElementById("cartCount");
   if (badge) {
@@ -21,20 +17,18 @@ function updateCartBadge() {
   }
 }
 
-/*  3. ADD TO CART */
-
 function addToCart(product) {
   const cart = getCart();
-
-  const existing = cart.find(item => item.name === product.name);
+  const existing = cart.find(i => i.name === product.name);
 
   if (existing) {
-    existing.qty += 1;
+    existing.qty++;
   } else {
     cart.push({
       name: product.name,
-      price: product.price,
+      price: Number(product.price),
       category: product.category,
+      image: product.image,
       qty: 1
     });
   }
@@ -43,28 +37,20 @@ function addToCart(product) {
   updateCartBadge();
 }
 
-/*4. BUTTON EVENTS */
-
 document.addEventListener("DOMContentLoaded", () => {
   updateCartBadge();
 
-  const buttons = document.querySelectorAll(".product button");
+  document.querySelectorAll(".product button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      addToCart({
+        name: btn.dataset.name,
+        price: btn.dataset.price,
+        category: btn.dataset.category,
+        image: btn.dataset.image
+      });
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      const product = {
-        name: button.dataset.name || "Produit",
-        price: button.dataset.price || "0$",
-        category: button.dataset.category || "Autre"
-      };
-
-      addToCart(product);
-
-      // petit feedback UX
-      button.textContent = "Ajouté ✓";
-      setTimeout(() => {
-        button.textContent = "Ajouter au panier";
-      }, 800);
+      btn.textContent = "Ajouté ✓";
+      setTimeout(() => (btn.textContent = "Ajouter au panier"), 800);
     });
   });
 });
