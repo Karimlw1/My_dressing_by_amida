@@ -16,6 +16,7 @@
       .cart-container {
         width: 100%;
         padding: 15px;
+        background-color: #0000006b;
       }
 
       .cart-item {
@@ -34,12 +35,14 @@
         color: #000000;
         border: solid 1px #777;
         display: inline-block;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px rgb(18, 19, 18);
       }
 
-      .remove {
+      span {
         color: red;
         cursor: pointer;
-        font-size: 14px;
+        font-size: 19px;
       }
 
       .total {
@@ -59,8 +62,8 @@
         border: none;
         font-size: 16px;
         cursor: pointer;
-        margin-bottom: 255px;
-        position: relative;
+        margin-bottom: 40px;
+        box-shadow: 1px 1px 10px rgb(18, 19, 18);
       }
 
       .empty {
@@ -86,15 +89,17 @@
       <div class="cart-container" id="cartContainer"></div>
     </div>
 
-    <button class="send" onclick="generatePDF()">Télécharger le PDF</button>
+    <button
+      class="send"
+      onclick="generatePDF()"
+      style="background-color: rgb(40, 40, 128)"
+    >
+      Télécharger le PDF
+    </button>
 
     <button class="send" onclick="sendToWhatsApp()">
       Envoyer sur WhatsApp
     </button>
-
-    <footer>
-      <p>© My Dressing by Amida</p>
-    </footer>
 
     <script src="cart.js"></script>
     <script src="cart-page.js"></script>
