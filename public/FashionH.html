@@ -20,99 +20,83 @@
     />
     <title>MD homme</title>
   </head>
+
   <body>
     <header class="navbar">
       <div class="menu">
-        <strong onclick="location.href = 'index.html'"
-          ><i class="fa fa-home"></i><br
-        /></strong>
-
-        <div class="socials">
-          <h2>Nos Comptes :</h2>
-          <a href="#" class="wa"
-            ><i class="fa-brands fa-whatsapp"></i> whatsapp</a
-          >
-          <a href="#" class="ig"
-            ><i class="fa-brands fa-instagram"></i> instagram</a
-          >
-          <a href="#" class="tt"><i class="fa-brands fa-tiktok"></i> tiktok</a>
-          <a href="#" class="fb"
-            ><i class="fa-brands fa-facebook"></i> facebook</a
-          >
-        </div>
+        <strong onclick="location.href = 'index.html'">
+          <i class="fa fa-home"></i><br />
+        </strong>
       </div>
       <h3><strong>HOMME</strong></h3>
-      <div class="cart" onclick="location.href = 'cart.html'" style="cursor: pointer;">
+      <div
+        class="cart"
+        onclick="location.href = 'cart.html'"
+        style="cursor: pointer"
+      >
         🛒 <span class="badge" id="cartCount"></span>
       </div>
     </header>
 
     <div class="categories">
       <div class="flex">
-        <div class="category" id="haut" style="cursor: pointer">
+        <div class="category" id="haut">
           <img
             src="https://i.pinimg.com/1200x/64/41/b4/6441b4ed993e3463e9628ec7a52d2649.jpg"
-            alt=""
           />
           <p>Haut</p>
         </div>
-        <div class="category" id="bas" style="cursor: pointer">
+        <div class="category" id="bas">
           <img
             src="https://i.pinimg.com/736x/b9/9e/98/b99e98d5823dc425d69a603ab149de93.jpg"
-            alt=""
           />
           <p>Bas</p>
         </div>
-        <div class="category" id="chaussure" style="cursor: pointer">
+        <div class="category" id="chaussure">
           <img
             src="https://i.pinimg.com/1200x/bf/6f/59/bf6f59b280c18e2e1d4d34462dd42898.jpg"
-            alt=""
           />
-          <p>chaussures</p>
+          <p>Chaussures</p>
         </div>
-        <div class="category" id="accessoire" style="cursor: pointer">
+        <div class="category" id="accessoire">
           <img
             src="https://i.pinimg.com/1200x/e0/cc/e1/e0cce177845982e05503889fc3e7d202.jpg"
-            alt=""
           />
           <p>Accessoires</p>
         </div>
-        <div class="category" id="habitmuslim" style="cursor: pointer">
+        <div class="category" id="habitmuslim">
           <img
             src="https://i.pinimg.com/1200x/0e/e8/9b/0ee89bebbde9f82c4b5027e797737fed.jpg"
-            alt=""
           />
           <p>Habit muslim</p>
         </div>
-        <div class="category" id="complet" style="cursor: pointer">
+        <div class="category" id="complet">
           <img
             src="https://i.pinimg.com/1200x/0e/e8/9b/0ee89bebbde9f82c4b5027e797737fed.jpg"
-            alt=""
           />
           <p>Complet</p>
         </div>
       </div>
     </div>
 
-    <p id="pTrie">
-      Trier : <strong id="trieMessage"> Tout les arcticle </strong>
-    </p>
+    <p id="pTrie">Trier : <strong id="trieMessage">Tout les article</strong></p>
 
     <section class="products">
-      <div class="product haut" id="haut">
+      <div class="product haut">
         <img
           src="https://i.pinimg.com/1200x/84/f2/d7/84f2d733d4736d4376ba44c005194a5b.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$150</div>
           <button
+            class="details"
+            data-id="FashionHp1"
             data-name="chemise ZARA"
             data-price="150"
             data-category="Homme(haut)"
             data-image="https://i.pinimg.com/1200x/84/f2/d7/84f2d733d4736d4376ba44c005194a5b.jpg"
           >
-            ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -120,17 +104,18 @@
       <div class="product access">
         <img
           src="https://i.pinimg.com/736x/46/c1/ca/46c1ca4aaa247e242120a89823e042c5.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$40</div>
           <button
+            class="details"
+            data-id="FashionHp2"
             data-name="Montre"
             data-price="40"
             data-category="Homme(accessoire)"
             data-image="https://i.pinimg.com/736x/46/c1/ca/46c1ca4aaa247e242120a89823e042c5.jpg"
           >
-            ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -138,17 +123,18 @@
       <div class="product bas">
         <img
           src="https://i.pinimg.com/1200x/4b/4a/18/4b4a186675a7274b5c6d613713d5d435.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$35</div>
           <button
+            class="details"
+            data-id="FashionHp3"
             data-name="Culotte de sport noir"
             data-price="35"
             data-category="Homme(Bas)"
             data-image="https://i.pinimg.com/1200x/4b/4a/18/4b4a186675a7274b5c6d613713d5d435.jpg"
           >
-            ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -156,17 +142,18 @@
       <div class="product haut">
         <img
           src="https://i.pinimg.com/1200x/1a/80/c0/1a80c0cf8eef5d4f398982e08e54bf57.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$80</div>
           <button
+            class="details"
+            data-id="FashionHp4"
             data-name="tricot marron"
             data-price="80"
             data-category="Homme(Haut)"
             data-image="https://i.pinimg.com/1200x/1a/80/c0/1a80c0cf8eef5d4f398982e08e54bf57.jpg"
           >
-            ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -174,12 +161,18 @@
       <div class="product access">
         <img
           src="https://i.pinimg.com/1200x/e4/6a/5b/e46a5bdbbf182d89d492d1458fce95b0.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$40</div>
-          <button data-name="2 bonets" data-price="40" data-category="homme(accessoire)" data-image="">
-            ajouter au panier
+          <button
+            class="details"
+            data-id="FashionHp5"
+            data-name="2 bonets"
+            data-price="40"
+            data-category="homme(accessoire)"
+            data-image="https://i.pinimg.com/1200x/e4/6a/5b/e46a5bdbbf182d89d492d1458fce95b0.jpg"
+          >
+            Voir produit
           </button>
         </div>
       </div>
@@ -187,12 +180,18 @@
       <div class="product bas">
         <img
           src="https://i.pinimg.com/736x/12/6d/5f/126d5f4bdd73ee1f48f9808e977c675d.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$30</div>
-          <button data-name="3 culottes" data-price="30" data-category="homme(accessoire)" data-image="https://i.pinimg.com/736x/12/6d/5f/126d5f4bdd73ee1f48f9808e977c675d.jpg">
-            ajouter au panier
+          <button
+            class="details"
+            data-id="FashionHp6"
+            data-name="3 culottes"
+            data-price="30"
+            data-category="homme(accessoire)"
+            data-image="https://i.pinimg.com/736x/12/6d/5f/126d5f4bdd73ee1f48f9808e977c675d.jpg"
+          >
+            Voir produit
           </button>
         </div>
       </div>
@@ -200,17 +199,18 @@
       <div class="product bas">
         <img
           src="https://i.pinimg.com/1200x/c5/cc/f4/c5ccf44e7cd0f72ddc3d098435431cf9.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$50</div>
           <button
+            class="details"
+            data-id="FashionHp7"
             data-name="4 culottes"
             data-price="50"
             data-category="homme(accessoire)"
             data-image="https://i.pinimg.com/1200x/c5/cc/f4/c5ccf44e7cd0f72ddc3d098435431cf9.jpg"
           >
-            ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -218,17 +218,18 @@
       <div class="product access">
         <img
           src="https://i.pinimg.com/1200x/df/d9/98/dfd9986fb48ab0bdffa30d7e432cd92e.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$20</div>
           <button
+            class="details"
+            data-id="FashionHp8"
             data-name="sac noir"
             data-price="20"
             data-category="homme(accessoire)"
             data-image="https://i.pinimg.com/1200x/df/d9/98/dfd9986fb48ab0bdffa30d7e432cd92e.jpg"
           >
-            ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -236,17 +237,18 @@
       <div class="product chaussure">
         <img
           src="https://i.pinimg.com/736x/fd/0a/89/fd0a8932abe69c47f7e1e1f9d4b2c6d9.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$55</div>
           <button
+            class="details"
+            data-id="FashionHp9"
             data-name="sandale dior"
             data-price="55$"
             data-category="homme(chaussure)"
             data-image="https://i.pinimg.com/736x/fd/0a/89/fd0a8932abe69c47f7e1e1f9d4b2c6d9.jpg"
           >
-            ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -254,17 +256,18 @@
       <div class="product chaussure">
         <img
           src="https://i.pinimg.com/736x/9b/6e/89/9b6e892029ddcfb3fa32fb3c17f29c16.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$80</div>
           <button
+            class="details"
+            data-id="FashionHp10"
             data-name="sandale hermes"
             data-price="80"
             data-category="homme(chausssure)"
             data-image="https://i.pinimg.com/736x/9b/6e/89/9b6e892029ddcfb3fa32fb3c17f29c16.jpg"
           >
-            ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -272,17 +275,18 @@
       <div class="product chaussure">
         <img
           src="https://i.pinimg.com/1200x/de/69/43/de69434a6cf0ad4c78379af6e60fff5d.jpg"
-          alt=""
         />
         <div class="info">
           <div class="price">$200</div>
           <button
+            class="details"
+            data-id="FashionHp11"
             data-name="chaussure tom ford"
             data-price="200$"
             data-category="homme(chausssure)"
             data-image="https://i.pinimg.com/1200x/de/69/43/de69434a6cf0ad4c78379af6e60fff5d.jpg"
           >
-            ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -290,11 +294,14 @@
 
     <footer>
       <p>
-        © <span id="year"></span> My Dressing by Amida. <br />
-        All rights reserved.
+        © <span id="year"></span> My Dressing by Amida.<br />All rights
+        reserved.
       </p>
     </footer>
+
     <script src="filter.js"></script>
     <script src="cart.js"></script>
+    <script src="cart-core.js"></script>
+    <script src="product-link.js"></script>
   </body>
 </html>
