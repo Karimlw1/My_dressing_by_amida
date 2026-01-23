@@ -41,7 +41,11 @@
         </div>
       </div>
       <h3><strong>My dressing by amida</strong></h3>
-      <div class="cart" onclick="location.href = 'cart.html'" style="cursor: pointer;">
+      <div
+        class="cart"
+        onclick="location.href = 'cart.html'"
+        style="cursor: pointer"
+      >
         🛒 <span class="badge" id="cartCount"></span>
       </div>
     </header>
@@ -104,51 +108,30 @@
     <section class="categories">
       <h3>Categories</h3>
       <div class="grid">
-        <div
-          class="category"
-          onclick="
-            location.href =
-              'FashionH.html'
-          "
-        >
+        <div class="category" onclick="location.href = 'FashionH.html'">
           <p>Fashion Homme</p>
         </div>
 
-        <div class="category" onclick="
-            location.href =
-              'FashionF.html'
-          ">
+        <div class="category" onclick="location.href = 'FashionF.html'">
           <p>Fashion Femme</p>
         </div>
 
-        <div class="category" onclick="
-            location.href =
-              'beaute.html'
-          ">
+        <div class="category" onclick="location.href = 'beaute.html'">
           <p>
             beauté & <br />
             Skin care
           </p>
         </div>
 
-        <div class="category" onclick="
-            location.href =
-              'gift.html'
-          ">
+        <div class="category" onclick="location.href = 'gift.html'">
           <p>Cadeau</p>
         </div>
 
-        <div class="category" onclick="
-            location.href =
-              'Accessoires.html'
-          ">
+        <div class="category" onclick="location.href = 'Accessoires.html'">
           <p>Accessoires</p>
         </div>
 
-        <div class="category" onclick="
-            location.href =
-              'fourniture.html'
-          ">
+        <div class="category" onclick="location.href = 'fourniture.html'">
           <p>Fournitures</p>
         </div>
       </div>
@@ -156,21 +139,23 @@
 
     <h2 style="margin: 10px 0 0 10px">Explorez</h2>
     <section class="products">
-     
       <div class="product">
         <img
           src="https://i.pinimg.com/1200x/4a/27/0d/4a270d9a52ff3199fb4a1e516e249a94.jpg"
           alt=""
         />
         <div class="info">
-          <div class="price">$150</div>
+          <div class="price">$50</div>
           <button
+            data-id="Homep1"
+            class="details"
+            class="details"
             data-name="talon rouge maron"
             data-price="150"
             data-category="Femme(soulier)"
             data-image="https://i.pinimg.com/1200x/4a/27/0d/4a270d9a52ff3199fb4a1e516e249a94.jpg"
           >
-            Ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -183,30 +168,35 @@
         <div class="info">
           <div class="price">$80</div>
           <button
+            data-id="Homep2"
+            class="details"
+            class="details"
             data-name="tricot maron homme"
             data-price="80"
             data-category="Homme(haut)"
-            data-image="https://i.pinimg.com/1200x/4a/27/0d/4a270d9a52ff3199fb4a1e516e249a94.jpg"
+            data-image="https://i.pinimg.com/1200x/1a/80/c0/1a80c0cf8eef5d4f398982e08e54bf57.jpg"
           >
-            Ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
 
       <div class="product">
         <img
-          src="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/images/skincareHome.png"
+          src="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/skincareHome.png"
           alt=""
         />
         <div class="info">
           <div class="price">$100</div>
           <button
+            data-id="Homep3"
+            class="details"
             data-name="centella"
             data-price="100"
             data-category="skin care"
-            data-image="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/images/skincareHome.png"
+            data-image="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/skincareHome.png"
           >
-            Ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -219,12 +209,14 @@
         <div class="info">
           <div class="price">$350</div>
           <button
+            data-id="Homep4"
+            class="details"
             data-name="robe complet femme"
             data-price="350"
             data-category="Femme(complet)"
             data-image="https://i.pinimg.com/1200x/32/85/04/328504bda1f71b45ce07fdda398351fb.jpg"
           >
-            Ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -237,12 +229,14 @@
         <div class="info">
           <div class="price">$200/P</div>
           <button
+            data-id="Homep5"
+            class="details"
             data-name="chaise"
             data-price="250"
             data-category="Fourniture"
             data-image="https://i.pinimg.com/736x/da/56/4e/da564e6b2abe587262ae19c6a456f804.jpg"
           >
-            Ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -255,12 +249,14 @@
         <div class="info">
           <div class="price">$210</div>
           <button
+            data-id="Homep6"
+            class="details"
             data-name="Lunette Celine"
             data-price="210"
             data-category="Femme (Accessoire)"
             data-image="https://i.pinimg.com/736x/d4/ce/98/d4ce985e40ea436f4eea1d8881375531.jpg"
           >
-            Ajouter au panier
+            Voir produit
           </button>
         </div>
       </div>
@@ -283,6 +279,8 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="product-link.js"></script>
     <script src="cart.js"></script>
+    <script src="cart-core.js"></script>
   </body>
 </html>

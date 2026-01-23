@@ -73,6 +73,8 @@ app.get("/order/:id", (req, res) => {
           <p>Catégorie: ${item.category}</p>
           <p>Quantité: ${item.qty}</p>
           <p>Prix: ${item.price} USD</p>
+          <p>Taille: ${item.size}</p>
+          <p>Couleur: ${item.color}</p>
         </div>
       </div>
     `;
@@ -80,36 +82,6 @@ app.get("/order/:id", (req, res) => {
 
   html += `<div class="total">Total: ${total} USD</div>`;
   html += `</body></html>`;
-
-  res.send(html);
-});
-
-
-app.get("/cart", (req, res) => {
-  const cart = [
-    {
-      name: "talon rouge maron",
-      price: 150,
-      category: "Femme(soulier)",
-      image: "https://i.pinimg.com/1200x/4a/27/0d/4a270d9a52ff3199fb4a1e516e249a94.jpg",
-      qty: 1
-    }
-  ];
-
-  let html = `<div style =" width: 100% , height: max-content, background-color: darkblue "><h1 style="text-align:center;">Mon Panier</h1></div>`;
-  cart.forEach(item => {
-    html += `
-      <div style="display:flex;align-items:center;margin:10px 0;background:#fff;padding:10px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.1);">
-        <img src="${item.image}" style="width:100px;height:100px;margin-right:10px;border-radius:8px;">
-        <div>
-          <h3>${item.name}</h3>
-          <p>Catégorie: ${item.category}</p>
-          <p>Quantité: ${item.qty}</p>
-          <p>Prix: ${item.price} USD</p>
-        </div>
-      </div>
-    `;
-  });
 
   res.send(html);
 });

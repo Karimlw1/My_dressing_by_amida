@@ -29,7 +29,11 @@
         </strong>
       </div>
       <h3><strong>COSMETIQUE</strong></h3>
-      <div class="cart" onclick="location.href = 'cart.html'" style="cursor: pointer;">
+      <div
+        class="cart"
+        onclick="location.href = 'cart.html'"
+        style="cursor: pointer"
+      >
         🛒 <span class="badge" id="cartCount"></span>
       </div>
     </header>
@@ -77,21 +81,22 @@
     <p id="articlesDisponible"></p>
 
     <section class="products">
-
-      <div class="product maquillage" id="maquillage">
+      <div class="product maquillage">
         <img
           src="https://i.pinimg.com/736x/fc/95/a8/fc95a8fde6efd87c6377786a9ab11058.jpg"
-          alt=""
+          alt="Rouge à lèvre Lancome"
         />
         <div class="info">
           <div class="price">$150</div>
-         <button
+          <button
+            class="details"
+            data-id="BeautyP1"
             data-name="Rouge a levre lancome"
             data-price="150"
             data-category="Cosmetique(maquillage)"
             data-image="https://i.pinimg.com/736x/fc/95/a8/fc95a8fde6efd87c6377786a9ab11058.jpg"
           >
-            ajouter au panier
+            voir produit
           </button>
         </div>
       </div>
@@ -99,17 +104,19 @@
       <div class="product access">
         <img
           src="https://i.pinimg.com/736x/4a/ec/63/4aec636ed4040a38d293607b48c5521d.jpg"
-          alt=""
+          alt="Masse visage"
         />
         <div class="info">
           <div class="price">$40</div>
-         <button
+          <button
+            class="details"
+            data-id="BeautyP2"
             data-name="masse visage"
             data-price="40"
-            data-category="Cosmetique(Accessoire)"
+            data-category="Cosmetique(accessoire)"
             data-image="https://i.pinimg.com/736x/4a/ec/63/4aec636ed4040a38d293607b48c5521d.jpg"
           >
-            ajouter au panier
+            voir produit
           </button>
         </div>
       </div>
@@ -117,17 +124,19 @@
       <div class="product skincare">
         <img
           src="https://i.pinimg.com/736x/9f/af/11/9faf117b216f2aa8a897e41ca3e870ea.jpg"
-          alt=""
+          alt="La roche posay vitamine C"
         />
         <div class="info">
           <div class="price">$35</div>
-         <button
-            data-name="La roche posey VITAMINE C"
+          <button
+            class="details"
+            data-id="BeautyP3"
+            data-name="La roche posay Vitamine C"
             data-price="35"
-            data-category="Cosmetique(skincare"
+            data-category="Cosmetique(skincare)"
             data-image="https://i.pinimg.com/736x/9f/af/11/9faf117b216f2aa8a897e41ca3e870ea.jpg"
           >
-            ajouter au panier
+            voir produit
           </button>
         </div>
       </div>
@@ -135,17 +144,19 @@
       <div class="product skincare">
         <img
           src="https://i.pinimg.com/736x/7e/b5/16/7eb5166567f5890bd9827441e70a63b8.jpg"
-          alt=""
+          alt="EQQUAL BERRY vitamine C"
         />
         <div class="info">
           <div class="price">$30</div>
-         <button
+          <button
+            class="details"
+            data-id="BeautyP4"
             data-name="EQQUAL BERRY vitamine C"
             data-price="30"
             data-category="Cosmetique(skincare)"
             data-image="https://i.pinimg.com/736x/7e/b5/16/7eb5166567f5890bd9827441e70a63b8.jpg"
           >
-            ajouter au panier
+            voir produit
           </button>
         </div>
       </div>
@@ -153,17 +164,19 @@
       <div class="product skincare">
         <img
           src="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/images/skincareHome.png"
-          alt=""
+          alt="Centella skincare"
         />
         <div class="info">
           <div class="price">$100</div>
           <button
+            class="details"
+            data-id="BeautyP5"
             data-name="centella"
             data-price="100"
-            data-category="skin care"
+            data-category="Cosmetique(skincare)"
             data-image="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/images/skincareHome.png"
           >
-            Ajouter au panier
+            voir produit
           </button>
         </div>
       </div>
@@ -171,17 +184,19 @@
       <div class="product fragrance">
         <img
           src="https://i.pinimg.com/736x/11/fd/5c/11fd5c4ed5231ccf813827a2ec295850.jpg"
-          alt=""
+          alt="Stronger with you"
         />
         <div class="info">
-          <div class="price">$55</div>
-         <button
+          <div class="price">$50</div>
+          <button
+            class="details"
+            data-id="BeautyP6"
             data-name="stronger with You"
             data-price="50"
             data-category="Cosmetique(fragrance)"
             data-image="https://i.pinimg.com/736x/11/fd/5c/11fd5c4ed5231ccf813827a2ec295850.jpg"
           >
-            ajouter au panier
+            voir produit
           </button>
         </div>
       </div>
@@ -189,30 +204,33 @@
       <div class="product haircare">
         <img
           src="https://i.pinimg.com/736x/19/e6/cc/19e6cc85d0dbc47881063962605de663.jpg"
-          alt=""
+          alt="Kit haircare"
         />
         <div class="info">
-          <div class="price">$50</div>
-         <button
+          <div class="price">$55</div>
+          <button
+            class="details"
+            data-id="BeautyP7"
             data-name="KIT complet haircare"
             data-price="55"
-            data-category="Cosmetique(Haircare)"
+            data-category="Cosmetique(haircare)"
             data-image="https://i.pinimg.com/736x/19/e6/cc/19e6cc85d0dbc47881063962605de663.jpg"
           >
-            ajouter au panier
+            voir produit
           </button>
         </div>
       </div>
-
-     </section>
+    </section>
 
     <footer>
       <p>
-        © <span id="year"></span> My Dressing by Amida. <br />
+        2026© <span id="year"></span> My Dressing by Amida. <br />
         All rights reserved.
       </p>
     </footer>
     <script src="filter.js"></script>
     <script src="cart.js"></script>
+    <script src="cart-core.js"></script>
+    <script src="product-link.js"></script>
   </body>
 </html>
