@@ -128,9 +128,10 @@ a.wa {
     position: absolute;
     top: -6px;
     right: -8px;
-    background: orange;
-    color: white;
-    font-size: 12px;
+    background: #000000;
+    color: #ffffff;
     padding: 2px 6px;
     border-radius: 50%;
+    font: -webkit-small-control;
+    font-weight: bold;
 }
