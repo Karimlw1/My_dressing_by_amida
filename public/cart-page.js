@@ -6,6 +6,18 @@ function saveCart(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+
+
+function updateCartBadge() {
+  const cart = getCart();
+  const badge = document.querySelector(".cart-badge"); // ton élément badge
+  if (badge) {
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    badge.textContent = totalQty;
+  }
+}
+
+// Appelle à chaque rendu de cart
 function renderCart() {
   const container = document.getElementById("cartContainer");
   const cart = getCart();
@@ -13,6 +25,7 @@ function renderCart() {
 
   if (cart.length === 0) {
     container.innerHTML = "<p>Votre panier est vide</p>";
+    updateCartBadge();
     return;
   }
 
@@ -38,6 +51,7 @@ function renderCart() {
   });
 
   container.innerHTML += `<h3>Total : ${total}$</h3>`;
+  updateCartBadge(); // met à jour badge à chaque rendu
 }
 
 function removeItem(index) {
@@ -47,7 +61,13 @@ function removeItem(index) {
   renderCart();
 }
 
-document.addEventListener("DOMContentLoaded", renderCart);
+document.addEventListener("DOMContentLoaded", () => {
+  renderCart();
+  
+  const btn = document.querySelector(".send");
+  if (btn) btn.addEventListener("click", sendCartToAdmin);
+});
+
 
 function sendCartToAdmin() {
   const cart = getCart();
