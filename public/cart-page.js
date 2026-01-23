@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
@@ -18,9 +18,6 @@ function updateCartBadge() {
   }
 }
 
-// Appelle à chaque rendu de cart
-=======
->>>>>>> b533df3 (Fix cart, product pages and add product details system)
 function renderCart() {
   const container = document.getElementById("cartContainer");
   const cart = getCart();
