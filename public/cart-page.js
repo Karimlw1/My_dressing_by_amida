@@ -57,14 +57,17 @@ function sendCartToAdmin() {
     return;
   }
 
-  fetch("http://localhost:3000/create-order", {
+  // URL publique de ton serveur Render
+  const serverUrl = "https://mydressingbyamida.onrender.com";
+
+  fetch(`${serverUrl}/create-order`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ cart })
   })
     .then(res => res.json())
     .then(data => {
-      const orderLink = `http://localhost:3000/order/${data.orderId}`;
+      const orderLink = `${serverUrl}/order/${data.orderId}`;
 
       const phone = "256788064469";
       const whatsappLink =
@@ -80,5 +83,6 @@ function sendCartToAdmin() {
       alert("Erreur lors de l'envoi de la commande");
     });
 }
+
 
 
