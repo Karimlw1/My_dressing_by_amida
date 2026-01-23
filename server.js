@@ -48,17 +48,21 @@ app.get("/order/:id", (req, res) => {
       <title>Votre Panier</title>
       <style>
         body { font-family: Arial, sans-serif; background:#f7f7f7; padding:20px; }
-        h1 { text-align:center; color:#333; }
+        .nav-bar{ border-bottom: 1px solid lightgrey; width: 100% ; display:flex ; flex-direction: rows; justify-content: space evenly;}
+        h1 { text-align:center; color:#333;}
         .cart-item { display:flex; align-items:center; background:#fff; padding:10px; margin-bottom:10px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
         .cart-item img { width:100px; height:100px; object-fit:cover; border-radius:8px; margin-right:15px; }
         .cart-item-details { flex:1; }
         .cart-item-details h3 { margin:0; }
         .cart-item-details p { margin:5px 0; color:#555; }
-        .total { text-align:right; font-weight:bold; margin-top:20px; font-size:1.2em; }
+        .total { text-align:right; font-weight:bold; margin-top:20px; font-size:1.2em; color: darkgreen;}
       </style>
     </head>
     <body>
+     <div class="nav-bar">
+      <span class= "back" onclick="window.location.href='mydressingbyamida.onrender.com'"><</span>
       <h1>Panier reçu</h1>
+     </div>
   `;
 
   let total = 0;
