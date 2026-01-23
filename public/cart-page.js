@@ -71,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function sendCartToAdmin() {
   const cart = getCart();
+  const whatsappBtn = document.querySelector(".send-whatsapp");
+  if (whatsappBtn) whatsappBtn.addEventListener("click", sendCartToAdmin);
 
   if (cart.length === 0) {
     alert("Votre panier est vide");
