@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function sendCartToAdmin() {
   const cart = getCart();
+  
 
   if (!cart || cart.length === 0) {
     alert("Votre panier est vide");
@@ -80,15 +81,12 @@ function sendCartToAdmin() {
 
   const phone = "256788064469";
 
-  // 1️⃣ Open WhatsApp immediately (Safari allows this)
-  const whatsappWindow = window.open(
-    `https://wa.me/${phone}?text=Préparation de votre commande...`,
-    "_blank"
-  );
+  // 1️⃣ Open a blank window (Safari allows this)
+  const popup = window.open("", "_blank");
 
-  // 2️⃣ Then do the API call
   const serverUrl = "https://mydressingbyamida.onrender.com";
 
+  // 2️⃣ Create order
   fetch(`${serverUrl}/create-order`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -101,22 +99,30 @@ function sendCartToAdmin() {
     .then(data => {
       const orderLink = `${serverUrl}/order/${data.orderId}`;
 
-      const finalMessage =
+      const message =
         "🛍️ Nouvelle commande My Dressing by Amida\n\n" +
+        "Voir le panier 👇\n" +
         orderLink;
 
-      // 3️⃣ Update WhatsApp URL
-      whatsappWindow.location.href =
+      const whatsappUrl =
         `https://wa.me/${phone}?text=` +
-        encodeURIComponent(finalMessage);
+        encodeURIComponent(message);
+
+      popup.location.href = whatsappUrl;
+
+setTimeout(() => {
+  popup.location.href =
+    `https://wa.me/${phone}?text=` +
+    encodeURIComponent(message);
+}, 800);
+
+
+      // 3️⃣ Load WhatsApp ONCE with final message
+      popup.location.href = whatsappUrl;
     })
     .catch(err => {
       console.error(err);
-      whatsappWindow.close();
+      popup.close();
       alert("Erreur lors de l'envoi de la commande");
     });
 }
-
-
-
-
