@@ -65,7 +65,7 @@ function removeItem(index) {
 document.addEventListener("DOMContentLoaded", () => {
   renderCart();
   
-  const btn = document.querySelector(".send");
+  const btn = document.querySelector(".send-whatsapp");
   if (btn) btn.addEventListener("click", sendCartToAdmin);
 });
 
