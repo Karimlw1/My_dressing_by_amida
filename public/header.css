@@ -1,7 +1,8 @@
 .navbar {
-    height: 60px;
-    background: #2f3e4e;
-    color: white;
+   height: 60px;
+    background: #fdfdfd;
+    color: rgb(15, 15, 15);
+    border-bottom: solid 1px rgb(0 0 0 / 10%);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,7 +15,7 @@
 .navbar h3 {
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
-    color: #ffffffc7;
+    color: #0000008c;
     font-size: 1.7rem;
     -webkit-text-stroke-width: medium;
 }
