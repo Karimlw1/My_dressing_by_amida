@@ -59,6 +59,7 @@ function removeItem(index) {
   cart.splice(index, 1);
   saveCart(cart);
   renderCart();
+  updateCartBadge(); 
 }
 
 document.addEventListener("DOMContentLoaded", () => {
