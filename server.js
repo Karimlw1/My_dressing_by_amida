@@ -41,14 +41,14 @@ app.get("/order/:id", (req, res) => {
     return res.send("<h2>Commande introuvable</h2>");
   }
 
-  // Créer une vraie page HTML avec style CSS
+  //le HTML et style CSS de mon server 
   let html = `
     <html>
     <head>
       <title>Votre Panier</title>
       <style>
         body { font-family: Arial, sans-serif; background:#f7f7f7; padding:20px; }
-        .nav-bar{ border-bottom: 1px solid lightgrey; width: 100% ; display:flex ; flex-direction: rows; justify-content: space evenly;}
+        .nav-bar{ border-bottom: 1px solid lightgrey; width: 100% ; display:flex ; flex-direction: row; justify-content: space evenly;}
         h1 { text-align:center; color:#333;}
         .cart-item { display:flex; align-items:center; background:#fff; padding:10px; margin-bottom:10px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
         .cart-item img { width:100px; height:100px; object-fit:cover; border-radius:8px; margin-right:15px; }
@@ -60,13 +60,13 @@ app.get("/order/:id", (req, res) => {
     </head>
     <body>
      <div class="nav-bar">
-      <span class= "back" onclick="window.location.href='mydressingbyamida.onrender.com'"><</span>
+      <span class= "back" onclick="location.href='mydressingbyamida.onrender.com'"><</span>
       <h1>Panier reçu</h1>
      </div>
   `;
 
   let total = 0;
-
+  
   order.forEach(item => {
     total += item.price * (item.qty || 1);
     html += `
