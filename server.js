@@ -120,7 +120,7 @@ app.get("/order/:id", (req, res) => {
     <body>
      <div class="nav-bar">
        <a class="back" href="https://mydressingbyamida.onrender.com">
-        ⬅ Retour au site
+        ← Retour au site
       </a>
       <h1>Panier reçu</h1>
      </div>
