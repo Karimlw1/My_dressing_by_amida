@@ -47,24 +47,74 @@ app.get("/order/:id", (req, res) => {
     <head>
       <title>Votre Panier</title>
       <style>
-        body { font-family: Arial, sans-serif; background:#f7f7f7; padding:20px; }
-        .nav-bar{ border-bottom: 1px solid lightgrey; width: 100% ; display:flex ; flex-direction: row; justify-content: space evenly;}
-        h1 { text-align:center; color:#333;}
-        .cart-item { display:flex; align-items:center; background:#fff; padding:10px; margin-bottom:10px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
-        .cart-item img { width:100px; height:100px; object-fit:cover; border-radius:8px; margin-right:15px; }
-        .cart-item-details { flex:1; }
-        .cart-item-details h3 { margin:0; }
-        .cart-item-details p { margin:5px 0; color:#555; }
-        .total { text-align:right; font-weight:bold; margin-top:20px; font-size:1.2em; color: darkgreen;}
+         body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        padding: 20px;
+      }
+      .nav-bar {
+        border-bottom: 1px solid lightgrey;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        width: 80%;
+      }
+      .cart-item {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        padding: 10px;
+        height: max-content;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .cart-item img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 15px;
+      }
+      .cart-item-details {
+        flex: 1;
+        height: max-content;
+      }
+      .cart-item-details h3 {
+        margin: 0;
+      }
+      .cart-item-details p {
+        margin: 5px 0;
+        color: #555;
+      }
+      .total {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 1.2em;
+        color: darkgreen;
+      }
       .back {
-          display: inline-block;
-          margin-bottom: 20px;
-          text-decoration: none;
-          color: white;
-          background: black;
-          padding: 10px 16px;
-          border-radius: 6px;
-        }
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background: black;
+        padding: 10px 16px;
+        height: max-content;
+        border-radius: 6px;
+        height: max-content;
+        display: flex;
+        align-self: center;
+        font-size: 10px;
+      }
+      a {
+        text-decoration: none;
+      }
         </style>
     </head>
     <body>
@@ -81,8 +131,9 @@ app.get("/order/:id", (req, res) => {
   order.forEach(item => {
     total += item.price * (item.qty || 1);
     html += `
+      <a href="https://mydressingbyamida.onrender.com/product.html?id=${item.id}">
       <div class="cart-item">
-        <img src="${item.image}" alt="${item.name}">
+        <img src="${item.image}" alt="${item.name}" />
         <div class="cart-item-details">
           <h3>${item.name}</h3>
           <p>Catégorie: ${item.category}</p>
@@ -90,11 +141,9 @@ app.get("/order/:id", (req, res) => {
           <p>Prix: ${item.price} USD</p>
           <p>Taille: ${item.size}</p>
           <p>Couleur: ${item.color}</p>
-          <a href="https://my-dressing-by-amida.vercel.app/product.html?id=${item.id}">
-           Voir le produit
-          </a>
         </div>
       </div>
+    </a>
     `;
   });
 
