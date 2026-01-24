@@ -60,7 +60,9 @@ app.get("/order/:id", (req, res) => {
     </head>
     <body>
      <div class="nav-bar">
-      <span class= "back" onclick="location.href='mydressingbyamida.onrender.com'"><</span>
+       <a class="back" href="https://my-dressing-by-amida.vercel.app">
+        ⬅ Retour au site
+      </a>
       <h1>Panier reçu</h1>
      </div>
   `;
