@@ -1,6 +1,9 @@
-document.addEventListener("click", e => {
-  const btn = e.target.closest(".details");
-  if (!btn) return;
+document.addEventListener("click", (e) => {
+  const card = e.target.closest(".product.details");
+  if (!card) return;
 
-  window.location.href = `product.html?id=${btn.dataset.id}`;
+  const id = card.dataset.id;
+  if (!id) return;
+
+  window.location.href = `product.html?id=${id}`;
 });
