@@ -56,7 +56,16 @@ app.get("/order/:id", (req, res) => {
         .cart-item-details h3 { margin:0; }
         .cart-item-details p { margin:5px 0; color:#555; }
         .total { text-align:right; font-weight:bold; margin-top:20px; font-size:1.2em; color: darkgreen;}
-      </style>
+      .back {
+          display: inline-block;
+          margin-bottom: 20px;
+          text-decoration: none;
+          color: white;
+          background: black;
+          padding: 10px 16px;
+          border-radius: 6px;
+        }
+        </style>
     </head>
     <body>
      <div class="nav-bar">
@@ -81,6 +90,9 @@ app.get("/order/:id", (req, res) => {
           <p>Prix: ${item.price} USD</p>
           <p>Taille: ${item.size}</p>
           <p>Couleur: ${item.color}</p>
+          <a href="https://my-dressing-by-amida.vercel.app/product.html?id=${item.id}">
+           Voir le produit
+          </a>
         </div>
       </div>
     `;
