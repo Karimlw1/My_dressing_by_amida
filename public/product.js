@@ -329,7 +329,8 @@ const PRODUCTS = {
       price: 45,
       category: "maternite",
       image: "https://i.pinimg.com/736x/5e/fb/0d/5efb0d628a6278c4f6748c383d6814ef.jpg",
-      description: "Coffret maternité mixte pour maman et bébé"
+      description: "Coffret maternité mixte pour maman et bébé",
+      options:{}
     },
   
    MAT02 :
@@ -338,7 +339,8 @@ const PRODUCTS = {
     price: 75,
     category: "maternite",
     image: "https://i.pinimg.com/736x/86/0b/28/860b2871ce09823dbffeee19e846e70d.jpg",
-    description: "Coffret complet naissance"
+    description: "Coffret complet naissance",
+      options:{}
   },
 
   MAT03 :{
@@ -347,7 +349,8 @@ const PRODUCTS = {
     price: 110,
     category: "maternite",
     image: "https://i.pinimg.com/736x/fa/f0/a2/faf0a2f2daf53ef00be9a139c82754c0.jpg",
-    description: "Coffret maternité haut de gamme"
+    description: "Coffret maternité haut de gamme",
+      options:{}
   }
 };
 
