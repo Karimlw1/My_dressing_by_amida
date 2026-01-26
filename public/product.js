@@ -382,7 +382,7 @@ if (!product) {
 
 const container = document.getElementById("materniteProducts");
 
-products
+PRODUCTS
   .filter(p => p.category === "maternite")
   .forEach(product => {
     container.innerHTML += `
