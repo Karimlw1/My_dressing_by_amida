@@ -153,6 +153,7 @@
     background: url("https://i.pinimg.com/736x/35/1f/31/351f317f8c6d4cb2b178120794c4650b.jpg");
     background-size: cover;
     background-repeat: round;
+    width: 100%;
 }
 
 .category:nth-child(5) {
