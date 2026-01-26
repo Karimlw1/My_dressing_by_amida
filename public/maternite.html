@@ -19,41 +19,65 @@
       </div>
     </header>
 
-    <section class="gift-section">
-  <h2>🎁 Composer votre cadeau</h2>
+   <section class="gift-section">
+  <h2>🎁 Offrir un cadeau</h2>
 
   <form id="giftForm">
+
     <label>Nom du destinataire</label>
-    <input type="text" id="recipient" required placeholder="Ex: Sarah" />
+    <input type="text" id="recipient" placeholder="Ex : Sarah" required />
 
-    <label>Message personnalisé</label>
-    <textarea id="message" placeholder="Votre message..."></textarea>
+    <label>Occasion</label>
+    <select id="occasion">
+      <option>Anniversaire</option>
+      <option>Mariage</option>
+      <option>Saint-Valentin</option>
+      <option>Fête</option>
+      <option>Autre</option>
+    </select>
 
-    <label>Choisissez vos articles</label>
-
-    <div class="gift-items">
+    <label>Choisissez votre option</label>
+    <div class="choice-box">
       <label>
-        <input type="checkbox" value="Montre classique|40" />
-        Montre classique – 40$
+        <input type="radio" name="giftType" value="coffret" checked />
+        🎁 Choisir un coffret
       </label>
 
       <label>
-        <input type="checkbox" value="Parfum Stronger With You|55" />
-        Parfum Stronger With You – 55$
-      </label>
-
-      <label>
-        <input type="checkbox" value="Chemise ZARA|100" />
-        Chemise ZARA – 100$
+        <input type="radio" name="giftType" value="recommande" />
+        💡 Cadeau recommandé
       </label>
     </div>
+
+    <!-- COFFRET -->
+    <div id="coffretBox">
+      <label>Type de coffret</label>
+      <select id="coffretType">
+        <option>Coffret Bronze</option>
+        <option>Coffret Silver</option>
+        <option>Coffret Gold</option>
+      </select>
+    </div>
+
+    <!-- RECOMMANDATION -->
+    <div id="recommendBox" style="display:none">
+      <label>Parlez-nous du destinataire</label>
+      <textarea
+        id="description"
+        placeholder="Âge, style, homme/femme, goûts, budget approximatif..."
+      ></textarea>
+    </div>
+
+    <label>Message personnalisé</label>
+    <textarea id="message" placeholder="Message à joindre au cadeau"></textarea>
 
     <label>Adresse de livraison (optionnel)</label>
     <input type="text" id="address" />
 
-    <button type="submit">🎁 Envoyer sur WhatsApp</button>
+    <button type="submit">Envoyer sur WhatsApp</button>
   </form>
 </section>
+
 <script src="cart.js"></script>
 <script src="filter.js"></script>
 <script src="cart-core.js"></script>
