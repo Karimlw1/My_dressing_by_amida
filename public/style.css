@@ -98,8 +98,8 @@
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    justify-content: center;
     gap: 10px;
+    align-items: center;
 }
 
 .grid {
