@@ -94,7 +94,13 @@
 .categories h3 {
     margin-bottom: 10px;
 }
-
+.category-container{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    gap: 10px;
+}
 
 .grid {
     display: grid;
@@ -103,6 +109,10 @@
     justify-self: center;
     width: 80%;
 
+}
+.flex {
+    display: flex;
+    justify-content: center;
 }
 
 .category {
