@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylegift.css">
+</head>
+<body>
+    <header class="navbar">
+      <div class="menu" onclick="history.back()">←</div>
+      <h3><strong>PRODUIT</strong></h3>
+      <div
+        class="cart"
+        onclick="location.href = 'cart.html'"
+        style="cursor: pointer"
+      >
+        🛒 <span class="badge" id="cartCount"></span>
+      </div>
+    </header>
+
+    <section class="gift-section">
+  <h2>🎁 Composer votre cadeau</h2>
+
+  <form id="giftForm">
+    <label>Nom du destinataire</label>
+    <input type="text" id="recipient" required placeholder="Ex: Sarah" />
+
+    <label>Message personnalisé</label>
+    <textarea id="message" placeholder="Votre message..."></textarea>
+
+    <label>Choisissez vos articles</label>
+
+    <div class="gift-items">
+      <label>
+        <input type="checkbox" value="Montre classique|40" />
+        Montre classique – 40$
+      </label>
+
+      <label>
+        <input type="checkbox" value="Parfum Stronger With You|55" />
+        Parfum Stronger With You – 55$
+      </label>
+
+      <label>
+        <input type="checkbox" value="Chemise ZARA|100" />
+        Chemise ZARA – 100$
+      </label>
+    </div>
+
+    <label>Adresse de livraison (optionnel)</label>
+    <input type="text" id="address" />
+
+    <button type="submit">🎁 Envoyer sur WhatsApp</button>
+  </form>
+</section>
+<script src="cart.js"></script>
+<script src="filter.js"></script>
+<script src="cart-core.js"></script>
+<script src="product.js"></script>
+</body>
+</html>
