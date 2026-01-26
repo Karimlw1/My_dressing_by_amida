@@ -328,7 +328,7 @@ const PRODUCTS = {
       name: "Coffret Maternité Douceur",
       price: 45,
       category: "maternite",
-      image: "images/mat1.jpg",
+      image: "https://i.pinimg.com/736x/5e/fb/0d/5efb0d628a6278c4f6748c383d6814ef.jpg",
       description: "Coffret maternité mixte pour maman et bébé"
     },
   
@@ -337,7 +337,7 @@ const PRODUCTS = {
     name: "Coffret Naissance Premium",
     price: 75,
     category: "maternite",
-    image: "images/mat2.jpg",
+    image: "https://i.pinimg.com/736x/86/0b/28/860b2871ce09823dbffeee19e846e70d.jpg",
     description: "Coffret complet naissance"
   },
 
@@ -346,7 +346,7 @@ const PRODUCTS = {
     name: "Coffret Famille & Bébé",
     price: 110,
     category: "maternite",
-    image: "images/mat3.jpg",
+    image: "https://i.pinimg.com/736x/fa/f0/a2/faf0a2f2daf53ef00be9a139c82754c0.jpg",
     description: "Coffret maternité haut de gamme"
   }
 };
