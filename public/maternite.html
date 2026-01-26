@@ -19,64 +19,21 @@
       </div>
     </header>
 
-   <section class="gift-section">
-  <h2>🎁 Offrir un cadeau</h2>
+<section class="maternite-section">
+  <h2>🤍 Coffrets Maternité</h2>
 
-  <form id="giftForm">
+  <div class="product-grid" id="materniteProducts"></div>
 
-    <label>Nom du destinataire</label>
-    <input type="text" id="recipient" placeholder="Ex : Sarah" required />
-
-    <label>Occasion</label>
-    <select id="occasion">
-      <option>Anniversaire</option>
-      <option>Mariage</option>
-      <option>Saint-Valentin</option>
-      <option>Fête</option>
-      <option>Autre</option>
-    </select>
-
-    <label>Choisissez votre option</label>
-    <div class="choice-box">
-      <label>
-        <input type="radio" name="giftType" value="coffret" checked />
-        🎁 Choisir un coffret
-      </label>
-
-      <label>
-        <input type="radio" name="giftType" value="recommande" />
-        💡 Cadeau recommandé
-      </label>
-    </div>
-
-    <!-- COFFRET -->
-    <div id="coffretBox">
-      <label>Type de coffret</label>
-      <select id="coffretType">
-        <option>Coffret Bronze</option>
-        <option>Coffret Silver</option>
-        <option>Coffret Gold</option>
-      </select>
-    </div>
-
-    <!-- RECOMMANDATION -->
-    <div id="recommendBox" style="display:none">
-      <label>Parlez-nous du destinataire</label>
-      <textarea
-        id="description"
-        placeholder="Âge, style, homme/femme, goûts, budget approximatif..."
-      ></textarea>
-    </div>
-
-    <label>Message personnalisé</label>
-    <textarea id="message" placeholder="Message à joindre au cadeau"></textarea>
-
-    <label>Adresse de livraison (optionnel)</label>
-    <input type="text" id="address" />
-
-    <button type="submit">Envoyer sur WhatsApp</button>
-  </form>
+  <div class="gift-custom">
+    <h3>🎁 Cadeau maternité personnalisé</h3>
+    <p>
+      Vous ne savez pas quoi choisir ?  
+      Décrivez-nous la famille, nous nous occupons du reste.
+    </p>
+    <button onclick="openGiftForm()">Demander un cadeau recommandé</button>
+  </div>
 </section>
+
 
 <script src="cart.js"></script>
 <script src="filter.js"></script>

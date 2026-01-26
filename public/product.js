@@ -322,6 +322,32 @@ const PRODUCTS = {
     category: "Cosmetique(haircare)",
     image: "https://i.pinimg.com/736x/19/e6/cc/19e6cc85d0dbc47881063962605de663.jpg",
    options:{}
+  },
+  MAT01:{
+      id: "MAT01",
+      name: "Coffret Maternité Douceur",
+      price: 45,
+      category: "maternite",
+      image: "images/mat1.jpg",
+      description: "Coffret maternité mixte pour maman et bébé"
+    },
+  
+   MAT02 :
+   { id: "MAT02",
+    name: "Coffret Naissance Premium",
+    price: 75,
+    category: "maternite",
+    image: "images/mat2.jpg",
+    description: "Coffret complet naissance"
+  },
+
+  MAT03 :{
+    id: "MAT03",
+    name: "Coffret Famille & Bébé",
+    price: 110,
+    category: "maternite",
+    image: "images/mat3.jpg",
+    description: "Coffret maternité haut de gamme"
   }
 };
 
