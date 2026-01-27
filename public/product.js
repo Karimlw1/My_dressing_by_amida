@@ -1,5 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
+const recipientName = document.getElementById("recipientName").value;
 
 const PRODUCTS = {
   Homep1: {
@@ -11,6 +12,9 @@ const PRODUCTS = {
     options: {
       size: ["36", "37", "38", "39" ,"40" ,"41"],
       color: ["Rouge", "Marron"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
 
@@ -23,6 +27,9 @@ const PRODUCTS = {
     options: {
       size: ["S", "M", "L" , "XL", "XXL"],
       color: ["Noir", "Gris" , "marron"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
   Homep3: {
@@ -31,7 +38,10 @@ const PRODUCTS = {
     category: "cosmetique",
     price: 100,
     image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/skincareHome.png",
-    options: {}
+    options: {},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
   Homep4: {
     id: "Homep4",
@@ -42,6 +52,9 @@ const PRODUCTS = {
     options: {
         size: [ "S", "M", "L" , "XL", "XXL"],
         color: ["noir" , "blanc" , "rouge"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
   Homep5: {
@@ -52,6 +65,9 @@ const PRODUCTS = {
     image: "https://i.pinimg.com/736x/da/56/4e/da564e6b2abe587262ae19c6a456f804.jpg",
     options: {
         color: ["white" , "gris"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
   Homep6: {
@@ -60,8 +76,9 @@ const PRODUCTS = {
     category: "Femme (Accessoire)",
     price: 210,
     image: "https://i.pinimg.com/736x/d4/ce/98/d4ce985e40ea436f4eea1d8881375531.jpg",
-    options: {
-
+    options: {},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
   FashionHp1: {
@@ -74,6 +91,10 @@ const PRODUCTS = {
       size: ["S", "M", "L", "XL"],
       color: ["Blanc", "Noir", "Beige"]
     }
+    ,
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionHp2: {
@@ -82,7 +103,10 @@ const PRODUCTS = {
     category: "Homme(accessoire)",
     price: 40,
     image: "https://i.pinimg.com/736x/46/c1/ca/46c1ca4aaa247e242120a89823e042c5.jpg",
-    options: {}
+    options: {},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionHp3: {
@@ -93,6 +117,9 @@ const PRODUCTS = {
     image: "https://i.pinimg.com/1200x/4b/4a/18/4b4a186675a7274b5c6d613713d5d435.jpg",
     options: {
       size: ["S", "M", "L", "XL"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
 
@@ -105,6 +132,9 @@ const PRODUCTS = {
     options: {
       size: ["S", "M", "L", "XL", "XXL"],
       color: ["Marron", "Noir", "Gris"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
 
@@ -114,7 +144,10 @@ const PRODUCTS = {
     category: "homme(accessoire)",
     price: 40,
     image: "https://i.pinimg.com/1200x/e4/6a/5b/e46a5bdbbf182d89d492d1458fce95b0.jpg",
-    options: {}
+    options: {},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionHp6: {
@@ -125,6 +158,9 @@ const PRODUCTS = {
     image: "https://i.pinimg.com/736x/12/6d/5f/126d5f4bdd73ee1f48f9808e977c675d.jpg",
     options: {
       size: ["S", "M", "L"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
 
@@ -136,6 +172,9 @@ const PRODUCTS = {
     image: "https://i.pinimg.com/1200x/c5/cc/f4/c5ccf44e7cd0f72ddc3d098435431cf9.jpg",
     options: {
       size: ["S", "M", "L", "XL"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
 
@@ -145,7 +184,10 @@ const PRODUCTS = {
     category: "homme(accessoire)",
     price: 20,
     image: "https://i.pinimg.com/1200x/df/d9/98/dfd9986fb48ab0bdffa30d7e432cd92e.jpg",
-    options: {}
+    options: {},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionHp9: {
@@ -156,6 +198,9 @@ const PRODUCTS = {
     image: "https://i.pinimg.com/736x/fd/0a/89/fd0a8932abe69c47f7e1e1f9d4b2c6d9.jpg",
     options: {
       size: ["39", "40", "41", "42", "43"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
 
@@ -167,6 +212,9 @@ const PRODUCTS = {
     image: "https://i.pinimg.com/736x/9b/6e/89/9b6e892029ddcfb3fa32fb3c17f29c16.jpg",
     options: {
       size: ["39", "40", "41", "42", "43"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
 
@@ -178,6 +226,9 @@ const PRODUCTS = {
     image: "https://i.pinimg.com/1200x/de/69/43/de69434a6cf0ad4c78379af6e60fff5d.jpg",
     options: {
       size: ["40", "41", "42", "43", "44"]
+    },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
   },
 
@@ -205,7 +256,10 @@ const PRODUCTS = {
     category: "Femme(accessoires)",
     price: 40,
     image: "https://i.pinimg.com/1200x/b4/8e/81/b48e8111848ca991a4eb6b793e0f5fe4.jpg",
-    options: {}
+    options: {},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionFp4: {
@@ -214,7 +268,10 @@ const PRODUCTS = {
     category: "Femme(bas)",
     price: 35,
     image: "https://i.pinimg.com/736x/ae/f8/1b/aef81bff4c08a594dc3f808bb56c16a4.jpg",
-    options: { size: ["S", "M", "L", "XL"] }
+    options: { size: ["S", "M", "L", "XL"] },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionFp5: {
@@ -223,7 +280,10 @@ const PRODUCTS = {
     category: "Femme(haut)",
     price: 80,
     image: "https://i.pinimg.com/736x/c8/5d/0d/c85d0d708b0e77bce7dce8d6e249a920.jpg",
-    options: { size: ["S", "M", "L", "XL"] }
+    options: { size: ["S", "M", "L", "XL"] },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionFp6: {
@@ -232,7 +292,10 @@ const PRODUCTS = {
     category: "Femme(bas)",
     price: 30,
     image: "https://i.pinimg.com/1200x/20/ca/85/20ca8528d84d0f54fde3b5d504e8cc43.jpg",
-    options: { size: ["S", "M", "L"] }
+    options: { size: ["S", "M", "L"] },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionFp7: {
@@ -241,7 +304,10 @@ const PRODUCTS = {
     category: "Femme(haut)",
     price: 100,
     image: "https://i.pinimg.com/1200x/67/f8/38/67f8383b696cef0dbeb050305586b421.jpg",
-    options: { size: ["S", "M", "L", "XL"] }
+    options: { size: ["S", "M", "L", "XL"] },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionFp8: {
@@ -250,7 +316,10 @@ const PRODUCTS = {
     category: "Femme(Accessoire)",
     price: 40,
     image: "https://i.pinimg.com/736x/ad/d1/3d/add13d7b799c811eb46a27fe92233af6.jpg",
-    options: {}
+    options: {},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   FashionFp9: {
@@ -259,7 +328,10 @@ const PRODUCTS = {
     category: "Femme(haut)",
     price: 350,
     image: "https://i.pinimg.com/1200x/4c/d9/0d/4cd90ddb1aac1998f8f68705044e902b.jpg",
-    options: { size: ["S", "M", "L", "XL"] }
+    options: { size: ["S", "M", "L", "XL"] },
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
   BeautyP1: {
     id: "BeautyP1",
@@ -267,7 +339,10 @@ const PRODUCTS = {
     price: 150,
     category: "Cosmetique(maquillage)",
     image: "https://i.pinimg.com/736x/fc/95/a8/fc95a8fde6efd87c6377786a9ab11058.jpg",
-    options:{}
+    options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   BeautyP2: {
@@ -276,7 +351,10 @@ const PRODUCTS = {
     price: 40,
     category: "Cosmetique(accessoire)",
     image: "https://i.pinimg.com/736x/4a/ec/63/4aec636ed4040a38d293607b48c5521d.jpg",
-   options:{}
+   options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   BeautyP3: {
@@ -285,7 +363,10 @@ const PRODUCTS = {
     price: 35,
     category: "Cosmetique(skincare)",
     image: "https://i.pinimg.com/736x/9f/af/11/9faf117b216f2aa8a897e41ca3e870ea.jpg",
-   options:{}
+   options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   BeautyP4: {
@@ -294,7 +375,10 @@ const PRODUCTS = {
     price: 30,
     category: "Cosmetique(skincare)",
     image: "https://i.pinimg.com/736x/7e/b5/16/7eb5166567f5890bd9827441e70a63b8.jpg",
-   options:{}
+   options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   BeautyP5: {
@@ -303,7 +387,10 @@ const PRODUCTS = {
     price: 100,
     category: "Cosmetique(skincare)",
     image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/images/skincareHome.png",
-   options:{}
+   options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   BeautyP6: {
@@ -312,7 +399,10 @@ const PRODUCTS = {
     price: 50,
     category: "Cosmetique(fragrance)",
     image: "https://i.pinimg.com/736x/11/fd/5c/11fd5c4ed5231ccf813827a2ec295850.jpg",
-   options:{}
+   options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   BeautyP7: {
@@ -321,7 +411,10 @@ const PRODUCTS = {
     price: 55,
     category: "Cosmetique(haircare)",
     image: "https://i.pinimg.com/736x/19/e6/cc/19e6cc85d0dbc47881063962605de663.jpg",
-   options:{}
+   options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
   MAT01:{
       id: "MAT01",
@@ -330,7 +423,11 @@ const PRODUCTS = {
       category: "maternite",
       image: "https://i.pinimg.com/736x/5e/fb/0d/5efb0d628a6278c4f6748c383d6814ef.jpg",
       description: "Coffret maternité mixte pour maman et bébé",
-      options:{}
+      qty: 1,
+      options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
     },
   
    MAT02 :
@@ -340,7 +437,10 @@ const PRODUCTS = {
     category: "maternite",
     image: "https://i.pinimg.com/736x/86/0b/28/860b2871ce09823dbffeee19e846e70d.jpg",
     description: "Coffret complet naissance",
-      options:{}
+      options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   },
 
   MAT03 :{
@@ -350,13 +450,17 @@ const PRODUCTS = {
     category: "maternite",
     image: "https://i.pinimg.com/736x/fa/f0/a2/faf0a2f2daf53ef00be9a139c82754c0.jpg",
     description: "Coffret maternité haut de gamme",
-      options:{}
+      options:{},
+    LDL: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   }
 };
 
 const product = PRODUCTS[id];
 
 const optionsContainer = document.getElementById("options");
+const LDLContainer = document.getElementById("LDL");
 
 if (product.options.size) {
   optionsContainer.innerHTML += `
@@ -375,13 +479,23 @@ if (product.options.color) {
     </select>
   `;
 }
+
+if (product.LDLContainer.ville) {
+  optionsContainer.innerHTML += `
+    <label>lieux de livraison :</label>
+    <select id="LDL">
+      ${product.LDL.map(L => `<option>${L}</option>`).join("")}
+    </select>
+  `;
+}
+
 if (!product) {
   document.body.innerHTML = "<h2>Produit introuvable</h2>";
   throw new Error("Produit introuvable");
 }
 
 const container = document.getElementById("materniteProducts");
-
+/** 
 PRODUCTS
   .filter(p => p.category === "maternite")
   .forEach(product => {
@@ -401,7 +515,7 @@ PRODUCTS
     `;
   });
 
-
+**/
 
 document.getElementById("name").textContent = product.name;
 document.getElementById("price").textContent = product.price + "$";
@@ -411,6 +525,8 @@ document.getElementById("category").textContent = product.category;
 document.getElementById("addToCart").addEventListener("click", () => {
     const size = document.getElementById("size")?.value || null;
     const color = document.getElementById("color")?.value || null;
+    const LDL = document.getElementById("LDL")?.value || "lieu de livraison manquant";
+
     addToCart({
     id: product.id,
     name: product.name,
@@ -418,9 +534,9 @@ document.getElementById("addToCart").addEventListener("click", () => {
     price: product.price,
     image: product.image,
     size,
-    color
+    color,
+    LDL,
   });
-
 
   alert("Produit ajouté au panier ✔");
 });

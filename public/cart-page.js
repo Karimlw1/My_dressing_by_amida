@@ -45,6 +45,7 @@ function renderCart() {
         Prix : <small> ${item.price}$ × ${item.qty}</small><br>
         Taille : <small>${item.size ?? "-"}</small><br>
         Couleur : <small>${item.color ?? "-"}</small><br>
+        Lieux de livraison : <strong> ${item.LDL}</strong>
 
       </div>
       <span onclick="removeItem(${index})">✕</span>
