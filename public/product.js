@@ -484,7 +484,7 @@ if (product.LDLContainer.ville) {
   optionsContainer.innerHTML += `
     <label>lieux de livraison :</label>
     <select id="LDL">
-      ${product.LDL.map(L => `<option>${L}</option>`).join("")}
+      ${product.LDLContainer.map(L => `<option>${L}</option>`).join("")}
     </select>
   `;
 }
