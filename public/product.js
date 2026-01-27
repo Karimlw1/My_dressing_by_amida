@@ -521,6 +521,39 @@ PRODUCTS
 
 **/
 
+
+function addToCart(product) {
+  const cart = getCart();
+
+  const existing = cart.find(
+    i =>
+      i.id === product.id &&
+      i.size === product.size &&
+      i.color === product.color &&
+      i.ville === product.ville
+  );
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      category: product.category,
+      price: Number(product.price),
+      image: product.image,
+      size: product.size,
+      color: product.color,
+      ville: product.ville,
+      qty: 1
+    });
+  }
+
+  saveCart(cart);
+  updateCartBadge();
+}
+
+
 document.getElementById("name").textContent = product.name;
 document.getElementById("price").textContent = product.price + "$";
 document.getElementById("image").src = product.image;
@@ -529,9 +562,15 @@ document.getElementById("category").textContent = product.category;
 document.getElementById("addToCart").addEventListener("click", () => {
     const size = document.getElementById("size")?.value || null;
     const color = document.getElementById("color")?.value || null;
-    const ville = document.getElementById("ville")?.value || null;
+    const ville = document.getElementById("ville")?.value?.trim() || null;
 
-    addToCart({
+
+    if (!ville || ville.length < 2) {
+  alert("Veuillez choisir un lieu de livraison");
+  return;
+}
+
+   addToCart ({
     id: product.id,
     name: product.name,
     category: product.category,
@@ -543,4 +582,5 @@ document.getElementById("addToCart").addEventListener("click", () => {
   });
 
   alert("Produit ajouté au panier ✔");
+
 });

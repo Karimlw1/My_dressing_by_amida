@@ -123,6 +123,7 @@ setTimeout(() => {
 
       // 3️⃣ Load WhatsApp ONCE with final message
       popup.location.href = whatsappUrl;
+      localStorage.removeItem("cart");
     })
     .catch(err => {
       console.error(err);
