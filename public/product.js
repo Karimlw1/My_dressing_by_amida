@@ -493,9 +493,9 @@ if (!product) {
   document.body.innerHTML = "<h2>Produit introuvable</h2>";
   throw new Error("Produit introuvable");
 }
-
-const container = document.getElementById("materniteProducts");
 /** 
+const container = document.getElementById("materniteProducts");
+
 PRODUCTS
   .filter(p => p.category === "maternite")
   .forEach(product => {
