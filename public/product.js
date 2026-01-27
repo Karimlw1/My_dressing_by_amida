@@ -1,6 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-const recipientName = document.getElementById("recipientName").value;
+
+// const recipientName = document.getElementById("recipientName").value;
 
 const PRODUCTS = {
   Homep1: {
