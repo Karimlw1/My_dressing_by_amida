@@ -487,7 +487,7 @@ if (product.lieuDeLIvraisonContainer.ville) {
   lieuDeLIvraisonContainer.innerHTML += `
     <label>lieux de livraison :</label>
     <select id="ville">
-      ${product.lieuDeLIvraisonContainer.map(L => `<option>${L}</option required>`).join("")}
+      ${product.lieuDeLIvraisonContainer.ville.map(L => `<option>${L}</option required>`).join("")}
     </select>
   `;
 }
@@ -528,7 +528,7 @@ document.getElementById("category").textContent = product.category;
 document.getElementById("addToCart").addEventListener("click", () => {
     const size = document.getElementById("size")?.value || null;
     const color = document.getElementById("color")?.value || null;
-    const ville = document.getElementById("LDL")?.value || "lieu de livraison manquant";
+    const ville = document.getElementById("ville")?.value || null;
 
     addToCart({
     id: product.id,
