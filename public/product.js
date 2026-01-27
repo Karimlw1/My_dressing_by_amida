@@ -461,6 +461,10 @@ const PRODUCTS = {
 };
 
 const product = PRODUCTS[id];
+if (!product) {
+  document.body.innerHTML = "<h2>Produit introuvable</h2>";
+  throw new Error("Produit introuvable");
+}
 
 const optionsContainer = document.getElementById("options");
 const lieuDeLIvraisonContainer = document.getElementById("lieuDeLIvraison");
@@ -483,19 +487,16 @@ if (product.options.color) {
   `;
 }
 
-if (product.lieuDeLIvraisonContainer.ville) {
+if (product.lieuDeLIvraison.ville) {
   lieuDeLIvraisonContainer.innerHTML += `
     <label>lieux de livraison :</label>
-    <select id="ville">
-      ${product.lieuDeLIvraisonContainer.ville.map(L => `<option>${L}</option required>`).join("")}
+    <select id="ville" required>
+      ${product.lieuDeLIvraisonContainer.ville.map(v => `<option value="${v}">${v}</option>`).join("")}
     </select>
   `;
 }
 
-if (!product) {
-  document.body.innerHTML = "<h2>Produit introuvable</h2>";
-  throw new Error("Produit introuvable");
-}
+
 /** 
 const container = document.getElementById("materniteProducts");
 
