@@ -140,7 +140,8 @@ app.get("/order/:id", (req, res) => {
           <p>Quantité: ${item.qty}</p>
           <p>Prix: ${item.price} USD</p>
           <p>Taille: ${item.size}</p>
-          <p>Couleur: ${item.color}</p>
+          <p>Couleur: ${item.color}</p><br>
+          <strong>lieu de livraison:${item.ville}</ville>
         </div>
       </div>
     </a>
