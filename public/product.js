@@ -461,10 +461,6 @@ const PRODUCTS = {
 };
 
 const product = PRODUCTS[id];
-if (!product) {
-  document.body.innerHTML = "<h2>Produit introuvable</h2>";
-  throw new Error("Produit introuvable");
-}
 
 const optionsContainer = document.getElementById("options");
 const lieuDeLIvraisonContainer = document.getElementById("lieuDeLIvraison");
