@@ -15,9 +15,6 @@
 .navbar h3 {
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
-    color: #0000008c;
-    font-size: 1.7rem;
-    -webkit-text-stroke-width: medium;
 }
 
 .menu {
@@ -58,7 +55,6 @@ div.socials.visible {
 
 .menu .socials a {
     background: #c8a44b;
-    ;
     border: none;
     color: white;
     padding: 8px 12px;
