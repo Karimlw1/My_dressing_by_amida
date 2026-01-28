@@ -1,16 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="stylegift.css">
+    <link rel="stylesheet" href="stylegift.css" />
     <link rel="stylesheet" href="style2.css" />
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="generals.css" />
     <link rel="stylesheet" href="footer.css" />
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .maternite-section {
+        border-bottom: solid 1px #e7e7e7;
+        padding-bottom: 60px;
+        background: url(https://i.pinimg.com/1200x/39/65/c3/3965c3214167f0259cc34cb97f12a712.jpg);
+        background-size: cover;
+        color: #6d6767;
+        border-radius: 0 0 5px 5px;
+      }
+      p {
+        text-align: justify;
+        margin: 60px;
+      }
+      h3 {
+        user-select: none;
+        cursor: default;
+      }
+      h2 {
+        text-align: center;
+        color: rgb(107, 94, 60);
+      }
+      .info {
+        background-color: #f0eeee;
+      }
+    </style>
+  </head>
+  <body>
     <header class="navbar">
       <div class="menu" onclick="history.back()">←</div>
       <h3><strong>MATERNITE</strong></h3>
@@ -23,35 +52,30 @@
       </div>
     </header>
 
-<section class="maternite-section">
-  <h2> Coffrets Maternité</h2>
+    <section class="maternite-section">
+      <h2>Article et Coffrets Maternité</h2>
 
-  <div class="product-grid" id="materniteProducts">
+      <div class="product-grid" id="materniteProducts"></div>
 
-  </div>
-
-  <div class="gift-custom">
-    <h3> Cadeau maternité personnalisé</h3>
-    <p>
-      Vous ne savez pas quoi choisir ?  
-      Décrivez-nous la famille, nous nous occupons du reste.
-    </p>
-    <button onclick="openGiftForm()">Demander un cadeau recommandé</button>
-  </div>
-</section>
-<section class="products">
-  <div class="product details" data-id="MAT01">
+      <div class="gift-custom">
+        <p>
+          Vous ne savez pas quoi choisir ? Décrivez-nous la famille, nous nous
+          occupons du reste.
+        </p>
+        <button onclick="openGiftForm()" style="margin-left: 10px">
+          Demander un cadeau recommandé
+        </button>
+      </div>
+    </section>
+    <section class="products">
+      <div class="product details" data-id="MAT01">
         <img
           src="https://i.pinimg.com/736x/5e/fb/0d/5efb0d628a6278c4f6748c383d6814ef.jpg"
           alt=""
         />
         <div class="info">
           <div class="price">$50</div>
-          <button
-            class="details-bttn"
-          >
-            Voir produit
-          </button>
+          <button class="details-bttn">Voir produit</button>
         </div>
       </div>
 
@@ -62,11 +86,7 @@
         />
         <div class="info">
           <div class="price">$60</div>
-          <button
-            class="details-bttn"
-          >
-            Voir produit
-          </button>
+          <button class="details-bttn">Voir produit</button>
         </div>
       </div>
       <div class="product details" data-id="MAT03">
@@ -76,20 +96,15 @@
         />
         <div class="info">
           <div class="price">$70</div>
-          <button
-            class="details-bttn"
-          >
-            Voir produit
-          </button>
+          <button class="details-bttn">Voir produit</button>
         </div>
       </div>
-</section>
+    </section>
 
-
-<script src="cart.js"></script>
-<script src="filter.js"></script>
-<script src="cart-core.js"></script>
-<script src="product.js"></script>
-<script src="product-link.js"></script>
-</body>
+    <script src="cart.js"></script>
+    <script src="filter.js"></script>
+    <script src="cart-core.js"></script>
+    <script src="product.js"></script>
+    <script src="product-link.js"></script>
+  </body>
 </html>
