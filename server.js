@@ -99,19 +99,6 @@ app.get("/order/:id", (req, res) => {
         text-align: right;
         font-weight: bold;
         margin-top: 50px;
-        font-size: 1.7em;
-        color: darkgreen;
-        background-color: white;
-        width: max-content;
-        padding: 5px 10px;
-        border: 1px solid rgb(240, 234, 234);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-
-      }
-      .back {
-        text-align: right;
-        font-weight: bold;
-        margin-top: 50px;
         /* font-size: 1.7em; */
         color: darkgreen;
         background-color: white;
@@ -126,6 +113,21 @@ app.get("/order/:id", (req, res) => {
         align-items: center;
         font-size: 40px;
         border-radius: 20px;
+
+      }
+      .back {
+        position: absolute;
+        left: 20px;
+        width: max-content;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background: black;
+        padding: 30px 60px;
+        font-weight: bolder;
+        height: max-content;
+        border-radius: 6px;
       }
       a {
         text-decoration: none;
