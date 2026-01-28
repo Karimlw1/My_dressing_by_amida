@@ -7,7 +7,10 @@
 
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="footer.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -18,7 +21,7 @@
         text-align: center;
         color: #333;
       }
-      #cartContainer{
+      #cartContainer {
         margin-bottom: 10px;
       }
       .cart-item {
@@ -52,6 +55,7 @@
         font-weight: bold;
         margin-top: 20px;
         font-size: 1.2em;
+        color: green;
       }
 
       body {
@@ -91,8 +95,12 @@
       }
 
       /* ===== TEXT ===== */
+      b {
+        color: #835417;
+        margin-left: px;
+      }
       .cart-item strong {
-        color: #935252;
+        color: #ff0000;
         font-size: 16px;
       }
 
@@ -121,29 +129,66 @@
 
       /* ===== TOTAL ===== */
       .total {
-        text-align: right;
+        justify-self: right;
         font-size: 20px;
-        margin-top: 20px;
-        color: var(--neon);
+        margin-top: 30px;
+        color: rgb(12, 110, 12);
+        background-color: white;
+        width: max-content;
+        padding: 5px 10px;
+        border: 1px solid rgb(240, 234, 234);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      /* ==== details ===*/
+      .details {
+        display: flex;
+        justify-self: center;
+        color: #971616;
+        flex-direction: column;
+        margin: 30px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: large;
+        border: 1px solid rgb(155, 11, 11);
+        padding: 20px;
+        border-radius: 20px;
+      }
+      ul {
+        line-height: 30px;
+      }
+      /* ===== BUTTONS ===== */
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        gap: 20px;
+      }
+      .send-whatsapp {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 40px ;
       }
 
-      /* ===== BUTTONS ===== */
-      .send-whatsapp , .send {
-        margin: 20px 30px;
+      .send-whatsapp,
+      .send {
         padding: 14px 28px;
         border-radius: 10px;
         border: none;
         font-size: 16px;
         cursor: pointer;
         color: white;
-        background-color: rgba(55, 78, 55, 0.712);
+        background-color: rgba(24, 143, 24, 0.712);
         box-shadow: 0 0 10px rgba(76, 74, 83, 0.6);
         transition:
           transform 0.3s ease,
           box-shadow 0.3s ease;
+        justify-self: center;
+        font-size: smaller;
       }
 
-      .send-whatsapp:hover, .send:hover {
+      .send-whatsapp:hover,
+      .send:hover {
         transform: translateY(-3px);
         box-shadow: 0 0 30px rgba(106, 227, 255, 0.8);
       }
@@ -181,15 +226,40 @@
       <div class="cart-container" id="cartContainer"></div>
     </div>
 
-    <button class="send" onclick="generatePDF()" style="background-color: rgb(40, 40, 128)">
-  Télécharger le PDF
-</button>
+    <div class="details">
+      <em>A lire avant de passer une commande!!!</em>
+      <ul>
+        <li>Garder une capture de votre panier</li>
+        <li>
+          Toute commande dois etre effectuer via le service client whatapp
+          <br />
+          pour faciliter la communication et la transparance
+        </li>
+        <li>
+          Le Mode de payement et livraison serons discuter <br />
+          en profondeur avec notre service client whatsapp
+        </li>
+        <li>
+          Apres avoir passer votre commande votre panier se vide automatiquement
+          <br />
+          si non faite le manuellement
+        </li>
+      </ul>
+    </div>
+    <section class="buttons">
+      <button
+        class="send"
+        onclick="generatePDF()"
+        style="background-color: rgb(40, 40, 128)"
+      >
+        Télécharger le PDF
+      </button>
 
-<button class="send-whatsapp">
-  Commander via WhatsApp
-</button>
-
-
+      <button class="send-whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        Commander via WhatsApp </i>
+      </button>
+    </section>
     <script src="cart.js"></script>
     <script src="cart-page.js"></script>
     <script src="cart-core.js"></script>
