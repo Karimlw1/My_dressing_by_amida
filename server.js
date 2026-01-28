@@ -110,14 +110,15 @@ app.get("/order/:id", (req, res) => {
         text-decoration: none;
         color: white;
         background: black;
-        padding: 20px 40px;
+        padding: 30px 60px;
         font-weight: bolder;
         height: max-content;
         border-radius: 6px;
         height: max-content;
         display: flex;
         align-self: center;
-        font-size: 13px;
+        font-size: 15px;
+        margin: 30px;
       }
       a {
         text-decoration: none;
@@ -127,7 +128,7 @@ app.get("/order/:id", (req, res) => {
     <body>
      <div class="nav-bar">
        <a class="back" href="https://mydressingbyamida.onrender.com">
-        ← Retour au site
+        ←  Retour au site
       </a>
       <h1>Panier reçu</h1>
      </div>
