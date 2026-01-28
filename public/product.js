@@ -485,7 +485,8 @@ if (product.options.color) {
 
 if (product.lieuDeLIvraison.ville) {
   lieuDeLIvraisonContainer.innerHTML += `
-    <label>lieux de livraison :</label>
+    <label><i class="fa fa-bullseye"> Choisissez lieux de livraison </i>
+:</label>
     <select id="ville" required>
       ${product.lieuDeLIvraison.ville.map(v => `<option value="${v}">${v}</option>`).join("")}
     </select>
