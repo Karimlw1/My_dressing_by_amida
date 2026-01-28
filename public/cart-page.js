@@ -40,7 +40,7 @@ function renderCart() {
     div.innerHTML = `
       <img src="${item.image}" width="70"  alt=" image place">
       <div>
-        <strong>${item.name}</strong><br>
+        <b>${item.name}</b><br><br>
         type :<small>${item.category}</small><br>
         Prix : <small> ${item.price}$ × ${item.qty}</small><br>
         Taille : <small>${item.size ?? "-"}</small><br>
@@ -54,7 +54,7 @@ function renderCart() {
     container.appendChild(div);
   });
 
-  container.innerHTML += `<h3>Total : ${total}$</h3>`;
+  container.innerHTML += `<h3 class="total">Total : ${total}$</h3>`;
   updateCartBadge(); // met à jour badge à chaque rendu
 }
 
