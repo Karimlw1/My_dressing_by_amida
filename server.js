@@ -73,10 +73,11 @@ app.get("/order/:id", (req, res) => {
         margin-bottom: 10px;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
       }
       .cart-item img {
-        width: 100px;
-        height: 100px;
+        width: 300px;
+        height: 350px;
         object-fit: cover;
         border-radius: 8px;
         margin-right: 15px;
@@ -84,9 +85,11 @@ app.get("/order/:id", (req, res) => {
       .cart-item-details {
         flex: 1;
         height: max-content;
+        font-size: xx-large;
       }
       .cart-item-details h3 {
         margin: 0;
+        color: darksalmon;
       }
       .cart-item-details p {
         margin: 5px 0;
@@ -106,19 +109,23 @@ app.get("/order/:id", (req, res) => {
 
       }
       .back {
-        display: inline-block;
-        text-decoration: none;
-        color: white;
-        background: black;
-        padding: 30px 60px;
-        font-weight: bolder;
+        text-align: right;
+        font-weight: bold;
+        margin-top: 50px;
+        /* font-size: 1.7em; */
+        color: darkgreen;
+        background-color: white;
+        /* width: max-content; */
+        padding: 16px 30px;
+        border: 1px solid rgb(240, 234, 234);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        justify-self: end;
         height: max-content;
-        border-radius: 6px;
-        height: max-content;
+        width: max-content;
         display: flex;
-        align-self: center;
-        font-size: 15px;
-        margin: 30px;
+        align-items: center;
+        font-size: 40px;
+        border-radius: 20px;
       }
       a {
         text-decoration: none;
@@ -149,7 +156,7 @@ app.get("/order/:id", (req, res) => {
           <p>Prix: ${item.price} USD</p>
           <p>Taille: ${item.size}</p>
           <p>Couleur: ${item.color}</p><br>
-          <strong>lieu de livraison:${item.ville}</ville>
+          <strong style="color: crimson;">lieu de livraison:${item.ville}</ville>
         </div>
       </div>
     </a>
