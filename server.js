@@ -95,22 +95,29 @@ app.get("/order/:id", (req, res) => {
       .total {
         text-align: right;
         font-weight: bold;
-        margin-top: 20px;
-        font-size: 1.2em;
+        margin-top: 50px;
+        font-size: 1.7em;
         color: darkgreen;
+        background-color: white;
+        width: max-content;
+        padding: 5px 10px;
+        border: 1px solid rgb(240, 234, 234);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
       }
       .back {
         display: inline-block;
         text-decoration: none;
         color: white;
         background: black;
-        padding: 10px 16px;
+        padding: 20px 40px;
+        font-weight: bolder;
         height: max-content;
         border-radius: 6px;
         height: max-content;
         display: flex;
         align-self: center;
-        font-size: 10px;
+        font-size: 13px;
       }
       a {
         text-decoration: none;
