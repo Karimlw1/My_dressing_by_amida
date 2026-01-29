@@ -1,95 +1,63 @@
 body {
+  font-family: Inter, sans-serif;
   background: #fff;
   color: #000;
-  font-family: system-ui, sans-serif;
 }
 
-.gift-wrapper {
+.gift-builder {
   max-width: 800px;
-  margin: auto;
-  padding: 60px 20px;
+  margin: 60px auto;
 }
 
-.gift-header {
+header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
-.step {
-  display: none;
+header h1 {
+  font-size: 36px;
 }
 
-.step.active {
-  display: block;
-}
-
-h2 {
-  border-bottom: 1px solid #000;
-  padding-bottom: 10px;
+.block {
+  border: 1px solid #ddd;
+  padding: 30px;
   margin-bottom: 25px;
 }
 
-label {
+.block h2 {
   font-size: 14px;
-  margin-top: 15px;
-  display: block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-input,
-textarea,
-select {
+input, select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #000;
-  margin-top: 6px;
+  margin-bottom: 15px;
+  background: transparent;
 }
 
-textarea {
-  min-height: 90px;
-}
-
-.row {
-  display: flex;
-  gap: 20px;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
 .actions {
-  margin-top: 30px;
   display: flex;
   justify-content: space-between;
 }
 
 button {
-  padding: 14px 22px;
-  border: none;
+  padding: 14px 24px;
+  border: 1px solid #000;
+  background: transparent;
   cursor: pointer;
-  font-size: 14px;
 }
 
-.next,
-.submit {
+.send {
   background: #000;
   color: #fff;
-}
-
-.prev {
-  background: #eee;
-}
-
-.urgent-box {
-  margin: 25px 0;
-  padding: 15px;
-  border: 2px solid #000;
-  background: #fafafa;
-  font-size: 14px;
-}
-
-.urgent-box input {
-  margin-right: 8px;
-}
-
-@media (max-width: 600px) {
-  .row {
-    flex-direction: column;
-  }
 }

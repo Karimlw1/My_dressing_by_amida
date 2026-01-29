@@ -2,6 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
+const axios = require("axios");
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,6 +19,78 @@ if (!fs.existsSync(ORDERS_FILE)) {
   fs.writeFileSync(ORDERS_FILE, JSON.stringify({}));
 }
 
+// maternite
+
+  // EXEMPLE API (Twilio / Meta WhatsApp API)
+ async function sendWhatsApp(message) {
+  const token = process.env.WHATSAPP_TOKEN;
+  const phoneNumberId = process.env.WHATSAPP_PHONE_ID;
+  const to = process.env.WHATSAPP_TO;
+
+  try {
+    await axios.post(
+      `https://graph.facebook.com/v18.0/${phoneNumberId}/messages`,
+      {
+        messaging_product: "whatsapp",
+        to,
+        type: "text",
+        text: {
+          body: message
+        }
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+    console.log("✅ Message WhatsApp envoyé");
+  } catch (error) {
+    console.error(
+      "❌ Erreur WhatsApp:",
+      error.response?.data || error.message
+    );
+    throw error;
+  }
+}
+app.post("/gift-request", async (req, res) => {
+  const { gifts, sender } = req.body;
+
+  let message =
+`🎁 NOUVELLE DEMANDE CADEAU
+━━━━━━━━━━━━━━━━━━━
+
+👤 Client :
+Nom : ${sender.name}
+Téléphone : ${sender.phone}
+Ville : ${sender.city}
+
+━━━━━━━━━━━━━━━━━━━
+`;
+
+  gifts.forEach((g, i) => {
+    message +=
+`🎁 Cadeau ${i + 1}
+👤 Pour : ${g.receiver_name}
+🎯 Type : ${g.gift_type}
+💰 Budget : ${g.budget}
+🤝 Relation : ${g.relation}
+📝 Détails :
+${g.details}
+
+━━━━━━━━━━━━━━━━━━━
+`;
+  });
+
+  try {
+    await sendWhatsApp(message);
+    res.status(200).json({ success: true });
+  } catch {
+    res.status(500).json({ error: "WhatsApp failed" });
+  }
+});
 
 
 // créer une commande

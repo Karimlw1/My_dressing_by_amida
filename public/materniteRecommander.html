@@ -2,105 +2,64 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Cadeau recommandé | My Dressing by Amida</title>
+  <title>Cadeau personnalisé</title>
   <link rel="stylesheet" href="cadeau-recommande.css">
 </head>
 <body>
 
-<section class="gift-wrapper">
+<section class="gift-builder">
 
-  <header class="gift-header">
+  <header>
     <h1>Cadeau personnalisé</h1>
-    <p>Un service sur mesure, pensé pour marquer les esprits.</p>
+    <p>Décrivez la personne, nous nous occupons du reste.</p>
   </header>
 
-  <form id="giftForm" class="gift-form">
+  <form id="giftForm">
 
-    <!-- STEP 1 -->
-    <div class="step active" data-step="1">
-      <h2>Vos informations</h2>
-
-      <label>Votre nom</label>
-      <input name="clientName" required>
-
-      <label>Téléphone (optionnel)</label>
-      <input name="clientPhone">
-
-      <div class="actions">
-        <button type="button" class="next">Suivant</button>
-      </div>
+    <div class="block">
+      <h2>Client</h2>
+      <input name="client_name" placeholder="Votre nom" required>
+      <input name="client_phone" placeholder="Téléphone WhatsApp" required>
     </div>
 
-    <!-- STEP 2 -->
-    <div class="step" data-step="2">
-      <h2>Destinataire</h2>
+    <div class="block">
+      <h2>Personne à gâter</h2>
+      <input name="receiver_name" placeholder="Nom de la personne" required>
 
-      <label>Pour qui est le cadeau</label>
-      <input name="receiverName">
-
-      <div class="row">
-        <div>
-          <label>Âge</label>
-          <input name="receiverAge">
-        </div>
-        <div>
-          <label>Sexe</label>
-          <select name="receiverGender">
-            <option></option>
-            <option>Femme</option>
-            <option>Homme</option>
-            <option>Enfant</option>
-          </select>
-        </div>
+      <div class="grid">
+        <input name="receiver_age" placeholder="Âge">
+        <select name="receiver_gender">
+          <option value="">Genre</option>
+          <option>Femme</option>
+          <option>Homme</option>
+          <option>Enfant</option>
+        </select>
       </div>
 
-      <div class="actions">
-        <button type="button" class="prev">Retour</button>
-        <button type="button" class="next">Suivant</button>
-      </div>
+      <input name="relation" placeholder="Relation (mère, ami, épouse...)">
     </div>
 
-    <!-- STEP 3 -->
-    <div class="step" data-step="3">
-      <h2>Le cadeau</h2>
+    <div class="block">
+      <h2>Cadeau</h2>
 
-      <label>Occasion</label>
-      <input name="occasion">
+      <select name="gift_type">
+        <option value="Coffret">Coffret prêt à offrir</option>
+        <option value="Recommandé">Cadeau recommandé</option>
+      </select>
 
-      <div class="row">
-        <div>
-          <label>Budget</label>
-          <input name="budget" placeholder="Ex: 50$ – 100$">
-        </div>
-        <div>
-          <label>Délai souhaité</label>
-          <input name="deadline">
-        </div>
-      </div>
+      <select name="budget">
+        <option>Libre</option>
+        <option>Petit budget</option>
+        <option>Moyen</option>
+        <option>Haut de gamme</option>
+      </select>
 
-      <!-- URGENCE -->
-      <div class="urgent-box">
-        <input type="checkbox" name="urgent" id="urgent">
-        <label for="urgent">
-          ⚠ Besoin urgent (traitement prioritaire)
-        </label>
-      </div>
+      <textarea name="details" placeholder="Préférences, message, occasion..."></textarea>
+    </div>
 
-      <label>Style souhaité</label>
-      <input name="style">
-
-      <label>Message à joindre</label>
-      <textarea name="message"></textarea>
-
-      <label>Notes supplémentaires</label>
-      <textarea name="notes"></textarea>
-
-      <div class="actions">
-        <button type="button" class="prev">Retour</button>
-        <button type="submit" class="submit">
-          Envoyer sur WhatsApp
-        </button>
-      </div>
+    <div class="actions">
+      <button type="button" id="addGift">+ Ajouter un autre cadeau</button>
+      <button type="submit" class="send">Envoyer la demande</button>
     </div>
 
   </form>
@@ -108,6 +67,5 @@
 </section>
 
 <script src="cadeau-recommande.js"></script>
-
 </body>
 </html>
