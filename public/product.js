@@ -457,6 +457,17 @@ const PRODUCTS = {
     lieuDeLIvraison: {
       ville: ["Kinshasa", "Goma" , "Lubumbashi"]
     }
+  },
+  MAT04 :{
+    id: "MAT04",
+    name: "Coffret Famille & Bébé",
+    price: 150,
+    category: "maternite",
+    image: "https://i.pinimg.com/736x/f9/f0/9d/f9f09d51d6444b8adc6e2161ae16a7a7.jpg",
+    options:{size : ["0-6m" , " 6-9m" , "9-12m" , "12-18m", "18-24m" , "3 ans", "4 ans" , "5 ans", "6 ans" ,"7 ans" ]},
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi"]
+    }
   }
 };
 
