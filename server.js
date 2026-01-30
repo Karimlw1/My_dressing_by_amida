@@ -17,17 +17,29 @@ const ORDERS_FILE = "orders.json";
 if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}));
 
 // Configurer le transporteur mail
+
 const transporter = nodemailer.createTransport({
-  service: "gmail", // ou ton fournisseur
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false, // IMPORTANT
   auth: {
-    user: process.env.EMAIL_USER,    // ton email
-    pass: process.env.EMAIL_PASS     // mot de passe / token d'application
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 });
+
+
+console.log("EMAIL_USER =", process.env.EMAIL_USER);
+console.log("EMAIL_PASS =", process.env.EMAIL_PASS ? "OK" : "MANQUANT");
+
 
 // Route pour recevoir le formulaire cadeau
 app.post("/gift-request", async (req, res) => {
   const { gifts, sender } = req.body;
+
+  if (!gifts || gifts.length === 0) {
+    return res.status(400).json({ error: "Aucun cadeau reçu" });
+  }
 
   let message = `
 🎁 NOUVELLE DEMANDE CADEAU
@@ -53,19 +65,19 @@ Ville : ${sender?.city || "Non fourni"}
 `;
   });
 
-  try {
+try {
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO,    // ton email pour recevoir les demandes
-      subject: "Nouvelle demande cadeau",
+      from: `"Formulaire Cadeau" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_TO,
+      subject: "Nouvelle demande de cadeau",
       text: message
     });
 
     console.log("✅ Email envoyé !");
     res.status(200).json({ success: true });
   } catch (err) {
-    console.error("❌ Erreur email:", err);
-    res.status(500).json({ error: "Email failed" });
+    console.error("❌ Erreur email:", err.message);
+    res.status(500).json({ error: "Impossible d'envoyer l'email" });
   }
 });
 
