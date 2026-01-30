@@ -254,7 +254,7 @@ app.post("/send-order-email", async (req, res) => {
       {
         sender: {
           name: "My Dressing by Amida",
-          email: process.env.BREVO_USER
+          email: process.env.EMAIL_FROM
         },
         to: [
           { email: process.env.EMAIL_TO, name: "Admin" }
