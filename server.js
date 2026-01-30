@@ -19,14 +19,13 @@ if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}
 // Configurer le transporteur mail
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false, // IMPORTANT
+  service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
   }
 });
+
 
 
 console.log("EMAIL_USER =", process.env.EMAIL_USER);
@@ -35,6 +34,9 @@ console.log("EMAIL_PASS =", process.env.EMAIL_PASS ? "OK" : "MANQUANT");
 
 // Route pour recevoir le formulaire cadeau
 app.post("/gift-request", async (req, res) => {
+  console.log("📩 REQUÊTE REÇUE SUR RENDER");
+  console.log(req.body);
+
   const { gifts, sender } = req.body;
 
   if (!gifts || gifts.length === 0) {
