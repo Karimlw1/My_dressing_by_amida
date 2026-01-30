@@ -56,7 +56,7 @@ app.post("/gift-request", async (req, res) => {
 👤 Client :
 Nom : ${sender?.name}
 Téléphone : ${sender?.phone}
-
+adresse : ${sender?.city}
 ━━━━━━━━━━━━━━━━━━━
 `;
 

@@ -1,63 +1,174 @@
+/* ==== Reset de base ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Inter, sans-serif;
-  background: #fff;
-  color: #000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #0d0d0d;
+  color: #f0f0f0;
+  line-height: 1.6;
+  padding: 0 15px;
+  -webkit-text-size-adjust: 100%; /* empêche zoom iPhone */
 }
 
-.gift-builder {
-  max-width: 800px;
-  margin: 60px auto;
-}
-
+/* ==== Header ==== */
 header {
   text-align: center;
-  margin-bottom: 40px;
+  margin: 30px 0;
 }
 
 header h1 {
-  font-size: 36px;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+header p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 8px;
+}
+
+/* ==== Formulaire ==== */
+form {
+  max-width: 600px;
+  margin: auto;
+  background: #111;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .block {
-  border: 1px solid #ddd;
-  padding: 30px;
   margin-bottom: 25px;
 }
 
 .block h2 {
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
 }
 
+/* ==== Inputs & selects ==== */
 input, select, textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #000;
+  padding: 12px 15px;
   margin-bottom: 15px;
-  background: transparent;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
 }
 
+input:focus, select:focus, textarea:focus {
+  border-color: #fff;
+  background: #222;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ==== Grid pour âge/genre ==== */
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  display: flex;
+  gap: 10px;
 }
 
+.grid input, .grid select {
+  flex: 1;
+}
+
+/* ==== Actions boutons ==== */
 .actions {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 button {
-  padding: 14px 24px;
-  border: 1px solid #000;
-  background: transparent;
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+#addGift {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+#addGift:hover {
+  background: #fff;
+  color: #111;
 }
 
 .send {
-  background: #000;
+  background: #fff;
+  color: #111;
+}
+
+.send:hover {
+  background: #ccc;
+}
+
+/* ==== Bouton retour fixe ==== */
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #111;
+  border: 1px solid #fff;
   color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 480px) {
+  form {
+    padding: 20px 15px;
+  }
+  
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .grid {
+    flex-direction: column;
+  }
+  
+  button {
+    font-size: 0.95rem;
+  }
 }
