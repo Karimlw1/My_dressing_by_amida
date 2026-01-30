@@ -24,21 +24,19 @@ if (!fs.existsSync(ORDERS_FILE)) {
 // maternite
 
   // EXEMPLE API (Twilio / Meta WhatsApp API)
- async function sendWhatsApp(message) {
-  const token = process.env.WHATSAPP_TOKEN;
-  const phoneNumberId = process.env.WHATSAPP_PHONE_ID;
-  const to = process.env.WHATSAPP_TO;
+async function sendWhatsApp(message) {
+  const token = "EAAXf9t0r73IBQt4SZAOfzZCr8aUaVEwYo1EZCHjRMqD3jr4UB4LF9bmhb95BFLkKI2w6XZBhIelWOZCN2A73rxiIYU4JztovOmpD90i48stuMMuhPx5yZCXpWlCoMcpX0GvLh3g2Lcmpt97fvXloqPQgxquyAZCpDmZATDv5mLIkgXEHZBYNYqOk0kzZAOyIe3EpuwxgBrahZAYfn4JigTnWFnuv4tfKa3ZAccrOenVAeCz5h1cNuhG9xi9hQ0tmOGKYj9E2T5ZB6LtiYMZB2wW0x6wpqSZCgZDZD";
+  const phoneNumberId = "1004224462770179"; // Numéro test ID
+  const to = "243982932331"; // Ton vrai numéro
 
   try {
     await axios.post(
-      `https://graph.facebook.com/v18.0/${phoneNumberId}/messages`,
+      `https://graph.facebook.com/v22.0/${phoneNumberId}/messages`,
       {
         messaging_product: "whatsapp",
         to,
         type: "text",
-        text: {
-          body: message
-        }
+        text: { body: message }
       },
       {
         headers: {
@@ -50,13 +48,11 @@ if (!fs.existsSync(ORDERS_FILE)) {
 
     console.log("✅ Message WhatsApp envoyé");
   } catch (error) {
-    console.error(
-      "❌ Erreur WhatsApp:",
-      error.response?.data || error.message
-    );
+    console.error("❌ Erreur WhatsApp:", error.response?.data || error.message);
     throw error;
   }
 }
+
 app.post("/gift-request", async (req, res) => {
   const { gifts, sender } = req.body;
 
@@ -65,9 +61,9 @@ app.post("/gift-request", async (req, res) => {
 ━━━━━━━━━━━━━━━━━━━
 
 👤 Client :
-Nom : ${sender.name}
-Téléphone : ${sender.phone}
-Ville : ${sender.city}
+Nom : ${sender.name || "Non fourni"}
+Téléphone : ${sender.phone || "Non fourni"}
+Ville : ${sender.city || "Non fourni"}
 
 ━━━━━━━━━━━━━━━━━━━
 `;
@@ -75,12 +71,12 @@ Ville : ${sender.city}
   gifts.forEach((g, i) => {
     message +=
 `🎁 Cadeau ${i + 1}
-👤 Pour : ${g.receiver_name}
-🎯 Type : ${g.gift_type}
-💰 Budget : ${g.budget}
-🤝 Relation : ${g.relation}
+👤 Pour : ${g.receiver_name || "Non fourni"}
+🎯 Type : ${g.gift_type || "Non fourni"}
+💰 Budget : ${g.budget || "Non fourni"}
+🤝 Relation : ${g.relation || "Non fourni"}
 📝 Détails :
-${g.details}
+${g.details || "Non fourni"}
 
 ━━━━━━━━━━━━━━━━━━━
 `;
@@ -93,6 +89,7 @@ ${g.details}
     res.status(500).json({ error: "WhatsApp failed" });
   }
 });
+
 
 
 // créer une commande
