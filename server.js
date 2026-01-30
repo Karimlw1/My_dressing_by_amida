@@ -24,19 +24,22 @@ if (!fs.existsSync(ORDERS_FILE)) {
 // maternite
 
   // EXEMPLE API (Twilio / Meta WhatsApp API)
-async function sendWhatsApp(message) {
+async function sendWhatsApp() {
   const token = "EAAXf9t0r73IBQt4SZAOfzZCr8aUaVEwYo1EZCHjRMqD3jr4UB4LF9bmhb95BFLkKI2w6XZBhIelWOZCN2A73rxiIYU4JztovOmpD90i48stuMMuhPx5yZCXpWlCoMcpX0GvLh3g2Lcmpt97fvXloqPQgxquyAZCpDmZATDv5mLIkgXEHZBYNYqOk0kzZAOyIe3EpuwxgBrahZAYfn4JigTnWFnuv4tfKa3ZAccrOenVAeCz5h1cNuhG9xi9hQ0tmOGKYj9E2T5ZB6LtiYMZB2wW0x6wpqSZCgZDZD";
-  const phoneNumberId = "1004224462770179"; // Numéro test ID
-  const to = "243982932331"; // Ton vrai numéro
+  const phoneNumberId = "1004224462770179";
+  const to = "243982932331";
 
   try {
-    await axios.post(
+    const res = await axios.post(
       `https://graph.facebook.com/v22.0/${phoneNumberId}/messages`,
       {
         messaging_product: "whatsapp",
         to,
-        type: "text",
-        text: { body: message }
+        type: "template",
+        template: {
+          name: "hello_world", // le template approuvé
+          language: { code: "en_US" }
+        }
       },
       {
         headers: {
@@ -46,12 +49,12 @@ async function sendWhatsApp(message) {
       }
     );
 
-    console.log("✅ Message WhatsApp envoyé");
-  } catch (error) {
-    console.error("❌ Erreur WhatsApp:", error.response?.data || error.message);
-    throw error;
+    console.log("✅ Message WhatsApp envoyé:", res.data);
+  } catch (err) {
+    console.error("❌ Erreur WhatsApp:", err.response?.data || err.message);
   }
 }
+
 
 app.post("/gift-request", async (req, res) => {
   const { gifts, sender } = req.body;
