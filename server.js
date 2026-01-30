@@ -25,9 +25,9 @@ if (!fs.existsSync(ORDERS_FILE)) {
 
   // EXEMPLE API (Twilio / Meta WhatsApp API)
 async function sendWhatsApp() {
-  const token = "EAAXf9t0r73IBQt4SZAOfzZCr8aUaVEwYo1EZCHjRMqD3jr4UB4LF9bmhb95BFLkKI2w6XZBhIelWOZCN2A73rxiIYU4JztovOmpD90i48stuMMuhPx5yZCXpWlCoMcpX0GvLh3g2Lcmpt97fvXloqPQgxquyAZCpDmZATDv5mLIkgXEHZBYNYqOk0kzZAOyIe3EpuwxgBrahZAYfn4JigTnWFnuv4tfKa3ZAccrOenVAeCz5h1cNuhG9xi9hQ0tmOGKYj9E2T5ZB6LtiYMZB2wW0x6wpqSZCgZDZD";
-  const phoneNumberId = "1004224462770179";
-  const to = "243982932331";
+  const token = process.env.WHATSAPP_TOKEN;
+  const phoneNumberId = process.env.WHATSAPP_PHONE_ID;
+  const to = process.env.WHATSAPP_TO;
 
   try {
     const res = await axios.post(
@@ -37,7 +37,7 @@ async function sendWhatsApp() {
         to,
         type: "template",
         template: {
-          name: "hello_world", // le template approuvé
+          name: "hello_world",
           language: { code: "en_US" }
         }
       },
@@ -54,6 +54,7 @@ async function sendWhatsApp() {
     console.error("❌ Erreur WhatsApp:", err.response?.data || err.message);
   }
 }
+
 
 
 app.post("/gift-request", async (req, res) => {
