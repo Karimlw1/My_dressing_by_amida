@@ -3,7 +3,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
-const nodemailer = require("nodemailer");
+const axios = require("axios");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,45 +18,44 @@ if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}
 
 // Configurer le transporteur mail
 
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.BREVO_USER,
-    pass: process.env.BREVO_API_KEY
-  }
-});
 
-transporter.verify((error, success) => {
-  if (error) {
-    console.error("❌ SMTP Brevo erreur:", error);
-  } else {
-    console.log("✅ SMTP Brevo prêt");
-  }
-});
-
-
-console.log("EMAIL_USER =", process.env.EMAIL_USER);
-console.log("EMAIL_PASS =", process.env.EMAIL_PASS ? "OK" : "MANQUANT");
+async function sendEmailBrevo(subject, message) {
+  return axios.post(
+    "https://api.brevo.com/v3/smtp/email",
+    {
+      sender: {
+        name: "My Dressing by Amida",
+        email: process.env.EMAIL_FROM
+      },
+      to: [
+        {
+          email: process.env.EMAIL_TO,
+          name: "Admin"
+        }
+      ],
+      subject,
+      textContent: message
+    },
+    {
+      headers: {
+        "api-key": process.env.BREVO_API_KEY,
+        "Content-Type": "application/json"
+      }
+    }
+  );
+}
 
 
 // Route pour recevoir le formulaire cadeau
 app.post("/gift-request", async (req, res) => {
-  
   const { gifts, sender } = req.body;
-
-  if (!gifts || gifts.length === 0) {
-    return res.status(400).json({ error: "Aucun cadeau reçu" });
-  }
 
   let message = `
 🎁 NOUVELLE DEMANDE CADEAU
 
 👤 Client :
-Nom : ${sender?.name || "Non fourni"}
-Téléphone : ${sender?.phone || "Non fourni"}
-Ville : ${sender?.city || "Non fourni"}
+Nom : ${sender?.name}
+Téléphone : ${sender?.phone}
 
 ━━━━━━━━━━━━━━━━━━━
 `;
@@ -64,32 +63,29 @@ Ville : ${sender?.city || "Non fourni"}
   gifts.forEach((g, i) => {
     message += `
 🎁 Cadeau ${i + 1}
-👤 Pour : ${g.receiver_name || "Non fourni"}
-🎯 Type : ${g.gift_type || "Non fourni"}
-💰 Budget : ${g.budget || "Non fourni"}
-🤝 Relation : ${g.relation || "Non fourni"}
-📝 Détails : ${g.details || "Non fourni"}
+👤 Pour : ${g.receiver_name}
+🎯 Type : ${g.gift_type}
+💰 Budget : ${g.budget}
+🤝 Relation : ${g.relation}
+📝 Détails : ${g.details}
 
 ━━━━━━━━━━━━━━━━━━━
 `;
   });
 
-try {
-    await transporter.sendMail({
-      from: `"Formulaire Cadeau" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO,
-      subject: "Nouvelle demande de cadeau",
-      text: message
-    });
+  try {
+    await sendEmailBrevo(
+      "Nouvelle demande de cadeau",
+      message
+    );
 
-    console.log("✅ Email envoyé !");
-    res.status(200).json({ success: true });
+    console.log("✅ Email envoyé via Brevo API");
+    res.json({ success: true });
   } catch (err) {
-    console.error("❌ Erreur email:", err.message);
-    res.status(500).json({ error: "Impossible d'envoyer l'email" });
+    console.error("❌ Brevo API error:", err.response?.data || err.message);
+    res.status(500).json({ error: "Email failed" });
   }
 });
-
 
 
 // créer une commande
