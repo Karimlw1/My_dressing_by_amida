@@ -245,6 +245,40 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+app.post("/send-order-email", async (req, res) => {
+  const { subject, message } = req.body;
+
+  try {
+    await axios.post(
+      "https://api.brevo.com/v3/smtp/email",
+      {
+        sender: {
+          name: "My Dressing by Amida",
+          email: process.env.BREVO_USER
+        },
+        to: [
+          { email: process.env.EMAIL_TO, name: "Admin" }
+        ],
+        subject,
+        textContent: message
+      },
+      {
+        headers: {
+          "api-key": process.env.BREVO_API_KEY,
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+    console.log("✅ Email de commande envoyé !");
+    res.json({ success: true });
+  } catch (err) {
+    console.error("❌ Erreur Brevo:", err.response?.data || err.message);
+    res.status(500).json({ error: "Impossible d'envoyer l'email" });
+  }
+});
+
+
 app.listen(PORT, () => {
   console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });

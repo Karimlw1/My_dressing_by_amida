@@ -73,61 +73,45 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btn) btn.addEventListener("click", sendCartToAdmin);
 });
 
-
 function sendCartToAdmin() {
   const cart = getCart();
-  
 
   if (!cart || cart.length === 0) {
     alert("Votre panier est vide");
     return;
   }
 
-  const phone = "256788064469";
-
-  // 1️⃣ Open a blank window (Safari allows this)
-  const popup = window.open("", "_blank");
-
   const serverUrl = "https://mydressingbyamida.onrender.com";
 
-  // 2️⃣ Create order
+  // 1️⃣ Créer la commande sur le serveur
   fetch(`${serverUrl}/create-order`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ cart })
   })
     .then(res => {
-      if (!res.ok) throw new Error("Server error");
+      if (!res.ok) throw new Error("Erreur serveur");
       return res.json();
     })
-    .then(data => {
+    .then(async data => {
       const orderLink = `${serverUrl}/order/${data.orderId}`;
 
-      const message =
-        "🛍️ Nouvelle commande My Dressing by Amida\n\n" +
-        "Voir le panier 👇\n" +
-        orderLink;
+      // 2️⃣ Envoyer un email via ton endpoint serveur
+      await fetch(`${serverUrl}/send-order-email`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: "Nouvelle commande My Dressing by Amida",
+          message: `🛍️ Nouvelle commande reçue !\n\nVoir le panier complet ici : ${orderLink}`
+        })
+      });
 
-      const whatsappUrl =
-        `https://wa.me/${phone}?text=` +
-        encodeURIComponent(message);
-
-      popup.location.href = whatsappUrl;
-
-setTimeout(() => {
-  popup.location.href =
-    `https://wa.me/${phone}?text=` +
-    encodeURIComponent(message);
-}, 800);
-
-
-      // 3️⃣ Load WhatsApp ONCE with final message
-      popup.location.href = whatsappUrl;
+      alert("Commande envoyée avec succès par email !");
       localStorage.removeItem("cart");
+      renderCart();
     })
     .catch(err => {
       console.error(err);
-      popup.close();
       alert("Erreur lors de l'envoi de la commande");
     });
 }
