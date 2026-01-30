@@ -24,7 +24,7 @@ if (!fs.existsSync(ORDERS_FILE)) {
 // maternite
 
   // EXEMPLE API (Twilio / Meta WhatsApp API)
-async function sendWhatsApp() {
+async function sendWhatsApp(message) {
   const token = process.env.WHATSAPP_TOKEN;
   const phoneNumberId = process.env.WHATSAPP_PHONE_ID;
   const to = process.env.WHATSAPP_TO;
@@ -35,10 +35,9 @@ async function sendWhatsApp() {
       {
         messaging_product: "whatsapp",
         to,
-        type: "template",
-        template: {
-          name: "hello_world",
-          language: { code: "en_US" }
+        type: "text",       // <-- ici, plus de template
+        text: {
+          body: message     // <-- ton message dynamique
         }
       },
       {
@@ -54,6 +53,7 @@ async function sendWhatsApp() {
     console.error("❌ Erreur WhatsApp:", err.response?.data || err.message);
   }
 }
+
 
 
 
