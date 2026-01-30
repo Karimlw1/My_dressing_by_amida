@@ -19,15 +19,22 @@ if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}
 // Configurer le transporteur mail
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
+  host: "smtp-relay.brevo.com",
+  port: 587,
+  secure: false,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
+    user: process.env.BREVO_USER,
+    pass: process.env.BREVO_API_KEY
   }
 });
 
+transporter.verify((error, success) => {
+  if (error) {
+    console.error("❌ SMTP Brevo erreur:", error);
+  } else {
+    console.log("✅ SMTP Brevo prêt");
+  }
+});
 
 
 console.log("EMAIL_USER =", process.env.EMAIL_USER);
@@ -36,9 +43,7 @@ console.log("EMAIL_PASS =", process.env.EMAIL_PASS ? "OK" : "MANQUANT");
 
 // Route pour recevoir le formulaire cadeau
 app.post("/gift-request", async (req, res) => {
-  console.log("📩 REQUÊTE REÇUE SUR RENDER");
-  console.log(req.body);
-
+  
   const { gifts, sender } = req.body;
 
   if (!gifts || gifts.length === 0) {
