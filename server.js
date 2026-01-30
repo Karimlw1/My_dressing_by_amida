@@ -57,7 +57,9 @@ async function sendWhatsApp() {
 
 
 
-app.post("/gift-request", async (req, res) => {
+app.post("/gift-request", async (req, res) =>{
+
+/** 
   const { gifts, sender } = req.body;
 
   let message =
@@ -91,7 +93,8 @@ ${g.details || "Non fourni"}
     res.status(200).json({ success: true });
   } catch {
     res.status(500).json({ error: "WhatsApp failed" });
-  }
+  }**/
+
 });
 
 
