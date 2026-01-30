@@ -1,11 +1,9 @@
-require("dotenv").config(); 
-
+require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
-const axios = require("axios");
-
+const nodemailer = require("nodemailer");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,86 +12,61 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+// Fichier pour sauvegarder les commandes si tu veux
 const ORDERS_FILE = "orders.json";
+if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}));
 
-// créer le fichier s'il n'existe pas
-if (!fs.existsSync(ORDERS_FILE)) {
-  fs.writeFileSync(ORDERS_FILE, JSON.stringify({}));
-}
-
-// maternite
-
-  // EXEMPLE API (Twilio / Meta WhatsApp API)
-async function sendWhatsApp(message) {
-  const token = process.env.WHATSAPP_TOKEN;
-  const phoneNumberId = process.env.WHATSAPP_PHONE_ID;
-  const to = process.env.WHATSAPP_TO;
-
-  try {
-    const res = await axios.post(
-      `https://graph.facebook.com/v22.0/${phoneNumberId}/messages`,
-      {
-        messaging_product: "whatsapp",
-        to,
-        type: "text",       // <-- ici, plus de template
-        text: {
-          body: message     // <-- ton message dynamique
-        }
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json"
-        }
-      }
-    );
-
-    console.log("✅ Message WhatsApp envoyé:", res.data);
-  } catch (err) {
-    console.error("❌ Erreur WhatsApp:", err.response?.data || err.message);
+// Configurer le transporteur mail
+const transporter = nodemailer.createTransport({
+  service: "gmail", // ou ton fournisseur
+  auth: {
+    user: process.env.EMAIL_USER,    // ton email
+    pass: process.env.EMAIL_PASS     // mot de passe / token d'application
   }
-}
+});
 
-
-
-
-app.post("/gift-request", async (req, res) =>{
-
+// Route pour recevoir le formulaire cadeau
+app.post("/gift-request", async (req, res) => {
   const { gifts, sender } = req.body;
 
-  let message =
-`🎁 NOUVELLE DEMANDE CADEAU
-━━━━━━━━━━━━━━━━━━━
+  let message = `
+🎁 NOUVELLE DEMANDE CADEAU
 
 👤 Client :
-Nom : ${sender.name || "Non fourni"}
-Téléphone : ${sender.phone || "Non fourni"}
-Ville : ${sender.city || "Non fourni"}
+Nom : ${sender?.name || "Non fourni"}
+Téléphone : ${sender?.phone || "Non fourni"}
+Ville : ${sender?.city || "Non fourni"}
 
 ━━━━━━━━━━━━━━━━━━━
 `;
 
   gifts.forEach((g, i) => {
-    message +=
-`🎁 Cadeau ${i + 1}
+    message += `
+🎁 Cadeau ${i + 1}
 👤 Pour : ${g.receiver_name || "Non fourni"}
 🎯 Type : ${g.gift_type || "Non fourni"}
 💰 Budget : ${g.budget || "Non fourni"}
 🤝 Relation : ${g.relation || "Non fourni"}
-📝 Détails :
-${g.details || "Non fourni"}
+📝 Détails : ${g.details || "Non fourni"}
 
 ━━━━━━━━━━━━━━━━━━━
 `;
   });
 
   try {
-    await sendWhatsApp(message);
-    res.status(200).json({ success: true });
-  } catch {
-    res.status(500).json({ error: "WhatsApp failed" });
-  }
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO,    // ton email pour recevoir les demandes
+      subject: "Nouvelle demande cadeau",
+      text: message
+    });
 
+    console.log("✅ Email envoyé !");
+    res.status(200).json({ success: true });
+  } catch (err) {
+    console.error("❌ Erreur email:", err);
+    res.status(500).json({ error: "Email failed" });
+  }
 });
 
 
