@@ -1,4 +1,4 @@
-const steps = document.querySelectorAll(".step");
+const steps = document.querySelectorAll(".step")
 let current = 0;
 
 function showStep(index) {
@@ -43,7 +43,7 @@ document.getElementById("giftForm").addEventListener("submit", e => {
 CLIENT
 Nom: ${data.clientName}
 Tel: ${data.clientPhone || "-"}
-ville: ${data.Town}
+ville: ${data.clienTown}
 
 
 DESTINATAIRE

@@ -11,8 +11,8 @@ html {
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #0d0d0d;
-  color: #f0f0f0;
+  background: #ffffff;
+  color: #d3d0d0;
   line-height: 1.6;
   padding: 0 15px;
   -webkit-text-size-adjust: 100%; /* empêche zoom iPhone */
@@ -28,7 +28,7 @@ header h1 {
   font-size: 2.2rem;
   font-weight: 900;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: #292929;
 }
 
 header p {
@@ -41,7 +41,7 @@ header p {
 form {
   max-width: 600px;
   margin: auto;
-  background: #111;
+  background: #000000;
   padding: 25px 20px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
@@ -65,7 +65,7 @@ input, select, textarea {
   width: 100%;
   padding: 12px 15px;
   margin-bottom: 15px;
-  background: #1a1a1a;
+  background: #424242;
   border: 1px solid #333;
   border-radius: 10px;
   color: #fff;
