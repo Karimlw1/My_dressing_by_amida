@@ -19,33 +19,6 @@ if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}
 // Configurer le transporteur mail
 
 
-async function sendEmailBrevo(subject, message) {
-  return axios.post(
-    "https://api.brevo.com/v3/smtp/email",
-    {
-      sender: {
-        name: "My Dressing by Amida",
-        email: process.env.EMAIL_FROM
-      },
-      to: [
-        {
-          email: process.env.EMAIL_TO,
-          name: "Admin"
-        }
-      ],
-      subject,
-      textContent: message
-    },
-    {
-      headers: {
-        "api-key": process.env.BREVO_API_KEY,
-        "Content-Type": "application/json"
-      }
-    }
-  );
-}
-
-
 // Route pour recevoir le formulaire cadeau
 app.post("/gift-request", async (req, res) => {
   const { gifts, sender } = req.body;
