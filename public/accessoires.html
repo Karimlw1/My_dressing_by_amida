@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="generals.css" />
+    <link rel="stylesheet" href="footer.css" />
+
+    <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
+    <link rel="shortcut icon" href="images/MDamida-logo.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>MD homme</title>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="menu">
+        <strong onclick="location.href = 'index.html'">
+          <i class="fa fa-home"></i><br />
+        </strong>
+      </div>
+      <h3><strong>HOMME</strong></h3>
+      <div
+        class="cart"
+        onclick="location.href = 'cart.html'"
+        style="cursor: pointer"
+      >
+        🛒 <span class="badge" id="cartCount"></span>
+      </div>
+    </header>
+
+    <div class="categories">
+      <div class="flex">
+        <div class="category" id="Montre">
+          <img
+            src="https://i.pinimg.com/1200x/64/41/b4/6441b4ed993e3463e9628ec7a52d2649.jpg"
+          />
+          <p>Montre</p>
+        </div>
+        <div class="category" id="chaussure">
+          <img
+            src="https://i.pinimg.com/736x/b9/9e/98/b99e98d5823dc425d69a603ab149de93.jpg"
+          />
+          <p>chaussures</p>
+        </div>
+        <div class="category" id="Sac">
+          <img
+            src="https://i.pinimg.com/1200x/bf/6f/59/bf6f59b280c18e2e1d4d34462dd42898.jpg"
+          />
+          <p>Sac</p>
+        </div>
+        <div class="category" id="Lunettes">
+          <img
+            src="https://i.pinimg.com/1200x/e0/cc/e1/e0cce177845982e05503889fc3e7d202.jpg"
+          />
+          <p>Lunettes</p>
+        </div>
+        <div class="category" id="Phone">
+          <img
+            src="https://i.pinimg.com/1200x/0e/e8/9b/0ee89bebbde9f82c4b5027e797737fed.jpg"
+          />
+          <p>Phone</p>
+        </div>
+        <div class="category" id="bracha">
+          <img
+            src="https://i.pinimg.com/1200x/0e/e8/9b/0ee89bebbde9f82c4b5027e797737fed.jpg"
+          />
+          <p>bracelet & chainette</p>
+        </div>
+      </div>
+    </div>
+
+    <p id="pTrie">Trier : <strong id="trieMessage">Tout les article</strong></p>
+
+    <section class="products">
+      <div class="product Montre details" data-id="FashionHp1">
+        <img
+          src="https://i.pinimg.com/1200x/84/f2/d7/84f2d733d4736d4376ba44c005194a5b.jpg"
+        />
+        <div class="info">
+          <div class="price">$150</div>
+          <button>
+            Voir produit
+          </button>
+        </div>
+      </div>
+
+      <div class="product Sac details" 
+            data-id="FashionHp2">
+        <img
+          src="https://i.pinimg.com/736x/46/c1/ca/46c1ca4aaa247e242120a89823e042c5.jpg"
+        />
+        <div class="info">
+          <div class="price">$40</div>
+          <button>
+            Voir produit
+          </button>
+        </div>
+      </div>
+
+      <div class="product chaussure details"  data-id="FashionHp3">
+        <img
+          src="https://i.pinimg.com/1200x/4b/4a/18/4b4a186675a7274b5c6d613713d5d435.jpg"
+        />
+        <div class="info">
+          <div class="price">$35</div>
+          <button>
+            Voir produit
+          </button>
+        </div>
+      </div>
+
+      <div class="product Lunettes details"   data-id="FashionHp4"
+            >
+        <img
+          src="https://i.pinimg.com/1200x/1a/80/c0/1a80c0cf8eef5d4f398982e08e54bf57.jpg"
+        />
+        <div class="info">
+          <div class="price">$80</div>
+          <button>
+            Voir produit
+          </button>
+        </div>
+      </div>
+
+      <div class="product bracha details" data-id="FashionHp5">
+        <img
+          src="https://i.pinimg.com/1200x/e4/6a/5b/e46a5bdbbf182d89d492d1458fce95b0.jpg"
+        />
+        <div class="info">
+          <div class="price">$40</div>
+          <button>
+            Voir produit
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © <span id="year"></span> My Dressing by Amida.<br />All rights
+        reserved.
+      </p>
+    </footer>
+
+    <script src="filter.js"></script>
+    <script src="cart.js"></script>
+    <script src="cart-core.js"></script>
+    <script src="product-link.js"></script>
+  </body>
+</html>

@@ -19,6 +19,12 @@ const categories = {
   skincare: document.querySelectorAll(".skincare"),
   fragrance: document.querySelectorAll(".fragrance"),
   haircare: document.querySelectorAll(".haircare"),
+  lunette: document.querySelectorAll(".Lunettes"),
+  montre: document.querySelectorAll(".Montre"),
+  sac: document.querySelectorAll(".Sac"),
+  bracha: document.querySelectorAll(".bracha"),
+  phone: document.querySelectorAll(".Phone"),
+
 };
 
 
@@ -36,6 +42,11 @@ const boxes = {
   skincare: document.getElementById("skincare"),
   fragrance: document.getElementById("fragrance"),
   haircare: document.getElementById("haircare"),
+  lunette: document.getElementById("Lunettes"),
+  montre: document.getElementById("Montre"),
+  sac: document.getElementById("Sac"),
+  bracha: document.getElementById("bracha"),
+  phone: document.getElementById("Phone"),
 };
 
 
@@ -165,6 +176,11 @@ function formatMessage(arr) {
     skincare: "Skin Care",
     fragrance: "Parfums",
     haircare: "hair Care",
+    lunette: "Lunettes",
+    montre: "Montre",
+    sac: "Sac",
+    bracha: "bracelet $ chainettes",
+    phone: "Phone",
   };
 
   const translated = arr.map(name => namesMap[name]);
