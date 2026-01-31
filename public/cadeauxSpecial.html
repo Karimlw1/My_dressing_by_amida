@@ -1,15 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="stylegift.css">
-</head>
-<body>
+    <link rel="stylesheet" href="stylegift.css" />
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="generals.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .maternite-section {
+        border-bottom: solid 1px #e7e7e7;
+        padding-bottom: 60px;
+        background: url(https://i.pinimg.com/736x/b8/11/d2/b811d2d7e02574966bfba49b668ff2f6.jpg);
+        background-size: cover;
+        color: #ffffff;
+        border-radius: 0 0 5px 5px;
+      }
+      p {
+        text-align: justify;
+        margin: 60px;
+      }
+      h3 {
+        user-select: none;
+        cursor: default;
+      }
+      h2 {
+        text-align: center;
+        color: rgb(107, 94, 60);
+      }
+      
+    </style>
+  </head>
+  <body>
     <header class="navbar">
       <div class="menu" onclick="history.back()">←</div>
-      <h3><strong>PRODUIT</strong></h3>
+      <h3><strong>CADEAU SPECIAL</strong></h3>
       <div
         class="cart"
         onclick="location.href = 'cart.html'"
@@ -18,44 +49,73 @@
         🛒 <span class="badge" id="cartCount"></span>
       </div>
     </header>
-    <section class="gift-section">
-  <h2>🎁 Composer votre cadeau</h2>
 
-  <form id="giftForm">
-    <label>Nom du destinataire</label>
-    <input type="text" id="recipient" required placeholder="Ex: Sarah" />
+    <section class="maternite-section">
+      <h2>Article, Coffrets, et Cadeau special</h2>
 
-    <label>Message personnalisé</label>
-    <textarea id="message" placeholder="Votre message..."></textarea>
+      <div class="product-grid" id="materniteProducts"></div>
 
-    <label>Choisissez vos articles</label>
+      <div class="gift-custom">
+        <p>
+          Vous ne savez pas quoi choisir ? Décrivez-nous la famille, nous nous
+          occupons du reste.
+        </p>
+        <a href="materniteRecommander.html" style="text-decoration: none;">
+          <button style="margin-left: 10px">
+          Demander un cadeau recommandé
+          </button>
+        </a>
+      </div>
+    </section>
+    <section class="products">
+      <div class="product details" data-id="CDSP01">
+        <img
+          src="https://i.pinimg.com/736x/3b/53/3d/3b533d5acc64be322ddba28b5b9f1750.jpg"
+          alt=""
+        />
+        <div class="info">
+          <div class="price">$30</div>
+          <button class="details-bttn">Voir produit</button>
+        </div>
+      </div>
 
-    <div class="gift-items">
-      <label>
-        <input type="checkbox" value="Montre classique|40" />
-        Montre classique – 40$
-      </label>
+      <div class="product details" data-id="CDSP02">
+        <img
+          src="https://i.pinimg.com/1200x/7c/a6/1d/7ca61d16736365380366f8cdb385168a.jpg"
+          alt=""
+        />
+        <div class="info">
+          <div class="price">$10</div>
+          <button class="details-bttn">Voir produit</button>
+        </div>
+      </div>
+      <div class="product details" data-id="CDSP03">
+        <img
+          src="https://i.pinimg.com/1200x/9b/9a/1d/9b9a1d82a447d69ad9e1015d224861a1.jpg"
+          alt=""
+        />
+        <div class="info">
+          <div class="price">$100</div>
+          <button class="details-bttn">Voir produit</button>
+        </div>
+      </div>
+      <div class="product details" data-id="CDSP04">
+        <img
+          src="https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg"
+          alt=""
+        />
+        <div class="info">
+          <div class="price">$80</div>
+          <button class="details-bttn">Voir produit</button>
+        </div>
+      </div>
 
-      <label>
-        <input type="checkbox" value="Parfum Stronger With You|55" />
-        Parfum Stronger With You – 55$
-      </label>
+    </section>
 
-      <label>
-        <input type="checkbox" value="Chemise ZARA|100" />
-        Chemise ZARA – 100$
-      </label>
-    </div>
-
-    <label>Adresse de livraison (optionnel)</label>
-    <input type="text" id="address" />
-
-    <button type="submit">🎁 Envoyer sur WhatsApp</button>
-  </form>
-</section>
-<script src="cart.js"></script>
-<script src="filter.js"></script>
-<script src="cart-core.js"></script>
-<script src="product.js"></script>
-</body>
+    <script src="cart.js"></script>
+    <script src="filter.js"></script>
+    <script src="cart-core.js"></script>
+    <script src="product.js"></script>
+    <script src="product-link.js"></script>
+  </body>
 </html>
