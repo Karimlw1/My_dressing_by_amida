@@ -11,7 +11,7 @@ function saveCart(cart) {
 
 function updateCartBadge() {
   const cart = getCart();
-  const badge = document.querySelector(".cart-badge"); // ton élément badge
+  const badge = document.querySelector(".badge"); // ton élément badge
   if (badge) {
     const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
     badge.textContent = totalQty;
