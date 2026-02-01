@@ -232,6 +232,71 @@ const PRODUCTS = {
       ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
     }
   },
+  FashionHp12: {
+    id: "FashionHp12",
+    name: "POLO homme Luxe ",
+    category: "homme(Haut)",
+    price: 25,
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo01.jpeg",
+    options: {
+      size: ["S" ,"M", "L", "XL", "XX4" , "XXXL" ] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
+    },
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    }
+  },
+  FashionHp13: {
+    id: "FashionHp13",
+    name: "POLO homme Luxe ",
+    category: "homme(Haut)",
+    price: 25,
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo02.jpeg",
+    options: {
+      size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
+    },
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    }
+  },
+FashionHp14: {
+    id: "FashionHp14",
+    name: "POLO homme Luxe ",
+    category: "homme(Haut)",
+    price: 25,
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo03.jpeg",
+    options: {
+      size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
+    },
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    }
+  },
+FashionHp15: {
+    id: "FashionHp15",
+    name: "POLO homme Luxe ",
+    category: "homme(Haut)",
+    price: 25,
+    image: "",
+    options: {
+      size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
+    },
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    }
+  },
+FashionHp16: {
+    id: "FashionHp16",
+    name: "POLO homme Luxe ",
+    category: "homme(Haut)",
+    price: 25,
+    image: "",
+    options: {
+      size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
+    },
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    }
+  },
 
   FashionFp1: {
     id: "FashionFp1",
@@ -574,8 +639,8 @@ const PRODUCTS = {
     options:{color : ["Golden"]},
     lieuDeLIvraison: { ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]}
   },
-  ACCESS06: {
-    id: "ACCESS06",
+  ACCESS07: {
+    id: "ACCESS07",
     name: "Sac PRADA luxe ",
     price: "80",
     category: "Accessoire sac",
