@@ -276,7 +276,7 @@ FashionHp15: {
     name: "POLO homme Luxe ",
     category: "homme(Haut)",
     price: 25,
-    image: "",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo04.jpeg",
     options: {
       size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
     },
@@ -289,7 +289,7 @@ FashionHp16: {
     name: "POLO homme Luxe ",
     category: "homme(Haut)",
     price: 25,
-    image: "",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo05.jpeg",
     options: {
       size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
     },
