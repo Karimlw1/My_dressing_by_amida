@@ -513,7 +513,58 @@ const PRODUCTS = {
       ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
     
     } 
+  },
+  ACCESS01: {
+    id: "ACCESS0",
+    name: "Accessoire ",
+    price: --,
+    category: "Accessoire",
+    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
+    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+  },
+  ACCESS02: {
+    id: "ACCESS02",
+    name: "Accessoire ",
+    price: --,
+    category: "Accessoire",
+    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
+    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+  },
+  ACCESS03: {
+    id: "ACCESS03",
+    name: "Accessoire ",
+    price: --,
+    category: "Accessoire",
+    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
+    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+  },
+  ACCESS04: {
+    id: "ACCESS04",
+    name: "Accessoire",
+    price: --,
+    category: "Accessoire",
+    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
+    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+  },
+  ACCESS05: {
+    id: "ACCESS05",
+    name: "Accessoire",
+    price: --,
+    category: "Accessoire",
+    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
+    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
+    lieuDeLIvraison: {
+      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
   }
+}
 }
 
 const product = PRODUCTS[id];
