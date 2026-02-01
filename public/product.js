@@ -515,56 +515,74 @@ const PRODUCTS = {
     } 
   },
   ACCESS01: {
-    id: "ACCESS0",
-    name: "Accessoire ",
-    price: --,
-    category: "Accessoire",
-    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
-    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
+    id: "ACCESS01",
+    name: "Sac luis vuiton",
+    price: "80",
+    category: "Accessoire sac",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md photos/femme/access/sacLV.jpeg",
+    options:{ size:["S","M","L"] , color : ["Noir"]},
     lieuDeLIvraison: {
       ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    }
   },
   ACCESS02: {
     id: "ACCESS02",
-    name: "Accessoire ",
-    price: --,
-    category: "Accessoire",
-    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
-    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
+    name: "Sac Hermes premium",
+    price: "50",
+    category: "Accessoire sac",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md photos/femme/access/sacHERMES.jpeg",
+    options:{ size:["S","M","L"] , color : ["Noir"]},
     lieuDeLIvraison: {
       ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    }
   },
   ACCESS03: {
     id: "ACCESS03",
-    name: "Accessoire ",
-    price: --,
-    category: "Accessoire",
-    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
-    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
+    name: "Chaussure Femme ZARA luxe ",
+    price: "35",
+    category: "Accessoire chaussure",
+    image: "https://i.pinimg.com/736x/82/f2/93/82f2939845c7fb3f46112301d3a577ca.jpg",
+    options:{ size:["36","37","38","39","40","41","42"] , color : ["Rouge", "noir"]},
     lieuDeLIvraison: {
       ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    }
   },
   ACCESS04: {
-    id: "ACCESS04",
-    name: "Accessoire",
-    price: --,
-    category: "Accessoire",
-    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
-    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
-    lieuDeLIvraison: {
-      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    id: "ACCESS05",
+    name: "Sac CELINE luxe ",
+    price: "50",
+    category: "Accessoire sac",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md photos/femme/access/sacCELINE.jpeg",
+    options:{ size:["S","M","L"] , color : ["Noir"]},
+    lieuDeLIvraison: { ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]}
   },
   ACCESS05: {
     id: "ACCESS05",
-    name: "Accessoire",
-    price: --,
-    category: "Accessoire",
-    image: "https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg",
-    options:{ size:["S","M","L","XL","XXL","XXXL"] , color : ["Rouge", "Chocolat", "Beige"]},
-    lieuDeLIvraison: {
-      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
+    name: "Lunette Femme luxe ",
+    price: "60",
+    category: "Accessoire Lunette",
+    image: "https://i.pinimg.com/1200x/31/b0/a8/31b0a8f96f6f64780735a205122313e2.jpg",
+    options:{color : ["Noir"]},
+    lieuDeLIvraison: { ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]}
+  },
+  ACCESS06: {
+    id: "ACCESS06",
+    name: "Bracelet luxe ",
+    price: "25",
+    category: "Accessoire Bracelet",
+    image: "https://i.pinimg.com/1200x/ca/66/19/ca6619dde767a8d8b513bce1fca21cff.jpg",
+    options:{color : ["Golden"]},
+    lieuDeLIvraison: { ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]}
+  },
+  ACCESS06: {
+    id: "ACCESS06",
+    name: "Sac PRADA luxe ",
+    price: "80",
+    category: "Accessoire sac",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md photos/femme/access/sacPRADA.jpeg",
+    options:{ size:["S","M","L"] , color : ["Chocolat"]},
+    lieuDeLIvraison: { ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]}
   }
-}
 }
 
 const product = PRODUCTS[id];
