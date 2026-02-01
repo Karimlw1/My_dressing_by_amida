@@ -676,7 +676,7 @@ if (product.options.color) {
 if (product.lieuDeLIvraison.ville) {
   lieuDeLIvraisonContainer.innerHTML += `
     <label><i class="fa fa-list-ul"> </i>
-  Choisissez le lieux de livraison : <br> <br> [Kinshasa] , [Goma] , [Lubumbashi], "kampala"</label>
+  Choisissez le lieux de livraison : <br> <br> [Kinshasa] , [Goma] , [Lubumbashi], [kampala]</label>
     <select id="ville" required>
       ${product.lieuDeLIvraison.ville.map(v => `<option value="${v}">${v}</option>`).join("")}
     </select>
