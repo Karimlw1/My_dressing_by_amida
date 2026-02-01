@@ -237,7 +237,7 @@ const PRODUCTS = {
     name: "POLO homme Luxe ",
     category: "homme(Haut)",
     price: 25,
-    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo01.jpeg",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md%20photos/homme/haut/polo01.jpeg",
     options: {
       size: ["S" ,"M", "L", "XL", "XX4" , "XXXL" ] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
     },
@@ -250,7 +250,7 @@ const PRODUCTS = {
     name: "POLO homme Luxe ",
     category: "homme(Haut)",
     price: 25,
-    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo02.jpeg",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md%20photos/homme/haut/polo02.jpeg",
     options: {
       size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
     },
@@ -263,7 +263,7 @@ FashionHp14: {
     name: "POLO homme Luxe ",
     category: "homme(Haut)",
     price: 25,
-    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo03.jpeg",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md%20photos/homme/haut/polo03.jpeg",
     options: {
       size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
     },
@@ -276,7 +276,7 @@ FashionHp15: {
     name: "POLO homme Luxe ",
     category: "homme(Haut)",
     price: 25,
-    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo04.jpeg",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md%20photos/homme/haut/polo04.jpeg",
     options: {
       size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
     },
@@ -289,7 +289,7 @@ FashionHp16: {
     name: "POLO homme Luxe ",
     category: "homme(Haut)",
     price: 25,
-    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/homme/haut/polo05.jpeg",
+    image: "https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md%20photos/homme/haut/polo05.jpeg",
     options: {
       size: ["S", "M", "L", "XL", "XXL", "XXXL"] ,color:["Noir" , "Bleu" , "Beige", "Vert"]
     },
