@@ -53,5 +53,40 @@
     "lieuDeLIvraison": {
       "ville": []
     }
+  },
+  "FashionHp1": {
+    "id": "FashionHp1",
+    "name": "haut homme",
+    "category": "Haut",
+    "price": 300,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770330441/hsnolgmbyr09i1yhbrhw.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770330441/hsnolgmbyr09i1yhbrhw.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770330452/jrnvbqsjji92qznq3bns.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
