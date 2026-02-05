@@ -1,1 +1,20 @@
-{}
+{
+  "FashionHp10": {
+    "id": "FashionHp10",
+    "category": "accessoire",
+    "price": 20,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770324122/yzvwqvw1tcfz9xjhubmm.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770324122/yzvwqvw1tcfz9xjhubmm.jpg"
+    ],
+    "options": {},
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Goma",
+        "Lubumbashi",
+        "Kampala"
+      ]
+    }
+  }
+}
