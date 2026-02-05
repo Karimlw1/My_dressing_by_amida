@@ -192,14 +192,13 @@
     margin-top: 32px;
     font-variant-numeric: oldstyle-nums;
     background-color: #ffffff;
-    justify-items: center;
+        justify-items: center;
 }
 
 
 
 .product {
     width: 95%;
-    height: 470px;
     background: white;
     border-radius: 12px;
     display: flex;
@@ -220,8 +219,8 @@
 
 
 .product img {
-    width: 250px;
-    height: 380px;
+    width: 100%;
+    height: 250px;
     border-radius: 12px 12px 0 0;
 }
 
