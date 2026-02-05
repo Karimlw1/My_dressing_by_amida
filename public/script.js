@@ -75,4 +75,27 @@ function showMenu() {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-//* Filter */
+//* display products */
+
+const productsContainer = document.getElementById("productsContainer");
+
+fetch("/api/products")
+  .then(res => res.json())
+  .then(products => {
+    Object.values(products).forEach(product => {
+      const div = document.createElement("div");
+      div.className = "product details";
+      div.dataset.id = product.id;
+      div.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <div class="info">
+          <div class="price">$${product.price}</div>
+          <button class="details-bttn" onclick="location.href='product.html?id=${product.id}'">
+            Voir produit
+          </button>
+        </div>
+      `;
+      productsContainer.appendChild(div);
+    });
+  });
+
