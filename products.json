@@ -34,5 +34,24 @@
         "Kampala"
       ]
     }
+  },
+  "FasionHp1": {
+    "id": "FasionHp1",
+    "name": "karim",
+    "category": "food",
+    "price": 200,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770330083/uetzuhhvfvh3znjd7m3g.png",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770330083/uetzuhhvfvh3znjd7m3g.png"
+    ],
+    "options": {
+      "size": [
+        "S"
+      ],
+      "color": []
+    },
+    "lieuDeLIvraison": {
+      "ville": []
+    }
   }
 }
