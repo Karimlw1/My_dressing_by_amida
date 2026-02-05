@@ -34,6 +34,12 @@ if (!fs.existsSync(PRODUCTS_FILE)) {
   fs.writeFileSync(PRODUCTS_FILE, JSON.stringify({}, null, 2));
 }
 
+function isAdmin(req, res, next) {
+  if (req.headers["x-admin-key"] !== process.env.ADMIN_KEY) {
+    return res.status(403).json({ error: "Accès refusé" });
+  }
+  next();
+}
 
 // route
 app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res) => {
@@ -64,12 +70,6 @@ app.get("/api/products", (req, res) => {
   res.json(products);
 });
 
-function isAdmin(req, res, next) {
-  if (req.headers["x-admin-key"] !== process.env.ADMIN_KEY) {
-    return res.status(403).json({ error: "Accès refusé" });
-  }
-  next();
-}
 
 
 

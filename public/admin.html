@@ -23,25 +23,22 @@
 
 
 <script>
-
-const ADMIN_KEY = "1234"; // même clé que dans Render env
-
-const res = await fetch("/admin/upload-image", {
-  method: "POST",
-  headers: { "x-admin-key": ADMIN_KEY },
-  body: formData
-});
-
+const ADMIN_KEY = "1234";
 
 let uploadedImageUrl = "";
 
 document.getElementById("uploadBtn").onclick = async () => {
   const file = imageInput.files[0];
+  if (!file) return alert("Choisis une image");
+
   const formData = new FormData();
   formData.append("image", file);
 
   const res = await fetch("/admin/upload-image", {
     method: "POST",
+    headers: {
+      "x-admin-key": ADMIN_KEY
+    },
     body: formData
   });
 
@@ -51,23 +48,30 @@ document.getElementById("uploadBtn").onclick = async () => {
 };
 
 document.getElementById("saveProduct").onclick = async () => {
+  if (!uploadedImageUrl) return alert("Upload l'image d'abord");
+
   const product = {
     id: id.value,
     name: name.value,
     category: category.value,
     price: Number(price.value),
     image: uploadedImageUrl,
+    images: [uploadedImageUrl],   // compatibilité galerie
     options: {},
-    lieuDeLIvraison: { ville: ["Kinshasa"] }
+    lieuDeLIvraison: { ville: ["Kinshasa", "Goma", "Lubumbashi", "Kampala"] }
   };
 
-  await fetch("/admin/add-product", {
+  const res = await fetch("/admin/add-product", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "x-admin-key": ADMIN_KEY
+    },
     body: JSON.stringify(product)
   });
 
-  alert("Produit ajouté");
+  const data = await res.json();
+  alert("Produit ajouté ✔");
 };
 </script>
 </body>

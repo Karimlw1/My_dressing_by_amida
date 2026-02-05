@@ -212,12 +212,3 @@ document.getElementById("addToCart").addEventListener("click", () => {
 
 
 }
-function isAdmin(req, res, next) {
-  if (req.headers["x-admin-key"] !== process.env.ADMIN_KEY) {
-    return res.status(403).json({ error: "Accès refusé" });
-  }
-  next();
-}
-
-app.post("/admin/add-product", isAdmin, (req, res) => {  });
-app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res) => { });
