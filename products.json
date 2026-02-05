@@ -122,5 +122,40 @@
         "kampala"
       ]
     }
+  },
+  "FasionHp2": {
+    "id": "FasionHp2",
+    "name": "pentalon luxe",
+    "category": "Homme",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770334634/lf5qzslnmbfyzp6lcyhs.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770334634/lf5qzslnmbfyzp6lcyhs.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770334649/v8onoloq63czljcedc7c.jpg"
+    ],
+    "options": {
+      "size": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
