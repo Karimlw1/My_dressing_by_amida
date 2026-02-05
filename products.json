@@ -16,5 +16,23 @@
         "Kampala"
       ]
     }
+  },
+  "Home1": {
+    "id": "Home1",
+    "category": "food",
+    "price": 20,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770325160/cgtidvfw6wdlnucdolnq.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770325160/cgtidvfw6wdlnucdolnq.jpg"
+    ],
+    "options": {},
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Goma",
+        "Lubumbashi",
+        "Kampala"
+      ]
+    }
   }
 }
