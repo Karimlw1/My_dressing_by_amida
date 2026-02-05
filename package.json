@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Karimlw1/My_dressing_by_amida#readme",
   "dependencies": {
+    "@octokit/rest": "^22.0.1",
     "axios": "^1.13.4",
     "cloudinary": "^2.9.0",
     "cors": "^2.8.6",

@@ -1,3 +1,12 @@
+const { Octokit } = require("@octokit/rest");
+
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN // token avec droit push sur le repo
+});
+
+const OWNER = "karimlw1"; 
+const REPO = "My_dressing_by_amida"; 
+const BRANCH = "main"; 
 
 require("dotenv").config();
 const express = require("express");
@@ -54,15 +63,22 @@ app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res
   }
 });
 
-app.post("/admin/add-product", isAdmin, (req, res) => {
+app.post("/admin/add-product", isAdmin, async (req, res) => {
   const newProduct = req.body;
 
+  // lire localement
   const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
   products[newProduct.id] = newProduct;
 
+  // sauvegarder localement
   fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+
+  // mettre à jour sur GitHub
+  await updateProductsOnGitHub(products);
+
   res.json({ success: true });
 });
+
 
 
 
@@ -71,6 +87,36 @@ app.get("/api/products", (req, res) => {
   res.json(products);
 });
 
+
+//Fonction pour mettre à jour products.json sur GitHub
+async function updateProductsOnGitHub(newProducts) {
+  try {
+    // récupérer le SHA actuel du fichier
+    const { data: fileData } = await octokit.repos.getContent({
+      owner: OWNER,
+      repo: REPO,
+      path: "products.json",
+      ref: BRANCH
+    });
+
+    const sha = fileData.sha;
+
+    // commit sur GitHub
+    await octokit.repos.createOrUpdateFileContents({
+      owner: OWNER,
+      repo: REPO,
+      path: "products.json",
+      message: "Ajout d'un nouveau produit via admin",
+      content: Buffer.from(JSON.stringify(newProducts, null, 2)).toString("base64"),
+      sha,
+      branch: BRANCH
+    });
+
+    console.log("✅ products.json mis à jour sur GitHub !");
+  } catch (err) {
+    console.error("❌ Erreur GitHub:", err);
+  }
+}
 
 
 
