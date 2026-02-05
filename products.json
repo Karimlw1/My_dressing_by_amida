@@ -88,5 +88,39 @@
         "kampala"
       ]
     }
+  },
+  "hommep1": {
+    "id": "hommep1",
+    "name": "tricot",
+    "category": "Homme",
+    "price": 45,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770331339/uam9oavvreu8j2bst27y.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770331339/uam9oavvreu8j2bst27y.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
