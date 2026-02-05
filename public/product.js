@@ -49,33 +49,7 @@ if (product.lieuDeLIvraison.ville) {
       ${product.lieuDeLIvraison.ville.map(v => `<option value="${v}">${v}</option>`).join("")}
     </select>
   `;
-}
-
-
-/** 
-const container = document.getElementById("materniteProducts");
-
-PRODUCTS
-  .filter(p => p.category === "maternite")
-  .forEach(product => {
-    container.innerHTML += `
-      <div class="product-card">
-        <img src="${product.image}" alt="${product.name}" />
-
-        <h4>${product.name}</h4>
-        <p>${product.description}</p>
-
-        <div class="price">$${product.price}</div>
-
-        <button onclick="addToCart('${product.id}')">
-          Ajouter au panier
-        </button>
-      </div>
-    `;
-  });
-
-**/
-
+};
 
 function addToCart(product) {
   const cart = getCart();
