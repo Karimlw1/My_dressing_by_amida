@@ -1,6 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
+
 // const recipientName = document.getElementById("recipientName").value;
 
 const PRODUCTS = {
@@ -20,19 +21,24 @@ const PRODUCTS = {
   },
 
   Homep2: {
-    id: "Homep2",
-    name: "Tricot homme",
-    category: "haut",
-    price: 80,
-    image: "https://i.pinimg.com/1200x/1a/80/c0/1a80c0cf8eef5d4f398982e08e54bf57.jpg",
-    options: {
-      size: ["S", "M", "L" , "XL", "XXL"],
-      color: ["Noir", "Gris" , "marron"]
-    },
-    lieuDeLIvraison: {
-      ville: ["Kinshasa", "Goma" , "Lubumbashi", "kampala"]
-    }
+  id: "Homep2",
+  name: "Vienna Collection",
+  category: "Sac",
+  price: 80,
+  images: [
+    "https://i.pinimg.com/736x/63/72/2e/63722eea2a428ce8343d04a1ebf17b6f.jpg",
+    "https://i.pinimg.com/1200x/09/de/ae/09deae070dac734de551b13ec1de49d3.jpg",
+    "https://i.pinimg.com/1200x/9e/0e/d4/9e0ed494fc31391cb17e681f69bb4157.jpg"
+  ],
+  options: {
+    size: ["36", "37", "38", "39", "40", "41"],
+    color: ["Rouge", "Marron"]
   },
+  lieuDeLIvraison: {
+    ville: ["Kinshasa", "Goma", "Lubumbashi", "kampala"]
+  }
+},
+
   Homep3: {
     id: "Homep3",
     name: "Crème visage Centella",
@@ -743,7 +749,43 @@ function addToCart(product) {
 
 document.getElementById("name").textContent = product.name;
 document.getElementById("price").textContent = product.price + "$";
-document.getElementById("image").src = product.image;
+const mainImage = document.getElementById("mainImage");
+const thumbs = document.getElementById("thumbs");
+
+let currentIndex = 0;
+const images = product.images || [product.image]; // fallback if old products
+
+mainImage.src = images[0];
+
+// Thumbnails
+thumbs.innerHTML = images.map((img, index) => `
+  <img src="${img}" data-index="${index}" class="${index === 0 ? "active" : ""}">
+`).join("");
+
+document.querySelectorAll(".thumbs img").forEach(img => {
+  img.addEventListener("click", () => {
+    currentIndex = Number(img.dataset.index);
+    updateImage();
+  });
+});
+
+function updateImage() {
+  mainImage.src = images[currentIndex];
+  document.querySelectorAll(".thumbs img").forEach((thumb, i) => {
+    thumb.classList.toggle("active", i === currentIndex);
+  });
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateImage();
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateImage();
+});
+
 document.getElementById("category").textContent = product.category;
 
 document.getElementById("addToCart").addEventListener("click", () => {
@@ -757,16 +799,17 @@ document.getElementById("addToCart").addEventListener("click", () => {
   return;
 }
 
-   addToCart ({
-    id: product.id,
-    name: product.name,
-    category: product.category,
-    price: product.price,
-    image: product.image,
-    size,
-    color,
-    ville,
-  });
+   addToCart({
+  id: product.id,
+  name: product.name,
+  category: product.category,
+  price: product.price,
+  image: images[currentIndex],
+  size,
+  color,
+  ville
+});
+
 
   alert("Produit ajouté au panier ✔");
 
