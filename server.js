@@ -25,10 +25,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Fichier pour sauvegarder les commandes si tu veux
-const ORDERS_FILE = "orders.json";
+const ORDERS_FILE = path.join(__dirname, "orders.json");
+
 if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}));
 
-const PRODUCTS_FILE = path.join(__dirname, "data/products.json");
+const PRODUCTS_FILE = path.join(__dirname, "products.json");
 
 if (!fs.existsSync(PRODUCTS_FILE)) {
   fs.writeFileSync(PRODUCTS_FILE, JSON.stringify({}, null, 2));
