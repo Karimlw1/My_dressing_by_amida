@@ -1,0 +1,16 @@
+{
+  "Homep1": {
+    "id": "Homep1",
+    "name": "Talon rouge marron",
+    "category": "chaussures",
+    "price": 150,
+    "image": "https://i.pinimg.com/1200x/4a/27/0d/4a270d9a52ff3199fb4a1e516e249a94.jpg",
+    "options": {
+      "size": ["36", "37", "38", "39", "40", "41"],
+      "color": ["Rouge", "Marron"]
+    },
+    "lieuDeLIvraison": {
+      "ville": ["Kinshasa", "Goma", "Lubumbashi", "kampala"]
+    }
+  }
+}

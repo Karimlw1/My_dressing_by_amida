@@ -1,12 +1,24 @@
+
 require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
 const axios = require("axios");
+const cloudinary = require("cloudinary").v2;
+const multer = require("multer");
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+const upload = multer({ dest: "uploads/" });
 
 app.use(cors());
 app.use(express.json());
@@ -15,6 +27,51 @@ app.use(express.static(path.join(__dirname, "public")));
 // Fichier pour sauvegarder les commandes si tu veux
 const ORDERS_FILE = "orders.json";
 if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}));
+
+const PRODUCTS_FILE = path.join(__dirname, "data/products.json");
+
+if (!fs.existsSync(PRODUCTS_FILE)) {
+  fs.writeFileSync(PRODUCTS_FILE, JSON.stringify({}, null, 2));
+}
+
+
+// route
+app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res) => {
+  try {
+    const result = await cloudinary.uploader.upload(req.file.path);
+    fs.unlinkSync(req.file.path);
+    res.json({ imageUrl: result.secure_url });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Upload failed" });
+  }
+});
+
+app.post("/admin/add-product", isAdmin, (req, res) => {
+  const newProduct = req.body;
+
+  const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
+  products[newProduct.id] = newProduct;
+
+  fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+  res.json({ success: true });
+});
+
+
+
+app.get("/api/products", (req, res) => {
+  const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
+  res.json(products);
+});
+
+function isAdmin(req, res, next) {
+  if (req.headers["x-admin-key"] !== process.env.ADMIN_KEY) {
+    return res.status(403).json({ error: "Accès refusé" });
+  }
+  next();
+}
+
+
 
 // Configurer le transporteur mail
 
