@@ -786,6 +786,39 @@ document.querySelector(".prev").addEventListener("click", () => {
   updateImage();
 });
 
+// telephone swipe
+
+let startX = 0;
+let endX = 0;
+
+mainImage.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+mainImage.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const distance = endX - startX;
+
+  // petite marge pour éviter les faux mouvements
+  if (Math.abs(distance) < 50) return;
+
+  if (distance < 0) {
+    // swipe vers la gauche → image suivante
+    currentIndex = (currentIndex + 1) % images.length;
+  } else {
+    // swipe vers la droite → image précédente
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+  }
+
+  updateImage();
+}
+
+
 document.getElementById("category").textContent = product.category;
 
 document.getElementById("addToCart").addEventListener("click", () => {
