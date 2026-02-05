@@ -157,5 +157,40 @@
         "kampala"
       ]
     }
+  },
+  "FasionHp3": {
+    "id": "FasionHp3",
+    "name": "asssa",
+    "category": "Homme",
+    "type": "chaussure",
+    "price": 30,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770335610/ueopoquvvvaqjn7f2ecc.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770335610/ueopoquvvvaqjn7f2ecc.jpg"
+    ],
+    "options": {
+      "size": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
