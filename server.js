@@ -79,7 +79,7 @@ app.post("/admin/add-product", isAdmin, async (req, res) => {
   products[product.id] = product;
   fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
 
-  // 2️⃣ Push to GitHub
+  // 2️⃣ Try GitHub push
   try {
     const { data: fileData } = await octokit.repos.getContent({
       owner: OWNER,
@@ -99,11 +99,12 @@ app.post("/admin/add-product", isAdmin, async (req, res) => {
     });
 
     console.log("✅ Produit ajouté et GitHub mis à jour !");
-    res.json({ success: true });
   } catch (err) {
     console.error("❌ GitHub update failed:", err);
-    res.json({ success: false });
+    // Ne pas bloquer le front-end
   }
+
+  res.json({ success: true });
 });
 
 // Get products
