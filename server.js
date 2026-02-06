@@ -27,7 +27,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-const upload = multer({ dest: "uploads/" });
 
 app.use(cors());
 app.use(express.json());
@@ -52,32 +51,27 @@ function isAdmin(req, res, next) {
 }
 
 // route
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
+
 app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res) => {
-  try {
-    const result = await cloudinary.uploader.upload(req.file.path);
-    fs.unlinkSync(req.file.path);
-    res.json({ imageUrl: result.secure_url });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Upload failed" });
-  }
+  const result = await cloudinary.uploader.upload(req.file.path);
+  fs.unlinkSync(req.file.path);
+  res.json({ imageUrl: result.secure_url });
 });
 
 app.post("/admin/add-product", isAdmin, async (req, res) => {
-  const newProduct = req.body;
+  const products = JSON.parse(fs.readFileSync("products.json", "utf-8"));
+  const p = req.body;
 
-  // lire localement
-  const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
-  products[newProduct.id] = newProduct;
+  products[p.id] = p;
 
-  // sauvegarder localement
-  fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
-
-  // mettre à jour sur GitHub
+  fs.writeFileSync("products.json", JSON.stringify(products, null, 2));
   await updateProductsOnGitHub(products);
 
   res.json({ success: true });
 });
+
 
 
 

@@ -67,55 +67,89 @@
         </a>
       </div>
     </section>
-    <section class="products">
-      <div class="product details" data-id="MAT01">
-        <img
-          src="https://i.pinimg.com/736x/5e/fb/0d/5efb0d628a6278c4f6748c383d6814ef.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$50</div>
-          <button class="details-bttn">Voir produit</button>
-        </div>
-      </div>
-
-      <div class="product details" data-id="MAT02">
-        <img
-          src="https://i.pinimg.com/736x/86/0b/28/860b2871ce09823dbffeee19e846e70d.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$60</div>
-          <button class="details-bttn">Voir produit</button>
-        </div>
-      </div>
-      <div class="product details" data-id="MAT03">
-        <img
-          src="https://i.pinimg.com/736x/fa/f0/a2/faf0a2f2daf53ef00be9a139c82754c0.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$70</div>
-          <button class="details-bttn">Voir produit</button>
-        </div>
-      </div>
-      <div class="product details" data-id="MAT04">
-        <img
-          src="https://i.pinimg.com/736x/f9/f0/9d/f9f09d51d6444b8adc6e2161ae16a7a7.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$150</div>
-          <button class="details-bttn">Voir produit</button>
-        </div>
-      </div>
+    <section class="products" id="productsContainer">
 
     </section>
 
-    <script src="cart.js"></script>
+    <footer>
+      <p>
+        © <span id="year"></span> My Dressing by Amida.<br />All rights
+        reserved.
+      </p>
+    </footer>
+    <script>
+      
+function getCategoryClasses(product) {
+  const classes = [];
+
+  // Add main category
+  if (product.category) {
+    classes.push(product.category.toLowerCase());
+  }
+
+  if (product.type) {
+    classes.push(product.type.toLowerCase())
+  }
+
+  if (product.options?.size) {
+    product.options.size.forEach(size => {
+      classes.push(size.toLowerCase());
+    });
+  }
+
+  if (product.options?.color) {
+    product.options.color.forEach(color => {
+      classes.push(color.toLowerCase());
+    });
+  }
+
+  return classes.join(" "); // <- this is OK here
+}
+
+
+      fetch("/api/products")
+        .then(res => res.json())
+        .then(products => {
+          const container = document.getElementById("productsContainer");
+          Object.values(products)
+            .filter(p => p.category === "Maternite") // filtrage par page
+            .forEach(p => {
+              const div = document.createElement("div");
+              div.className = `product details ${getCategoryClasses(p)}`;
+              div.dataset.id = p.id;
+              div.innerHTML = `
+                <img src="${p.image}" alt="${p.name}" />
+                <div class="info">
+                  <div class="price">$${p.price}</div>
+                  <button onclick="location.href='product.html?id=${p.id}'">Voir produit</button>
+                </div>
+              `;
+              container.appendChild(div);
+            });
+            const categories = {
+                  haut: document.querySelectorAll(".haut"),
+                  bas: document.querySelectorAll(".bas"),
+                  chaussure: document.querySelectorAll(".chaussure"),
+                  accessoires: document.querySelectorAll(".accessoire"),
+                  abaya: document.querySelectorAll(".abaya"),
+                  complet: document.querySelectorAll(".complet"),
+                  habitmuslim: document.querySelectorAll(".habitmuslim"),
+                  maquillage: document.querySelectorAll(".maquillage"),
+                  skincare: document.querySelectorAll(".skincare"),
+                  fragrance: document.querySelectorAll(".fragrance"),
+                  haircare: document.querySelectorAll(".haircare"),
+                  lunette: document.querySelectorAll(".lunettes"),
+                  montre: document.querySelectorAll(".montre"),
+                  sac: document.querySelectorAll(".sac"),
+                  bracha: document.querySelectorAll(".bracha"),
+                  phone: document.querySelectorAll(".phone"),
+
+                };
+        });
+    </script>
     <script src="filter.js"></script>
+    <script src="cart.js"></script>
     <script src="cart-core.js"></script>
-    <script src="product.js"></script>
     <script src="product-link.js"></script>
   </body>
 </html>

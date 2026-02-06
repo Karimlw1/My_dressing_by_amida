@@ -1,65 +1,161 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Admin Upload</title>
+  <meta charset="UTF-8">
+  <title>Admin – My Dressing by Amida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      margin: 0;
+      padding: 0;
+    }
+    .admin {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    input, textarea, button {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      font-size: 14px;
+    }
+    button {
+      background: black;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    button:hover {
+      background: #333;
+    }
+    .preview {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .preview img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #eee;
+    }
+  </style>
 </head>
 <body>
-  
-<h2>Créer un produit</h2>
 
-<input id="id" placeholder="ID produit" />
-<input id="name" placeholder="Nom" />
-<input id="price" type="number" placeholder="Prix" />
-<input id="category" placeholder="Catégorie" />
-<input type="file" id="imageInput" />
-<button id="uploadBtn">Uploader image</button>
+<div class="admin">
+  <h2>Admin – Ajouter un produit</h2>
 
-<p id="imageUrl"></p>
+<div class="grid">
+  <input id="id" placeholder="ID produit (ex: FashionHp10)">
+  <input id="name" placeholder="Nom du produit">
+  <input id="price" type="number" placeholder="Prix">
 
-<button id="saveProduct">Sauvegarder produit</button>
+  <!-- Category for page -->
+  <select id="category">
+    <option value="">Choisir la page</option>
+    <option value="Homme">Homme</option>
+    <option value="Femme">Femme</option>
+    <option value="Beaute&Skincare">Beaute & Skincare</option>
+    <option value="Cadeau">Cadeau</option>
+    <option value="Accessoire">Accessoire</option>
+    <option value="Maternite">Maternite</option>
+    <option value="CadeauSpecial">Cadeau Special</option>
+  </select>
+
+  <!-- Type for filtering -->
+  <select id="type">
+    <option value="">Type de produit</option>
+    <option value="haut">Haut</option>
+    <option value="bas">Bas</option>
+    <option value="chaussure">Chaussure</option>
+    <option value="accessoire">Accessoire</option>
+    <option value="habitmuslim">Habit Muslim</option>
+    <option value="complet">Complet</option>
+    <option value="maquillage">maquillage</option>
+    <option value="fragrance">fragrance</option>
+    <option value="haircare">haircare</option>
+    <option value="Lunettes">Lunettes</option>
+    <option value="Sac">Sac</option>
+    <option value="bracha">bracha</option>
+    <option value="Phone">Phone</option>
+     
+    <!-- ajouter d'autres types si besoin -->
+  </select>
+
+  <input id="sizes" placeholder="Tailles (S, M, L)">
+  <input id="colors" placeholder="Couleurs (Noir, Blanc)">
+  <input id="villes" placeholder="Villes (Kinshasa, Goma)">
+</div>
 
 
+  <h3>Images</h3>
+  <input type="file" id="imageInput" accept="image/*">
+  <button id="uploadBtn">Uploader l’image</button>
 
+  <div class="preview" id="preview"></div>
+
+  <br>
+  <button id="saveProduct">Enregistrer le produit</button>
+</div>
 
 <script>
 const ADMIN_KEY = "1234";
 
-let uploadedImageUrl = "";
-
-document.getElementById("uploadBtn").onclick = async () => {
-  const file = imageInput.files[0];
-  if (!file) return alert("Choisis une image");
-
-  const formData = new FormData();
-  formData.append("image", file);
-
-  const res = await fetch("/admin/upload-image", {
-    method: "POST",
-    headers: {
-      "x-admin-key": ADMIN_KEY
-    },
-    body: formData
-  });
-
-  const data = await res.json();
-  uploadedImageUrl = data.imageUrl;
-  imageUrl.textContent = uploadedImageUrl;
-};
+const idInput = document.getElementById("id");
+const nameInput = document.getElementById("name");
+const priceInput = document.getElementById("price");
+const categoryInput = document.getElementById("category");
+const typeInput = document.getElementById("type");
+const sizesInput = document.getElementById("sizes");
+const colorsInput = document.getElementById("colors");
+const villesInput = document.getElementById("villes");
 
 document.getElementById("saveProduct").onclick = async () => {
-  if (!uploadedImageUrl) return alert("Upload l'image d'abord");
+  if (!idInput || !nameInput || !priceInput || !categoryInput || !typeInput ) {
+    alert("Un champ du formulaire est introuvable dans le HTML");
+    return;
+  }
 
   const product = {
-    id: id.value,
-    name: name.value,
-    category: category.value,
-    price: Number(price.value),
-    image: uploadedImageUrl,
-    images: [uploadedImageUrl],   // compatibilité galerie
-    options: {},
-    lieuDeLIvraison: { ville: ["Kinshasa", "Goma", "Lubumbashi", "Kampala"] }
+    id: idInput.value.trim(),
+    name: nameInput.value.trim(),
+    category: categoryInput.value.trim(),
+    type: typeInput.value, 
+    price: Number(priceInput.value),
+    image: uploadedImages[0],
+    images: uploadedImages,
+    options: {
+      size: sizesInput.value.split(",").map(s => s.trim()).filter(Boolean),
+      color: colorsInput.value.split(",").map(c => c.trim()).filter(Boolean)
+    },
+    lieuDeLIvraison: {
+      ville: villesInput.value.split(",").map(v => v.trim()).filter(Boolean)
+    }
   };
+
+  if (!product.id || !product.name || !product.price) {
+    alert("ID, nom et prix sont obligatoires");
+    return;
+  }
 
   const res = await fetch("/admin/add-product", {
     method: "POST",
@@ -71,9 +167,97 @@ document.getElementById("saveProduct").onclick = async () => {
   });
 
   const data = await res.json();
-  alert("Produit ajouté ✔");
+
+  if (data.success) {
+    alert("Produit ajouté ✔");
+    location.reload();
+  } else {
+    alert("Erreur lors de l'enregistrement");
+  }
 };
+//upload
+
+const imageInput = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
+const uploadedImages = [];
+
+// Supprime une image de uploadedImages et de l'affichage
+function removeImage(index) {
+  uploadedImages.splice(index, 1);
+  renderPreview();
+}
+
+// Affiche toutes les images uploadées en miniature
+function renderPreview() {
+  preview.innerHTML = "";
+  uploadedImages.forEach((url, i) => {
+    const div = document.createElement("div");
+    div.style.position = "relative";
+
+    const img = document.createElement("img");
+    img.src = url;
+    div.appendChild(img);
+
+    const btn = document.createElement("button");
+    btn.textContent = "✖";
+    btn.style.position = "absolute";
+    btn.style.top = "0";
+    btn.style.right = "0";
+    btn.style.background = "rgba(255,0,0,0.7)";
+    btn.style.border = "none";
+    btn.style.color = "white";
+    btn.style.borderRadius = "50%";
+    btn.style.cursor = "pointer";
+    btn.onclick = () => removeImage(i);
+
+    div.appendChild(btn);
+    preview.appendChild(div);
+  });
+}
+
+// Gestion du bouton upload
+document.getElementById("uploadBtn").onclick = async () => {
+  const files = imageInput.files;
+  if (!files.length) return alert("Choisissez une image");
+
+  for (let file of files) {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+      const res = await fetch("/admin/upload-image", {
+        method: "POST",
+        headers: { "x-admin-key": ADMIN_KEY },
+        body: formData
+      });
+
+      const data = await res.json();
+      if (data.imageUrl) {
+        uploadedImages.push(data.imageUrl);
+        renderPreview();
+      } else {
+        console.error("Upload failed:", data);
+      }
+    } catch (err) {
+      console.error("Erreur upload:", err);
+    }
+  }
+
+  // reset input
+  imageInput.value = "";
+};
+
+  console.log({
+  id: idInput?.value,
+  name: nameInput?.value,
+  price: priceInput?.value,
+  category: categoryInput?.value,
+  sizes: sizesInput?.value,
+  colors: colorsInput?.value,
+  villes: villesInput?.value
+});
+
 </script>
+
 </body>
 </html>
-

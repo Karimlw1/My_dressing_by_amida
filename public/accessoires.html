@@ -81,95 +81,9 @@
 
     <p id="pTrie">Trier : <strong id="trieMessage">Tout les article</strong></p>
 
-    <section class="products">
-      <div class="product Sac details" data-id="ACCESS01">
-        <img
-          src="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md photos/femme/access/sacLV.jpeg"
-        />
-        <div class="info">
-          <div class="price">$150</div>
-          <button>
-            Voir produit
-          </button>
-        </div>
-      </div>
+    <section class="products" id="productsContainer">
 
-      <div class="product Sac details" 
-            data-id="ACCESS02">
-        <img
-          src="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md photos/femme/access/sacHERMES.jpeg"
-        />
-        <div class="info">
-          <div class="price">$40</div>
-          <button>
-            Voir produit
-          </button>
-        </div>
-      </div>
-
-      <div class="product chaussure details"  data-id="ACCESS03">
-        <img
-          src="https://i.pinimg.com/736x/82/f2/93/82f2939845c7fb3f46112301d3a577ca.jpg"
-        />
-        <div class="info">
-          <div class="price">$35</div>
-          <button>
-            Voir produit
-          </button>
-        </div>
-      </div>
-
-        <div class="product Sac details" 
-            data-id="ACCESS04">
-        <img
-          src="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md photos/femme/access/sacCELINE.jpeg"
-        />
-        <div class="info">
-          <div class="price">$50</div>
-          <button>
-            Voir produit
-          </button>
-        </div>
-      </div>
-
-      <div class="product Lunettes details"   data-id="ACCESS05"
-            >
-        <img
-          src="https://i.pinimg.com/1200x/31/b0/a8/31b0a8f96f6f64780735a205122313e2.jpg"
-        />
-        <div class="info">
-          <div class="price">$60</div>
-          <button>
-            Voir produit
-          </button>
-        </div>
-      </div>
-
-      <div class="product bracha details" data-id="ACCESS06">
-        <img
-          src="https://i.pinimg.com/1200x/ca/66/19/ca6619dde767a8d8b513bce1fca21cff.jpg"
-        />
-        <div class="info">
-          <div class="price">$25</div>
-          <button>
-            Voir produit
-          </button>
-        </div>
-      </div>
-      <div class="product Sac details" 
-            data-id="ACCESS07">
-        <img
-          src="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/md photos/femme/access/sacPRADA.jpeg"
-        />
-        <div class="info">
-          <div class="price">$80</div>
-          <button>
-            Voir produit
-          </button>
-        </div>
-      </div>
     </section>
-       
 
     <footer>
       <p>
@@ -177,7 +91,76 @@
         reserved.
       </p>
     </footer>
+    <script>
+      
+function getCategoryClasses(product) {
+  const classes = [];
 
+  // Add main category
+  if (product.category) {
+    classes.push(product.category.toLowerCase());
+  }
+
+  if (product.type) {
+    classes.push(product.type.toLowerCase())
+  }
+
+  if (product.options?.size) {
+    product.options.size.forEach(size => {
+      classes.push(size.toLowerCase());
+    });
+  }
+
+  if (product.options?.color) {
+    product.options.color.forEach(color => {
+      classes.push(color.toLowerCase());
+    });
+  }
+
+  return classes.join(" "); // <- this is OK here
+}
+
+
+      fetch("/api/products")
+        .then(res => res.json())
+        .then(products => {
+          const container = document.getElementById("productsContainer");
+          Object.values(products)
+            .filter(p => p.category === "Accessoire") // filtrage par page
+            .forEach(p => {
+              const div = document.createElement("div");
+              div.className = `product details ${getCategoryClasses(p)}`;
+              div.dataset.id = p.id;
+              div.innerHTML = `
+                <img src="${p.image}" alt="${p.name}" />
+                <div class="info">
+                  <div class="price">$${p.price}</div>
+                  <button onclick="location.href='product.html?id=${p.id}'">Voir produit</button>
+                </div>
+              `;
+              container.appendChild(div);
+            });
+            const categories = {
+                  haut: document.querySelectorAll(".haut"),
+                  bas: document.querySelectorAll(".bas"),
+                  chaussure: document.querySelectorAll(".chaussure"),
+                  accessoires: document.querySelectorAll(".accessoire"),
+                  abaya: document.querySelectorAll(".abaya"),
+                  complet: document.querySelectorAll(".complet"),
+                  habitmuslim: document.querySelectorAll(".habitmuslim"),
+                  maquillage: document.querySelectorAll(".maquillage"),
+                  skincare: document.querySelectorAll(".skincare"),
+                  fragrance: document.querySelectorAll(".fragrance"),
+                  haircare: document.querySelectorAll(".haircare"),
+                  lunette: document.querySelectorAll(".lunettes"),
+                  montre: document.querySelectorAll(".montre"),
+                  sac: document.querySelectorAll(".sac"),
+                  bracha: document.querySelectorAll(".bracha"),
+                  phone: document.querySelectorAll(".phone"),
+
+                };
+        });
+    </script>
     <script src="filter.js"></script>
     <script src="cart.js"></script>
     <script src="cart-core.js"></script>

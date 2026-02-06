@@ -7,11 +7,12 @@ messageBox.innerHTML = "Total :" + ` ${document.querySelectorAll('.product').len
 
 // 1. Collect product categories on the page
 
+
 const categories = {
   haut: document.querySelectorAll(".haut"),
   bas: document.querySelectorAll(".bas"),
   chaussure: document.querySelectorAll(".chaussure"),
-  accessoires: document.querySelectorAll(".access"),
+  accessoires: document.querySelectorAll(".accessoire"),
   abaya: document.querySelectorAll(".abaya"),
   complet: document.querySelectorAll(".complet"),
   habitmuslim: document.querySelectorAll(".habitmuslim"),
@@ -19,11 +20,11 @@ const categories = {
   skincare: document.querySelectorAll(".skincare"),
   fragrance: document.querySelectorAll(".fragrance"),
   haircare: document.querySelectorAll(".haircare"),
-  lunette: document.querySelectorAll(".Lunettes"),
-  montre: document.querySelectorAll(".Montre"),
-  sac: document.querySelectorAll(".Sac"),
+  lunette: document.querySelectorAll(".lunettes"),
+  montre: document.querySelectorAll(".montre"),
+  sac: document.querySelectorAll(".sac"),
   bracha: document.querySelectorAll(".bracha"),
-  phone: document.querySelectorAll(".Phone"),
+  phone: document.querySelectorAll(".phone"),
 
 };
 
@@ -42,7 +43,7 @@ const boxes = {
   skincare: document.getElementById("skincare"),
   fragrance: document.getElementById("fragrance"),
   haircare: document.getElementById("haircare"),
-  lunette: document.getElementById("Lunettes"),
+  lunette: document.getElementById("lunettes"),
   montre: document.getElementById("Montre"),
   sac: document.getElementById("Sac"),
   bracha: document.getElementById("bracha"),
@@ -61,9 +62,40 @@ const activeCategories = Object.keys(categories).filter(name => categories[name]
 const pTrie = document.getElementById("pTrie");
 const trieMessage = document.getElementById("trieMessage");
 
+// 5. Update view based on selected filters
+function updateView() {
+  const selected = Object.keys(categories).filter(name => {
+    return boxes[name] && boxes[name].classList.contains("category-active");
+  });
+
+  const allProducts = document.querySelectorAll(".product"); // all products
+
+  if (selected.length === 0) {
+    // no filter: show everything
+    allProducts.forEach(p => p.style.display = "block");
+    trieMessage.textContent = "Total :" + allProducts.length + " articles disponibles";
+    removeEmptyMessage();
+    return;
+  }
+
+  // hide all products first
+  allProducts.forEach(p => p.style.display = "none");
+
+  // reveal only products matching selected categories
+  let anyVisible = false;
+  allProducts.forEach(p => {
+    const pClasses = Array.from(p.classList);
+    if (selected.some(cat => pClasses.includes(cat))) {
+      p.style.display = "block";
+      anyVisible = true;
+    }
+  });
+
+  trieMessage.textContent = anyVisible ? formatMessage(selected) : "Aucun article disponible";
+}
 
 
-// 5. Attach click events
+// 6. Attach click events
 
 Object.keys(categories).forEach(name => {
   const catBox = boxes[name];
@@ -83,39 +115,6 @@ Object.keys(categories).forEach(name => {
     };
   }
 });
-
-
-
-// 6. Update view based on selected filters
-
-function updateView() {
-  const selected = Object.keys(categories).filter(name => {
-    return boxes[name] && boxes[name].classList.contains("category-active");
-  });
-
-  if (selected.length === 0) {
-    showAll();
-    trieMessage.textContent = "Total :" + ` ${document.querySelectorAll('.product').length}` + " articles disponibles";
-    removeEmptyMessage();
-    return;
-  }
-
-  // hide all first
-  Object.keys(categories).forEach(name => {
-    showOrHide(categories[name], false);
-  });
-
-  // reveal selected
-  let anyVisible = false;
-  selected.forEach(name => {
-    categories[name].forEach(el => {
-      el.style.display = "block";
-      anyVisible = true;
-    });
-  });
-
-  trieMessage.textContent = anyVisible ? formatMessage(selected) : "Aucun article disponible";
-}
 
 // select one category at a time
 let lastSelectedBox = null;

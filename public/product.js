@@ -59,6 +59,30 @@ function renderProduct() {
       </select>
     `;
   }
+  function getCategoryClasses(product) {
+  const classes = [];
+
+  // Add main category
+  if (product.category) {
+    classes.push(product.category.toLowerCase());
+  }
+
+  // Add size options as classes
+  if (product.options?.size) {
+    product.options.size.forEach(size => {
+      classes.push(size.toLowerCase());
+    });
+  }
+
+  // Add color options as classes
+  if (product.options?.color) {
+    product.options.color.forEach(color => {
+      classes.push(color.toLowerCase());
+    });
+  }
+
+  return classes.join(" ");
+}
 
   document.getElementById("name").textContent = product.name;
   document.getElementById("price").textContent = product.price + "$";
