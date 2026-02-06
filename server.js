@@ -54,22 +54,17 @@ function isAdmin(req, res, next) {
 const upload = multer({ dest: "uploads/" });
 
 
-app.post("/admin/add-product", async (req, res) => {
-  // 1. Read product data
+app.post("/admin/add-product", isAdmin, async (req, res) => {
   const product = req.body;
 
-  // 2. Add product to your JSON file (or repo)
-  const content = JSON.stringify(product, null, 2);
+  // 1️⃣ Update local products.json
+  const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
+  products[product.id] = product;
+  fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
 
-  // 3. Commit to GitHub
+  // 2️⃣ Push products.json to GitHub
   try {
-    await octokit.repos.createOrUpdateFileContents({
-      owner: "Karimlw1",
-      repo: "My_dressing_by_amida",
-      path: `products/${product.id}.json`, // or your path
-      message: `Add product ${product.name}`,
-      content: Buffer.from(content).toString("base64")
-    });
+    await updateProductsOnGitHub(products);
     res.json({ success: true });
   } catch (err) {
     console.error(err);
