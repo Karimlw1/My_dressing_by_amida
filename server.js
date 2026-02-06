@@ -64,7 +64,7 @@ app.post("/admin/add-product", isAdmin, async (req, res) => {
 
   // 2️⃣ Trigger GitHub Action
   try {
-    await axios.post(
+    await axios.post(  // <- this await is fine, because we're inside an async function
       `https://api.github.com/repos/${OWNER}/${REPO}/dispatches`,
       {
         event_type: "update-products",
