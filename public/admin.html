@@ -6,114 +6,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* === Reset et base === */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(160deg,#f6f7fb,#e9ecef);
-      color: #333;
-    }
-    h2, h3 { font-weight: 700; color: #1a1a1a; letter-spacing: 0.5px; }
+ <style>
+/* === Reset & Base === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f5f5f7;
+  color: #2c2c2c;
+}
 
-    /* === Container principal === */
-    .admin {
-      max-width: 960px;
-      margin: 50px auto;
-      padding: 40px;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
-    }
-    .admin:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+/* === Container principal - premium card === */
+.admin {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+.admin:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
 
-    /* === Formulaire === */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-bottom: 25px;
-    }
-    input, select, textarea {
-      padding: 14px 16px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      font-size: 15px;
-      transition: all 0.2s ease;
-      background: #fafafa;
-      width: 100%;
-    }
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: #555;
-      background: #fff;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    }
+/* === Titles === */
+h2, h3 {
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
 
-    select {
-      appearance: none;
-      background: #fafafa url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path fill='gray' d='M4 6l4 4 4-4z'/></svg>") no-repeat right 12px center;
-      background-size: 12px;
-    }
+/* === Form Grid === */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
 
-    /* === Buttons premium === */
-    button {
-      padding: 14px 24px;
-      border-radius: 12px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      background: linear-gradient(135deg,#111,#444);
-      color: #fff;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    button:hover {
-      background: linear-gradient(135deg,#000,#333);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
+/* === Inputs & Selects === */
+input, select, textarea {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  width: 100%;
+  background: #fafafa;
+  color: #2c2c2c;
+  transition: all 0.2s ease;
+}
+input::placeholder, select::placeholder { color: #888; }
 
-    /* === Preview images === */
-    .preview {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 15px;
-    }
-    .preview div {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 2px solid #eee;
-      transition: transform 0.2s ease;
-    }
-    .preview div:hover { transform: scale(1.05); }
-    .preview img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      display: block;
-    }
-    .preview button {
-      position: absolute;
-      top: 4px;
-      right: 4px;
-      background: rgba(255,0,0,0.8);
-      border-radius: 50%;
-      width: 22px;
-      height: 22px;
-      font-size: 14px;
-      padding: 0;
-    }
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #7a7a7a;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
 
-    /* === Responsive === */
-    @media(max-width:720px) {
-      .grid { grid-template-columns: 1fr; }
-      .preview img { width: 80px; height: 80px; }
-    }
-  </style>
+/* === Select arrow === */
+select {
+  appearance: none;
+  background: #fafafa url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path fill='gray' d='M4 6l4 4 4-4z'/></svg>") no-repeat right 12px center;
+  background-size: 12px;
+  padding-right: 36px;
+}
+
+/* === Buttons === */
+button {
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+button:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* === Image Preview === */
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+.preview div {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.preview div:hover { 
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.preview img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+.preview button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #e74c3c;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+  padding: 0;
+  color: #fff;
+  border: none;
+}
+
+/* === Responsive === */
+@media(max-width:720px) {
+  .grid { grid-template-columns: 1fr; }
+  .preview img { width: 80px; height: 80px; }
+}
+</style>
+
 </head>
 <body>
 
