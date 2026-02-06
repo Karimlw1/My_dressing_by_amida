@@ -189,5 +189,35 @@
         "kampala"
       ]
     }
+  },
+  "FasionHp302": {
+    "id": "FasionHp302",
+    "name": "Karim Abdoul lw",
+    "category": "Homme",
+    "type": "haut",
+    "price": 200,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770353237/bphmhonct3tfyqvca0x6.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770353237/bphmhonct3tfyqvca0x6.jpg"
+    ],
+    "options": {
+      "size": [
+        "a"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
