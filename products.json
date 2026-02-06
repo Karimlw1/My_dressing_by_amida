@@ -1,1 +1,122 @@
-{}
+
+  "Produit1": {
+    "id": "Produit1",
+    "name": "Polo homme",
+    "category": "Homme",
+    "type": "haut",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387219/mydressing_products/nzx3zztpw7wgwjx7dlbc.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387219/mydressing_products/nzx3zztpw7wgwjx7dlbc.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387228/mydressing_products/qyegugheny2n9al29mgj.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387338/mydressing_products/ffrxqtnhtfqcypy3zjv8.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387355/mydressing_products/jkunvk7mwphwl5nqbp1l.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Bleu",
+        "Orange",
+        "Beige"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "GOMA",
+        "Lubumbashi",
+        "Kampala"
+      ]
+    }
+  },
+  "Produit2": {
+    "id": "Produit2",
+    "name": "Sac Ã  main",
+    "category": "Femme",
+    "type": "Sac",
+    "price": 40,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387817/mydressing_products/vgarwaxmhnzgkiyz4mtz.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387817/mydressing_products/vgarwaxmhnzgkiyz4mtz.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387839/mydressing_products/z8pras191fo755acdhuv.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387861/mydressing_products/t0st363dlupwhwwf18b7.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387897/mydressing_products/aaj3ltanbo4sygugelwu.jpg"
+    ],
+    "options": {
+      "size": [],
+      "color": [
+        "Noir",
+        "beige",
+        "bordeaux",
+        "chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit3": {
+    "id": "Produit3",
+    "name": "Sac Ã  main",
+    "category": "Femme",
+    "type": "Sac",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770388729/mydressing_products/od0o99cjwlgnydv0ujob.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770388729/mydressing_products/od0o99cjwlgnydv0ujob.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770388740/mydressing_products/ae2k2xam2vjdzqsnpzxt.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770388751/mydressing_products/thtqgcbehynanuh7cxba.jpg"
+    ],
+    "options": {
+      "size": [],
+      "color": [
+        "Chocolat",
+        "Noir"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit4": {
+    "id": "Produit4",
+    "name": "Sac Ã  main",
+    "category": "Femme",
+    "type": "Sac",
+    "price": 30,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770388966/mydressing_products/nbdewparmlthb9phkoru.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770388966/mydressing_products/nbdewparmlthb9phkoru.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770388987/mydressing_products/azvxru5s1dzfjzvnagdg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770389003/mydressing_products/kb9nsofnhhd1zsvvngap.jpg"
+    ],
+    "options": {
+      "size": [],
+      "color": [
+        "Chocolat",
+        "beige"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  }
+}
