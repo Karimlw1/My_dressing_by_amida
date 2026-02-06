@@ -52,3 +52,19 @@
  .product:hover{
     cursor: pointer;
  }
+.category {
+  position: relative;
+}
+
+.category .count {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  opacity: 0.9;
+}
