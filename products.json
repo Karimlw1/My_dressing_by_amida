@@ -154,5 +154,40 @@
         "kampala"
       ]
     }
+  },
+  "FasionHp300": {
+    "id": "FasionHp300",
+    "name": "bugema",
+    "category": "Accessoire",
+    "type": "chaussure",
+    "price": 100,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770351480/moytu3olktmijmdtjaf5.webp",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770351480/moytu3olktmijmdtjaf5.webp"
+    ],
+    "options": {
+      "size": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
