@@ -53,35 +53,31 @@ function isAdmin(req, res, next) {
 // ROUTES
 // -------------------
 
-// Upload image to Cloudinary
-app.post("/admin/add-product", isAdmin, async (req, res) => {
+// Upload image to Cloudinaryapp.post("/admin/add-product", isAdmin, async (req, res) => {
   const product = req.body;
 
-  // 1️⃣ Update local products.json
+  // 1️⃣ Save locally
   const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
   products[product.id] = product;
   fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
 
-  // 2️⃣ Upload images to Cloudinary (if needed)
-  // Your Cloudinary logic stays as is
-
-  // 3️⃣ Trigger GitHub Action
+  // 2️⃣ Trigger GitHub Action
   try {
     await axios.post(
       `https://api.github.com/repos/${OWNER}/${REPO}/dispatches`,
       {
         event_type: "update-products",
-        client_payload: { products: JSON.stringify(products, null, 2) }
+        client_payload: { products: JSON.stringify(products, null, 2) },
       },
       {
         headers: {
           Accept: "application/vnd.github+json",
-          Authorization: `token ${process.env.GITHUB_TOKEN}`
-        }
+          Authorization: `token ${process.env.GITHUB_TOKEN}`,
+        },
       }
     );
 
-    console.log("✅ GitHub Action triggered");
+    console.log("✅ GitHub Action triggered successfully");
     res.json({ success: true });
   } catch (err) {
     console.error("❌ Failed to trigger GitHub Action:", err.response?.data || err.message);
