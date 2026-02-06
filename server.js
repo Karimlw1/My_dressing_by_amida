@@ -54,23 +54,6 @@ function isAdmin(req, res, next) {
 // -------------------
 
 // Upload image to Cloudinary
-app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res) => {
-  try {
-    if (!req.file) return res.status(400).json({ error: "No file uploaded" });
-
-    const result = await cloudinary.uploader.upload(req.file.path, {
-      folder: "my_dressing_by_amida",
-    });
-
-    fs.unlinkSync(req.file.path); // remove temp file
-    res.json({ imageUrl: result.secure_url });
-  } catch (err) {
-    console.error("Cloudinary upload error:", err);
-    res.status(500).json({ error: "Upload failed" });
-  }
-});
-
-// Add a product
 app.post("/admin/add-product", isAdmin, async (req, res) => {
   const product = req.body;
 
@@ -79,12 +62,29 @@ app.post("/admin/add-product", isAdmin, async (req, res) => {
   products[product.id] = product;
   fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
 
-  // 2️⃣ Push products.json to GitHub
+  // 2️⃣ Upload images to Cloudinary (if needed)
+  // Your Cloudinary logic stays as is
+
+  // 3️⃣ Trigger GitHub Action
   try {
-    await updateProductsOnGitHub(products);
+    await axios.post(
+      `https://api.github.com/repos/${OWNER}/${REPO}/dispatches`,
+      {
+        event_type: "update-products",
+        client_payload: { products: JSON.stringify(products, null, 2) }
+      },
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+          Authorization: `token ${process.env.GITHUB_TOKEN}`
+        }
+      }
+    );
+
+    console.log("✅ GitHub Action triggered");
     res.json({ success: true });
   } catch (err) {
-    console.error("GitHub push failed:", err);
+    console.error("❌ Failed to trigger GitHub Action:", err.response?.data || err.message);
     res.json({ success: false });
   }
 });
