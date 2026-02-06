@@ -7,33 +7,42 @@ const path = require("path");
 const cors = require("cors");
 const cloudinary = require("cloudinary").v2;
 const multer = require("multer");
+const axios = require("axios");
 const { Octokit } = require("@octokit/rest");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// -------------------
 // GitHub setup
+// -------------------
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const OWNER = "karimlw1";
 const REPO = "My_dressing_by_amida";
 const BRANCH = "main";
 
+// -------------------
 // Cloudinary setup
+// -------------------
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+// -------------------
 // Middleware
+// -------------------
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Multer for file uploads
+// Multer for uploads
 const upload = multer({ dest: "uploads/" });
 
+// -------------------
 // Files
+// -------------------
 const PRODUCTS_FILE = path.join(__dirname, "products.json");
 const ORDERS_FILE = path.join(__dirname, "orders.json");
 
@@ -41,7 +50,9 @@ const ORDERS_FILE = path.join(__dirname, "orders.json");
 if (!fs.existsSync(PRODUCTS_FILE)) fs.writeFileSync(PRODUCTS_FILE, JSON.stringify({}, null, 2));
 if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}));
 
+// -------------------
 // Admin check
+// -------------------
 function isAdmin(req, res, next) {
   if (req.headers["x-admin-key"] !== process.env.ADMIN_KEY) {
     return res.status(403).json({ error: "Accès refusé" });
@@ -50,10 +61,28 @@ function isAdmin(req, res, next) {
 }
 
 // -------------------
-// ROUTES
+// Routes
 // -------------------
 
 // Upload image to Cloudinary
+app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res) => {
+  try {
+    if (!req.file) return res.status(400).json({ error: "Aucun fichier reçu" });
+
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "my_dressing_by_amida",
+    });
+
+    fs.unlinkSync(req.file.path); // remove temp file
+
+    res.json({ imageUrl: result.secure_url });
+  } catch (err) {
+    console.error("❌ Upload image failed:", err);
+    res.status(500).json({ error: "Impossible d'uploader l'image" });
+  }
+});
+
+// Add product
 app.post("/admin/add-product", isAdmin, async (req, res) => {
   const product = req.body;
 
@@ -64,7 +93,7 @@ app.post("/admin/add-product", isAdmin, async (req, res) => {
 
   // 2️⃣ Trigger GitHub Action
   try {
-    await axios.post(  // <- this await is fine, because we're inside an async function
+    await axios.post(
       `https://api.github.com/repos/${OWNER}/${REPO}/dispatches`,
       {
         event_type: "update-products",
