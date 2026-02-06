@@ -47,7 +47,7 @@ if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}
 
 function isAdmin(req, res, next) {
   if (req.headers["x-admin-key"] !== process.env.ADMIN_KEY) {
-    return res.status(403).json({ error: "Accès refusé" });
+    return res.status(403).json({ error: "Accès refusé / you are not admin" });
   }
   next();
 }
