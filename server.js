@@ -113,6 +113,15 @@ app.get("/api/products", (req, res) => {
   res.json(products);
 });
 
+// Télécharger products.json depuis Render
+app.get("/admin/download-products", isAdmin, (req, res) => {
+  res.download(PRODUCTS_FILE, "products.json", (err) => {
+    if (err) console.error("Erreur téléchargement:", err);
+  });
+});
+
+
+
 // Orders
 app.post("/create-order", (req, res) => {
   const cart = req.body.cart;
