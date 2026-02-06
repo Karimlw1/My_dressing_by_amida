@@ -1,39 +1,4 @@
 {
-  "FasionHp1": {
-    "id": "FasionHp1",
-    "name": "karim",
-    "category": "Homme",
-    "type": "haut",
-    "price": 10,
-    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770341386/bzoca2gsnk6yfwecxmqo.jpg",
-    "images": [
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770341386/bzoca2gsnk6yfwecxmqo.jpg"
-    ],
-    "options": {
-      "size": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL",
-        "XXXL"
-      ],
-      "color": [
-        "Noir",
-        "Blanc",
-        "Bleu",
-        "Rouge"
-      ]
-    },
-    "lieuDeLIvraison": {
-      "ville": [
-        "kinshasa",
-        "goma",
-        "lubumbashi",
-        "kampala"
-      ]
-    }
-  },
   "accessp1": {
     "id": "accessp1",
     "name": "asssa",
@@ -46,41 +11,6 @@
     ],
     "options": {
       "size": [],
-      "color": [
-        "Noir",
-        "Blanc",
-        "Bleu",
-        "Rouge"
-      ]
-    },
-    "lieuDeLIvraison": {
-      "ville": [
-        "kinshasa",
-        "goma",
-        "lubumbashi",
-        "kampala"
-      ]
-    }
-  },
-  "FasionHp3": {
-    "id": "FasionHp3",
-    "name": "pentalon",
-    "category": "Homme",
-    "type": "bas",
-    "price": 90,
-    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770341673/dduw5mtygejklqphastd.jpg",
-    "images": [
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770341673/dduw5mtygejklqphastd.jpg"
-    ],
-    "options": {
-      "size": [
-        "25",
-        "26",
-        "27",
-        "28",
-        "29",
-        "30"
-      ],
       "color": [
         "Noir",
         "Blanc",
@@ -203,6 +133,41 @@
     "options": {
       "size": [
         "a"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
+  },
+  "FasionHp3013": {
+    "id": "FasionHp3013",
+    "name": "fcc_tutor",
+    "category": "Femme",
+    "type": "haut",
+    "price": 200,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770353685/xsq43obbii1zf9tdtzdi.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770353685/xsq43obbii1zf9tdtzdi.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
       ],
       "color": [
         "Noir",
