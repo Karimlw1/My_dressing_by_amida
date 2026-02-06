@@ -38,7 +38,7 @@
   "Produit2": {
     "id": "Produit2",
     "name": "Sac Ã  main",
-    "category": "Femme",
+    "category": "Accessoire",
     "type": "Sac",
     "price": 40,
     "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770387817/mydressing_products/vgarwaxmhnzgkiyz4mtz.jpg",
@@ -68,7 +68,7 @@
   "Produit3": {
     "id": "Produit3",
     "name": "Sac Ã  main",
-    "category": "Femme",
+    "category": "Accessoire",
     "type": "Sac",
     "price": 50,
     "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770388729/mydressing_products/od0o99cjwlgnydv0ujob.jpg",
@@ -95,7 +95,7 @@
   "Produit4": {
     "id": "Produit4",
     "name": "Sac Ã  main",
-    "category": "Femme",
+    "category": "Accessoire",
     "type": "Sac",
     "price": 30,
     "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770388966/mydressing_products/nbdewparmlthb9phkoru.jpg",
