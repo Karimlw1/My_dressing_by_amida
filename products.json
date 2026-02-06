@@ -124,5 +124,35 @@
         "kampala"
       ]
     }
+  },
+  "FasionHp100": {
+    "id": "FasionHp100",
+    "name": "bugema_admi",
+    "category": "Femme",
+    "type": "accessoire",
+    "price": 100,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770348441/m8sxyhmrh8gwzqnbfwwa.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770348441/m8sxyhmrh8gwzqnbfwwa.jpg"
+    ],
+    "options": {
+      "size": [
+        "S"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
