@@ -113,17 +113,45 @@ app.get("/api/products", (req, res) => {
   res.json(products);
 });
 
-// Delete a product
-app.delete("/admin/delete-product/:id", isAdmin, (req, res) => {
+// Supprimer un produit
+app.delete("/admin/delete-product/:id", isAdmin, async (req, res) => {
   const productId = req.params.id;
-  const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
+
+  // 1️⃣ Charger les produits
+  let products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
 
   if (!products[productId]) {
     return res.status(404).json({ error: "Produit introuvable" });
   }
 
-  delete products[productId]; // remove it
+  // 2️⃣ Supprimer le produit
+  delete products[productId];
   fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+
+  // 3️⃣ Tenter la mise à jour sur GitHub (si besoin)
+  try {
+    const { data: fileData } = await octokit.repos.getContent({
+      owner: OWNER,
+      repo: REPO,
+      path: "products.json",
+      ref: BRANCH,
+    });
+
+    await octokit.repos.createOrUpdateFileContents({
+      owner: OWNER,
+      repo: REPO,
+      path: "products.json",
+      message: `Suppression du produit ${productId}`,
+      content: Buffer.from(JSON.stringify(products, null, 2)).toString("base64"),
+      sha: fileData.sha,
+      branch: BRANCH,
+    });
+
+    console.log("✅ Produit supprimé et GitHub mis à jour !");
+  } catch (err) {
+    console.error("❌ GitHub update failed:", err);
+    // Ne pas bloquer le front-end
+  }
 
   res.json({ success: true, message: `Produit ${productId} supprimé ✔` });
 });
