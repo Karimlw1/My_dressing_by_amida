@@ -1,34 +1,13 @@
-// 0. Show total stock
+// ===============================
+// 1. Get UI elements
+// ===============================
+const pTrie = document.getElementById("pTrie");
+const trieMessage = document.getElementById("trieMessage");
 
-const messageBox = document.getElementById("trieMessage");
-messageBox.innerHTML = "Total :" + ` ${document.querySelectorAll('.product').length}` + " articles disponibles";
-
-
-// 1. Collect product categories on the page
-
-const categories = {
-  haut: document.querySelectorAll(".haut"),
-  bas: document.querySelectorAll(".bas"),
-  chaussure: document.querySelectorAll(".chaussure"),
-  accessoires: document.querySelectorAll(".accessoire"),
-  abaya: document.querySelectorAll(".abaya"),
-  complet: document.querySelectorAll(".complet"),
-  habitmuslim: document.querySelectorAll(".habitmuslim"),
-  maquillage: document.querySelectorAll(".maquillage"),
-  skincare: document.querySelectorAll(".skincare"),
-  fragrance: document.querySelectorAll(".fragrance"),
-  haircare: document.querySelectorAll(".haircare"),
-  lunette: document.querySelectorAll(".lunettes"),
-  montre: document.querySelectorAll(".montre"),
-  sac: document.querySelectorAll(".sac"),
-  bracha: document.querySelectorAll(".bracha"),
-  phone: document.querySelectorAll(".phone"),
-
-};
-
-
-// 2. Collect box buttons by ID
-
+// ===============================
+// 2. Get category buttons
+// (IDs must match HTML)
+// ===============================
 const boxes = {
   haut: document.getElementById("haut"),
   bas: document.getElementById("bas"),
@@ -41,108 +20,130 @@ const boxes = {
   skincare: document.getElementById("skincare"),
   fragrance: document.getElementById("fragrance"),
   haircare: document.getElementById("haircare"),
-  lunette: document.getElementById("Lunettes"),
-  montre: document.getElementById("Montre"),
-  sac: document.getElementById("Sac"),
+  lunette: document.getElementById("lunette"),
+  montre: document.getElementById("montre"),
+  sac: document.getElementById("sac"),
   bracha: document.getElementById("bracha"),
-  phone: document.getElementById("Phone"),
+  phone: document.getElementById("phone"),
 };
 
+// ===============================
+// 3. Get products by category
+// (always fresh from the DOM)
+// ===============================
+function getCategories() {
+  return {
+    haut: document.querySelectorAll(".haut"),
+    bas: document.querySelectorAll(".bas"),
+    chaussure: document.querySelectorAll(".chaussure"),
+    accessoires: document.querySelectorAll(".accessoire"),
+    abaya: document.querySelectorAll(".abaya"),
+    complet: document.querySelectorAll(".complet"),
+    habitmuslim: document.querySelectorAll(".habitmuslim"),
+    maquillage: document.querySelectorAll(".maquillage"),
+    skincare: document.querySelectorAll(".skincare"),
+    fragrance: document.querySelectorAll(".fragrance"),
+    haircare: document.querySelectorAll(".haircare"),
+    lunette: document.querySelectorAll(".lunettes"),
+    montre: document.querySelectorAll(".montre"),
+    sac: document.querySelectorAll(".sac"),
+    bracha: document.querySelectorAll(".bracha"),
+    phone: document.querySelectorAll(".phone"),
+  };
+}
 
-// 3. Detect which categories exist on page
+// ===============================
+// 4. Show total stock
+// ===============================
+function showTotalStock() {
+  const totalProducts = document.querySelectorAll(".product").length;
+  trieMessage.textContent = "Total : " + totalProducts + " articles disponibles";
+}
 
-const activeCategories = Object.keys(categories).filter(name => categories[name].length > 0);
-
-
-
-// 4. UI message areas
-
-const pTrie = document.getElementById("pTrie");
-const trieMessage = document.getElementById("trieMessage");
-
-// 5. Update view based on selected filters
-
+// ===============================
+// 5. Update products when clicking category
+// ===============================
 function updateView() {
-  const selected = Object.keys(categories).filter(name => {
+  const categories = getCategories();
+
+  // Find selected categories
+  const selectedCategories = Object.keys(categories).filter(name => {
     return boxes[name] && boxes[name].classList.contains("category-active");
   });
 
-  if (selected.length === 0) {
-    showAll();
-    trieMessage.textContent = "Total :" + ` ${document.querySelectorAll('.product').length}` + " articles disponibles";
+  // Hide all products first
+  Object.keys(categories).forEach(name => {
+    categories[name].forEach(item => {
+      item.style.display = "none";
+    });
+  });
+
+  // If nothing selected, show everything
+  if (selectedCategories.length === 0) {
+    showAllProducts();
+    showTotalStock();
+    refreshCategoryStockUI()
     removeEmptyMessage();
     return;
   }
 
-  // hide all first
-  Object.keys(categories).forEach(name => {
-    showOrHide(categories[name], false);
-  });
+  let hasVisibleProduct = false;
 
-  // reveal selected
-  let anyVisible = false;
-  selected.forEach(name => {
-    categories[name].forEach(el => {
-      el.style.display = "block";
-      anyVisible = true;
+  // Show only selected categories
+  selectedCategories.forEach(name => {
+    categories[name].forEach(item => {
+      item.style.display = "block";
+      hasVisibleProduct = true;
     });
   });
 
-  trieMessage.textContent = anyVisible ? formatMessage(selected) : "Aucun article disponible";
+  trieMessage.textContent = hasVisibleProduct
+    ? formatMessage(selectedCategories)
+    : "Aucun article disponible";
 }
 
-// 6. Attach click events
+// ===============================
+// 6. Handle button clicks
+// (only one active at a time)
+// ===============================
+let lastActiveBox = null;
 
-Object.keys(categories).forEach(name => {
-  const catBox = boxes[name];
-  const catItems = categories[name];
-
-  if (!catBox) return;
-
-  if (catItems.length === 0) {
-    // disable visual
-    catBox.style.opacity = "0.3";
-    catBox.style.cursor = "not-allowed";
-    catBox.onclick = emptyStockMessage;
-  } else {
-    catBox.onclick = () => {
-      catBox.classList.toggle("category-active");
-      updateView();
-    };
-  }
-});
-
-// select one category at a time
-let lastSelectedBox = null;
 Object.keys(boxes).forEach(name => {
   const box = boxes[name];
   if (!box) return;
-    box.onclick = () => {
-        if (lastSelectedBox && lastSelectedBox !== box) {
-            lastSelectedBox.classList.remove("category-active");
-        }
-        box.classList.toggle("category-active");
-        lastSelectedBox = box.classList.contains("category-active") ? box : null;
-        updateView();
-    };
+
+  box.onclick = function () {
+    if (lastActiveBox && lastActiveBox !== box) {
+      lastActiveBox.classList.remove("category-active");
+    }
+
+    box.classList.toggle("category-active");
+
+    if (box.classList.contains("category-active")) {
+      lastActiveBox = box;
+    } else {
+      lastActiveBox = null;
+    }
+
+    updateView();
+  };
 });
 
-
+// ===============================
 // 7. Helper functions
-
-function showOrHide(list, show) {
-  list.forEach(el => el.style.display = show ? "block" : "none");
-}
-
-function showAll() {
+// ===============================
+function showAllProducts() {
+  const categories = getCategories();
   Object.keys(categories).forEach(name => {
-    categories[name].forEach(el => el.style.display = "block");
+    categories[name].forEach(item => {
+      item.style.display = "block";
+    });
   });
 }
 
 function removeEmptyMessage() {
-  const oldMsg = document.getElementById("emptyStock");
-  if (oldMsg) oldMsg.remove();
+  const msg = document.getElementById("emptyStock");
+  if (msg) msg.remove();
 }
 
 function emptyStockMessage() {
@@ -155,11 +156,32 @@ function emptyStockMessage() {
   pTrie.appendChild(message);
 }
 
+// ===============================
+// 8. Disable empty categories
+// ===============================
+function refreshCategoryStockUI() {
+  const categories = getCategories();
 
-// 8. Format display message
+  Object.keys(boxes).forEach(name => {
+    const box = boxes[name];
+    if (!box) return;
 
-function formatMessage(arr) {
-  const namesMap = {
+    if (categories[name].length === 0) {
+      box.style.opacity = "0.3";
+      box.style.cursor = "not-allowed";
+      box.onclick = emptyStockMessage;
+    } else {
+      box.style.opacity = "1";
+      box.style.cursor = "pointer";
+    }
+  });
+}
+
+// ===============================
+// 9. Format the message text
+// ===============================
+function formatMessage(selected) {
+  const names = {
     haut: "Haut",
     bas: "Bas",
     chaussure: "Chaussures",
@@ -170,20 +192,34 @@ function formatMessage(arr) {
     maquillage: "Maquillage",
     skincare: "Skin Care",
     fragrance: "Parfums",
-    haircare: "hair Care",
+    haircare: "Hair Care",
     lunette: "Lunettes",
-    montre: "Montre",
-    sac: "Sac",
-    bracha: "bracelet $ chainettes",
-    phone: "Phone",
+    montre: "Montres",
+    sac: "Sacs",
+    bracha: "Bracelets & Chaînettes",
+    phone: "Téléphones",
   };
 
-  const translated = arr.map(name => namesMap[name]);
-  const total = arr.reduce((acc, name) => acc + categories[name].length, 0);
+  const translatedNames = selected.map(name => names[name]);
+  const categories = getCategories();
 
-  if (translated.length === 1) return `${translated[0]} seulement, ${total} articles`;
-  if (translated.length === 2) return `${translated[0]} et ${translated[1]} seulement, ${total} articles`;
+  let total = 0;
+  selected.forEach(name => {
+    total += categories[name].length;
+  });
 
-  return `${translated.join(", ")} seulement, ${total} articles`;
+  if (translatedNames.length === 1) {
+    return `${translatedNames[0]} seulement, ${total} articles`;
+  }
+
+  if (translatedNames.length === 2) {
+    return `${translatedNames[0]} et ${translatedNames[1]} seulement, ${total} articles`;
+  }
+
+  return `${translatedNames.join(", ")} seulement, ${total} articles`;
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  refreshCategoryStockUI();
+  showTotalStock();
+});

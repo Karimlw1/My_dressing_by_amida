@@ -9,11 +9,12 @@ fetch("/api/products")
   .then(data => {
     PRODUCTS = data;
     initProduct();
+    refreshCategoryStockUI()
   });
 
-function initProduct() {
+  function initProduct() {
   if (!id) {
-    alert("ID produit manquant dans l'URL");
+    console.log("ID produit manquant dans l'URL");
     return;
   }
 
@@ -26,7 +27,13 @@ function initProduct() {
     return;
   }
 
+  // Sécurité: injecter l'id si absent dans le JSON
+  if (!product.id) {
+    product.id = id;
+  }
+
   renderProduct();
+  
 }
 
 function renderProduct() {
@@ -51,6 +58,7 @@ function renderProduct() {
     `;
   }
 
+
   if (product.lieuDeLIvraison?.ville) {
     lieuDeLIvraisonContainer.innerHTML += `
       <label>Choisissez le lieu de livraison :</label>
@@ -59,34 +67,12 @@ function renderProduct() {
       </select>
     `;
   }
-  function getCategoryClasses(product) {
-  const classes = [];
-
-  // Add main category
-  if (product.category) {
-    classes.push(product.category.toLowerCase());
-  }
-
-  // Add size options as classes
-  if (product.options?.size) {
-    product.options.size.forEach(size => {
-      classes.push(size.toLowerCase());
-    });
-  }
-
-  // Add color options as classes
-  if (product.options?.color) {
-    product.options.color.forEach(color => {
-      classes.push(color.toLowerCase());
-    });
-  }
-
-  return classes.join(" ");
-}
 
   document.getElementById("name").textContent = product.name;
   document.getElementById("price").textContent = product.price + "$";
   document.getElementById("category").textContent = product.category;
+
+  document.getElementById("product-id").textContent = `ID: ${product.id}`;
 
   const mainImage = document.getElementById("mainImage");
   const thumbs = document.getElementById("thumbs");

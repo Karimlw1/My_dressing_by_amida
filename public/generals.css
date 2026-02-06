@@ -1,11 +1,12 @@
  :root {
      --fa-style-family-brands: "Font Awesome 6 Brands";
      --fa-font-brands: normal 400 1em / 1 "Font Awesome 6 Brands";
-     background-color: black;
+        background-color: black;
+
  }
 
  html {
-     max-width: 100%;
+     max-width: 700px;
      justify-self: center;
  }
 
@@ -61,6 +62,7 @@
     font-variant-numeric: oldstyle-nums;
     background-color: #ffffff;
         justify-items: center;
+    max-width: 517px;
 }
 
 
