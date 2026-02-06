@@ -82,7 +82,7 @@ function sendCartToAdmin() {
     return;
   }
 
-  const phone = "256788064469";
+  const phone = "243986007232";
 
   // 1️⃣ Open a blank window (Safari allows this)
   const popup = window.open("", "_blank");
