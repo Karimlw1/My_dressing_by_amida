@@ -7,42 +7,33 @@ const path = require("path");
 const cors = require("cors");
 const cloudinary = require("cloudinary").v2;
 const multer = require("multer");
-const axios = require("axios");
 const { Octokit } = require("@octokit/rest");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// -------------------
 // GitHub setup
-// -------------------
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const OWNER = "karimlw1";
 const REPO = "My_dressing_by_amida";
 const BRANCH = "main";
 
-// -------------------
 // Cloudinary setup
-// -------------------
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// -------------------
 // Middleware
-// -------------------
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Multer for uploads
+// Multer for file uploads
 const upload = multer({ dest: "uploads/" });
 
-// -------------------
 // Files
-// -------------------
 const PRODUCTS_FILE = path.join(__dirname, "products.json");
 const ORDERS_FILE = path.join(__dirname, "orders.json");
 
@@ -50,9 +41,7 @@ const ORDERS_FILE = path.join(__dirname, "orders.json");
 if (!fs.existsSync(PRODUCTS_FILE)) fs.writeFileSync(PRODUCTS_FILE, JSON.stringify({}, null, 2));
 if (!fs.existsSync(ORDERS_FILE)) fs.writeFileSync(ORDERS_FILE, JSON.stringify({}));
 
-// -------------------
 // Admin check
-// -------------------
 function isAdmin(req, res, next) {
   if (req.headers["x-admin-key"] !== process.env.ADMIN_KEY) {
     return res.status(403).json({ error: "Accès refusé" });
@@ -61,24 +50,18 @@ function isAdmin(req, res, next) {
 }
 
 // -------------------
-// Routes
+// ROUTES
 // -------------------
 
 // Upload image to Cloudinary
 app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res) => {
   try {
-    if (!req.file) return res.status(400).json({ error: "Aucun fichier reçu" });
-
-    const result = await cloudinary.uploader.upload(req.file.path, {
-      folder: "my_dressing_by_amida",
-    });
-
+    const result = await cloudinary.uploader.upload(req.file.path, { folder: "mydressing" });
     fs.unlinkSync(req.file.path); // remove temp file
-
     res.json({ imageUrl: result.secure_url });
   } catch (err) {
-    console.error("❌ Upload image failed:", err);
-    res.status(500).json({ error: "Impossible d'uploader l'image" });
+    console.error("Cloudinary upload error:", err);
+    res.status(500).json({ error: "Upload failed" });
   }
 });
 
@@ -91,40 +74,7 @@ app.post("/admin/add-product", isAdmin, async (req, res) => {
   products[product.id] = product;
   fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
 
-  // 2️⃣ Trigger GitHub Action
-  try {
-    await axios.post(
-      `https://api.github.com/repos/${OWNER}/${REPO}/dispatches`,
-      {
-        event_type: "update-products",
-        client_payload: { products: JSON.stringify(products, null, 2) },
-      },
-      {
-        headers: {
-          Accept: "application/vnd.github+json",
-          Authorization: `token ${process.env.GITHUB_TOKEN}`,
-        },
-      }
-    );
-
-    console.log("✅ GitHub Action triggered successfully");
-    res.json({ success: true });
-  } catch (err) {
-    console.error("❌ Failed to trigger GitHub Action:", err.response?.data || err.message);
-    res.json({ success: false });
-  }
-});
-
-// Get all products
-app.get("/api/products", (req, res) => {
-  const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
-  res.json(products);
-});
-
-// -------------------
-// GitHub helper
-// -------------------
-async function updateProductsOnGitHub(newProducts) {
+  // 2️⃣ Push to GitHub
   try {
     const { data: fileData } = await octokit.repos.getContent({
       owner: OWNER,
@@ -133,23 +83,29 @@ async function updateProductsOnGitHub(newProducts) {
       ref: BRANCH,
     });
 
-    const sha = fileData.sha;
-
     await octokit.repos.createOrUpdateFileContents({
       owner: OWNER,
       repo: REPO,
       path: "products.json",
-      message: "Ajout d'un nouveau produit via admin",
-      content: Buffer.from(JSON.stringify(newProducts, null, 2)).toString("base64"),
-      sha,
+      message: `Ajout/maj produit ${product.name}`,
+      content: Buffer.from(JSON.stringify(products, null, 2)).toString("base64"),
+      sha: fileData.sha,
       branch: BRANCH,
     });
 
-    console.log("✅ products.json mis à jour sur GitHub !");
+    console.log("✅ products.json pushed to GitHub!");
+    res.json({ success: true });
   } catch (err) {
-    console.error("❌ Erreur GitHub:", err);
+    console.error("❌ GitHub push failed:", err);
+    res.status(500).json({ success: false, error: err.message });
   }
-}
+});
+
+// Get all products
+app.get("/api/products", (req, res) => {
+  const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
+  res.json(products);
+});
 
 // -------------------
 // Orders
@@ -194,16 +150,12 @@ app.get("/order/:id", (req, res) => {
   res.send(html);
 });
 
-// -------------------
 // Serve home page
-// -------------------
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// -------------------
 // Start server
-// -------------------
 app.listen(PORT, () => {
   console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
