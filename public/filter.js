@@ -1,164 +1,183 @@
-// 0. Show total stock
-const messageBox = document.getElementById("trieMessage");
-messageBox.innerHTML = "Total : " + document.querySelectorAll(".product").length + " articles disponibles";
+document.addEventListener("DOMContentLoaded", () => {
 
-// 1. Collect product categories on the page
-const categories = {
-  haut: document.querySelectorAll(".haut"),
-  bas: document.querySelectorAll(".bas"),
-  chaussure: document.querySelectorAll(".chaussure"),
-  accessoires: document.querySelectorAll(".accessoire"),
-  abaya: document.querySelectorAll(".abaya"),
-  complet: document.querySelectorAll(".complet"),
-  habitmuslim: document.querySelectorAll(".habitmuslim"),
-  maquillage: document.querySelectorAll(".maquillage"),
-  skincare: document.querySelectorAll(".skincare"),
-  fragrance: document.querySelectorAll(".fragrance"),
-  haircare: document.querySelectorAll(".haircare"),
-  lunette: document.querySelectorAll(".lunettes"),
-  montre: document.querySelectorAll(".montre"),
-  sac: document.querySelectorAll(".sac"),
-  bracha: document.querySelectorAll(".bracha"),
-  phone: document.querySelectorAll(".phone"),
-};
+  // 0. Show total stock
+  const messageBox = document.getElementById("trieMessage");
+  const pTrie = document.getElementById("pTrie");
 
-// 2. Collect box buttons by ID
-const boxes = {
-  haut: document.getElementById("haut"),
-  bas: document.getElementById("bas"),
-  chaussure: document.getElementById("chaussure"),
-  accessoires: document.getElementById("accessoire"),
-  abaya: document.getElementById("abaya"),
-  complet: document.getElementById("complet"),
-  habitmuslim: document.getElementById("habitmuslim"),
-  maquillage: document.getElementById("maquillage"),
-  skincare: document.getElementById("skincare"),
-  fragrance: document.getElementById("fragrance"),
-  haircare: document.getElementById("haircare"),
-  lunette: document.getElementById("lunettes"),
-  montre: document.getElementById("Montre"),
-  sac: document.getElementById("Sac"),
-  bracha: document.getElementById("bracha"),
-  phone: document.getElementById("Phone"),
-};
+  // 1. Collect product categories on the page
+  const categories = {
+    haut: document.querySelectorAll(".haut"),
+    bas: document.querySelectorAll(".bas"),
+    chaussure: document.querySelectorAll(".chaussure"),
+    accessoires: document.querySelectorAll(".accessoire"),
+    abaya: document.querySelectorAll(".abaya"),
+    complet: document.querySelectorAll(".complet"),
+    habitmuslim: document.querySelectorAll(".habitmuslim"),
+    maquillage: document.querySelectorAll(".maquillage"),
+    skincare: document.querySelectorAll(".skincare"),
+    fragrance: document.querySelectorAll(".fragrance"),
+    haircare: document.querySelectorAll(".haircare"),
+    lunette: document.querySelectorAll(".lunettes"),
+    montre: document.querySelectorAll(".montre"),
+    sac: document.querySelectorAll(".sac"),
+    bracha: document.querySelectorAll(".bracha"),
+    phone: document.querySelectorAll(".phone"),
+  };
 
-// 3. UI message areas
-const pTrie = document.getElementById("pTrie");
-const trieMessage = document.getElementById("trieMessage");
-
-// --------- Badge init (GLOBAL stock only) ---------
-Object.keys(categories).forEach(name => {
-  const box = boxes[name];
-  if (!box) return;
-
-  const count = categories[name].length;
-
-  let badge = box.querySelector(".count");
-  if (!badge) {
-    badge = document.createElement("span");
-    badge.className = "count";
-    box.appendChild(badge);
-  }
-
-  badge.textContent = count;
-  badge.style.background = count === 0 ? "#b00020" : "#111";
-
-  box.style.opacity = count === 0 ? "0.3" : "1";
-  box.style.cursor = count === 0 ? "not-allowed" : "pointer";
-});
-
-// --------- Core filter logic ---------
-
-function updateView() {
-  const selected = Object.keys(categories).filter(name =>
-    boxes[name] && boxes[name].classList.contains("category-active")
-  );
+  // 2. Collect box buttons by ID
+  const boxes = {
+    haut: document.getElementById("haut"),
+    bas: document.getElementById("bas"),
+    chaussure: document.getElementById("chaussure"),
+    accessoires: document.getElementById("accessoire"),
+    abaya: document.getElementById("abaya"),
+    complet: document.getElementById("complet"),
+    habitmuslim: document.getElementById("habitmuslim"),
+    maquillage: document.getElementById("maquillage"),
+    skincare: document.getElementById("skincare"),
+    fragrance: document.getElementById("fragrance"),
+    haircare: document.getElementById("haircare"),
+    lunette: document.getElementById("lunettes"),
+    montre: document.getElementById("Montre"),
+    sac: document.getElementById("Sac"),
+    bracha: document.getElementById("bracha"),
+    phone: document.getElementById("Phone"),
+  };
 
   const allProducts = document.querySelectorAll(".product");
 
-  if (selected.length === 0) {
-    allProducts.forEach(p => (p.style.display = "block"));
-    trieMessage.textContent = "Total : " + allProducts.length + " articles disponibles";
-    removeEmptyMessage();
-    return;
+  messageBox.textContent = `Total : ${allProducts.length} articles disponibles`;
+
+  // Helpers
+  function countVisible(catName) {
+    return Array.from(categories[catName] || []).filter(el => el.style.display !== "none").length;
   }
 
-  allProducts.forEach(p => (p.style.display = "none"));
+  function updateBoxCounts() {
+    Object.keys(boxes).forEach(name => {
+      const box = boxes[name];
+      if (!box) return;
 
-  let anyVisible = false;
-  allProducts.forEach(p => {
-    const classes = Array.from(p.classList);
-    if (selected.some(cat => classes.includes(cat))) {
-      p.style.display = "block";
-      anyVisible = true;
+      const visibleCount = countVisible(name);
+
+      let badge = box.querySelector(".count");
+      if (!badge) {
+        badge = document.createElement("span");
+        badge.className = "count";
+        box.appendChild(badge);
+      }
+
+      badge.textContent = visibleCount;
+      badge.style.background = visibleCount === 0 ? "#b00020" : "#111";
+      box.style.opacity = visibleCount === 0 ? "0.3" : "1";
+      box.style.cursor = visibleCount === 0 ? "not-allowed" : "pointer";
+    });
+  }
+
+  function updateView() {
+    const selected = Object.keys(categories).filter(name => {
+      return boxes[name] && boxes[name].classList.contains("category-active");
+    });
+
+    if (selected.length === 0) {
+      allProducts.forEach(p => p.style.display = "block");
+      messageBox.textContent = `Total : ${allProducts.length} articles disponibles`;
+      removeEmptyMessage();
+      updateBoxCounts();
+      return;
     }
+
+    // show matching
+    let visibleCount = 0;
+    allProducts.forEach(p => {
+      if (selected.some(cat => p.classList.contains(cat))) {
+        p.style.display = "block";
+        visibleCount++;
+      }
+    });
+
+    messageBox.textContent = visibleCount > 0
+      ? formatMessage(selected)
+      : "Aucun article disponible";
+
+    updateBoxCounts();
+  }
+
+  // Click logic (single handler, no duplicates)
+  let lastSelectedBox = null;
+
+  Object.keys(categories).forEach(name => {
+    const box = boxes[name];
+    const items = categories[name];
+
+    if (!box) return;
+
+    if (!items || items.length === 0) {
+      box.style.opacity = "0.3";
+      box.style.cursor = "not-allowed";
+      box.onclick = emptyStockMessage;
+      return;
+    }
+
+    box.onclick = () => {
+      if (lastSelectedBox && lastSelectedBox !== box) {
+        lastSelectedBox.classList.remove("category-active");
+      }
+
+      box.classList.toggle("category-active");
+      lastSelectedBox = box.classList.contains("category-active") ? box : null;
+
+      updateView();
+    };
   });
 
-  trieMessage.textContent = anyVisible ? formatMessage(selected) : "Aucun article disponible";
-}
+  // Messages
+  function removeEmptyMessage() {
+    const oldMsg = document.getElementById("emptyStock");
+    if (oldMsg) oldMsg.remove();
+  }
 
-// --------- Events (single select) ---------
+  function emptyStockMessage() {
+    removeEmptyMessage();
+    const message = document.createElement("p");
+    message.id = "emptyStock";
+    message.textContent = `Aucun article disponible dans ${this.id}`;
+    message.style.color = "red";
+    message.style.marginTop = "10px";
+    pTrie.appendChild(message);
+  }
 
-let lastSelectedBox = null;
+  // 8. Format display message
+  function formatMessage(arr) {
+    const namesMap = {
+      haut: "Haut",
+      bas: "Bas",
+      chaussure: "Chaussures",
+      accessoires: "Accessoires",
+      abaya: "Abayas",
+      complet: "Complets",
+      habitmuslim: "Habit Muslim",
+      maquillage: "Maquillage",
+      skincare: "Skin Care",
+      fragrance: "Parfums",
+      haircare: "Hair Care",
+      lunette: "Lunettes",
+      montre: "Montre",
+      sac: "Sac",
+      bracha: "Bracelets & chainettes",
+      phone: "Phone",
+    };
 
-Object.keys(categories).forEach(name => {
-  const box = boxes[name];
-  if (!box || categories[name].length === 0) return;
+    const translated = arr.map(name => namesMap[name] || name);
+    const total = arr.reduce((acc, name) => acc + (categories[name]?.length || 0), 0);
 
-  box.onclick = () => {
-    if (lastSelectedBox && lastSelectedBox !== box) {
-      lastSelectedBox.classList.remove("category-active");
-    }
+    if (translated.length === 1) return `${translated[0]} seulement, ${total} articles`;
+    if (translated.length === 2) return `${translated[0]} et ${translated[1]} seulement, ${total} articles`;
 
-    box.classList.toggle("category-active");
-    lastSelectedBox = box.classList.contains("category-active") ? box : null;
+    return `${translated.join(", ")} seulement, ${total} articles`;
+  }
 
-    updateView();
-  };
+  // Initial refresh
+  updateBoxCounts();
+
 });
-
-// --------- Helpers ---------
-
-function removeEmptyMessage() {
-  const oldMsg = document.getElementById("emptyStock");
-  if (oldMsg) oldMsg.remove();
-}
-
-function emptyStockMessage() {
-  removeEmptyMessage();
-  const message = document.createElement("p");
-  message.id = "emptyStock";
-  message.textContent = `Aucun article disponible dans ${this.id}`;
-  message.style.color = "red";
-  message.style.marginTop = "10px";
-  pTrie.appendChild(message);
-}
-
-function formatMessage(arr) {
-  const namesMap = {
-    haut: "Haut",
-    bas: "Bas",
-    chaussure: "Chaussures",
-    accessoires: "Accessoires",
-    abaya: "Abayas",
-    complet: "Complets",
-    habitmuslim: "Habit Muslim",
-    maquillage: "Maquillage",
-    skincare: "Skin Care",
-    fragrance: "Parfums",
-    haircare: "Hair Care",
-    lunette: "Lunettes",
-    montre: "Montre",
-    sac: "Sac",
-    bracha: "Bracelets & chainettes",
-    phone: "Phone",
-  };
-
-  const translated = arr.map(n => namesMap[n] || n);
-  const total = arr.reduce((acc, n) => acc + (categories[n]?.length || 0), 0);
-
-  if (translated.length === 1) return `${translated[0]} seulement, ${total} articles`;
-  if (translated.length === 2) return `${translated[0]} et ${translated[1]} seulement, ${total} articles`;
-
-  return `${translated.join(", ")} seulement, ${total} articles`;
-}
