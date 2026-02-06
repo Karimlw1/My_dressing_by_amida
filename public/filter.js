@@ -63,6 +63,11 @@ const pTrie = document.getElementById("pTrie");
 const trieMessage = document.getElementById("trieMessage");
 
 // 5. Update view based on selected filters
+function countVisible(catName) {
+  return Array.from(categories[catName]).filter(el => el.style.display !== "none").length;
+}
+
+
 function updateView() {
   const selected = Object.keys(categories).filter(name => {
     return boxes[name] && boxes[name].classList.contains("category-active");
@@ -89,6 +94,22 @@ function updateView() {
       p.style.display = "block";
       anyVisible = true;
     }
+
+    Object.keys(boxes).forEach(name => {
+      const box = boxes[name];
+      if (!box) return;
+
+      const visibleCount = countVisible(name);
+
+      if (visibleCount === 0) {
+        box.style.opacity = "0.3";
+        box.style.cursor = "not-allowed";
+      } else {
+        box.style.opacity = "1";
+        box.style.cursor = "pointer";
+      }
+    });
+
   });
 
   trieMessage.textContent = anyVisible ? formatMessage(selected) : "Aucun article disponible";
@@ -158,6 +179,7 @@ function emptyStockMessage() {
   message.style.marginTop = "10px";
   pTrie.appendChild(message);
 }
+
 
 
 // 8. Format display message
