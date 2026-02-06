@@ -1,1 +1,37 @@
-{}
+{
+  "FasionHp1": {
+    "id": "FasionHp1",
+    "name": "karim",
+    "category": "Homme",
+    "type": "haut",
+    "price": 10,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770341386/bzoca2gsnk6yfwecxmqo.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770341386/bzoca2gsnk6yfwecxmqo.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
+  }
+}
