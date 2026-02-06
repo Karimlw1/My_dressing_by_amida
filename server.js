@@ -113,6 +113,22 @@ app.get("/api/products", (req, res) => {
   res.json(products);
 });
 
+// Delete a product
+app.delete("/admin/delete-product/:id", isAdmin, (req, res) => {
+  const productId = req.params.id;
+  const products = JSON.parse(fs.readFileSync(PRODUCTS_FILE, "utf-8"));
+
+  if (!products[productId]) {
+    return res.status(404).json({ error: "Produit introuvable" });
+  }
+
+  delete products[productId]; // remove it
+  fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+
+  res.json({ success: true, message: `Produit ${productId} supprimé ✔` });
+});
+
+
 // Télécharger products.json depuis Render
 app.get("/admin/download-products", isAdmin, (req, res) => {
   res.download(PRODUCTS_FILE, "products.json", (err) => {

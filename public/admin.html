@@ -166,6 +166,13 @@
   <br>
   <button id="saveProduct">Enregistrer le produit</button>
 
+  <h3>Supprimer un produit</h3>
+    <div style="display:flex; gap:10px; margin-bottom:20px;">
+      <input id="deleteProductId" placeholder="ID du produit à supprimer">
+      <button id="deleteBtn">Supprimer</button>
+    </div>
+
+
   <br>
   <br>
   <button id="downloadProducts">Télécharger products.json</button>
@@ -325,6 +332,32 @@ document.getElementById("uploadBtn").onclick = async () => {
   colors: colorsInput?.value,
   villes: villesInput?.value
 });
+
+// supprimer un produit 
+document.getElementById("deleteBtn").onclick = async () => {
+  const id = document.getElementById("deleteProductId").value.trim();
+  if (!id) return alert("Veuillez entrer l'ID du produit");
+
+  if (!confirm(`Supprimer le produit ${id} ?`)) return;
+
+  try {
+    const res = await fetch(`/admin/delete-product/${id}`, {
+      method: "DELETE",
+      headers: { "x-admin-key": ADMIN_KEY }
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      alert(data.message);
+      location.reload();
+    } else {
+      alert("Erreur: " + (data.error || "Inconnu"));
+    }
+  } catch (err) {
+    console.error("Erreur suppression:", err);
+    alert("Erreur lors de la suppression");
+  }
+};
 
 </script>
 </body>
