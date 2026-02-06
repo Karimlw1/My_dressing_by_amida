@@ -33,5 +33,40 @@
         "kampala"
       ]
     }
+  },
+  "produit£2": {
+    "id": "produit£2",
+    "name": "abdoul",
+    "category": "Homme",
+    "type": "chaussure",
+    "price": 23,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770381654/mydressing_products/noil57p6smm4pgtrllxp.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770381654/mydressing_products/noil57p6smm4pgtrllxp.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
