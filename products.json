@@ -128,5 +128,37 @@
         "kampala"
       ]
     }
+  },
+  "FasionH1": {
+    "id": "FasionH1",
+    "name": "cc",
+    "category": "Homme",
+    "type": "haut",
+    "price": 7,
+    "images": [],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
