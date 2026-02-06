@@ -1,1 +1,37 @@
-{}
+{
+  "produit1": {
+    "id": "produit1",
+    "name": "karim&Harris",
+    "category": "Homme",
+    "type": "haut",
+    "price": 1,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770367703/mydressing_products/awyv69j6avouquutlobs.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770367703/mydressing_products/awyv69j6avouquutlobs.jpg"
+    ],
+    "options": {
+      "size": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
+  }
+}
