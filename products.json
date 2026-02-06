@@ -96,5 +96,33 @@
         "kampala"
       ]
     }
+  },
+  "FashionFp1": {
+    "id": "FashionFp1",
+    "name": "Denis",
+    "category": "Femme",
+    "type": "haut",
+    "price": 15,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770346724/lzlkufbmuuktgirm4aea.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770346724/lzlkufbmuuktgirm4aea.jpg"
+    ],
+    "options": {
+      "size": [],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
