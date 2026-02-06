@@ -159,23 +159,6 @@ function emptyStockMessage() {
 // ===============================
 // 8. Disable empty categories
 // ===============================
-function refreshCategoryStockUI() {
-  const categories = getCategories();
-
-  Object.keys(boxes).forEach(name => {
-    const box = boxes[name];
-    if (!box) return;
-
-    if (categories[name].length === 0) {
-      box.style.opacity = "0.3";
-      box.style.cursor = "not-allowed";
-      box.onclick = emptyStockMessage;
-    } else {
-      box.style.opacity = "1";
-      box.style.cursor = "pointer";
-    }
-  });
-}
 
 // ===============================
 // 9. Format the message text
