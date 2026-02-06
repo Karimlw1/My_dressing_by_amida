@@ -68,5 +68,33 @@
         "kampala"
       ]
     }
+  },
+  "lunette1": {
+    "id": "lunette1",
+    "name": "Karim Abdou",
+    "category": "Accessoire",
+    "type": "Lunettes",
+    "price": 300,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770384464/mydressing_products/mrnie5qlg8eh59ohnzpc.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770384464/mydressing_products/mrnie5qlg8eh59ohnzpc.jpg"
+    ],
+    "options": {
+      "size": [],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
   }
 }
