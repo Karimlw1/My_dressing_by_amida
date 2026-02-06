@@ -53,7 +53,8 @@ function isAdmin(req, res, next) {
 // ROUTES
 // -------------------
 
-// Upload image to Cloudinaryapp.post("/admin/add-product", isAdmin, async (req, res) => {
+// Upload image to Cloudinary
+app.post("/admin/add-product", isAdmin, async (req, res) => {
   const product = req.body;
 
   // 1️⃣ Save locally
