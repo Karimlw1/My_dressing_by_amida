@@ -51,7 +51,6 @@ function isAdmin(req, res, next) {
 }
 
 // route
-const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
 
 app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res) => {
