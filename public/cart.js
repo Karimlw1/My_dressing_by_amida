@@ -31,7 +31,8 @@ function addToCart(product) {
     item =>
       item.id === product.id &&
       item.size === product.size &&
-      item.color === product.color
+      item.color === product.color &&
+      item.ville ==- product.ville 
   );
 
   if (existing) {
@@ -45,6 +46,7 @@ function addToCart(product) {
       image: product.image,
       size: product.size || null,
       color: product.color || null,
+      ville: product.ville || null,
       qty: 1
     });
   }
