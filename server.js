@@ -53,25 +53,29 @@ function isAdmin(req, res, next) {
 // route
 const upload = multer({ dest: "uploads/" });
 
-app.post("/admin/upload-image", isAdmin, upload.single("image"), async (req, res) => {
-  const result = await cloudinary.uploader.upload(req.file.path);
-  fs.unlinkSync(req.file.path);
-  res.json({ imageUrl: result.secure_url });
+
+app.post("/admin/add-product", async (req, res) => {
+  // 1. Read product data
+  const product = req.body;
+
+  // 2. Add product to your JSON file (or repo)
+  const content = JSON.stringify(product, null, 2);
+
+  // 3. Commit to GitHub
+  try {
+    await octokit.repos.createOrUpdateFileContents({
+      owner: "Karimlw1",
+      repo: "My_dressing_by_amida",
+      path: `products/${product.id}.json`, // or your path
+      message: `Add product ${product.name}`,
+      content: Buffer.from(content).toString("base64")
+    });
+    res.json({ success: true });
+  } catch (err) {
+    console.error(err);
+    res.json({ success: false });
+  }
 });
-
-app.post("/admin/add-product", isAdmin, async (req, res) => {
-  const products = JSON.parse(fs.readFileSync("products.json", "utf-8"));
-  const p = req.body;
-
-  products[p.id] = p;
-
-  fs.writeFileSync("products.json", JSON.stringify(products, null, 2));
-  await updateProductsOnGitHub(products);
-
-  res.json({ success: true });
-});
-
-
 
 
 
