@@ -104,23 +104,6 @@ function updateView() {
       anyVisible = true;
     }
   });
-
-  // ✅ update box styles AFTER products are filtered
-  Object.keys(boxes).forEach(name => {
-    const box = boxes[name];
-    if (!box) return;
-
-    const visibleCount = countVisible(name);
-
-    if (visibleCount === 0) {
-      box.style.opacity = "0.3";
-      box.style.cursor = "not-allowed";
-    } else {
-      box.style.opacity = "1";
-      box.style.cursor = "pointer";
-    }
-  });
-
   trieMessage.textContent = anyVisible ? formatMessage(selected) : "Aucun article disponible";
 }
 
