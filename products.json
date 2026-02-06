@@ -129,13 +129,51 @@
       ]
     }
   },
-  "FasionH1": {
-    "id": "FasionH1",
-    "name": "cc",
+  "hommep1": {
+    "id": "hommep1",
+    "name": "Karim Abdoul lw",
     "category": "Homme",
-    "type": "haut",
-    "price": 7,
-    "images": [],
+    "type": "bas",
+    "price": 1000,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770362394/mydressing_products/h1igecugb3ezaoiy0hr5.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770362394/mydressing_products/h1igecugb3ezaoiy0hr5.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "Bleu",
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "kinshasa",
+        "goma",
+        "lubumbashi",
+        "kampala"
+      ]
+    }
+  },
+  "FasionHp156": {
+    "id": "FasionHp156",
+    "name": "fcc1",
+    "category": "Homme",
+    "type": "complet",
+    "price": 23,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770362571/mydressing_products/x4egshp9tajscva5tmao.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770362571/mydressing_products/x4egshp9tajscva5tmao.jpg"
+    ],
     "options": {
       "size": [
         "S",

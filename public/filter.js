@@ -41,7 +41,7 @@ const boxes = {
   skincare: document.getElementById("skincare"),
   fragrance: document.getElementById("fragrance"),
   haircare: document.getElementById("haircare"),
-  lunette: document.getElementById("lunettes"),
+  lunette: document.getElementById("Lunettes"),
   montre: document.getElementById("Montre"),
   sac: document.getElementById("Sac"),
   bracha: document.getElementById("bracha"),
