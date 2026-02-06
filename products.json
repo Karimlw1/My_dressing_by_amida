@@ -37,7 +37,7 @@
   },
   "Produit2": {
     "id": "Produit2",
-    "name": "Sac Ã  main",
+    "name": "Sac ÃÂ  main",
     "category": "Accessoire",
     "type": "Sac",
     "price": 40,
@@ -67,7 +67,7 @@
   },
   "Produit3": {
     "id": "Produit3",
-    "name": "Sac Ã  main",
+    "name": "Sac ÃÂ  main",
     "category": "Accessoire",
     "type": "Sac",
     "price": 50,
@@ -94,7 +94,7 @@
   },
   "Produit4": {
     "id": "Produit4",
-    "name": "Sac Ã  main",
+    "name": "Sac ÃÂ  main",
     "category": "Accessoire",
     "type": "Sac",
     "price": 30,
@@ -109,6 +109,291 @@
       "color": [
         "Chocolat",
         "beige"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit5": {
+    "id": "Produit5",
+    "name": "Ensemble tailleur haute gamme haut en tweed et jupe en satin",
+    "category": "Femme",
+    "type": "complet",
+    "price": 100,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770390731/mydressing_products/kwasalwpw6f4lg8ihiza.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770390731/mydressing_products/kwasalwpw6f4lg8ihiza.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770390742/mydressing_products/ry1vjxypkipvfzu4smsk.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770390757/mydressing_products/idhvu41tjh1rgrbi43mi.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "color": [
+        "Bleu marine"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit6": {
+    "id": "Produit6",
+    "name": "Chemise satinÃ©e manches longues",
+    "category": "Femme",
+    "type": "haut",
+    "price": 20,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391843/mydressing_products/dke6y4vnshulrheo80ms.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391843/mydressing_products/dke6y4vnshulrheo80ms.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391852/mydressing_products/ecgpue7qf4wntnb4ofhf.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391862/mydressing_products/ahajsbx6natkoh30icp8.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391871/mydressing_products/ngb0iu7zbyqglpezmdrs.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391878/mydressing_products/mzj3neaigh9rbgzvwjid.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "beige",
+        "vert"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit7": {
+    "id": "Produit7",
+    "name": "Ensemble costume homme croisÃ© 2piÃ¨ces Ã  col revers",
+    "category": "Homme",
+    "type": "complet",
+    "price": 100,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770392355/mydressing_products/ob2m2tqxw3rgahsshdxc.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770392355/mydressing_products/ob2m2tqxw3rgahsshdxc.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770392381/mydressing_products/ijhlrxjncd6spvrribxq.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770392408/mydressing_products/ikejoncilh2bqlqy8go6.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770392419/mydressing_products/g5t8hgqmr8tqc2116sxp.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL",
+        "6XL"
+      ],
+      "color": [
+        "Noir",
+        "Gris",
+        "Bleu",
+        "Kaki clair"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit8": {
+    "id": "Produit8",
+    "name": "Polo homme en coton,manches courtes",
+    "category": "Homme",
+    "type": "haut",
+    "price": 20,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770392972/mydressing_products/mbxeucyjmofmxghmmlok.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770392972/mydressing_products/mbxeucyjmofmxghmmlok.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770392986/mydressing_products/mvxw2lxulnn9ucdfwucj.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770392997/mydressing_products/xylgvx0myxju3lq35ske.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393014/mydressing_products/djvbl8prumvlw3pdassj.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393027/mydressing_products/qnbumbuagphctzi2lvax.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393038/mydressing_products/tijthnb3jktlbtadlukq.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393052/mydressing_products/tfqovjldkudfnvwsfznh.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393093/mydressing_products/hrsyp61hairhdxszpyzg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393126/mydressing_products/abeizewtfjx1fifikfk8.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393153/mydressing_products/a0wf5avefzmrbb7hqhw3.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "color": [
+        "Noir",
+        "gris",
+        "blanc",
+        "chocolat",
+        "bleu foncÃ©e",
+        "bleu marine",
+        "vert",
+        "beige",
+        "gris foncÃ©"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit9": {
+    "id": "Produit9",
+    "name": "Ensemble dÃ©contractÃ© pour femme 2piÃ¨ces en coton",
+    "category": "Femme",
+    "type": "complet",
+    "price": 30,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393576/mydressing_products/e3zlu0rdei0aimkadytd.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393576/mydressing_products/e3zlu0rdei0aimkadytd.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393598/mydressing_products/z0oqqucqin8iwtpn5eaa.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393626/mydressing_products/qnuiforpizszhmfmdpdn.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393634/mydressing_products/xhhtetbrlbghasw1nhga.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770393643/mydressing_products/xg1jzlu06glsawe4sqvp.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "color": [
+        "Bleu",
+        "Blanc",
+        "Orange",
+        "Rose",
+        "Vert",
+        "Noir"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit 10": {
+    "id": "Produit 10",
+    "name": "Chemise Ã©lÃ©gante pour femme Ã  manches longues avec motif floral",
+    "category": "Femme",
+    "type": "haut",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394101/mydressing_products/no7kwrzkeo0gkibobllm.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394101/mydressing_products/no7kwrzkeo0gkibobllm.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394110/mydressing_products/nsclgo0kwisggm7eivfm.jpg"
+    ],
+    "options": {
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL",
+        "6XL"
+      ],
+      "color": [
+        "Beige",
+        "Noire"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit10": {
+    "id": "Produit10",
+    "name": "Leggings de sport taille haute en silicone pour femme 2pieces",
+    "category": "Femme",
+    "type": "complet",
+    "price": 40,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394729/mydressing_products/skgxxpctdt9uw2xcjfbc.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394729/mydressing_products/skgxxpctdt9uw2xcjfbc.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394741/mydressing_products/jszte14ohdpmigmhebkv.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394753/mydressing_products/e0zpmxccd5dzltrjkqae.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394766/mydressing_products/tl1u35bti8gsbqwxneup.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394798/mydressing_products/anxdmtmzuqt2sye3f9cp.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394812/mydressing_products/ceb7pc6dnakkkdhbz09k.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394830/mydressing_products/kzvjlr4hnxlf2dneg7ig.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394867/mydressing_products/if3gb4msx042oj36sblg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394894/mydressing_products/xg60m7wyjucflxffae8o.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394926/mydressing_products/z9hyt6arp42iyss5oxtm.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Rose-rouge",
+        "Noir",
+        "brun",
+        "rose claire",
+        "vert foncÃ©",
+        "blanc",
+        "gris",
+        "bleu clair",
+        "mauve"
       ]
     },
     "lieuDeLIvraison": {
