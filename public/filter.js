@@ -67,26 +67,35 @@ function countVisible(catName) {
   return Array.from(categories[catName]).filter(el => el.style.display !== "none").length;
 }
 
-
 function updateView() {
   const selected = Object.keys(categories).filter(name => {
     return boxes[name] && boxes[name].classList.contains("category-active");
   });
 
-  const allProducts = document.querySelectorAll(".product"); // all products
+  const allProducts = document.querySelectorAll(".product");
 
   if (selected.length === 0) {
-    // no filter: show everything
     allProducts.forEach(p => p.style.display = "block");
     trieMessage.textContent = "Total :" + allProducts.length + " articles disponibles";
     removeEmptyMessage();
+
+    // refresh box styles
+    Object.keys(boxes).forEach(name => {
+      const box = boxes[name];
+      if (!box) return;
+
+      const visibleCount = countVisible(name);
+      box.style.opacity = visibleCount === 0 ? "0.3" : "1";
+      box.style.cursor = visibleCount === 0 ? "not-allowed" : "pointer";
+    });
+
     return;
   }
 
-  // hide all products first
+  // hide all products
   allProducts.forEach(p => p.style.display = "none");
 
-  // reveal only products matching selected categories
+  // show matching products
   let anyVisible = false;
   allProducts.forEach(p => {
     const pClasses = Array.from(p.classList);
@@ -94,22 +103,22 @@ function updateView() {
       p.style.display = "block";
       anyVisible = true;
     }
+  });
 
-    Object.keys(boxes).forEach(name => {
-      const box = boxes[name];
-      if (!box) return;
+  // ✅ update box styles AFTER products are filtered
+  Object.keys(boxes).forEach(name => {
+    const box = boxes[name];
+    if (!box) return;
 
-      const visibleCount = countVisible(name);
+    const visibleCount = countVisible(name);
 
-      if (visibleCount === 0) {
-        box.style.opacity = "0.3";
-        box.style.cursor = "not-allowed";
-      } else {
-        box.style.opacity = "1";
-        box.style.cursor = "pointer";
-      }
-    });
-
+    if (visibleCount === 0) {
+      box.style.opacity = "0.3";
+      box.style.cursor = "not-allowed";
+    } else {
+      box.style.opacity = "1";
+      box.style.cursor = "pointer";
+    }
   });
 
   trieMessage.textContent = anyVisible ? formatMessage(selected) : "Aucun article disponible";
