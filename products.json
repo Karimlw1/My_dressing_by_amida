@@ -37,7 +37,7 @@
   },
   "Produit2": {
     "id": "Produit2",
-    "name": "Sac ÃÂ  main",
+    "name": "Sac ÃÂÃÂ  main",
     "category": "Accessoire",
     "type": "Sac",
     "price": 40,
@@ -67,7 +67,7 @@
   },
   "Produit3": {
     "id": "Produit3",
-    "name": "Sac ÃÂ  main",
+    "name": "Sac ÃÂÃÂ  main",
     "category": "Accessoire",
     "type": "Sac",
     "price": 50,
@@ -94,7 +94,7 @@
   },
   "Produit4": {
     "id": "Produit4",
-    "name": "Sac ÃÂ  main",
+    "name": "Sac ÃÂÃÂ  main",
     "category": "Accessoire",
     "type": "Sac",
     "price": 30,
@@ -152,7 +152,7 @@
   },
   "Produit6": {
     "id": "Produit6",
-    "name": "Chemise satinÃ©e manches longues",
+    "name": "Chemise satinÃÂ©e manches longues",
     "category": "Femme",
     "type": "haut",
     "price": 20,
@@ -190,7 +190,7 @@
   },
   "Produit7": {
     "id": "Produit7",
-    "name": "Ensemble costume homme croisÃ© 2piÃ¨ces Ã  col revers",
+    "name": "Ensemble costume homme croisÃÂ© 2piÃÂ¨ces ÃÂ  col revers",
     "category": "Homme",
     "type": "complet",
     "price": 100,
@@ -263,11 +263,11 @@
         "gris",
         "blanc",
         "chocolat",
-        "bleu foncÃ©e",
+        "bleu foncÃÂ©e",
         "bleu marine",
         "vert",
         "beige",
-        "gris foncÃ©"
+        "gris foncÃÂ©"
       ]
     },
     "lieuDeLIvraison": {
@@ -280,7 +280,7 @@
   },
   "Produit9": {
     "id": "Produit9",
-    "name": "Ensemble dÃ©contractÃ© pour femme 2piÃ¨ces en coton",
+    "name": "Ensemble dÃÂ©contractÃÂ© pour femme 2piÃÂ¨ces en coton",
     "category": "Femme",
     "type": "complet",
     "price": 30,
@@ -322,7 +322,7 @@
   },
   "Produit 10": {
     "id": "Produit 10",
-    "name": "Chemise Ã©lÃ©gante pour femme Ã  manches longues avec motif floral",
+    "name": "Chemise ÃÂ©lÃÂ©gante pour femme ÃÂ  manches longues avec motif floral",
     "category": "Femme",
     "type": "haut",
     "price": 25,
@@ -389,11 +389,296 @@
         "Noir",
         "brun",
         "rose claire",
-        "vert foncÃ©",
+        "vert foncÃÂ©",
         "blanc",
         "gris",
         "bleu clair",
         "mauve"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit 11": {
+    "id": "Produit 11",
+    "name": "Talons dames respirants Ã  bout pointue en tissu maillÃ© Ã©lÃ©gants et pour toutes les saisons",
+    "category": "Accessoire",
+    "type": "chaussure",
+    "price": 60,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770467759/mydressing_products/nj60on88mvedx2qvpgtc.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770467759/mydressing_products/nj60on88mvedx2qvpgtc.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770467770/mydressing_products/v9kn684buspd1qqqes81.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770467778/mydressing_products/qbshudqe9idqarjsfjsk.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770467787/mydressing_products/lyxckjxt9limhfjmknws.jpg"
+    ],
+    "options": {
+      "size": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "color": [
+        "Noir"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit12": {
+    "id": "Produit12",
+    "name": "Robe Abaya pour femme avec broderie florale",
+    "category": "Femme",
+    "type": "habitmuslim",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468079/mydressing_products/lni0nxqjgvdlulyaqmk0.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468079/mydressing_products/lni0nxqjgvdlulyaqmk0.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468093/mydressing_products/jawz8lmyk3lxqwg2oqog.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468117/mydressing_products/ydelf9kwyh4zbt83liqm.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468131/mydressing_products/yxzldcfcbcli1gnakyms.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468143/mydressing_products/dhy7lathbevywjbhg0hw.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Noir",
+        "Beige",
+        "Chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit13": {
+    "id": "Produit13",
+    "name": "Manteau en tricot court vintage Ã  manches longues",
+    "category": "Femme",
+    "type": "haut",
+    "price": 40,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468511/mydressing_products/ilftrwnt65lilr6e1tdh.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468511/mydressing_products/ilftrwnt65lilr6e1tdh.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468531/mydressing_products/hyos52gkortjl9frgqul.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468549/mydressing_products/enxerdpevxngdmnwzonq.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468564/mydressing_products/a8biwpbe6nt09np8k2ti.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468584/mydressing_products/cwiqcuv89virjeajkthe.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468617/mydressing_products/lluqsmr4fr3vpsbcf4wk.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770468651/mydressing_products/g0jk7hhxwxrhd2atwtkl.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "color": [
+        "Noir",
+        "jaune",
+        "beige",
+        "kaki",
+        "rouge bordeau",
+        "chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit14": {
+    "id": "Produit14",
+    "name": "Robe Ã  col en V , manche longue de style blazer",
+    "category": "Femme",
+    "type": "complet",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770469082/mydressing_products/wcoibstc45kkqdwlvs5f.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770469082/mydressing_products/wcoibstc45kkqdwlvs5f.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770469100/mydressing_products/ej6wzfbnxhvnlbwaevjo.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770469112/mydressing_products/qqbbpvobfjfcodyzrkfs.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "color": [
+        "Noire",
+        "Blanche"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit15": {
+    "id": "Produit15",
+    "name": "Top de gilet asymÃ©trique Ã  un bouton avec texture tissÃ©e",
+    "category": "Femme",
+    "type": "haut",
+    "price": 35,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470051/mydressing_products/aqearchv3fuquqsfrdtr.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470051/mydressing_products/aqearchv3fuquqsfrdtr.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470060/mydressing_products/brfp8lxloj0x2ad04nbz.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470068/mydressing_products/ihjrbp7dthgowi8djwut.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470078/mydressing_products/z7fknelg48rawuuzlsow.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470087/mydressing_products/zt73efom9qhcmdqmd6jh.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470097/mydressing_products/ybvqikrrpskwi5mdobqc.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "color": [
+        "Beige",
+        "noir",
+        "blanc",
+        "gris pÃ¢le",
+        "vert",
+        "rose pÃ¢le"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit 16": {
+    "id": "Produit 16",
+    "name": "Ensemble 2pieces t-shirt et short pour homme",
+    "category": "Homme",
+    "type": "complet",
+    "price": 40,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470802/mydressing_products/kid63tieisas23rr2yra.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470802/mydressing_products/kid63tieisas23rr2yra.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470819/mydressing_products/klulsryaskaxnxdqbi79.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470835/mydressing_products/qugvc94vqqjuqpa5j6ic.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470836/mydressing_products/aakaewey2kcvct2a7ptq.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "L",
+        "M",
+        "XL"
+      ],
+      "color": [
+        "Beige",
+        "Marron"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit17": {
+    "id": "Produit17",
+    "name": "Montre-bracelet en bois avec 22mm de longueur de bande",
+    "category": "Accessoire",
+    "type": "accessoire",
+    "price": 60,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471365/mydressing_products/piyofsur5jp39oyz8ner.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471365/mydressing_products/piyofsur5jp39oyz8ner.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471377/mydressing_products/dxdmld71dtdwleszjboo.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471386/mydressing_products/cwijznqwicfbhoeugiez.jpg"
+    ],
+    "options": {
+      "size": [
+        "22mm de longueur de bande"
+      ],
+      "color": [
+        "Chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma"
+      ]
+    }
+  },
+  "Produit18": {
+    "id": "Produit18",
+    "name": "Basket dÃ©contractÃ© en cuir de vachette de premiÃ¨re qualitÃ©",
+    "category": "Accessoire",
+    "type": "chaussure",
+    "price": 70,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471792/mydressing_products/rd4leqx1aundcc5fwtjh.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471792/mydressing_products/rd4leqx1aundcc5fwtjh.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471841/mydressing_products/hlrcjeiynjoptq6aj1sg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471852/mydressing_products/pn4nwwftjwn7ikk5ixkz.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471861/mydressing_products/plm6epxifilmjss3381m.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471871/mydressing_products/gyqoqbzaoksgftnwwolu.jpg"
+    ],
+    "options": {
+      "size": [
+        "Euro 38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "color": [
+        "Chocolat",
+        "Blanc",
+        "Noir",
+        "marron",
+        "vert"
       ]
     },
     "lieuDeLIvraison": {
