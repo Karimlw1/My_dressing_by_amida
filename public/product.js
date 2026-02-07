@@ -42,7 +42,7 @@ function renderProduct() {
 
   if (product.options?.size) {
     optionsContainer.innerHTML += `
-      <label>Taille :</label>
+      <label>Cliquer pour Choisir la Taille :</label>
       <select id="size">
         ${product.options.size.map(s => `<option>${s}</option>`).join("")}
       </select>
@@ -51,7 +51,7 @@ function renderProduct() {
 
   if (product.options?.color) {
     optionsContainer.innerHTML += `
-      <label>Couleur :</label>
+      <label>Cliquer pour Choisir la Couleur :</label>
       <select id="color">
         ${product.options.color.map(c => `<option>${c}</option>`).join("")}
       </select>
@@ -61,7 +61,7 @@ function renderProduct() {
 
   if (product.lieuDeLIvraison?.ville) {
     lieuDeLIvraisonContainer.innerHTML += `
-      <label>Choisissez le lieu de livraison :</label>
+      <label>Cliquer pour choisir le lieu de livraison :</label>
       <select id="ville" required>
         ${product.lieuDeLIvraison.ville.map(v => `<option value="${v}">${v}</option>`).join("")}
       </select>
