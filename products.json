@@ -61,14 +61,14 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
         "kampala"
       ]
     }
   },
   "Produit3": {
     "id": "Produit3",
-    "name": "Sac ÃÂÃÂ  main",
+    "name": "Sac a main",
     "category": "Accessoire",
     "type": "Sac",
     "price": 50,
@@ -89,7 +89,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -116,7 +117,7 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
         "kampala"
       ]
     }
@@ -148,7 +149,7 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
         "kinshasa"
       ]
     }
@@ -187,7 +188,7 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
         "kampala"
       ]
     }
@@ -228,7 +229,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -278,7 +280,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -320,7 +323,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -357,7 +361,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -404,7 +409,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -442,7 +448,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -478,7 +485,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -517,7 +525,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -548,7 +557,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -588,7 +598,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -621,7 +632,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -649,7 +661,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   },
@@ -689,7 +702,8 @@
       "ville": [
         "Lubumbashi",
         "Kinshasa",
-        "Goma"
+        "Goma",
+        "kampala"
       ]
     }
   }
