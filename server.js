@@ -181,24 +181,121 @@ app.get("/order/:id", (req, res) => {
   const order = orders[req.params.id];
   if (!order) return res.send("<h2>Commande introuvable 😢</h2>");
 
-  let html = `<html><head><title>Panier</title></head><body style="font-family:sans-serif;">`;
+  let html = `
+  <html>
+  <head>
+  <title>Panier</title>
+  <style>
+         body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        padding: 20px;
+      }
+      .nav-bar {
+        border-bottom: 1px solid lightgrey;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        width: 80%;
+      }
+      .cart-item {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        padding: 10px;
+        height: max-content;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+      }
+      .cart-item img {
+        width: 300px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 15px;
+      }
+      .cart-item-details {
+        flex: 1;
+        height: max-content;
+        font-size: xx-large;
+      }
+      .cart-item-details h3 {
+        margin: 0;
+        color: darksalmon;
+      }
+      .cart-item-details p {
+        margin: 5px 0;
+        color: #555;
+      }
+      .total {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 50px;
+        /* font-size: 1.7em; */
+        color: darkgreen;
+        background-color: white;
+        /* width: max-content; */
+        padding: 16px 30px;
+        border: 1px solid rgb(240, 234, 234);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        justify-self: end;
+        height: max-content;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        font-size: 40px;
+        border-radius: 20px;
+
+      }
+      .back {
+        position: absolute;
+        left: 20px;
+        width: max-content;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background: black;
+        padding: 30px 60px;
+        font-weight: bolder;
+        height: max-content;
+        border-radius: 6px;
+      }
+      a {
+        text-decoration: none;
+      }
+        </style>
+  </head>`;
   let total = 0;
   order.forEach(item => {
     total += item.price * (item.qty || 1);
     html += `
-      <div style="margin-bottom:20px;">
-        <img src="${item.image}" width="150" style="border-radius:12px;" />
-        <h3>${item.name}</h3>
-        <p>Catégorie: ${item.category}</p>
-        <p>Quantité: ${item.qty}</p>
-        <p>Prix: ${item.price} USD</p>
-        <p>Taille: ${item.size}</p>
-        <p>Couleur: ${item.color}</p>
-        <p>Ville: ${item.ville}</p>
-      </div><hr/>
+    <body>
+       <a href="https://mydressingbyamida.onrender.com/product.html?id=${item.id}">
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}" />
+        <div class="cart-item-details">
+          <h3>${item.name}</h3>
+          <p>Catégorie: ${item.category}</p>
+          <p>Quantité: ${item.qty}</p>
+          <p>Prix: ${item.price} USD</p>
+          <p>Taille: ${item.size}</p>
+          <p>Couleur: ${item.color}</p><br>
+          <strong style="color: crimson;">lieu de livraison:${item.ville}</ville>
+        </div>
+      </div>
+    </a>
     `;
   });
-  html += `<h2>Total: ${total} USD 💰</h2></body></html>`;
+  html += `<div class="total">Total: ${total} USD</div>`;
+  html += `</body></html>`;
   res.send(html);
 });
 
@@ -208,4 +305,4 @@ app.get("/", (req, res) => res.sendFile(path.join(__dirname, "public", "index.ht
 // -------------------
 // Start server
 // -------------------
-app.listen(PORT, () => console.log(`🚀 Serveur sur http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`🚀 live Serveur sur http://localhost:${PORT}`));
