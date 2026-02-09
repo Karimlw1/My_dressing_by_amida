@@ -37,7 +37,7 @@
   },
   "Produit2": {
     "id": "Produit2",
-    "name": "Sac a  main",
+    "name": "Sac aÂ  main",
     "category": "Accessoire",
     "type": "Sac",
     "price": 40,
@@ -96,7 +96,7 @@
   },
   "Produit4": {
     "id": "Produit4",
-    "name": "Sac à main",
+    "name": "Sac Ã  main",
     "category": "Accessoire",
     "type": "Sac",
     "price": 30,
@@ -156,7 +156,7 @@
   },
   "Produit6": {
     "id": "Produit6",
-    "name": "Chemise satinÃÂ©e manches longues",
+    "name": "Chemise satinÃÂÃÂ©e manches longues",
     "category": "Femme",
     "type": "haut",
     "price": 20,
@@ -195,7 +195,7 @@
   },
   "Produit7": {
     "id": "Produit7",
-    "name": "Ensemble costume homme croisÃÂ© 2piÃÂ¨ces ÃÂ  col revers",
+    "name": "Ensemble costume homme croisÃÂÃÂ© 2piÃÂÃÂ¨ces ÃÂÃÂ  col revers",
     "category": "Homme",
     "type": "complet",
     "price": 100,
@@ -269,11 +269,11 @@
         "gris",
         "blanc",
         "chocolat",
-        "bleu foncÃÂ©e",
+        "bleu foncÃÂÃÂ©e",
         "bleu marine",
         "vert",
         "beige",
-        "gris foncÃÂ©"
+        "gris foncÃÂÃÂ©"
       ]
     },
     "lieuDeLIvraison": {
@@ -287,7 +287,7 @@
   },
   "Produit9": {
     "id": "Produit9",
-    "name": "Ensemble dÃÂ©contractÃÂ© pour femme 2piÃÂ¨ces en coton",
+    "name": "Ensemble dÃÂÃÂ©contractÃÂÃÂ© pour femme 2piÃÂÃÂ¨ces en coton",
     "category": "Femme",
     "type": "complet",
     "price": 30,
@@ -330,7 +330,7 @@
   },
   "Produit 10": {
     "id": "Produit 10",
-    "name": "Chemise ÃÂ©lÃÂ©gante pour femme ÃÂ  manches longues avec motif floral",
+    "name": "Chemise ÃÂÃÂ©lÃÂÃÂ©gante pour femme ÃÂÃÂ  manches longues avec motif floral",
     "category": "Femme",
     "type": "haut",
     "price": 25,
@@ -366,57 +366,9 @@
       ]
     }
   },
-  "Produit10": {
-    "id": "Produit10",
-    "name": "Leggings de sport taille haute en silicone pour femme 2pieces",
-    "category": "Femme",
-    "type": "complet",
-    "price": 40,
-    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394729/mydressing_products/skgxxpctdt9uw2xcjfbc.jpg",
-    "images": [
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394729/mydressing_products/skgxxpctdt9uw2xcjfbc.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394741/mydressing_products/jszte14ohdpmigmhebkv.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394753/mydressing_products/e0zpmxccd5dzltrjkqae.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394766/mydressing_products/tl1u35bti8gsbqwxneup.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394798/mydressing_products/anxdmtmzuqt2sye3f9cp.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394812/mydressing_products/ceb7pc6dnakkkdhbz09k.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394830/mydressing_products/kzvjlr4hnxlf2dneg7ig.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394867/mydressing_products/if3gb4msx042oj36sblg.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394894/mydressing_products/xg60m7wyjucflxffae8o.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394926/mydressing_products/z9hyt6arp42iyss5oxtm.jpg"
-    ],
-    "options": {
-      "size": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "color": [
-        "Rose-rouge",
-        "Noir",
-        "brun",
-        "rose claire",
-        "vert foncÃÂ©",
-        "blanc",
-        "gris",
-        "bleu clair",
-        "mauve"
-      ]
-    },
-    "lieuDeLIvraison": {
-      "ville": [
-        "Lubumbashi",
-        "Kinshasa",
-        "Goma",
-        "kampala"
-      ]
-    }
-  },
   "Produit 11": {
     "id": "Produit 11",
-    "name": "Talons dames respirants Ã  bout pointue en tissu maillÃ© Ã©lÃ©gants et pour toutes les saisons",
+    "name": "Talons dames respirants ÃÂ  bout pointue en tissu maillÃÂ© ÃÂ©lÃÂ©gants et pour toutes les saisons",
     "category": "Accessoire",
     "type": "chaussure",
     "price": 60,
@@ -492,7 +444,7 @@
   },
   "Produit13": {
     "id": "Produit13",
-    "name": "Manteau en tricot court vintage Ã  manches longues",
+    "name": "Manteau en tricot court vintage ÃÂ  manches longues",
     "category": "Femme",
     "type": "haut",
     "price": 40,
@@ -532,7 +484,7 @@
   },
   "Produit14": {
     "id": "Produit14",
-    "name": "Robe Ã  col en V , manche longue de style blazer",
+    "name": "Robe ÃÂ  col en V , manche longue de style blazer",
     "category": "Femme",
     "type": "complet",
     "price": 50,
@@ -564,7 +516,7 @@
   },
   "Produit15": {
     "id": "Produit15",
-    "name": "Top de gilet asymÃ©trique Ã  un bouton avec texture tissÃ©e",
+    "name": "Top de gilet asymÃÂ©trique ÃÂ  un bouton avec texture tissÃÂ©e",
     "category": "Femme",
     "type": "haut",
     "price": 35,
@@ -589,9 +541,9 @@
         "Beige",
         "noir",
         "blanc",
-        "gris pÃ¢le",
+        "gris pÃÂ¢le",
         "vert",
-        "rose pÃ¢le"
+        "rose pÃÂ¢le"
       ]
     },
     "lieuDeLIvraison": {
@@ -668,7 +620,7 @@
   },
   "Produit18": {
     "id": "Produit18",
-    "name": "Basket dÃ©contractÃ© en cuir de vachette de premiÃ¨re qualitÃ©",
+    "name": "Basket dÃÂ©contractÃÂ© en cuir de vachette de premiÃÂ¨re qualitÃÂ©",
     "category": "Accessoire",
     "type": "chaussure",
     "price": 70,
@@ -704,6 +656,143 @@
         "Kinshasa",
         "Goma",
         "kampala"
+      ]
+    }
+  },
+  "Produit19": {
+    "id": "Produit19",
+    "name": "Robe plissee A manches longues col en V",
+    "category": "Femme",
+    "type": "robe",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527257/mydressing_products/rkcofzzm8ld016zvlaqr.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527257/mydressing_products/rkcofzzm8ld016zvlaqr.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527265/mydressing_products/eyuqifejbnhekmaoxkwf.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527275/mydressing_products/f1xxpwy3v89mst8wyfqb.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Blanc"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma",
+        "Kampala"
+      ]
+    }
+  },
+  "Produit20": {
+    "id": "Produit20",
+    "name": "Blouse en popeline avec manche large et col en V",
+    "category": "Femme",
+    "type": "haut",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527908/mydressing_products/tfbsj9ynitcvpbsleerm.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527908/mydressing_products/tfbsj9ynitcvpbsleerm.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527920/mydressing_products/wqrm52puamudsecvuegn.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527928/mydressing_products/l3gz9a9yftuhlnjeocub.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527938/mydressing_products/wua80synpncplxz6oh7j.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527951/mydressing_products/leoxs2inkrzjb5qdavnz.jpg"
+    ],
+    "options": {
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "color": [
+        "Blanc"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    }
+  },
+  "Produit21": {
+    "id": "Produit21",
+    "name": "Polo A manches courtes pour homme avec col revers",
+    "category": "Homme",
+    "type": "haut",
+    "price": 20,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528179/mydressing_products/yg61cvhxweiv7ztju1hn.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528179/mydressing_products/yg61cvhxweiv7ztju1hn.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528188/mydressing_products/oqsatu9y6kk6baum7qes.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528205/mydressing_products/hmywr70yncfcgsewhpki.jpg"
+    ],
+    "options": {
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL"
+      ],
+      "color": [
+        "Chocolat",
+        "bleue marine",
+        "noire"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    }
+  },
+  "Produit22": {
+    "id": "Produit22",
+    "name": "Ensemble 2pieces avec rayures ,manches longues",
+    "category": "Femme",
+    "type": "complet",
+    "price": 35,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528783/mydressing_products/cbpdh7mi2xrvvqs7jqn6.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528783/mydressing_products/cbpdh7mi2xrvvqs7jqn6.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528792/mydressing_products/yucr6ukt2n57elb8gggb.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528801/mydressing_products/dnnm0sv922pf7czv8gof.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528809/mydressing_products/kllzgtp9kepmfdv5mijz.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "color": [
+        "Jaune"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
       ]
     }
   }
