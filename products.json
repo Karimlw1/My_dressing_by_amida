@@ -498,5 +498,67 @@
         "Goma"
       ]
     }
+  },
+  "Produit27": {
+    "id": "Produit27",
+    "name": "Sac fourre-tout en cuir veritable pour femmes",
+    "category": "Accessoire",
+    "type": "Sac",
+    "price": 60,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096424/mydressing_products/ahcbbooq4crnyqfjhmjk.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096424/mydressing_products/ahcbbooq4crnyqfjhmjk.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096441/mydressing_products/qwjqpijrh226ghqqfya8.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096451/mydressing_products/mi23hiw1fidphri5857h.jpg"
+    ],
+    "options": {
+      "size": [
+        "Normale"
+      ],
+      "color": [
+        "Rouge sombre",
+        "noire",
+        "chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    }
+  },
+  "Produit28": {
+    "id": "Produit28",
+    "name": "Sac bandoulière en cuir veritable pour femme",
+    "category": "Accessoire",
+    "type": "Sac",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096680/mydressing_products/egul1knuceminyqrwdly.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096680/mydressing_products/egul1knuceminyqrwdly.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096690/mydressing_products/sj4g3swbx5nmbme06ikg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096699/mydressing_products/wxcd3ymvib7ocrl0ib5z.jpg"
+    ],
+    "options": {
+      "size": [
+        "Normale"
+      ],
+      "color": [
+        "Noire",
+        "chocolat",
+        "vert clair"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    }
   }
 }
