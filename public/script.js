@@ -71,6 +71,11 @@ function showMenu() {
     menuContent.classList.toggle("visible");
 }
 
+function exitMenu(){
+    const menu = document.querySellector(".menu");
+    menu.classList.remove("visible");
+}
+
 /* copyright */
 
 document.getElementById('year').textContent = new Date().getFullYear();
