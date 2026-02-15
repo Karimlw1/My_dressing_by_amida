@@ -70,13 +70,14 @@
 .product {
     width: 95%;
     background: white;
-    border-radius: 12px;
+    border-radius: 7px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 9%);
     cursor: pointer;
-     transition: transform 0.2s ease, box-shadow 0.2s ease;}
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
 .product:hover {
   transform: translateY(-3px);
