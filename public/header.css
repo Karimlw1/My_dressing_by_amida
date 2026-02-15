@@ -49,7 +49,7 @@ div.socials.visible {
 
 .menu h2 {
     color: #ffffff;
-    margin: 20px 70px 20px 20px;
+    margin-top: 200px;
     position: relative;
     right: 100px;
     
@@ -94,13 +94,16 @@ div.socials.visible {
     color: rgb(45, 128, 206);
     box-shadow: 1px 5px 15px rgba(50, 158, 153, 0.8)
 }
-.exitMenu{
+.exitMenu{    
     display: block;
     position: absolute;
     left: 30px;
-    top: -2px;
     font-size: 40px;
-    font-family: cursive;
+    height: 50px;
+    width: 50px;
+    background-color: #140b0b;
+    color: #ffffff;
+    font-size: 30px;
 }
 
 a i {
