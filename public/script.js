@@ -72,7 +72,7 @@ function showMenu() {
 }
 
 function exitMenu(){
-    const menu2 = document.querySelector(".menu");
+    const menu2 = document.querySelector(".socials");
     menu2.classList.remove("visible");
 }
 
