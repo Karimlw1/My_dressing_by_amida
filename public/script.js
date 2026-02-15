@@ -72,8 +72,8 @@ function showMenu() {
 }
 
 function exitMenu(){
-    const menu = document.querySellector(".menu");
-    menu.classList.remove("visible");
+    const menu2 = document.querySelector(".menu");
+    menu2.classList.remove("visible");
 }
 
 /* copyright */
