@@ -94,7 +94,6 @@
   height: 220px;
   object-fit: fill;     
   object-position: center;
-  border-radius: 12px 12px 0 0;
   background-color: #f2f2f2; /* soft fallback while loading */
 }
 
