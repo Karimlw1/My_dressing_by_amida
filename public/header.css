@@ -26,7 +26,6 @@
     position: absolute;
     z-index: 1;
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(14px);
     display: flex;
     flex-direction: column;
     padding: 35px 15px;
@@ -34,12 +33,14 @@
     top: 0;
     gap: 10px;
     width: -webkit-fill-available;
+    max-width: 700px;
     align-items: center;
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.7);
     visibility: hidden;
     height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
+    justify-self: anchor-center;
 }
 
 div.socials.visible {
