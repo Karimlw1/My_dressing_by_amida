@@ -88,7 +88,7 @@ div.socials.visible {
 }
 
 .socials .button:nth-child(3) {
-    margin-top: 130px;
+    margin-top: 100px;
     color: rgb(15, 100, 12);
     transition: all ease 0.4s;
 
