@@ -135,6 +135,7 @@ div.socials.visible {
     transition: all ease 0.4s;
 }
 .conf {
+    margin-top: 20px;
     color: rgb(0, 0, 0);
 }
 .exitMenu{    
