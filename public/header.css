@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     padding: 35px 15px;
-    left: -2439px;
+    left: -5439px;
     top: 0;
     gap: 10px;
     width: -webkit-fill-available;
@@ -88,7 +88,6 @@ div.socials.visible {
 
 }
 .socials a:nth-child(2):hover {
-    margin-top: 120px;
     color: rgb(255, 255, 255);
     background-color:  rgb(27, 163, 22);
     border: 1px solid rgba(0, 128, 0, 0.404);
