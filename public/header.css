@@ -51,42 +51,45 @@
 }
 
 .socials img {
-    height: 140px;
+    height: 150px;
     border-radius: 50%;
-    margin: 60px auto 30px;
+    margin: 70px auto 40px;
     display: block;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-    -webkit-user-drag: none;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.15),
+        0 5px 15px rgba(0,0,0,0.1);
 }
 
 
 .menu .socials .button {
-    width: 100%;
+    width: 90%;
     max-width: 500px;
+    padding: 18px 22px;
+
+    border-radius: 20px;
+    background: #f2f2f2;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 16px 20px;
-    border-radius: 18px;
-
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 600;
+    color: #1a1a1a;
 
-    background: #ffffff;
-    color: #111;
+    box-shadow:
+        8px 8px 20px rgba(0,0,0,0.08),
+        -8px -8px 20px rgba(255,255,255,0.9);
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 /* Hover effect */
 .menu .socials .button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+    transform: translateY(-4px);
+    box-shadow:
+        12px 12px 25px rgba(0,0,0,0.12),
+        -8px -8px 20px rgba(255,255,255,0.9);
 }
 
 
@@ -109,25 +112,25 @@
 }
 
 a i {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    font-size: 22px;
-
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .conf {
-    margin-top: 30px;
+    margin-top: 40px;
     font-size: 14px;
-    color: #888;
+    color: #6c6c6c;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .conf:hover {
-    color: #916c27;
+    color: #916c27; 
 }
 
 .exitMenu {
