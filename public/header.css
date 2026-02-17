@@ -93,11 +93,6 @@ div.socials.visible {
     transition: all ease 0.4s;
 
 }
-.socials .button:nth-child(3):hover {
-    color: rgb(255, 255, 255);
-    background-color:  rgb(27, 163, 22);
-}
-
 
 .socials .button:nth-child(4) {
     background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
@@ -105,13 +100,6 @@ div.socials.visible {
     -webkit-text-fill-color: transparent;
     transition: all ease 0.4s;
 }
-.socials .button:nth-child(4):hover {
-    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-    -webkit-text-fill-color: white;
-    box-shadow: 1px 5px 15px rgba(155, 10, 10, 0.377);
-    transition: all ease 0.4s;
-}
-
 
 .socials .button:nth-child(5) {
     background-color: rgb(255, 255, 255);
