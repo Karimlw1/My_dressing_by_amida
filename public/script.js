@@ -65,15 +65,18 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const Body = document.querySelector(".Body");
 
 function showMenu() {
     const menuContent = document.querySelector(".socials");
     menuContent.classList.toggle("visible");
+    Body.style.display= 'none';
 }
 
 function exitMenu(){
     const menu2 = document.querySelector(".socials");
     menu2.classList.remove("visible");
+    Body.style.display= 'block';
 }
 
 /* copyright */

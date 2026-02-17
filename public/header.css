@@ -25,27 +25,30 @@
 .menu .socials {
     position: absolute;
     z-index: 1;
-    backdrop-filter: blur(10px);
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     padding: 35px 15px;
-    left: 0;
+    left: -2439px;
     top: 0;
     gap: 10px;
     width: -webkit-fill-available;
+    height: 100vh;
     max-width: 700px;
     align-items: center;
     box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.7);
-    visibility: hidden;
-    height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
     justify-self: anchor-center;
+    transition: all ease-in-out 0.2s;
+    cursor: default;
 }
 
 div.socials.visible {
-    visibility: visible;
+    visibility: visible; 
     position: fixed;
+    transition: all ease 0.2s;
+    left: 0;
 }
 
 .menu h2 {
@@ -57,24 +60,27 @@ div.socials.visible {
 }
 
 .menu .socials a {
-    background: #c8a44b;
-    border: none;
+    background: #ffffff;
+    border: 1px solid;
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
-    width: max-content;
+    width: 100%;
     text-decoration: none;
     align-items: anchor-center;
     display: grid;
     grid-template-columns: repeat(2, 110px);
     justify-items: center;
+    justify-content: space-evenly;
+    font-family: math;
 }
 
 .socials a:nth-child(2) {
-    background-color: green;
-    color: whitesmoke;
-    box-shadow: 1px 5px 15px rgba(62, 124, 26, 0.8)
+    margin-top: 120px;
+    color: rgb(15, 100, 12);
+    border: 1px solid rgba(0, 128, 0, 0.404);
+    box-shadow: 1px 5px 15px rgba(62, 124, 26, 0.425)
 }
 
 .socials a:nth-child(3) {
@@ -104,7 +110,8 @@ div.socials.visible {
     width: 50px;
     background-color: #140b0b;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 20px;
+    border-radius: 60px;
 }
 
 a i {
