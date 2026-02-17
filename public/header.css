@@ -80,7 +80,7 @@ div.socials.visible {
 }
 
 .socials a:nth-child(2) {
-    margin-top: 120px;
+    margin-top: 200px;
     color: rgb(15, 100, 12);
     border: 1px solid rgba(0, 128, 0, 0.404);
     box-shadow: 1px 5px 15px rgba(62, 124, 26, 0.219);
