@@ -2,8 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description"
-content="My Dressing By Amida is a fashion brand offering elegant dresses and modern clothing for women.">
+    <meta
+      name="description"
+      content="My Dressing By Amida is a fashion brand offering elegant dresses and modern clothing for women."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My dressing by amida Home</title>
     <link rel="stylesheet" href="style.css" />
@@ -26,26 +28,41 @@ content="My Dressing By Amida is a fashion brand offering elegant dresses and mo
   <body>
     <header class="navbar">
       <div class="menu">
-        <strong onclick="showMenu()">&#9776;</strong>
+        <strong
+          onclick="showMenu()"
+          style="
+            color: rgb(255, 252, 252);
+            background-color: black;
+            padding: 8px 10px;
+            border-radius: 50%;
+            font-size: 15px;
+          "
+          ><i class="fa fa-phone"></i>
+        </strong>
 
-       
         <div class="socials">
-          <button class="exitMenu" onclick="exitMenu()"> ← </button>
+          <button class="exitMenu" onclick="exitMenu()">←</button>
 
           <a href="https://wa.me/243986007232" class="button whatsapp"
             ><i class="fa-brands fa-whatsapp"></i> whatsapp</a
           >
-          <a href="https://www.instagram.com/md_by_amida?igsh=N3czZGdnaTAwZ2w4" class="button instagram"
+          <a
+            href="https://www.instagram.com/md_by_amida?igsh=N3czZGdnaTAwZ2w4"
+            class="button instagram"
             ><i class="fa-brands fa-instagram"></i> instagram</a
           >
-          <a href="https://www.tiktok.com/@mdbyamida?_r=1&_t=ZS-93zjfbF5iMf" class="button tiktok"><i class="fa-brands fa-tiktok"></i> tiktok</a>
+          <a
+            href="https://www.tiktok.com/@mdbyamida?_r=1&_t=ZS-93zjfbF5iMf"
+            class="button tiktok"
+            ><i class="fa-brands fa-tiktok"></i> tiktok</a
+          >
           <a href="" class="button facebook"
             ><i class="fa-brands fa-facebook"></i> facebook</a
           >
-           <a href="privacy&policy.html" class="conf">Politique de confidentialité</a>
+          <a href="privacy&policy.html" class="conf"
+            >Politique de confidentialité</a
+          >
         </div>
-        
-         
       </div>
       <h3><strong>My dressing by amida</strong></h3>
       <div
@@ -112,72 +129,73 @@ content="My Dressing By Amida is a fashion brand offering elegant dresses and mo
       </div>
     </section>
     <section class="Body">
-    <section class="categories">
-      <h3>Categories</h3>
-      <div class="category-container">
-        <div class="grid">
-          <div class="category" onclick="location.href = 'FashionH.html'">
-            <p>Fashion Homme</p>
-          </div>
+      <section class="categories">
+        <h3>Categories</h3>
+        <div class="category-container">
+          <div class="grid">
+            <div class="category" onclick="location.href = 'FashionH.html'">
+              <p>Fashion Homme</p>
+            </div>
 
-          <div class="category" onclick="location.href = 'FashionF.html'">
-            <p>Fashion Femme</p>
-          </div>
+            <div class="category" onclick="location.href = 'FashionF.html'">
+              <p>Fashion Femme</p>
+            </div>
 
-          <div class="category" onclick="location.href = 'beaute.html'">
-            <p>
-              beauté & <br />
-              Skin care
-            </p>
+            <div class="category" onclick="location.href = 'beaute.html'">
+              <p>
+                beauté & <br />
+                Skin care
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="flex">
-          <div
-            class="category"
-            onclick="location.href = 'gift.html'"
-            style="
-              width: 50%;
-              background: url(https://i.pinimg.com/736x/1a/8a/0d/1a8a0d1a3532fe45ea7ac60bd43b3f47.jpg);
-              background-repeat: round;
-            "
-          >
-            <p>Cadeau</p>
-          </div>
-          <div
-            class="category"
-            onclick="location.href = 'accessoires.html'"
-            style="
-              width: 50%;
-              background: url(https://i.pinimg.com/1200x/d2/ae/cd/d2aecd7387bf896efe08024eda3e405f.jpg);
-              background-repeat: round;
-            "
-          >
+          <div class="flex">
+            <div
+              class="category"
+              onclick="location.href = 'gift.html'"
+              style="
+                width: 50%;
+                background: url(https://i.pinimg.com/736x/1a/8a/0d/1a8a0d1a3532fe45ea7ac60bd43b3f47.jpg);
+                background-repeat: round;
+              "
+            >
+              <p>Cadeau</p>
+            </div>
+            <div
+              class="category"
+              onclick="location.href = 'accessoires.html'"
+              style="
+                width: 50%;
+                background: url(https://i.pinimg.com/1200x/d2/ae/cd/d2aecd7387bf896efe08024eda3e405f.jpg);
+                background-repeat: round;
+              "
+            >
               <p>Accessoires</p>
             </div>
           </div>
         </div>
       </section>
-    
-      <h2 style="font-size: x-large; margin: 10px 0 0 20px;">Explorez</h2>
 
-      
-        <section class="products" id="productsContainer"></section>
+      <h2 style="font-size: x-large; margin: 10px 0 0 20px">Explorez</h2>
 
-        <div class="texts">
-          <div class="slide-from-left reveal">Jusqu’à -30% sur vos achats</div>
-          <div class="slide-from-left reveal">Stock disponible immédiatement</div>
-          <div class="slide-from-left reveal">
-            Des milliers de clients satisfaits
-          </div>
-          <div class="slide-from-left reveal">Cadeaux uniques pour vos proches</div>
+      <section class="products" id="productsContainer"></section>
+
+      <div class="texts">
+        <div class="slide-from-left reveal">Jusqu’à -30% sur vos achats</div>
+        <div class="slide-from-left reveal">Stock disponible immédiatement</div>
+        <div class="slide-from-left reveal">
+          Des milliers de clients satisfaits
         </div>
+        <div class="slide-from-left reveal">
+          Cadeaux uniques pour vos proches
+        </div>
+      </div>
 
-        <footer>
-          <p>
-            © <span id="year"></span> My Dressing by Amida. <br />
-            All rights reserved.
-          </p>
-        </footer>
+      <footer>
+        <p>
+          © <span id="year"></span> My Dressing by Amida. <br />
+          All rights reserved.
+        </p>
+      </footer>
     </section>
     <script src="script.js"></script>
     <script src="product-link.js"></script>
