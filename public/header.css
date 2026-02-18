@@ -34,7 +34,7 @@
     flex-direction: column;
     align-items: center;
     gap: 18px;
-    place-self:anchor-center;
+    place-self: anchor-center;
 
     background: linear-gradient(#ffffff, #f4f6fa);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -49,7 +49,7 @@
 /* Visible state */
 .menu .socials.visible {
     transform: translateX(0);
-    left:0;
+    left: 0;
 }
 
 .socials img {
@@ -73,6 +73,7 @@
     justify-content: space-between;
     font-size: 18px;
     font-weight: 600;
+    text-decoration: none;
 
     box-shadow:
         8px 8px 20px rgba(0,0,0,0.08),
@@ -81,10 +82,10 @@
     transition: all 0.25s ease;
 }
 .button i{
-   align-content: center;
-   text-align: center;
+    text-decoration: none;
+    align-content: center;
+    text-align: center;
 }
-
 /* Hover effect */
 .menu .socials .button:hover {
     transform: translateY(-4px);
@@ -101,11 +102,11 @@
 
 .button.instagram {
     background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
-    -webkit-background-clip: text;
+    -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;
 }
-.button.instagram i{
-   background: content-box;
+.button.instagram i {
+    background: content-box;
 }
 
 .button.tiktok {
@@ -130,8 +131,8 @@ a i {
     margin-top: 40px;
     font-size: 24px;
     color: #1e1bdd;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    text-decoration: underline;
+    transition: color 1s ease;
 }
 
 .conf:hover {
