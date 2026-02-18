@@ -128,14 +128,14 @@ a i {
 
 .conf {
     margin-top: 40px;
-    font-size: 14px;
-    color: #6c6c6c;
+    font-size: 24px;
+    color: #1e1bdd;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .conf:hover {
-    color: #916c27; 
+    color: #070707; 
 }
 
 .exitMenu {
