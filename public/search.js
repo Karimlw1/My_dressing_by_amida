@@ -4,7 +4,7 @@ const searchInput = document.getElementById("SearchInput");
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("SearchInput");
 
-    if (!searchInput) return; // prevents crash if page doesn't have it
+    if (!searchInput) return; 
 
     searchInput.addEventListener("keydown", function (e) {
         if (e.key === "Enter") {
