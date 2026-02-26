@@ -63,7 +63,7 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-self: center;
-    margin-top: -10px;
+    margin-top: 0px;
     font-variant-numeric: oldstyle-nums;
     background-color: #ffffff;
     justify-items: center;

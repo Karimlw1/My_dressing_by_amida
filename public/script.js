@@ -106,10 +106,10 @@ fetch("/api/products")
           </button>
         </div>
       `;
-      if (product.price < 20) {
+      if (product.price < 40) {
         div.querySelector(".price").style.color = "green";
       }
-      
+
 
       productsContainer.appendChild(div);
     });
