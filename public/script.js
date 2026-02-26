@@ -97,7 +97,9 @@ fetch("/api/products")
       div.innerHTML = `
         <img src="${product.image}" alt="${product.name}" />
         <div class="info">
-        <div class="description">${product.name}</div>
+          <div class="description">${product.name}</div>
+          <p class="category">${product.category}</p>
+          <p class="size">${product.options?.size?.join(", ") || "N/A"}</p>
           <div class="price">$${product.price}</div>
           <button class="details-bttn" onclick="location.href='product.html?id=${product.id}'">
             Voir produit
