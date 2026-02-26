@@ -1,7 +1,7 @@
 {
   "Produit6": {
     "id": "Produit6",
-    "name": "Chemise satinÃÂÃÂ©e manches longues",
+    "name": "Chemise satinée manches longues",
     "category": "Femme",
     "type": "haut",
     "price": 20,
@@ -40,7 +40,7 @@
   },
   "Produit 10": {
     "id": "Produit 10",
-    "name": "Chemise ÃÂÃÂ©lÃÂÃÂ©gante pour femme ÃÂÃÂ  manches longues avec motif floral",
+    "name": "Chemise élégante pour femme à manches longues avec motif floral",
     "category": "Femme",
     "type": "haut",
     "price": 25,
@@ -78,7 +78,7 @@
   },
   "Produit15": {
     "id": "Produit15",
-    "name": "Top de gilet asymÃÂ©trique ÃÂ  un bouton avec texture tissÃÂ©e",
+    "name": "Top de gilet asymétrique à un bouton avec texture tissée",
     "category": "Femme",
     "type": "haut",
     "price": 35,
@@ -119,7 +119,7 @@
   },
   "Produit 16": {
     "id": "Produit 16",
-    "name": "Ensemble 2pieces t-shirt et short pour homme",
+    "name": "Ensemble 2 pièces t-shirt et short pour homme",
     "category": "Homme",
     "type": "complet",
     "price": 40,
@@ -182,7 +182,7 @@
   },
   "Produit18": {
     "id": "Produit18",
-    "name": "Basket dÃÂ©contractÃÂ© en cuir de vachette de premiÃÂ¨re qualitÃÂ©",
+    "name": "Basket décontractée en cuir de vachette de première qualité",
     "category": "Accessoire",
     "type": "chaussure",
     "price": 70,
@@ -223,7 +223,7 @@
   },
   "Produit19": {
     "id": "Produit19",
-    "name": "Robe plissee A manches longues col en V",
+    "name": "Robe plissée à manches longues col en V",
     "category": "Femme",
     "type": "robe",
     "price": 50,
@@ -290,7 +290,7 @@
   },
   "Produit21": {
     "id": "Produit21",
-    "name": "Polo A manches courtes pour homme avec col revers",
+    "name": "Polo à manches courtes pour homme avec col revers",
     "category": "Homme",
     "type": "haut",
     "price": 20,
@@ -396,7 +396,7 @@
   },
   "Produit24": {
     "id": "Produit24",
-    "name": "Robe de luxe longue elegante pour femme",
+    "name": "Robe de luxe longue élégante pour femme",
     "category": "Femme",
     "type": "robe",
     "price": 120,
@@ -429,7 +429,7 @@
   },
   "Produit25": {
     "id": "Produit25",
-    "name": "Talons aiguilles en dentelle epais et bout pointu",
+    "name": "Talons aiguilles en dentelle épais et bout pointu",
     "category": "Accessoire",
     "type": "chaussure",
     "price": 80,
@@ -501,7 +501,7 @@
   },
   "Produit27": {
     "id": "Produit27",
-    "name": "Sac fourre-tout en cuir veritable pour femmes",
+    "name": "Sac fourre-tout en cuir véritable pour femmes",
     "category": "Accessoire",
     "type": "Sac",
     "price": 60,
@@ -532,7 +532,7 @@
   },
   "Produit28": {
     "id": "Produit28",
-    "name": "Sac bandoulière en cuir veritable pour femme",
+    "name": "Sac bandoulière en cuir véritable pour femme",
     "category": "Accessoire",
     "type": "Sac",
     "price": 50,
@@ -666,7 +666,7 @@
   },
   "Produit4": {
     "id": "Produit4",
-    "name": "Stantey cup ancienne version",
+    "name": "Stanley cup ancienne version",
     "category": "Cadeau",
     "type": "",
     "price": 25,
