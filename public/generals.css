@@ -32,13 +32,13 @@
  }
 
 .description{
-    font-size: smaller;
+   font-size: smaller;
     color: black;
-    display: inline;
     text-wrap: wrap;
-    overflow: scroll;
     overflow-wrap: break-word;
-    width: 452px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
  .price {
@@ -55,8 +55,6 @@
      padding: 8px 12px;
      border-radius: 6px;
      cursor: pointer;
-     width: 38%;
-
  }
  
 .products {
