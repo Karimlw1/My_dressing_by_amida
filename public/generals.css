@@ -27,11 +27,15 @@
      padding: 10px;
      flex: 1;
      display: grid;
-     grid-template-columns: repeat(2, 1fr);
-
+     grid-template-columns: repeat(1, 1fr);
  }
 
-
+.description{
+ font-size: smaller;
+ color: darkgrey;
+ overflow: hidden;
+ text-wrap: wrap;
+}
 
  .price {
      color: rgb(0, 0, 0);
