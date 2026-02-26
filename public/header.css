@@ -169,14 +169,19 @@ a i {
 .cart {
     position: relative;
     font-size: 20px;
+    cursor: pointer;
+    background-color: black;
+    padding: 5px;
+    border-radius: 9px;
+    color: white;
+    align-items: end;
+    font: caption;
 }
 
 .badge {
     position: absolute;
     top: -6px;
     right: -8px;
-    background: #000000;
-    color: #ffffff;
     padding: 2px 6px;
     border-radius: 50%;
     font: -webkit-small-control;
