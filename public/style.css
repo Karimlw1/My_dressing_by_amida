@@ -9,13 +9,13 @@
     top: 64px;
     display: flex;
     align-items: center;
-    color: black;
+    color: #ffffff;
     border-radius: 20px;
     padding: -0rem 1rem;
     transition: all 0.25s ease;
     margin-top: 15px;
-    backdrop-filter: blur(20px);
-    box-shadow: inset 0px 1px 2px 0 rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    box-shadow: inset 0px 1px 2px 0 rgb(255 255 255 / 70%);
     height: 50px;
     justify-self: center;
     width: 300px;
