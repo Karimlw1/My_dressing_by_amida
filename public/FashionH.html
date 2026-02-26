@@ -34,7 +34,8 @@
         onclick="location.href = 'cart.html'"
         style="cursor: pointer"
       >
-        🛒 <span class="badge" id="cartCount"></span>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge" id="cartCount"></span>
       </div>
     </header>
 
@@ -46,7 +47,7 @@
           />
           <p>Complet</p>
         </div>
-        
+
         <div class="category" id="haut">
           <img
             src="https://i.pinimg.com/1200x/64/41/b4/6441b4ed993e3463e9628ec7a52d2649.jpg"
@@ -67,22 +68,19 @@
           />
           <p>Chaussures</p>
         </div>
-      
+
         <div class="category" id="habitmuslim">
           <img
             src="https://i.pinimg.com/1200x/00/45/2a/00452a73760ffbb64c2a69a7b337cf20.jpg"
           />
           <p>Habit muslim</p>
         </div>
-        
       </div>
     </div>
 
     <p id="pTrie">Trier : <strong id="trieMessage">Tout les article</strong></p>
 
-    <section class="products" id="productsContainer">
-
-    </section>
+    <section class="products" id="productsContainer"></section>
 
     <footer>
       <p>
@@ -91,42 +89,40 @@
       </p>
     </footer>
     <script>
-      
-function getCategoryClasses(product) {
-  const classes = [];
+      function getCategoryClasses(product) {
+        const classes = [];
 
-  // Add main category
-  if (product.category) {
-    classes.push(product.category.toLowerCase());
-  }
+        // Add main category
+        if (product.category) {
+          classes.push(product.category.toLowerCase());
+        }
 
-  if (product.type) {
-    classes.push(product.type.toLowerCase())
-  }
+        if (product.type) {
+          classes.push(product.type.toLowerCase());
+        }
 
-  if (product.options?.size) {
-    product.options.size.forEach(size => {
-      classes.push(size.toLowerCase());
-    });
-  }
+        if (product.options?.size) {
+          product.options.size.forEach((size) => {
+            classes.push(size.toLowerCase());
+          });
+        }
 
-  if (product.options?.color) {
-    product.options.color.forEach(color => {
-      classes.push(color.toLowerCase());
-    });
-  }
+        if (product.options?.color) {
+          product.options.color.forEach((color) => {
+            classes.push(color.toLowerCase());
+          });
+        }
 
-  return classes.join(" "); // <- this is OK here
-}
-
+        return classes.join(" "); // <- this is OK here
+      }
 
       fetch("/api/products")
-        .then(res => res.json())
-        .then(products => {
+        .then((res) => res.json())
+        .then((products) => {
           const container = document.getElementById("productsContainer");
           Object.values(products)
-            .filter(p => p.category === "Homme") // filtrage par page
-            .forEach(p => {
+            .filter((p) => p.category === "Homme") // filtrage par page
+            .forEach((p) => {
               const div = document.createElement("div");
               div.className = `product details ${getCategoryClasses(p)}`;
               div.dataset.id = p.id;
@@ -140,27 +136,24 @@ function getCategoryClasses(product) {
               container.appendChild(div);
             });
 
-            const categories = {
-                  haut: document.querySelectorAll(".haut"),
-                  bas: document.querySelectorAll(".bas"),
-                  chaussure: document.querySelectorAll(".chaussure"),
-                  accessoires: document.querySelectorAll(".accessoire"),
-                  abaya: document.querySelectorAll(".abaya"),
-                  complet: document.querySelectorAll(".complet"),
-                  habitmuslim: document.querySelectorAll(".habitmuslim"),
-                  maquillage: document.querySelectorAll(".maquillage"),
-                  skincare: document.querySelectorAll(".skincare"),
-                  fragrance: document.querySelectorAll(".fragrance"),
-                  haircare: document.querySelectorAll(".haircare"),
-                  lunette: document.querySelectorAll(".lunettes"),
-                  montre: document.querySelectorAll(".montre"),
-                  sac: document.querySelectorAll(".sac"),
-                  bracha: document.querySelectorAll(".bracha"),
-                  phone: document.querySelectorAll(".phone"),
-
-                };
-
-                
+          const categories = {
+            haut: document.querySelectorAll(".haut"),
+            bas: document.querySelectorAll(".bas"),
+            chaussure: document.querySelectorAll(".chaussure"),
+            accessoires: document.querySelectorAll(".accessoire"),
+            abaya: document.querySelectorAll(".abaya"),
+            complet: document.querySelectorAll(".complet"),
+            habitmuslim: document.querySelectorAll(".habitmuslim"),
+            maquillage: document.querySelectorAll(".maquillage"),
+            skincare: document.querySelectorAll(".skincare"),
+            fragrance: document.querySelectorAll(".fragrance"),
+            haircare: document.querySelectorAll(".haircare"),
+            lunette: document.querySelectorAll(".lunettes"),
+            montre: document.querySelectorAll(".montre"),
+            sac: document.querySelectorAll(".sac"),
+            bracha: document.querySelectorAll(".bracha"),
+            phone: document.querySelectorAll(".phone"),
+          };
         });
     </script>
     <script src="filter.js"></script>
