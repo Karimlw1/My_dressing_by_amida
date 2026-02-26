@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="generals.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="search.css" />
+
+    <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
+    <link rel="shortcut icon" href="images/MDamida-logo.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="menu" onclick="history.back()">←</div>
+      <h3><strong>RECHECHE</strong></h3>
+      <div
+        class="cart"
+        onclick="location.href = 'cart.html'"
+        style="cursor: pointer"
+      >
+        <i class="fa fa-shopping-bag"></i>
+        <span class="badge" id="cartCount"></span>
+      </div>
+    </header>
+
+    <div id="resultsCount" style="margin-left: 20px"></div>
+
+    <section class="products" id="resultsContainer"></section>
+    <footer>
+      <i class="fa fa-home" style="cursor: pointer">
+        <p>Home</p>
+      </i>
+      <i
+        class="fa fa-shopping-bag"
+        onclick="location.href = 'cart.html'"
+        style="cursor: pointer"
+      >
+        <p>cart</p>
+      </i>
+      <i class="fa fa-comments" onclick="showMenu()" style="cursor: pointer">
+        <p>Chat</p>
+      </i>
+    </footer>
+    <script src="mode.js"></script>
+    <script src="search.js"></script>
+    <script src="script.js"></script>
+    <script src="product-link.js"></script>
+    <script src="cart.js"></script>
+    <script src="cart-core.js"></script>
+  </body>
+</html>
