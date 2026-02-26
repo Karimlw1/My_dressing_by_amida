@@ -69,8 +69,6 @@
 
       /* CONTAINER PRODUIT */
       .product-page {
-        width: 90%;
-        max-width: 900px;
         margin: 40px auto;
         padding: 30px;
         background: #ffffff;
@@ -87,13 +85,13 @@
         border-radius: 12px;
       }
       .carousel {
+        padding: 20px;
         width: 80%;
-  position: relative;
+        position: relative;
 }
 
 #mainImage {
   width: 100%;
-  height: 430px;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -107,7 +105,8 @@
 .thumbs img {
   width: 60px;
   height: 60px;
-  object-fit: fill;
+  object-fit: cover;
+  margin:5px;
   border-radius: 8px;
   cursor: pointer;
   opacity: 0.6;
@@ -237,21 +236,22 @@
       </div>
     </header>
     <div class="product-page">
-       <div class="carousel">
-          <img id="mainImage" />
-          <div class="thumbs" id="thumbs"></div>
-          <button class="nav prev">❮</button>
-          <button class="nav next">❯</button>
-        </div>
+      <div class="carousel">
+        <img id="mainImage" />
+        <div class="thumbs" id="thumbs"></div>
+        <button class="nav prev">❮</button>
+        <button class="nav next">❯</button>
+      </div>
 
       <div class="product-info">
         <h2 id="name"></h2>
         <p id="category"></p>
         <h3 id="price"></h3>
 
-         <p id="product-id"></p>
+        <p id="product-id"></p>
         <div id="options"></div>
         <div id="lieuDeLIvraison"></div>
+        
         <button id="addToCart">Ajouter au panier</button>
         <a href="cart.html" style="
             text-align: center;
