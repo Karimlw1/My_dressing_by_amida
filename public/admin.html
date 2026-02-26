@@ -1,386 +1,427 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Admin – My Dressing by Amida</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin – My Dressing by Amida</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
+    <link rel="shortcut icon" href="images/MDamida-logo.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      /* === Reset & Base === */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f5f5f7;
+        color: #2c2c2c;
+      }
 
- <style>
-/* === Reset & Base === */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Inter', sans-serif;
-  background: #f5f5f7;
-  color: #2c2c2c;
-}
+      /* === Container principal - premium card === */
+      .admin {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 40px;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+      .admin:hover {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      }
 
-/* === Container principal - premium card === */
-.admin {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-.admin:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+      /* === Titles === */
+      h2,
+      h3 {
+        font-weight: 700;
+        color: #1a1a1a;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+      }
 
-/* === Titles === */
-h2, h3 {
-  font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: 0.5px;
-  margin-bottom: 20px;
-}
+      /* === Form Grid === */
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
 
-/* === Form Grid === */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 30px;
-}
+      /* === Inputs & Selects === */
+      input,
+      select,
+      textarea {
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        font-size: 15px;
+        width: 100%;
+        background: #fafafa;
+        color: #2c2c2c;
+        transition: all 0.2s ease;
+      }
+      input::placeholder,
+      select::placeholder {
+        color: #888;
+      }
 
-/* === Inputs & Selects === */
-input, select, textarea {
-  padding: 14px 16px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  font-size: 15px;
-  width: 100%;
-  background: #fafafa;
-  color: #2c2c2c;
-  transition: all 0.2s ease;
-}
-input::placeholder, select::placeholder { color: #888; }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #7a7a7a;
+        background: #fff;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+      }
 
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #7a7a7a;
-  background: #fff;
-  box-shadow: 0 0 12px rgba(0,0,0,0.05);
-}
+      /* === Select arrow === */
+      select {
+        appearance: none;
+        background: #fafafa
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path fill='gray' d='M4 6l4 4 4-4z'/></svg>")
+          no-repeat right 12px center;
+        background-size: 12px;
+        padding-right: 36px;
+      }
 
-/* === Select arrow === */
-select {
-  appearance: none;
-  background: #fafafa url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path fill='gray' d='M4 6l4 4 4-4z'/></svg>") no-repeat right 12px center;
-  background-size: 12px;
-  padding-right: 36px;
-}
+      /* === Buttons === */
+      button {
+        padding: 14px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        background: #1a1a1a;
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+      button:hover {
+        background: #333;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      }
 
-/* === Buttons === */
-button {
-  padding: 14px 24px;
-  border-radius: 12px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  background: #1a1a1a;
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-button:hover {
-  background: #333;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
+      /* === Image Preview === */
+      .preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .preview div {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #e0e0e0;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .preview div:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+      .preview img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        display: block;
+      }
+      .preview button {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        background: #e74c3c;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        font-size: 14px;
+        padding: 0;
+        color: #fff;
+        border: none;
+      }
 
-/* === Image Preview === */
-.preview {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 15px;
-}
-.preview div {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #e0e0e0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.preview div:hover { 
-  transform: scale(1.05);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-.preview img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  display: block;
-}
-.preview button {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  background: #e74c3c;
-  border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  font-size: 14px;
-  padding: 0;
-  color: #fff;
-  border: none;
-}
+      /* === Responsive === */
+      @media (max-width: 720px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .preview img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin">
+      <h2>Admin – Ajouter un produit</h2>
 
-/* === Responsive === */
-@media(max-width:720px) {
-  .grid { grid-template-columns: 1fr; }
-  .preview img { width: 80px; height: 80px; }
-}
-</style>
+      <div class="grid">
+        <input id="id" placeholder="ID produit (ex: FashionHp10)" />
+        <input id="name" placeholder="Nom du produit" />
+        <input id="price" type="number" placeholder="Prix" />
 
-</head>
-<body>
+        <select id="category">
+          <option value="">Choisir la page</option>
+          <option value="Homme">Homme</option>
+          <option value="Femme">Femme</option>
+          <option value="Beaute&Skincare">Beaute & Skincare</option>
+          <option value="Cadeau">Cadeau</option>
+          <option value="Accessoire">Accessoire</option>
+          <option value="Maternite">Maternite</option>
+          <option value="CadeauSpecial">Cadeau Special</option>
+        </select>
 
-<div class="admin">
-  <h2>Admin – Ajouter un produit</h2>
+        <select id="type">
+          <option value="">Type de produit</option>
+          <option value="haut">Haut</option>
+          <option value="bas">Bas</option>
+          <option value="chaussure">Chaussure</option>
+          <option value="accessoire">Accessoire</option>
+          <option value="lingerie">Lingerie</option>
+          <option value="robe">Robe</option>
+          <option value="habitmuslim">Habit Muslim</option>
+          <option value="complet">Complet</option>
+          <option value="maquillage">maquillage</option>
+          <option value="fragrance">fragrance</option>
+          <option value="haircare">haircare</option>
+          <option value="Lunettes">Lunettes</option>
+          <option value="Sac">Sac</option>
+          <option value="bracha">bracha</option>
+          <option value="Phone">Phone</option>
+        </select>
 
-  <div class="grid">
-    <input id="id" placeholder="ID produit (ex: FashionHp10)">
-    <input id="name" placeholder="Nom du produit">
-    <input id="price" type="number" placeholder="Prix">
+        <input id="sizes" placeholder="Tailles (S, M, L)" />
+        <input id="colors" placeholder="Couleurs (Noir, Blanc)" />
+        <input id="villes" placeholder="Villes (Kinshasa, Goma)" />
+      </div>
 
-    <select id="category">
-      <option value="">Choisir la page</option>
-      <option value="Homme">Homme</option>
-      <option value="Femme">Femme</option>
-      <option value="Beaute&Skincare">Beaute & Skincare</option>
-      <option value="Cadeau">Cadeau</option>
-      <option value="Accessoire">Accessoire</option>
-      <option value="Maternite">Maternite</option>
-      <option value="CadeauSpecial">Cadeau Special</option>
-    </select>
+      <h3>Images</h3>
+      <input type="file" id="imageInput" accept="image/*" />
+      <button id="uploadBtn">Uploader l’image</button>
+      <div class="preview" id="preview"></div>
 
-    <select id="type">
-      <option value="">Type de produit</option>
-      <option value="haut">Haut</option>
-      <option value="bas">Bas</option>
-      <option value="chaussure">Chaussure</option>
-      <option value="accessoire">Accessoire</option>
-      <option value="lingerie">Lingerie</option>
-      <option value="robe">Robe</option>
-      <option value="habitmuslim">Habit Muslim</option>
-      <option value="complet">Complet</option>
-      <option value="maquillage">maquillage</option>
-      <option value="fragrance">fragrance</option>
-      <option value="haircare">haircare</option>
-      <option value="Lunettes">Lunettes</option>
-      <option value="Sac">Sac</option>
-      <option value="bracha">bracha</option>
-      <option value="Phone">Phone</option>
-    </select>
+      <br />
+      <button id="saveProduct">Enregistrer le produit</button>
 
-    <input id="sizes" placeholder="Tailles (S, M, L)">
-    <input id="colors" placeholder="Couleurs (Noir, Blanc)">
-    <input id="villes" placeholder="Villes (Kinshasa, Goma)">
-  </div>
+      <h3>Supprimer un produit</h3>
+      <div style="display: flex; gap: 10px; margin-bottom: 20px">
+        <input id="deleteProductId" placeholder="ID du produit à supprimer" />
+        <button id="deleteBtn">Supprimer</button>
+      </div>
 
-  <h3>Images</h3>
-  <input type="file" id="imageInput" accept="image/*">
-  <button id="uploadBtn">Uploader l’image</button>
-  <div class="preview" id="preview"></div>
-
-  <br>
-  <button id="saveProduct">Enregistrer le produit</button>
-
-  <h3>Supprimer un produit</h3>
-    <div style="display:flex; gap:10px; margin-bottom:20px;">
-      <input id="deleteProductId" placeholder="ID du produit à supprimer">
-      <button id="deleteBtn">Supprimer</button>
+      <br />
+      <br />
+      <button id="downloadProducts">Télécharger products.json</button>
     </div>
 
+    <script>
+      const ADMIN_KEY = "1234";
 
-  <br>
-  <br>
-  <button id="downloadProducts">Télécharger products.json</button>
+      const idInput = document.getElementById("id");
+      const nameInput = document.getElementById("name");
+      const priceInput = document.getElementById("price");
+      const categoryInput = document.getElementById("category");
+      const typeInput = document.getElementById("type");
+      const sizesInput = document.getElementById("sizes");
+      const colorsInput = document.getElementById("colors");
+      const villesInput = document.getElementById("villes");
 
-</div>
+      document.getElementById("downloadProducts").onclick = async () => {
+        const res = await fetch("/admin/download-products", {
+          headers: { "x-admin-key": "1234" }, // remplace par ta vraie clé ADMIN_KEY
+        });
+        if (!res.ok) return alert("Erreur 😢");
 
-<script>
-const ADMIN_KEY = "1234";
+        const blob = await res.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "products.json";
+        a.click();
+      };
 
-const idInput = document.getElementById("id");
-const nameInput = document.getElementById("name");
-const priceInput = document.getElementById("price");
-const categoryInput = document.getElementById("category");
-const typeInput = document.getElementById("type");
-const sizesInput = document.getElementById("sizes");
-const colorsInput = document.getElementById("colors");
-const villesInput = document.getElementById("villes");
+      document.getElementById("saveProduct").onclick = async () => {
+        if (
+          !idInput ||
+          !nameInput ||
+          !priceInput ||
+          !categoryInput ||
+          !typeInput
+        ) {
+          alert("Un champ du formulaire est introuvable dans le HTML");
+          return;
+        }
 
-document.getElementById("downloadProducts").onclick = async () => {
-  const res = await fetch("/admin/download-products", {
-    headers: { "x-admin-key": "1234" } // remplace par ta vraie clé ADMIN_KEY
-  });
-  if (!res.ok) return alert("Erreur 😢");
+        const product = {
+          id: idInput.value.trim(),
+          name: nameInput.value.trim(),
+          category: categoryInput.value.trim(),
+          type: typeInput.value,
+          price: Number(priceInput.value),
+          image: uploadedImages[0],
+          images: uploadedImages,
+          options: {
+            size: sizesInput.value
+              .split(",")
+              .map((s) => s.trim())
+              .filter(Boolean),
+            color: colorsInput.value
+              .split(",")
+              .map((c) => c.trim())
+              .filter(Boolean),
+          },
+          lieuDeLIvraison: {
+            ville: villesInput.value
+              .split(",")
+              .map((v) => v.trim())
+              .filter(Boolean),
+          },
+        };
 
-  const blob = await res.blob();
-  const url = window.URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "products.json";
-  a.click();
-};
+        if (!product.id || !product.name || !product.price) {
+          alert("ID, nom et prix sont obligatoires");
+          return;
+        }
 
-document.getElementById("saveProduct").onclick = async () => {
-  if (!idInput || !nameInput || !priceInput || !categoryInput || !typeInput ) {
-    alert("Un champ du formulaire est introuvable dans le HTML");
-    return;
-  }
+        const res = await fetch("/admin/add-product", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-admin-key": ADMIN_KEY,
+          },
+          body: JSON.stringify(product),
+        });
 
-  const product = {
-    id: idInput.value.trim(),
-    name: nameInput.value.trim(),
-    category: categoryInput.value.trim(),
-    type: typeInput.value, 
-    price: Number(priceInput.value),
-    image: uploadedImages[0],
-    images: uploadedImages,
-    options: {
-      size: sizesInput.value.split(",").map(s => s.trim()).filter(Boolean),
-      color: colorsInput.value.split(",").map(c => c.trim()).filter(Boolean)
-    },
-    lieuDeLIvraison: {
-      ville: villesInput.value.split(",").map(v => v.trim()).filter(Boolean)
-    }
-  };
+        const data = await res.json();
 
-  if (!product.id || !product.name || !product.price) {
-    alert("ID, nom et prix sont obligatoires");
-    return;
-  }
+        if (data.success) {
+          alert("Produit ajouté ✔");
+          location.reload();
+        } else {
+          alert("Erreur lors de l'enregistrement");
+        }
+      };
+      //upload
 
-  const res = await fetch("/admin/add-product", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-admin-key": ADMIN_KEY
-    },
-    body: JSON.stringify(product)
-  });
+      const imageInput = document.getElementById("imageInput");
+      const preview = document.getElementById("preview");
+      const uploadedImages = [];
 
-  const data = await res.json();
+      // Supprime une image de uploadedImages et de l'affichage
+      function removeImage(index) {
+        uploadedImages.splice(index, 1);
+        renderPreview();
+      }
 
-  if (data.success) {
-    alert("Produit ajouté ✔");
-    location.reload();
-  } else {
-    alert("Erreur lors de l'enregistrement");
-  }
-};
-//upload
+      // Affiche toutes les images uploadées en miniature
+      function renderPreview() {
+        preview.innerHTML = "";
+        uploadedImages.forEach((url, i) => {
+          const div = document.createElement("div");
+          div.style.position = "relative";
 
-const imageInput = document.getElementById("imageInput");
-const preview = document.getElementById("preview");
-const uploadedImages = [];
+          const img = document.createElement("img");
+          img.src = url;
+          div.appendChild(img);
 
-// Supprime une image de uploadedImages et de l'affichage
-function removeImage(index) {
-  uploadedImages.splice(index, 1);
-  renderPreview();
-}
+          const btn = document.createElement("button");
+          btn.textContent = "✖";
+          btn.style.position = "absolute";
+          btn.style.top = "0";
+          btn.style.right = "0";
+          btn.style.background = "rgba(255,0,0,0.7)";
+          btn.style.border = "none";
+          btn.style.color = "white";
+          btn.style.borderRadius = "50%";
+          btn.style.cursor = "pointer";
+          btn.onclick = () => removeImage(i);
 
-// Affiche toutes les images uploadées en miniature
-function renderPreview() {
-  preview.innerHTML = "";
-  uploadedImages.forEach((url, i) => {
-    const div = document.createElement("div");
-    div.style.position = "relative";
+          div.appendChild(btn);
+          preview.appendChild(div);
+        });
+      }
 
-    const img = document.createElement("img");
-    img.src = url;
-    div.appendChild(img);
+      // Gestion du bouton upload
+      document.getElementById("uploadBtn").onclick = async () => {
+        const files = imageInput.files;
+        if (!files.length) return alert("Choisissez une image");
 
-    const btn = document.createElement("button");
-    btn.textContent = "✖";
-    btn.style.position = "absolute";
-    btn.style.top = "0";
-    btn.style.right = "0";
-    btn.style.background = "rgba(255,0,0,0.7)";
-    btn.style.border = "none";
-    btn.style.color = "white";
-    btn.style.borderRadius = "50%";
-    btn.style.cursor = "pointer";
-    btn.onclick = () => removeImage(i);
+        for (let file of files) {
+          const formData = new FormData();
+          formData.append("image", file);
 
-    div.appendChild(btn);
-    preview.appendChild(div);
-  });
-}
+          try {
+            const res = await fetch("/admin/upload-image", {
+              method: "POST",
+              headers: { "x-admin-key": ADMIN_KEY },
+              body: formData,
+            });
 
-// Gestion du bouton upload
-document.getElementById("uploadBtn").onclick = async () => {
-  const files = imageInput.files;
-  if (!files.length) return alert("Choisissez une image");
+            const data = await res.json();
+            if (data.imageUrl) {
+              uploadedImages.push(data.imageUrl);
+              renderPreview();
+            } else {
+              console.error("Upload failed:", data);
+            }
+          } catch (err) {
+            console.error("Erreur upload:", err);
+          }
+        }
 
-  for (let file of files) {
-    const formData = new FormData();
-    formData.append("image", file);
+        // reset input
+        imageInput.value = "";
+      };
 
-    try {
-      const res = await fetch("/admin/upload-image", {
-        method: "POST",
-        headers: { "x-admin-key": ADMIN_KEY },
-        body: formData
+      console.log({
+        id: idInput?.value,
+        name: nameInput?.value,
+        price: priceInput?.value,
+        category: categoryInput?.value,
+        sizes: sizesInput?.value,
+        colors: colorsInput?.value,
+        villes: villesInput?.value,
       });
 
-      const data = await res.json();
-      if (data.imageUrl) {
-        uploadedImages.push(data.imageUrl);
-        renderPreview();
-      } else {
-        console.error("Upload failed:", data);
-      }
-    } catch (err) {
-      console.error("Erreur upload:", err);
-    }
-  }
+      // supprimer un produit
+      document.getElementById("deleteBtn").onclick = async () => {
+        const id = document.getElementById("deleteProductId").value.trim();
+        if (!id) return alert("Veuillez entrer l'ID du produit");
 
-  // reset input
-  imageInput.value = "";
-};
+        if (!confirm(`Supprimer le produit ${id} ?`)) return;
 
-  console.log({
-  id: idInput?.value,
-  name: nameInput?.value,
-  price: priceInput?.value,
-  category: categoryInput?.value,
-  sizes: sizesInput?.value,
-  colors: colorsInput?.value,
-  villes: villesInput?.value
-});
+        try {
+          const res = await fetch(`/admin/delete-product/${id}`, {
+            method: "DELETE",
+            headers: { "x-admin-key": ADMIN_KEY },
+          });
+          const data = await res.json();
 
-// supprimer un produit 
-document.getElementById("deleteBtn").onclick = async () => {
-  const id = document.getElementById("deleteProductId").value.trim();
-  if (!id) return alert("Veuillez entrer l'ID du produit");
-
-  if (!confirm(`Supprimer le produit ${id} ?`)) return;
-
-  try {
-    const res = await fetch(`/admin/delete-product/${id}`, {
-      method: "DELETE",
-      headers: { "x-admin-key": ADMIN_KEY }
-    });
-    const data = await res.json();
-
-    if (data.success) {
-      alert(data.message);
-      location.reload();
-    } else {
-      alert("Erreur: " + (data.error || "Inconnu"));
-    }
-  } catch (err) {
-    console.error("Erreur suppression:", err);
-    alert("Erreur lors de la suppression");
-  }
-};
-
-</script>
-</body>
+          if (data.success) {
+            alert(data.message);
+            location.reload();
+          } else {
+            alert("Erreur: " + (data.error || "Inconnu"));
+          }
+        } catch (err) {
+          console.error("Erreur suppression:", err);
+          alert("Erreur lors de la suppression");
+        }
+      };
+    </script>
+  </body>
 </html>

@@ -268,20 +268,52 @@ app.get("/order/:id", (req, res) => {
         height: max-content;
         border-radius: 6px;
       }
-      a {
+        .back:hover {
+        background: darkred;
+      }
+       a {
         text-decoration: none;
       }
+        @media (max-width: 768px) {
+        .cart-item {
+          flex-direction: column;
+          text-align: center;
+        }
+        .cart-item img {
+          width: 100%;
+          height: auto;
+          margin-bottom: 15px;
+        }
+        .cart-item-details {
+          font-size: large;
+        }
+        .total {
+          font-size: 1.5em;
+          width: 100%;
+        }
+        .back {
+          padding: 20px 40px;
+          font-size: 1em;
+        }
+      }
+
+  </style>
         </style>
-  </head>`;
+  </head>
+
+  <body>
+  <a href="https://mydressingbyamida.onrender.com" class="back">Retour à la boutique</a>
+  <h1>Récapitulatif de votre commande</h1>
+  <div class="cart-container">
+
+  `;
   let total = 0;
   order.forEach(item => {
     total += item.price * (item.qty || 1);
     html += `
     <body>
     <a href="mydressingbyamida.onrender.com">
-    <button class="back">
-      Retour au Site 
-    </button>
+    
     </a>
        <a href="https://mydressingbyamida.onrender.com/product.html?id=${item.id}">
       <div class="cart-item">
