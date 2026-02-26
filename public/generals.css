@@ -28,13 +28,14 @@
      flex: 1;
      display: grid;
      grid-template-columns: repeat(1, 1fr);
+     background-color: #d3d3d340;
  }
 
 .description{
- font-size: smaller;
- color: darkgrey;
- overflow: hidden;
- text-wrap: wrap;
+     font-size: smaller;
+     color: darkgrey;
+     overflow: hidden;
+     text-wrap: wrap;
 }
 
  .price {
@@ -55,7 +56,7 @@
  }
  
 .products {
-   padding: 15px;
+    padding: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
