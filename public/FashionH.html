@@ -121,7 +121,7 @@
         .then((products) => {
           const container = document.getElementById("productsContainer");
           Object.values(products)
-            .filter((p) => p.category === "Femme") // filtrage par page
+            .filter((p) => p.category === "Homme") // filtrage par page
             .forEach((p) => {
               const div = document.createElement("div");
               div.className = `product details ${getCategoryClasses(p)}`;
@@ -134,6 +134,10 @@
                   <button onclick="location.href='product.html?id=${p.id}'">Voir produit</button>
                 </div>
               `;
+              if (p.price < 40) {
+                div.querySelector(".price").style.color = "green";
+              }
+
               container.appendChild(div);
             });
 
