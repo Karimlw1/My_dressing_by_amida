@@ -55,16 +55,15 @@
  }
  
 .products {
-    padding: 15px;
+   padding: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
     align-items: center;
     justify-self: center;
-    margin-top: 32px;
+    margin-top: -10px;
     font-variant-numeric: oldstyle-nums;
     background-color: #ffffff;
-        justify-items: center;
+    justify-items: center;
     max-width: 517px;
 }
 
