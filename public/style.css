@@ -172,7 +172,23 @@
     text-align: center;
 
 }
+p .category2{
+        height: 24px;
+        background: transparent;
+        color: #7d0000;
+        border: none;
+        box-shadow: none;
+        width: fit-content;
+        font-size: small;
+        font-weight: bold;
 
+    
+}
+p .size{
+    font-size: small;
+    color: grey;
+    font: menu;
+}
 
 .texts {
     height: max-content;
