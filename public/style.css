@@ -80,15 +80,7 @@
     animation: marquee 8s linear infinite;
 }
 
-@keyframes marquee {
-    0% {
-        transform: translate(0, -50%);
-    }
 
-    100% {
-        transform: translate(-100%, -50%);
-    }
-}
 
 .carousel {
     width: 100%;
