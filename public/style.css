@@ -172,7 +172,7 @@
     text-align: center;
 
 }
-p .category2{
+p.category2{
         height: 24px;
         background: transparent;
         color: #7d0000;
@@ -184,7 +184,7 @@ p .category2{
 
     
 }
-p .size{
+p.size{
     font-size: small;
     color: grey;
     font: menu;
