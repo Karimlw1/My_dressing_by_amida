@@ -121,7 +121,7 @@
         .then((products) => {
           const container = document.getElementById("productsContainer");
           Object.values(products)
-            .filter((p) => p.category === "Homme") // filtrage par page
+            .filter((p) => p.category === "Femme") // filtrage par page
             .forEach((p) => {
               const div = document.createElement("div");
               div.className = `product details ${getCategoryClasses(p)}`;
@@ -129,6 +129,7 @@
               div.innerHTML = `
                 <img src="${p.image}" alt="${p.name}" />
                 <div class="info">
+                  <h5>${p.name}</h5>
                   <div class="price">$${p.price}</div>
                   <button onclick="location.href='product.html?id=${p.id}'">Voir produit</button>
                 </div>

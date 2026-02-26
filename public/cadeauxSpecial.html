@@ -67,50 +67,61 @@
         </a>
       </div>
     </section>
-    <section class="products">
-      <div class="product details" data-id="CDSP01">
-        <img
-          src="https://i.pinimg.com/736x/3b/53/3d/3b533d5acc64be322ddba28b5b9f1750.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$30</div>
-          <button class="details-bttn">Voir produit</button>
-        </div>
-      </div>
+    <section class="products" id="productsContainer"></section>
 
-      <div class="product details" data-id="CDSP02">
-        <img
-          src="https://i.pinimg.com/1200x/7c/a6/1d/7ca61d16736365380366f8cdb385168a.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$10</div>
-          <button class="details-bttn">Voir produit</button>
-        </div>
-      </div>
-      <div class="product details" data-id="CDSP03">
-        <img
-          src="https://i.pinimg.com/1200x/9b/9a/1d/9b9a1d82a447d69ad9e1015d224861a1.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$100</div>
-          <button class="details-bttn">Voir produit</button>
-        </div>
-      </div>
-      <div class="product details" data-id="CDSP04">
-        <img
-          src="https://i.pinimg.com/736x/d6/0b/76/d60b76a8290a041a8df5457d50a1b203.jpg"
-          alt=""
-        />
-        <div class="info">
-          <div class="price">$80</div>
-          <button class="details-bttn">Voir produit</button>
-        </div>
-      </div>
-    </section>
+    <script>
+      function getCategoryClasses(product) {
+        const classes = [];
 
+        // Add main category
+        if (product.category) {
+          classes.push(product.category.toLowerCase());
+        }
+
+        if (product.type) {
+          classes.push(product.type.toLowerCase());
+        }
+
+        if (product.options?.size) {
+          product.options.size.forEach((size) => {
+            classes.push(size.toLowerCase());
+          });
+        }
+
+        if (product.options?.color) {
+          product.options.color.forEach((color) => {
+            classes.push(color.toLowerCase());
+          });
+        }
+
+        return classes.join(" "); // <- this is OK here
+      }
+
+      fetch("/api/products")
+        .then((res) => res.json())
+        .then((products) => {
+          const container = document.getElementById("productsContainer");
+          Object.values(products)
+            .filter((p) => p.category === "Femme") // filtrage par page
+            .forEach((p) => {
+              const div = document.createElement("div");
+              div.className = `product details ${getCategoryClasses(p)}`;
+              div.dataset.id = p.id;
+              div.innerHTML = `
+                <img src="${p.image}" alt="${p.name}" />
+                <div class="info">
+                  <h5>${p.name}</h5>
+                  <div class="price">$${p.price}</div>
+                  <button onclick="location.href='product.html?id=${p.id}'">Voir produit</button>
+                </div>
+              `;
+              container.appendChild(div);
+            });
+        })
+        .catch((error) => {
+          console.error("Error fetching products:", error);
+        });
+    </script>
     <script src="cart.js"></script>
     <script src="filter.js"></script>
     <script src="cart-core.js"></script>
