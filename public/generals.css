@@ -32,10 +32,13 @@
  }
 
 .description{
-     font-size: smaller;
-     color: black;
-     overflow: hidden;
-     text-wrap: wrap;
+    font-size: smaller;
+    color: black;
+    display: inline;
+    text-wrap: wrap;
+    overflow: scroll;
+    overflow-wrap: break-word;
+    width: 452px;
 }
 
  .price {
@@ -52,6 +55,7 @@
      padding: 8px 12px;
      border-radius: 6px;
      cursor: pointer;
+     width: 38%;
 
  }
  
