@@ -560,5 +560,143 @@
         "Goma"
       ]
     }
+  },
+  "Produit1": {
+    "id": "Produit1",
+    "name": "Ensemble de marque Ali pour femme",
+    "category": "Femme",
+    "type": "complet",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968246/mydressing_products/bw13qzy6irkvcsom24lj.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968246/mydressing_products/bw13qzy6irkvcsom24lj.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968255/mydressing_products/aha9jdbs1dod9g0uatuz.jpg"
+    ],
+    "options": {
+      "size": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "color": [
+        "Beige",
+        "rouge",
+        "vert",
+        "noir",
+        "gris",
+        "rouge bordeau"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    }
+  },
+  "Produit2": {
+    "id": "Produit2",
+    "name": "Polo Ralph homme",
+    "category": "Homme",
+    "type": "haut",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968637/mydressing_products/mwdjrpshct58fj9thnny.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968637/mydressing_products/mwdjrpshct58fj9thnny.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968650/mydressing_products/vw4db3qaimqdfj2hybjr.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968659/mydressing_products/ky30u7ms8faegvi6gmv6.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968666/mydressing_products/agzh6tuqrqwykf8macur.jpg"
+    ],
+    "options": {
+      "size": [
+        "M",
+        "L",
+        "X",
+        "XXL"
+      ],
+      "color": [
+        "Blanc",
+        "bleu de nuit",
+        "gris",
+        "chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    }
+  },
+  "Produit3": {
+    "id": "Produit3",
+    "name": "New Stanley cup",
+    "category": "CadeauSpecial",
+    "type": "",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970061/mydressing_products/q0lfaprb2wizstshwhu4.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970061/mydressing_products/q0lfaprb2wizstshwhu4.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970081/mydressing_products/ipszi8ce8zeja20uhmkg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970090/mydressing_products/jvtqbfqhjd0s58i9dloy.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970098/mydressing_products/gf0fryojh2ecpvycuvn4.jpg"
+    ],
+    "options": {
+      "size": [
+        "1.18L"
+      ],
+      "color": [
+        "Bleu",
+        "rose foncée",
+        "rose blanc"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "lubumbashi",
+        "Kampala",
+        "goma"
+      ]
+    }
+  },
+  "Produit4": {
+    "id": "Produit4",
+    "name": "Stantey cup ancienne version",
+    "category": "Cadeau",
+    "type": "",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970536/mydressing_products/hfhcxxx5whdibm18of5w.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970536/mydressing_products/hfhcxxx5whdibm18of5w.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970545/mydressing_products/axyoyw1bvdnqzm9lyjm5.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970667/mydressing_products/v7udxvkgedew2mgh0ltt.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970700/mydressing_products/hcikx9l4ztnnpoibt4sa.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970709/mydressing_products/fouarabhjxu9gvwhi2d7.jpg"
+    ],
+    "options": {
+      "size": [
+        "1.80L"
+      ],
+      "color": [
+        "Beige",
+        "rose",
+        "bleu",
+        "noire",
+        "rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    }
   }
 }
