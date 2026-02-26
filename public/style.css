@@ -1,3 +1,95 @@
+.search-wrapper {
+    max-width: 600px;
+    margin: 0 40px;
+    padding: 0 1rem;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    color: black;
+    border-radius: var(--radius);
+    padding: -0rem 1rem;
+    transition: all 0.25s ease;
+    margin-top: 15px;
+    backdrop-filter: blur(20px);
+    box-shadow: inset 0px 1px 2px 0 rgba(0, 0, 0, 0.7);
+    height: 35px;
+}
+
+.search-container:focus-within {
+    border-color: var(--primary);
+    box-shadow: 1px 0px 4px 4px rgb(0 0 0 / 7%);
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: #9ca3af;
+    margin-right: 0.5rem;
+}
+
+#SearchInput {
+    flex: 1;
+    outline: none;
+    width: 100%;
+    background: white;
+    font-size: 1rem;
+    color: black;
+    border: none;
+    width: 100%;
+    height: 30px;
+}
+
+#clearSearch {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #9ca3af;
+    display: none;
+}
+
+.highlight {
+    background-color: #fde68a;
+    padding: 0 2px;
+    border-radius: 4px;
+}
+
+.marquee-input {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.marquee-input input {
+    width: 100%;
+    padding: 8px;
+}
+
+.fake-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    color: #999;
+    pointer-events: none;
+    animation: marquee 8s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, -50%);
+    }
+
+    100% {
+        transform: translate(-100%, -50%);
+    }
+}
+
 .carousel {
     width: 100%;
     height: 300px;
