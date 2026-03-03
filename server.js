@@ -199,7 +199,9 @@ app.get("/order/:id", (req, res) => {
         justify-content: space-evenly;
       }
       h1 {
-        text-align: center;
+        display: flex;
+        justify-self: end;
+        text-align: end;
         color: #333;
         width: 80%;
       }

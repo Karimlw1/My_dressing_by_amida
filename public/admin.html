@@ -112,7 +112,30 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
       }
+      .spinner {
+        width: 18px;
+        height: 18px;
+        border: 3px solid rgba(255, 255, 255, 0.4);
+        border-top: 3px solid #ffffff;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        display: inline-block;
+      }
 
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      button.loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        pointer-events: none;
+        opacity: 0.8;
+      }
       /* === Image Preview === */
       .preview {
         display: flex;
@@ -215,7 +238,9 @@
       <div class="preview" id="preview"></div>
 
       <br />
-      <button id="saveProduct">Enregistrer le produit</button>
+      <button id="saveProduct">
+        <span class="btn-text">Enregistrer</span>
+      </button>
 
       <h3>Supprimer un produit</h3>
       <div style="display: flex; gap: 10px; margin-bottom: 20px">
@@ -254,65 +279,78 @@
         a.click();
       };
 
-      document.getElementById("saveProduct").onclick = async () => {
-        if (
-          !idInput ||
-          !nameInput ||
-          !priceInput ||
-          !categoryInput ||
-          !typeInput
-        ) {
-          alert("Un champ du formulaire est introuvable dans le HTML");
-          return;
-        }
+      document.getElementById("saveProduct").onclick = async function () {
+        const btn = this;
+        const textSpan = btn.querySelector(".btn-text");
 
-        const product = {
-          id: idInput.value.trim(),
-          name: nameInput.value.trim(),
-          category: categoryInput.value.trim(),
-          type: typeInput.value,
-          price: Number(priceInput.value),
-          image: uploadedImages[0],
-          images: uploadedImages,
-          options: {
-            size: sizesInput.value
-              .split(",")
-              .map((s) => s.trim())
-              .filter(Boolean),
-            color: colorsInput.value
-              .split(",")
-              .map((c) => c.trim())
-              .filter(Boolean),
-          },
-          lieuDeLIvraison: {
-            ville: villesInput.value
-              .split(",")
-              .map((v) => v.trim())
-              .filter(Boolean),
-          },
-        };
+        btn.classList.add("loading");
+        textSpan.innerHTML = `<span class="spinner"></span> Enregistrement...`;
 
-        if (!product.id || !product.name || !product.price) {
-          alert("ID, nom et prix sont obligatoires");
-          return;
-        }
+        try {
+          if (
+            !idInput ||
+            !nameInput ||
+            !priceInput ||
+            !categoryInput ||
+            !typeInput
+          ) {
+            alert("Un champ du formulaire est introuvable dans le HTML");
+            return;
+          }
 
-        const res = await fetch("/admin/add-product", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-admin-key": ADMIN_KEY,
-          },
-          body: JSON.stringify(product),
-        });
+          const product = {
+            id: idInput.value.trim(),
+            name: nameInput.value.trim(),
+            category: categoryInput.value.trim(),
+            type: typeInput.value,
+            price: Number(priceInput.value),
+            image: uploadedImages[0],
+            images: uploadedImages,
+            options: {
+              size: sizesInput.value
+                .split(",")
+                .map((s) => s.trim())
+                .filter(Boolean),
+              color: colorsInput.value
+                .split(",")
+                .map((c) => c.trim())
+                .filter(Boolean),
+            },
+            lieuDeLIvraison: {
+              ville: villesInput.value
+                .split(",")
+                .map((v) => v.trim())
+                .filter(Boolean),
+            },
+          };
 
-        const data = await res.json();
+          if (!product.id || !product.name || !product.price) {
+            alert("ID, nom et prix sont obligatoires");
+            return;
+          }
 
-        if (data.success) {
-          alert("Produit ajouté ✔");
-          location.reload();
-        } else {
-          alert("Erreur lors de l'enregistrement");
+          const res = await fetch("/admin/add-product", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "x-admin-key": ADMIN_KEY,
+            },
+            body: JSON.stringify(product),
+          });
+
+          const data = await res.json();
+
+          if (data.success) {
+            alert("Produit ajouté ✔");
+            location.reload();
+          } else {
+            alert("Erreur lors de l'enregistrement");
+          }
+        } catch (err) {
+          alert("Erreur réseau");
+        } finally {
+          btn.classList.remove("loading");
+          textSpan.textContent = "Enregistrer";
         }
       };
       //upload
