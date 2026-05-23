@@ -1,105 +1,288 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style2.css" />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="generals.css" />
-    <link rel="stylesheet" href="footer.css" />
-
-
+    <title>Cadeaux — My Dressing by Amida</title>
     <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
-    <link rel="shortcut icon" href="images/MDamida-logo.png" type="image/png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <title>MD Cadeaux</title>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="generals.css" />
     <style>
-      footer {
-    height: 200px;
-    width: 700px;
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/footerBG.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-color: white;
-    box-shadow: 1px 5px 15px rgba(0, 0, 3, 0.8);
-    align-content: end;
-    text-align: center;
-    color: grey;
-    justify-self: center;   
-}
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Cormorant Garamond", serif;
+        background: #fafaf9;
+        color: #1a1a1a;
+        -webkit-font-smoothing: antialiased;
+      }
 
-@media (max-width : 700px) {
-    footer {
+      /* ---- HERO VIDEO ---- */
+      .gift-hero {
+        position: relative;
+        height: 52vw;
+        min-height: 240px;
+        max-height: 420px;
+        overflow: hidden;
+        background: #111;
+      }
+      .gift-hero video {
         width: 100%;
-    }
-}
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .gift-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.6) 0%,
+          transparent 55%
+        );
+      }
+      .gift-hero-caption {
+        position: absolute;
+        bottom: 24px;
+        left: 20px;
+        right: 20px;
+        color: #fff;
+        z-index: 1;
+      }
+      @media (min-width: 700px) {
+        .gift-hero-caption {
+          left: 40px;
+          bottom: 36px;
+        }
+      }
+      .gift-hero-caption h2 {
+        font-size: clamp(1.3rem, 4vw, 2rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: #e8c97a;
+        font-variant-caps: small-caps;
+      }
+      .gift-hero-caption p {
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        opacity: 0.88;
+        margin-top: 5px;
+      }
+
+      /* ---- SECTION HEAD ---- */
+      .section-head {
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 20px 16px 12px;
+        color: #1a1a1a;
+      }
+      @media (min-width: 900px) {
+        .section-head {
+          padding: 24px 40px 14px;
+        }
+      }
+
+      /* ---- GIFT CARDS GRID ---- */
+      .gift-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 16px 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      @media (min-width: 600px) {
+        .gift-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (min-width: 900px) {
+        .gift-grid {
+          grid-template-columns: repeat(4, 1fr);
+          padding: 0 40px 60px;
+        }
+      }
+
+      .gift-card {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        aspect-ratio: 3/4;
+        background: #e8e5e0;
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
+        transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease;
+        text-decoration: none;
+        display: block;
+      }
+      .gift-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+      }
+
+      .gift-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      .gift-card:hover img {
+        transform: scale(1.04);
+      }
+
+      .gift-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.58) 0%,
+          transparent 55%
+        );
+      }
+
+      .gift-card-label {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        right: 14px;
+        z-index: 1;
+        color: #fff;
+      }
+      .gift-card-label p {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.25;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      }
+      .gift-card-label span {
+        font-size: 11px;
+        opacity: 0.75;
+        display: block;
+        margin-top: 3px;
+      }
+
+      /* ---- FOOTER ---- */
+      footer {
+        text-align: center;
+        padding: 20px 16px;
+        color: #aaa;
+        font-size: 13px;
+        border-top: 1px solid #e8e5e0;
+      }
     </style>
   </head>
-
   <body>
     <header class="navbar">
-      <div class="menu">
-        <strong onclick="location.href = 'index.html'">
-          <i class="fa fa-home"></i>
-        </strong>
+      <div style="cursor: pointer; font-size: 20px" onclick="history.back()">
+        ←
       </div>
-      <h3 style=" text-align: center;"><strong>Cadeaux</strong></h3>
-     
+      <h3>Cadeaux</h3>
+      <div
+        class="cart"
+        onclick="location.href = 'cart.html'"
+        style="cursor: pointer"
+      >
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge" id="cartCount"></span>
+      </div>
     </header>
-    
-    <div class="header2-video-autoplay">
-      <div class="video-autoplay-container">
-        <video class="gift-video" autoplay muted loop playsinline>
-          <source src="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/giftVid.mp4" type="video/mp4">
-        </video>
-        <div class="text-area">
-            <h3>Le plaisir d'offrir sans se tromper</h3>
-            <p> Offrez un sourire à envelopper. Des cadeaux pensés pour toucher le cœur. </p>
-        </div>
+
+    <!-- HERO -->
+    <div class="gift-hero">
+      <video autoplay muted loop playsinline>
+        <source
+          src="https://raw.githubusercontent.com/Karimlw1/My_dressing_by_amida/main/public/images/giftVid.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="gift-hero-caption">
+        <h2>Le plaisir d'offrir</h2>
+        <p>Des cadeaux pensés pour toucher le cœur</p>
       </div>
-      
     </div>
-   <section class="cat" style="
-       height: 400px;
-   ">
-      <div class="flex-cadeaux">
-        <a class="cat" href="maternite.html">
-          <img
-            src="https://i.pinimg.com/736x/8e/df/61/8edf6168fdf93de7b32b71dccd4ed727.jpg"
-            alt=""
-          />
-          <p class="cta">
-  Maternité et coffret <i class="fas fa-arrow-right"></i>
-</p>
 
-        </a>
-        <a href="cadeauxSpecial.html">
-            <img src="https://i.pinimg.com/736x/1f/17/cf/1f17cfba6bc60226029feda3acf41c38.jpg" alt="">
-            <p class="cta">Cadeau special et coffret <i class="fas fa-arrow-right"></i></p> 
-        </a>
+    <!-- GIFT CATEGORIES -->
+    <h2 class="section-head">Nos Idées Cadeaux</h2>
 
-      </div>
-      </div>
-    </section>
+    <div class="gift-grid">
+      <a href="maternite.html" class="gift-card">
+        <img
+          src="https://i.pinimg.com/736x/8e/df/61/8edf6168fdf93de7b32b71dccd4ed727.jpg"
+          alt="Maternité"
+          loading="lazy"
+        />
+        <div class="gift-card-label">
+          <p>Maternité</p>
+          <span>Coffrets & surprises</span>
+        </div>
+      </a>
+
+      <a href="accessoires.html" class="gift-card">
+        <img
+          src="https://i.pinimg.com/736x/1f/17/cf/1f17cfba6bc60226029feda3acf41c38.jpg"
+          alt="Cadeaux spéciaux"
+          loading="lazy"
+        />
+        <div class="gift-card-label">
+          <p>Cadeau Spécial</p>
+          <span>Idées originales</span>
+        </div>
+      </a>
+
+      <a href="beaute.html" class="gift-card">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80"
+          alt="Beauté"
+          loading="lazy"
+        />
+        <div class="gift-card-label">
+          <p>Beauté & Skincare</p>
+          <span>Soins & parfums</span>
+        </div>
+      </a>
+
+      <a href="FashionF.html" class="gift-card">
+        <img
+          src="https://i.pinimg.com/736x/d2/02/40/d202405b27f0f500b19b5d3fd84cd70a.jpg"
+          alt="Mode Femme"
+          loading="lazy"
+        />
+        <div class="gift-card-label">
+          <p>Mode Femme</p>
+          <span>Robes & tenues</span>
+        </div>
+      </a>
+    </div>
 
     <footer>
       <p>
-        © <span id="year"></span> My Dressing by Amida. <br />
-        All rights reserved.
+        © <span id="year"></span> My Dressing by Amida. All rights reserved.
       </p>
     </footer>
-    <script></script>
+
+    <script src="cart.js"></script>
+    <script src="cart-core.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      updateCartBadge();
+    </script>
   </body>
 </html>
