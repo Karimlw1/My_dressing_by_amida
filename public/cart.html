@@ -1,301 +1,378 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mon Panier — My Dressing by Amida</title>
-  <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="header.css" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Cormorant Garamond', serif;
-      background: #fafaf9;
-      color: #1a1a1a;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ---- PAGE LAYOUT ---- */
-    .cart-page {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 20px 16px 180px;
-    }
-
-    @media (min-width: 900px) {
-      .cart-page { padding: 32px 24px 80px; }
-    }
-
-    /* ---- EMPTY STATE ---- */
-    .cart-empty {
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .cart-empty i { font-size: 48px; color: #ddd; display: block; margin-bottom: 16px; }
-    .cart-empty h2 { font-size: 1.4rem; margin-bottom: 8px; }
-    .cart-empty p { color: #999; font-size: 14px; margin-bottom: 24px; }
-    .cart-empty a {
-      display: inline-block;
-      padding: 12px 28px;
-      background: #1a1a1a;
-      color: #fff;
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: background 0.2s ease;
-    }
-    .cart-empty a:hover { background: #333; }
-
-    /* ---- CART ITEM ---- */
-    .cart-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      background: #fff;
-      border: 1px solid #E8E5E0;
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 12px;
-      position: relative;
-      transition: box-shadow 0.2s ease;
-    }
-    .cart-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-
-    .cart-item-img {
-      width: 80px; height: 100px;
-      border-radius: 8px;
-      overflow: hidden;
-      flex-shrink: 0;
-      background: #f0efed;
-    }
-    .cart-item-img img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top;
-    }
-
-    .cart-item-body { flex: 1; min-width: 0; }
-
-    .cart-item-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: #1a1a1a;
-      line-height: 1.3;
-      margin-bottom: 6px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .cart-item-meta {
-      font-size: 12px;
-      color: #888;
-      line-height: 1.9;
-    }
-    .cart-item-meta strong { color: #444; font-weight: 600; }
-
-    .cart-item-price {
-      font-size: 16px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-top: 8px;
-    }
-
-    .btn-remove {
-      position: absolute;
-      top: 12px; right: 12px;
-      width: 26px; height: 26px;
-      border-radius: 6px;
-      background: none;
-      border: 1px solid #E8E5E0;
-      color: #bbb;
-      font-size: 12px;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s ease;
-      width: auto; /* override generals.css */
-      padding: 0 6px;
-    }
-    .btn-remove:hover { border-color: #c0392b; color: #c0392b; background: #fff5f5; }
-
-    /* ---- SUMMARY ---- */
-    .cart-summary {
-      background: #fff;
-      border: 1px solid #E8E5E0;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    .summary-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 0;
-      font-size: 14px;
-      color: #666;
-      border-bottom: 1px solid #f0efed;
-    }
-    .summary-row:last-child { border-bottom: none; }
-    .summary-row.total {
-      font-size: 17px;
-      font-weight: 700;
-      color: #1a1a1a;
-      padding-top: 12px;
-    }
-    .summary-row.total span:last-child { font-size: 20px; }
-
-    /* ---- CHECKOUT BAR ---- */
-    .checkout-bar {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(255,255,255,0.97);
-      border-top: 1px solid #E8E5E0;
-      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      backdrop-filter: blur(8px);
-      z-index: 50;
-    }
-
-    @media (min-width: 760px) {
-      .checkout-bar {
-        position: static;
-        background: none;
-        border: none;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Panier — My Dressing by Amida</title>
+    <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="header.css" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
         padding: 0;
-        backdrop-filter: none;
+      }
+
+      body {
+        font-family: "Cormorant Garamond", serif;
+        background: #fafaf9;
+        color: #1a1a1a;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ---- PAGE LAYOUT ---- */
+      .cart-page {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 20px 16px 180px;
+      }
+
+      @media (min-width: 900px) {
+        .cart-page {
+          padding: 32px 24px 80px;
+        }
+      }
+
+      /* ---- EMPTY STATE ---- */
+      .cart-empty {
+        text-align: center;
+        padding: 80px 20px;
+      }
+      .cart-empty i {
+        font-size: 48px;
+        color: #ddd;
+        display: block;
+        margin-bottom: 16px;
+      }
+      .cart-empty h2 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+      .cart-empty p {
+        color: #999;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .cart-empty a {
+        display: inline-block;
+        padding: 12px 28px;
+        background: #1a1a1a;
+        color: #fff;
+        border-radius: 7px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: background 0.2s ease;
+      }
+      .cart-empty a:hover {
+        background: #333;
+      }
+
+      /* ---- CART ITEM ---- */
+      .cart-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        background: #fff;
+        border: 1px solid #e8e5e0;
+        border-radius: 12px;
+        padding: 14px;
+        margin-bottom: 12px;
+        position: relative;
+        transition: box-shadow 0.2s ease;
+      }
+      .cart-item:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+      }
+
+      .cart-item-img {
+        width: 80px;
+        height: 100px;
+        border-radius: 8px;
+        overflow: hidden;
+        flex-shrink: 0;
+        background: #f0efed;
+      }
+      .cart-item-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .cart-item-body {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .cart-item-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: #1a1a1a;
+        line-height: 1.3;
+        margin-bottom: 6px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .cart-item-meta {
+        font-size: 12px;
+        color: #888;
+        line-height: 1.9;
+      }
+      .cart-item-meta strong {
+        color: #444;
+        font-weight: 600;
+      }
+
+      .cart-item-price {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-top: 8px;
+      }
+
+      .btn-remove {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+        background: none;
+        border: 1px solid #e8e5e0;
+        color: #bbb;
+        font-size: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        width: auto; /* override generals.css */
+        padding: 0 6px;
+      }
+      .btn-remove:hover {
+        border-color: #c0392b;
+        color: #c0392b;
+        background: #fff5f5;
+      }
+
+      /* ---- SUMMARY ---- */
+      .cart-summary {
+        background: #fff;
+        border: 1px solid #e8e5e0;
+        border-radius: 12px;
+        padding: 20px;
         margin-top: 20px;
       }
-    }
 
-    .btn-whatsapp {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 15px 24px;
-      border-radius: 8px;
-      border: none;
-      background: #128C7E;
-      color: #fff;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease;
-      width: 100%;
-    }
-    .btn-whatsapp:hover { background: #0e7066; transform: translateY(-1px); }
-    .btn-whatsapp:disabled { background: #aaa; cursor: not-allowed; transform: none; }
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        font-size: 14px;
+        color: #666;
+        border-bottom: 1px solid #f0efed;
+      }
+      .summary-row:last-child {
+        border-bottom: none;
+      }
+      .summary-row.total {
+        font-size: 17px;
+        font-weight: 700;
+        color: #1a1a1a;
+        padding-top: 12px;
+      }
+      .summary-row.total span:last-child {
+        font-size: 20px;
+      }
 
-    .btn-continue {
-      display: block;
-      text-align: center;
-      color: #888;
-      font-size: 13px;
-      text-decoration: none;
-      padding: 4px;
-      transition: color 0.2s ease;
-    }
-    .btn-continue:hover { color: #1a1a1a; }
+      /* ---- CHECKOUT BAR ---- */
+      .checkout-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.97);
+        border-top: 1px solid #e8e5e0;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        backdrop-filter: blur(8px);
+        z-index: 50;
+      }
 
-    /* ---- INFO CARD ---- */
-    .info-card {
-      background: #fff;
-      border: 1px solid #E8E5E0;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 16px;
-    }
-    .info-card h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: #444;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-    .info-card ul {
-      padding-left: 16px;
-      font-size: 13px;
-      color: #777;
-      line-height: 2;
-    }
+      @media (min-width: 760px) {
+        .checkout-bar {
+          position: static;
+          background: none;
+          border: none;
+          padding: 0;
+          backdrop-filter: none;
+          margin-top: 20px;
+        }
+      }
 
-    /* ---- TOAST ---- */
-    .toast {
-      position: fixed; bottom: 90px; left: 50%;
-      transform: translateX(-50%) translateY(10px);
-      background: #1a1a1a; color: #fff;
-      padding: 10px 22px; border-radius: 6px;
-      font-size: 13px; font-weight: 600;
-      opacity: 0; transition: all 0.25s ease;
-      z-index: 999; white-space: nowrap; pointer-events: none;
-    }
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-  </style>
-</head>
-<body>
+      .btn-whatsapp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px 24px;
+        border-radius: 8px;
+        border: none;
+        background: #128c7e;
+        color: #fff;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+        width: 100%;
+      }
+      .btn-whatsapp:hover {
+        background: #0e7066;
+        transform: translateY(-1px);
+      }
+      .btn-whatsapp:disabled {
+        background: #aaa;
+        cursor: not-allowed;
+        transform: none;
+      }
 
-<header class="navbar">
-  <div style="cursor:pointer;font-size:20px" onclick="history.back()">←</div>
-  <h3>Mon Panier</h3>
-  <div></div>
-</header>
+      .btn-continue {
+        display: block;
+        text-align: center;
+        color: #888;
+        font-size: 13px;
+        text-decoration: none;
+        padding: 4px;
+        transition: color 0.2s ease;
+      }
+      .btn-continue:hover {
+        color: #1a1a1a;
+      }
 
-<div class="cart-page">
-  <div id="cartContent"></div>
-</div>
+      /* ---- INFO CARD ---- */
+      .info-card {
+        background: #fff;
+        border: 1px solid #e8e5e0;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 16px;
+      }
+      .info-card h4 {
+        font-size: 13px;
+        font-weight: 700;
+        color: #444;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+      }
+      .info-card ul {
+        padding-left: 16px;
+        font-size: 13px;
+        color: #777;
+        line-height: 2;
+      }
 
-<div class="toast" id="toast"></div>
+      /* ---- TOAST ---- */
+      .toast {
+        position: fixed;
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: #1a1a1a;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        opacity: 0;
+        transition: all 0.25s ease;
+        z-index: 999;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div style="cursor: pointer; font-size: 20px" onclick="history.back()">
+        ←
+      </div>
+      <h3>Mon Panier</h3>
+      <div></div>
+    </header>
 
-<script src="cart.js"></script>
-<script src="cart-core.js"></script>
-<script>
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.className = 'toast show';
-  setTimeout(() => t.className = 'toast', 2400);
-}
+    <div class="cart-page">
+      <div id="cartContent"></div>
+    </div>
 
-function renderCart() {
-  const cart = getCart();
-  const el = document.getElementById('cartContent');
+    <div class="toast" id="toast"></div>
 
-  if (!cart.length) {
-    el.innerHTML = `
+    <script src="cart.js"></script>
+    <script src="cart-core.js"></script>
+    <script>
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.className = "toast show";
+        setTimeout(() => (t.className = "toast"), 2400);
+      }
+
+      function renderCart() {
+        const cart = getCart();
+        const el = document.getElementById("cartContent");
+
+        if (!cart.length) {
+          el.innerHTML = `
       <div class="cart-empty">
         <i class="fa fa-shopping-bag"></i>
         <h2>Panier vide</h2>
         <p>Ajoutez des articles pour commencer</p>
         <a href="index.html">Voir les produits</a>
       </div>`;
-    return;
-  }
+          return;
+        }
 
-  let total = 0;
-  let html = '';
+        let total = 0;
+        let html = "";
 
-  cart.forEach((item, i) => {
-    const subtotal = Number(item.price) * (Number(item.qty) || 1);
-    total += subtotal;
-    html += `
+        cart.forEach((item, i) => {
+          const subtotal = Number(item.price) * (Number(item.qty) || 1);
+          total += subtotal;
+          html += `
       <div class="cart-item">
         <div class="cart-item-img">
-          <img src="${item.image || ''}" alt="${item.name}" loading="lazy" onerror="this.style.display='none'" />
+          <img src="${item.image || ""}" alt="${item.name}" loading="lazy" onerror="this.style.display='none'" />
         </div>
         <div class="cart-item-body">
           <div class="cart-item-name">${item.name}</div>
           <div class="cart-item-meta">
-            ${item.category ? `Type : <strong>${item.category}</strong><br>` : ''}
-            ${item.size ? `Taille : <strong>${item.size}</strong><br>` : ''}
-            ${item.color ? `Couleur : <strong>${item.color}</strong><br>` : ''}
-            ${item.ville ? `Livraison : <strong>${item.ville}</strong>` : ''}
+            ${item.category ? `Type : <strong>${item.category}</strong><br>` : ""}
+            ${item.size ? `Taille : <strong>${item.size}</strong><br>` : ""}
+            ${item.color ? `Couleur : <strong>${item.color}</strong><br>` : ""}
+            ${item.ville ? `Livraison : <strong>${item.ville}</strong>` : ""}
           </div>
           <div class="cart-item-price">$${subtotal}</div>
         </div>
@@ -303,11 +380,11 @@ function renderCart() {
           <i class="fa fa-times"></i>
         </button>
       </div>`;
-  });
+        });
 
-  const count = cart.reduce((s, i) => s + (Number(i.qty) || 1), 0);
+        const count = cart.reduce((s, i) => s + (Number(i.qty) || 1), 0);
 
-  html += `
+        html += `
     <div class="cart-summary">
       <div class="summary-row"><span>${count} article(s)</span><span>$${total}</span></div>
       <div class="summary-row"><span>Livraison</span><span style="color:#128C7E">A confirmer</span></div>
@@ -326,62 +403,66 @@ function renderCart() {
       <h4>Avant de commander</h4>
       <ul>
         <li>Conservez une capture de votre panier pour votre sécurité</li>
-        <li>Livraison disponible à Lubumbashi, Kinshasa et Goma</li>
+        <li>Livraison disponible à Lubumbashi, Kinshasa, Goma et kampala</li>
         <li>Notre équipe WhatsApp vous accompagne à chaque étape</li>
       </ul>
     </div>`;
 
-  el.innerHTML = html;
-}
+        el.innerHTML = html;
+      }
 
-function removeItem(index) {
-  const cart = getCart();
-  cart.splice(index, 1);
-  saveCart(cart);
-  renderCart();
-  updateCartBadge();
-  showToast('Article retiré');
-}
+      function removeItem(index) {
+        const cart = getCart();
+        cart.splice(index, 1);
+        saveCart(cart);
+        renderCart();
+        updateCartBadge();
+        showToast("Article retiré");
+      }
 
-async function sendOrder() {
-  const cart = getCart();
-  if (!cart.length) { showToast('Votre panier est vide'); return; }
+      async function sendOrder() {
+        const cart = getCart();
+        if (!cart.length) {
+          showToast("Votre panier est vide");
+          return;
+        }
 
-  const btn = document.querySelector('.btn-whatsapp');
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Envoi en cours...';
+        const btn = document.querySelector(".btn-whatsapp");
+        btn.disabled = true;
+        btn.innerHTML =
+          '<i class="fa fa-spinner fa-spin"></i> Envoi en cours...';
 
-  const serverUrl = 'https://mydressingbyamida.onrender.com';
-  const phone = '243986007232';
+        const serverUrl = "https://mydressingbyamida.onrender.com";
+        const phone = "243986007232";
 
-  try {
-    const res = await fetch(`${serverUrl}/create-order`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({cart})
-    });
+        try {
+          const res = await fetch(`${serverUrl}/create-order`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ cart }),
+          });
 
-    if (!res.ok) throw new Error('Server error');
-    const data = await res.json();
+          if (!res.ok) throw new Error("Server error");
+          const data = await res.json();
 
-    const orderLink = `${serverUrl}/order/${data.orderId}`;
-    const msg = `Nouvelle commande My Dressing by Amida\n\nVoir le panier :\n${orderLink}`;
-    const waUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
+          const orderLink = `${serverUrl}/order/${data.orderId}`;
+          const msg = `Nouvelle commande My Dressing by Amida\n\nVoir le panier :\n${orderLink}`;
+          const waUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`;
 
-    localStorage.removeItem('cart');
-    updateCartBadge();
-    window.location.href = waUrl;
+          localStorage.removeItem("cart");
+          updateCartBadge();
+          window.location.href = waUrl;
+        } catch (err) {
+          console.error(err);
+          btn.disabled = false;
+          btn.innerHTML =
+            '<i class="fa-brands fa-whatsapp" style="font-size:18px"></i> Commander via WhatsApp';
+          showToast("Erreur — veuillez réessayer");
+        }
+      }
 
-  } catch(err) {
-    console.error(err);
-    btn.disabled = false;
-    btn.innerHTML = '<i class="fa-brands fa-whatsapp" style="font-size:18px"></i> Commander via WhatsApp';
-    showToast('Erreur — veuillez réessayer');
-  }
-}
-
-renderCart();
-updateCartBadge();
-</script>
-</body>
+      renderCart();
+      updateCartBadge();
+    </script>
+  </body>
 </html>
