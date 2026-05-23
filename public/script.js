@@ -80,7 +80,7 @@ fetch('/api/products')
         <div class="info">
           <p class="description">${product.name}</p>
           <div class="price">
-            <span ${isPromo ? 'style="color:#128C7E"' : ''}>$${product.price}</span>
+            <span ${isPromo ? 'style="color:#128C7E"' : 'style="color:#b30e0e"'}>$${product.price}</span>
             <div style="display:flex;gap:4px;align-items:center">
               ${isPromo ? '<span class="promo"><i class="fa fa-fire"></i></span>' : ''}
               ${isNew ? '<span class="new">Nouveau</span>' : ''}
