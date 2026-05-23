@@ -1,108 +1,107 @@
 /* ============================================
-   STYLE2.CSS — Category pages (FashionF, FashionH, accessoires, etc.)
+   STYLE2.CSS — Category pages filter strip
    ============================================ */
 
-/* ---- HORIZONTAL FILTER STRIP ---- */
+/* ---- FILTER STRIP ---- */
 .categories {
   display: flex;
-  flex-direction: row;
-  gap: 0;
   overflow-x: auto;
   scrollbar-width: none;
   border-bottom: 1px solid #e8e5e0;
-  padding: 0 16px;
   background: #fff;
   position: sticky;
-  top: 56px; /* below navbar */
+  top: 56px;
   z-index: 50;
+  padding: 10px 16px;
+  gap: 8px;
 }
 .categories::-webkit-scrollbar { display: none; }
 
 .flex {
   display: flex;
   flex-direction: row;
-  gap: 4px;
-  padding: 10px 0;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
+/* Each category = small pill */
 .category {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
   cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 8px;
-  min-width: 68px;
+  padding: 7px 14px;
+  border-radius: 50px;
+  border: 1px solid #e0ddd8;
+  background: #fff;
+  white-space: nowrap;
   flex-shrink: 0;
-  transition: background 0.2s ease;
-  border: none;
-  background: transparent;
+  transition: all 0.18s ease;
 }
-.category:hover { background: #f5f4f2; }
+.category:hover { border-color: #1a1a1a; background: #f5f4f2; }
 
 .category img {
-  width: 44px;
-  height: 44px;
+  width: 22px; height: 22px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1.5px solid #e8e5e0;
-  transition: border-color 0.2s ease;
+  flex-shrink: 0;
 }
 
 .category p {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
-  color: #555;
-  text-align: center;
-  white-space: nowrap;
+  color: #444;
   font-family: 'Cormorant Garamond', serif;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
 
-/* Active state */
-.category-active { background: #1a1a1a; border-radius: 8px; }
-.category-active img { border-color: #555; }
+/* Active pill */
+.category-active {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+}
 .category-active p { color: #fff; }
+.category-active img { opacity: 0.85; }
 
-/* ---- SORT BAR ---- */
+/* ---- SORT LABEL ---- */
 #pTrie {
-  padding: 12px 16px 4px;
-  font-size: 13px;
-  color: #888;
+  padding: 10px 16px 2px;
+  font-size: 12px;
+  color: #999;
   font-family: 'Cormorant Garamond', serif;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-#pTrie strong,
 #trieMessage {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: #1a1a1a;
   background: #f5f4f2;
-  padding: 4px 12px;
-  border-radius: 6px;
-  border: 1px solid #e8e5e0;
-  font-variant: normal;
-  box-shadow: none;
-  outline: none;
-  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 50px;
+  border: 1px solid #e0ddd8;
   font-family: 'Cormorant Garamond', serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: inline-block;
+  font-variant: normal;
+  box-shadow: none;
+  outline: none;
 }
 
 #articlesDisponible {
   padding: 0 16px 4px;
-  font-size: 12px;
-  color: #aaa;
+  font-size: 11px;
+  color: #bbb;
   font-family: 'Cormorant Garamond', serif;
 }
 
-/* ---- EMPTY STATE ---- */
+/* ---- MISC ---- */
 .invisible { display: none; }
 
 #emptyStock {

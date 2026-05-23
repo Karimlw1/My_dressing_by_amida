@@ -20,17 +20,21 @@
     }
 
     /* ======== NAVBAR ======== */
-    .navbar {
-      height: 56px;
+    /* sticky header = navbar row + search row glued together */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       background: #fff;
       border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .navbar {
+      height: 54px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 16px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
     @media (min-width: 900px) { .navbar { padding: 0 40px; } }
 
@@ -39,6 +43,46 @@
       font-weight: 600;
       color: #1a1a1a;
       text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    /* search bar row — inside the sticky header, below navbar row */
+    .header-search {
+      padding: 0 16px 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+    }
+    @media (min-width: 900px) { .header-search { padding: 0 40px 12px; } }
+
+    .header-search-inner {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      max-width: 560px;
+      background: #f5f4f2;
+      border-radius: 8px;
+      padding: 0 12px;
+      height: 36px;
+      gap: 8px;
+      transition: background 0.2s ease;
+    }
+    .header-search-inner:focus-within {
+      background: #eeecea;
+    }
+    .header-search-inner svg { width: 14px; height: 14px; color: #999; flex-shrink: 0; }
+    .header-search-inner input {
+      flex: 1; border: none; outline: none;
+      background: transparent;
+      font-size: 13px; font-family: 'Cormorant Garamond', serif;
+      color: #1a1a1a;
+    }
+    .header-search-inner input::placeholder { color: #aaa; }
+    .header-search-inner button {
+      background: none; border: none; cursor: pointer;
+      font-size: 13px; color: #bbb; padding: 0; display: none;
+      width: auto;
     }
 
     .nav-btn {
@@ -196,40 +240,6 @@
     .page-body { max-width: 1400px; margin: 0 auto; }
 
     /* ======== SEARCH ======== */
-    .search-wrapper {
-      padding: 14px 16px 0;
-    }
-    @media (min-width: 900px) { .search-wrapper { padding: 20px 40px 0; } }
-
-    .search-container {
-      display: flex;
-      align-items: center;
-      background: #fafaf9;
-      border: none;
-      border-bottom: 1.5px solid #dddad5;
-      padding: 0 4px;
-      height: 42px;
-      gap: 10px;
-      max-width: 520px;
-      width: 100%;
-      transition: border-color 0.2s ease;
-    }
-    .search-container:focus-within { border-bottom-color: #1a1a1a; }
-
-    .search-icon { width: 16px; height: 16px; color: #999; flex-shrink: 0; }
-
-    #SearchInput {
-      flex: 1; border: none; outline: none;
-      background: transparent; font-size: 14px;
-      color: #1a1a1a; font-family: 'Cormorant Garamond', serif;
-    }
-    #SearchInput::placeholder { color: #aaa; }
-
-    #clearSearch {
-      background: none; border: none; cursor: pointer;
-      font-size: 14px; color: #aaa; display: none; padding: 0;
-    }
-
     /* ======== CATEGORIES ======== */
     .categories-section {
       padding: 16px 16px 0;
@@ -382,18 +392,30 @@
 <body>
 
 <!-- NAVBAR -->
-<header class="navbar">
-  <button class="nav-btn" onclick="openSocials()">
-    <i class="fa fa-phone"></i>
-  </button>
+<div class="site-header">
+  <header class="navbar">
+    <button class="nav-btn" onclick="openSocials()">
+      <i class="fa fa-phone"></i>
+    </button>
 
-  <h3>My dressing by amida</h3>
+    <h3>My dressing by amida</h3>
 
-  <div class="cart-btn" onclick="location.href='cart.html'">
-    <i class="fa-solid fa-cart-shopping"></i>
-    <span class="badge" id="cartCount"></span>
+    <div class="cart-btn" onclick="location.href='cart.html'">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="badge" id="cartCount"></span>
+    </div>
+  </header>
+
+  <div class="header-search">
+    <div class="header-search-inner">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" id="SearchInput" autocomplete="off" placeholder="Rechercher un produit..." />
+      <button id="clearSearch">✕</button>
+    </div>
   </div>
-</header>
+</div>
 
 <!-- SOCIALS PANEL -->
 <div class="socials-backdrop" id="backdrop" onclick="closeSocials()"></div>
@@ -443,16 +465,6 @@
 
 <!-- PAGE BODY -->
 <div class="page-body">
-
-  <!-- SEARCH -->
-  <div class="search-wrapper">
-    <div class="search-container">
-      <svg class="search-icon" viewBox="0 0 24 24">
-        <path d="M21 21l-4.35-4.35m1.35-5.15a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <input type="text" id="SearchInput" autocomplete="off" placeholder="Rechercher un produit..." />
-      <button id="clearSearch">✕</button>
-    </div>
   </div>
 
   <!-- CATEGORIES — all 5 in one unified grid -->
