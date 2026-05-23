@@ -204,17 +204,17 @@
     .search-container {
       display: flex;
       align-items: center;
-      background: #fff;
-      border: 1px solid #dddad5;
-      border-radius: 8px;
-      padding: 0 14px;
+      background: #fafaf9;
+      border: none;
+      border-bottom: 1.5px solid #dddad5;
+      padding: 0 4px;
       height: 42px;
       gap: 10px;
       max-width: 520px;
       width: 100%;
       transition: border-color 0.2s ease;
     }
-    .search-container:focus-within { border-color: #1a1a1a; }
+    .search-container:focus-within { border-bottom-color: #1a1a1a; }
 
     .search-icon { width: 16px; height: 16px; color: #999; flex-shrink: 0; }
 
@@ -247,7 +247,13 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
     }
-    @media (min-width: 600px) { .cat-grid { grid-template-columns: repeat(5, 1fr); } }
+    /* Last 2 cards each take half the 3-col row = 1.5 cols, use span trick */
+    .cat-card:nth-child(4) { grid-column: 1 / 2; }
+    .cat-card:nth-child(5) { grid-column: 2 / 4; }
+    @media (min-width: 600px) {
+      .cat-grid { grid-template-columns: repeat(5, 1fr); }
+      .cat-card:nth-child(4), .cat-card:nth-child(5) { grid-column: auto; }
+    }
 
     .cat-card {
       height: 130px;
