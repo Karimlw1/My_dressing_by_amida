@@ -197,8 +197,8 @@ button.voir {
   place-items: center;
 }
 
-#complet{
-  margin-left: 33%;
+#complet, #maquillage{
+  margin-left: 35%;
 }
 
 .category::after {
