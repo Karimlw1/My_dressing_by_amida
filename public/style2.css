@@ -12,59 +12,68 @@
   position: sticky;
   top: 56px;
   z-index: 50;
-  padding: 10px 16px;
-  gap: 8px;
+  padding: 8px 12px;
+  gap: 6px;
 }
 .categories::-webkit-scrollbar { display: none; }
 
 .flex {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 6px;
   flex-shrink: 0;
 }
 
-/* Each category = small pill */
+/* Each filter = compact pill with small icon + label */
 .category {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 4px;
   cursor: pointer;
-  padding: 7px 14px;
-  border-radius: 50px;
-  border: 1px solid #e0ddd8;
-  background: #fff;
-  white-space: nowrap;
+  padding: 6px 10px 5px;
+  border-radius: 10px;
+  border: 1px solid #ece9e4;
+  background: #fafaf9;
+  min-width: 58px;
   flex-shrink: 0;
   transition: all 0.18s ease;
 }
-.category:hover { border-color: #1a1a1a; background: #f5f4f2; }
+.category:hover { border-color: #1a1a1a; background: #f0efed; }
 
+/* Icon: small, round, clipped, visible against light bg */
 .category img {
-  width: 22px; height: 22px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
+  background: #e8e5e0;
+  border: 1.5px solid #e0ddd8;
+  display: block;
   flex-shrink: 0;
 }
 
 .category p {
-  font-size: 12px;
-  font-weight: 600;
-  color: #444;
+  font-size: 10px;
+  font-weight: 700;
+  color: #555;
+  text-align: center;
   font-family: 'Cormorant Garamond', serif;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
+  line-height: 1;
   margin: 0;
+  white-space: nowrap;
 }
 
-/* Active pill */
+/* Active */
 .category-active {
   background: #1a1a1a;
   border-color: #1a1a1a;
 }
 .category-active p { color: #fff; }
-.category-active img { opacity: 0.85; }
+.category-active img { border-color: #444; filter: brightness(0.85); }
 
 /* ---- SORT LABEL ---- */
 #pTrie {
@@ -78,7 +87,7 @@
 }
 
 #trieMessage {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: #1a1a1a;
   background: #f5f4f2;
@@ -87,7 +96,7 @@
   border: 1px solid #e0ddd8;
   font-family: 'Cormorant Garamond', serif;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   display: inline-block;
   font-variant: normal;
   box-shadow: none;
@@ -101,7 +110,6 @@
   font-family: 'Cormorant Garamond', serif;
 }
 
-/* ---- MISC ---- */
 .invisible { display: none; }
 
 #emptyStock {

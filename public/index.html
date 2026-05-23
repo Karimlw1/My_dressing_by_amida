@@ -251,18 +251,26 @@
       margin-bottom: 12px;
     }
 
-    /* All 5 categories in one unified grid */
+    /* All 5 categories: row1 = 3 equal cols, row2 = 2 equal cols */
     .cat-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 10px;
     }
-    /* Last 2 cards each take half the 3-col row = 1.5 cols, use span trick */
-    .cat-card:nth-child(4) { grid-column: 1 / 2; }
-    .cat-card:nth-child(5) { grid-column: 2 / 4; }
+    /* Row 1: 3 cards, each span 2 of 6 cols → equal thirds */
+    .cat-card:nth-child(1),
+    .cat-card:nth-child(2),
+    .cat-card:nth-child(3) { grid-column: span 2; }
+    /* Row 2: 2 cards, each span 3 of 6 cols → perfect 50/50 */
+    .cat-card:nth-child(4),
+    .cat-card:nth-child(5) { grid-column: span 3; }
     @media (min-width: 600px) {
       .cat-grid { grid-template-columns: repeat(5, 1fr); }
-      .cat-card:nth-child(4), .cat-card:nth-child(5) { grid-column: auto; }
+      .cat-card:nth-child(1),
+      .cat-card:nth-child(2),
+      .cat-card:nth-child(3),
+      .cat-card:nth-child(4),
+      .cat-card:nth-child(5) { grid-column: span 1; }
     }
 
     .cat-card {
