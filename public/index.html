@@ -1,232 +1,614 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="My Dressing By Amida is a fashion brand offering elegant dresses and modern clothing for women."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My dressing by amida Home</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="generals.css" />
-    <link rel="stylesheet" href="footer.css" />
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="My Dressing By Amida — mode élégante pour femme et homme." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dressing by Amida</title>
+  <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
-    <link rel="shortcut icon" href="images/MDamida-logo.png" type="image/png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: #fff;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-  <body>
-    <header class="navbar">
-      <div class="menu">
-        <strong
-          onclick="showMenu()"
-          style="
-            color: rgb(255, 252, 252);
-            background-color: black;
-            padding: 8px 10px;
-            border-radius: 50%;
-            font-size: 15px;
-          "
-          ><i class="fa fa-phone"></i>
-        </strong>
+    /* ======== NAVBAR ======== */
+    .navbar {
+      height: 56px;
+      background: #fff;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    @media (min-width: 900px) { .navbar { padding: 0 40px; } }
 
-        <div class="socials">
-          <button class="exitMenu" onclick="exitMenu()">←</button>
+    .navbar h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-align: center;
+    }
 
-          <a href="https://wa.me/243986007232" class="button whatsapp"
-            ><i class="fa-brands fa-whatsapp"></i> whatsapp</a
-          >
-          <a
-            href="https://www.instagram.com/md_by_amida?igsh=N3czZGdnaTAwZ2w4"
-            class="button instagram"
-            ><i class="fa-brands fa-instagram"></i> instagram</a
-          >
-          <a
-            href="https://www.tiktok.com/@mdbyamida?_r=1&_t=ZS-93zjfbF5iMf"
-            class="button tiktok"
-            ><i class="fa-brands fa-tiktok"></i> tiktok</a
-          >
-          <a href="" class="button facebook"
-            ><i class="fa-brands fa-facebook"></i> facebook</a
-          >
-          <a href="privacy&policy.html" class="conf"
-            >Politique de confidentialité</a
-          >
+    .nav-btn {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .nav-btn:hover { background: #333; }
+
+    .cart-btn {
+      position: relative;
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .cart-btn:hover { background: #333; }
+
+    .badge {
+      position: absolute;
+      top: -5px; right: -6px;
+      min-width: 16px; height: 16px;
+      padding: 0 4px;
+      border-radius: 50px;
+      font-size: 10px; font-weight: 700;
+      background: #c0392b; color: #fff;
+      display: none; align-items: center; justify-content: center;
+    }
+
+    /* ======== SOCIALS PANEL ======== */
+    .socials-panel {
+      position: fixed;
+      top: 0; left: 0;
+      width: min(340px, 85vw);
+      height: 100vh;
+      background: #fff;
+      box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+      z-index: 200;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 60px 20px 40px;
+      gap: 10px;
+      transform: translateX(-110%);
+      transition: transform 0.32s cubic-bezier(0.25,0.46,0.45,0.94);
+      overflow-y: auto;
+    }
+    .socials-panel.open { transform: translateX(0); }
+
+    .socials-close {
+      position: absolute; top: 14px; left: 14px;
+      width: 34px; height: 34px;
+      border-radius: 7px; background: #f2f2f0;
+      border: none; font-size: 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .socials-close:hover { background: #e8e5e0; }
+
+    .soc-link {
+      width: 100%;
+      max-width: 280px;
+      padding: 13px 18px;
+      border-radius: 9px;
+      border: 1px solid #e8e5e0;
+      background: #fff;
+      display: flex; align-items: center; justify-content: space-between;
+      text-decoration: none;
+      font-size: 15px; font-weight: 600;
+      color: #1a1a1a;
+      font-family: 'Cormorant Garamond', serif;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .soc-link:hover { border-color: #1a1a1a; transform: translateY(-2px); }
+    .soc-link i {
+      width: 34px; height: 34px; border-radius: 7px;
+      background: #f5f4f2;
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+    }
+    .soc-link.wa { color: #128C7E; }
+    .soc-link.ig { background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .soc-link.ig i { background: #f5f4f2; }
+    .soc-link.tt { color: #010101; }
+    .soc-link.fb { color: #2d80ce; }
+
+    .socials-backdrop {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 199;
+    }
+    .socials-backdrop.open { display: block; }
+
+    /* ======== CAROUSEL ======== */
+    .carousel {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      background: #111;
+    }
+    @media (min-width: 600px)  { .carousel { height: 420px; } }
+    @media (min-width: 900px)  { .carousel { height: 520px; } }
+    @media (min-width: 1200px) { .carousel { height: 600px; } }
+
+    .slides {
+      display: flex; height: 100%;
+      transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .slide { min-width: 100%; position: relative; overflow: hidden; }
+    .slide img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top;
+      pointer-events: none; user-select: none; display: block;
+    }
+    .slide::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%);
+    }
+    .caption {
+      position: absolute; bottom: 28px; left: 20px; right: 20px;
+      color: #fff; z-index: 1;
+    }
+    @media (min-width: 900px) { .caption { left: 48px; bottom: 48px; } }
+    .caption h2 {
+      font-size: clamp(1.4rem, 4vw, 2.4rem);
+      color: #E8C97A;
+      font-variant-caps: small-caps;
+      line-height: 1.1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .caption p {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      opacity: 0.9;
+      margin-top: 4px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    }
+    .dots {
+      position: absolute; bottom: 10px; width: 100%;
+      text-align: center; z-index: 2; pointer-events: none;
+    }
+    .dot {
+      display: inline-block; width: 7px; height: 7px; margin: 0 3px;
+      background: rgba(255,255,255,0.4); border-radius: 50%;
+      transition: all 0.25s ease; cursor: pointer; pointer-events: all;
+    }
+    .dot.active { background: #E8C97A; width: 20px; border-radius: 4px; }
+
+    /* ======== BODY WRAPPER ======== */
+    .page-body { max-width: 1400px; margin: 0 auto; }
+
+    /* ======== SEARCH ======== */
+    .search-wrapper {
+      padding: 14px 16px 0;
+    }
+    @media (min-width: 900px) { .search-wrapper { padding: 20px 40px 0; } }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #dddad5;
+      border-radius: 8px;
+      padding: 0 14px;
+      height: 42px;
+      gap: 10px;
+      max-width: 520px;
+      width: 100%;
+      transition: border-color 0.2s ease;
+    }
+    .search-container:focus-within { border-color: #1a1a1a; }
+
+    .search-icon { width: 16px; height: 16px; color: #999; flex-shrink: 0; }
+
+    #SearchInput {
+      flex: 1; border: none; outline: none;
+      background: transparent; font-size: 14px;
+      color: #1a1a1a; font-family: 'Cormorant Garamond', serif;
+    }
+    #SearchInput::placeholder { color: #aaa; }
+
+    #clearSearch {
+      background: none; border: none; cursor: pointer;
+      font-size: 14px; color: #aaa; display: none; padding: 0;
+    }
+
+    /* ======== CATEGORIES ======== */
+    .categories-section {
+      padding: 16px 16px 0;
+    }
+    @media (min-width: 900px) { .categories-section { padding: 20px 40px 0; } }
+
+    .categories-section h3 {
+      font-size: 1rem; font-weight: 600; color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+
+    /* All 5 categories in one unified grid */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    @media (min-width: 600px) { .cat-grid { grid-template-columns: repeat(5, 1fr); } }
+
+    .cat-card {
+      height: 130px;
+      border-radius: 10px;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 10px;
+      cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cat-card:hover { transform: translateY(-3px); box-shadow: 0 7px 22px rgba(0,0,0,0.5); }
+    .cat-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 65%);
+      border-radius: 10px;
+    }
+    .cat-card p {
+      position: relative; z-index: 1;
+      font-size: 13px; font-weight: 700;
+      color: #fff; line-height: 1.25;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    }
+
+    /* On mobile, cadeau & accessoires span full width as a row of 2 */
+    .cat-wide {
+      grid-column: span 1;
+    }
+
+    /* ======== SECTION HEADING ======== */
+    .section-head {
+      font-size: 1rem; font-weight: 600; color: #1a1a1a;
+      padding: 16px 16px 4px;
+    }
+    @media (min-width: 900px) { .section-head { padding: 16px 40px 4px; } }
+
+    /* ======== PRODUCTS GRID ======== */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 8px 16px 80px;
+    }
+    @media (min-width: 600px)  { .products { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 900px)  { .products { grid-template-columns: repeat(4, 1fr); padding: 8px 40px 80px; } }
+    @media (min-width: 1200px) { .products { grid-template-columns: repeat(5, 1fr); } }
+
+    .product {
+      border-radius: 9px;
+      border: 1px solid #e8e5e0;
+      overflow: hidden;
+      background: #fff;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex; flex-direction: column;
+    }
+    .product:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+
+    .product img {
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover; object-position: top;
+      display: block; background: #f5f4f2;
+    }
+
+    .product-info {
+      padding: 8px 10px 10px;
+      display: flex; flex-direction: column; gap: 5px;
+    }
+
+    .product-name {
+      font-size: 12px; color: #555;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+
+    .product-price {
+      font-size: 14px; font-weight: 700; color: #1a1a1a;
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    .badge-new {
+      font-size: 9px; font-weight: 700; padding: 2px 6px;
+      border-radius: 4px; background: #1a6b0a; color: #fff;
+      text-transform: uppercase; letter-spacing: 0.4px;
+    }
+
+    .badge-promo { font-size: 12px; color: #128C7E; }
+
+    .product button {
+      margin: 0 10px 10px;
+      padding: 7px;
+      border: none; border-radius: 6px;
+      background: #1a1a1a; color: #fff;
+      font-size: 12px; font-weight: 600;
+      font-family: 'Cormorant Garamond', serif;
+      cursor: pointer; pointer-events: none;
+    }
+
+    /* ======== TEXTS / REVEAL ======== */
+    .texts {
+      padding: 16px 16px 0;
+      font-size: 1.05rem; line-height: 2.2; color: #444;
+    }
+    @media (min-width: 900px) { .texts { padding: 16px 40px 0; } }
+
+    .reveal { opacity: 0; transition: transform 0.6s ease, opacity 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateX(0) translateY(0) !important; }
+    .slide-from-left { border-top: 1px solid #eee; }
+    .slide-from-left:nth-child(1) { transform: translateX(-40px); }
+    .slide-from-left:nth-child(2) { transform: translateX(-80px); }
+    .slide-from-left:nth-child(3) { transform: translateX(-120px); }
+    .slide-from-left:nth-child(4) { transform: translateX(-160px); }
+
+    /* ======== FOOTER ======== */
+    footer {
+      text-align: center; padding: 24px 16px;
+      color: #aaa; font-size: 13px;
+      border-top: 1px solid #eee; margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <button class="nav-btn" onclick="openSocials()">
+    <i class="fa fa-phone"></i>
+  </button>
+
+  <h3>My dressing by amida</h3>
+
+  <div class="cart-btn" onclick="location.href='cart.html'">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="badge" id="cartCount"></span>
+  </div>
+</header>
+
+<!-- SOCIALS PANEL -->
+<div class="socials-backdrop" id="backdrop" onclick="closeSocials()"></div>
+<div class="socials-panel" id="socialsPanel">
+  <button class="socials-close" onclick="closeSocials()"><i class="fa fa-times"></i></button>
+  <a href="https://wa.me/243986007232" class="soc-link wa" target="_blank">
+    <span>WhatsApp</span><i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="https://www.instagram.com/md_by_amida?igsh=N3czZGdnaTAwZ2w4" class="soc-link ig" target="_blank">
+    <span>Instagram</span><i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="https://www.tiktok.com/@mdbyamida" class="soc-link tt" target="_blank">
+    <span>TikTok</span><i class="fa-brands fa-tiktok"></i>
+  </a>
+  <a href="#" class="soc-link fb">
+    <span>Facebook</span><i class="fa-brands fa-facebook"></i>
+  </a>
+</div>
+
+<!-- CAROUSEL -->
+<section class="carousel">
+  <div class="slides" id="slides">
+    <div class="slide">
+      <img src="https://i.pinimg.com/1200x/6e/3b/6c/6e3b6cff7af0c7e6445103d02f2bef5e.jpg" alt="Shopping" loading="eager" />
+      <div class="caption"><h2>Shopping</h2><p>Bénéficiez de 10% de réduction sur notre site</p></div>
+    </div>
+    <div class="slide">
+      <img src="https://i.pinimg.com/736x/7d/b8/4a/7db84aba851e96846229e42d6535a42a.jpg" alt="Arrivage" loading="lazy" />
+      <div class="caption"><h2>Arrivage</h2><p>Mode tendance pour tout le monde</p></div>
+    </div>
+    <div class="slide">
+      <img src="https://i.pinimg.com/736x/51/4d/22/514d22430ca8a0badf0598751eef49b8.jpg" alt="Deals" loading="lazy" />
+      <div class="caption"><h2>Best Deals</h2><p>Économisez sur les meilleures marques</p></div>
+    </div>
+    <div class="slide">
+      <img src="https://i.pinimg.com/736x/7f/9d/95/7f9d9562949f1e8f278e9ceed2968eb9.jpg" alt="Beauté" loading="lazy" />
+      <div class="caption"><h2>Beauté &amp; Skincare</h2><p>Offrez à votre peau ce qu'elle mérite</p></div>
+    </div>
+  </div>
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+<!-- PAGE BODY -->
+<div class="page-body">
+
+  <!-- SEARCH -->
+  <div class="search-wrapper">
+    <div class="search-container">
+      <svg class="search-icon" viewBox="0 0 24 24">
+        <path d="M21 21l-4.35-4.35m1.35-5.15a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <input type="text" id="SearchInput" autocomplete="off" placeholder="Rechercher un produit..." />
+      <button id="clearSearch">✕</button>
+    </div>
+  </div>
+
+  <!-- CATEGORIES — all 5 in one unified grid -->
+  <section class="categories-section">
+    <h3>Catégories</h3>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="location.href='FashionH.html'"
+        style="background-image:url('https://res.cloudinary.com/dpsewpbqa/image/upload/v1779387472/a8bf0169-df10-41ab-a28f-ff3a8fbe7900_gk9j0s.jpg')">
+        <p>Fashion Homme</p>
+      </div>
+      <div class="cat-card" onclick="location.href='FashionF.html'"
+        style="background-image:url('https://res.cloudinary.com/dpsewpbqa/image/upload/v1779387473/19eecc87-4940-4ffd-89d4-2a791f22b73d_byhdui.jpg')">
+        <p>Fashion Femme</p>
+      </div>
+      <div class="cat-card" onclick="location.href='beaute.html'"
+        style="background-image:url('https://res.cloudinary.com/dpsewpbqa/image/upload/v1779387472/d7be6484-16f0-4ae4-9d71-3d2b2c7ee330_skxmqs.jpg')">
+        <p>Beauté &amp; Skin care</p>
+      </div>
+      <div class="cat-card" onclick="location.href='gift.html'"
+        style="background-image:url('https://res.cloudinary.com/dpsewpbqa/image/upload/v1779387472/04cacd0c-c2cd-421a-9cf8-c9d9f009278b_bamniq.jpg')">
+        <p>Cadeau</p>
+      </div>
+      <div class="cat-card" onclick="location.href='accessoires.html'"
+        style="background-image:url('https://res.cloudinary.com/dpsewpbqa/image/upload/v1779387474/ee789332-4edb-4ab6-9a6e-1b5ce9f86639_ee37b6.jpg')">
+        <p>Accessoires</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <h2 class="section-head">Explorez</h2>
+  <section class="products" id="productsContainer"></section>
+
+  <!-- REVEAL TEXTS -->
+  <div class="texts">
+    <div class="slide-from-left reveal">Jusqu'à -30% sur vos achats</div>
+    <div class="slide-from-left reveal">Stock disponible immédiatement</div>
+    <div class="slide-from-left reveal">Des milliers de clients satisfaits</div>
+    <div class="slide-from-left reveal">Cadeaux uniques pour vos proches</div>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> My Dressing by Amida. All rights reserved.</p>
+  </footer>
+</div>
+
+<script src="cart.js"></script>
+<script src="cart-core.js"></script>
+<script>
+/* ---- SOCIALS ---- */
+function openSocials() {
+  document.getElementById('socialsPanel').classList.add('open');
+  document.getElementById('backdrop').classList.add('open');
+}
+function closeSocials() {
+  document.getElementById('socialsPanel').classList.remove('open');
+  document.getElementById('backdrop').classList.remove('open');
+}
+
+/* ---- CAROUSEL ---- */
+const slidesEl = document.getElementById('slides');
+const slideItems = slidesEl.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let idx = 0;
+
+function goTo(n) {
+  idx = (n + slideItems.length) % slideItems.length;
+  slidesEl.style.transform = `translateX(-${idx * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+}
+
+let timer = setInterval(() => goTo(idx + 1), 4000);
+function resetTimer() { clearInterval(timer); timer = setInterval(() => goTo(idx + 1), 4000); }
+
+dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); resetTimer(); }));
+
+let sx = 0;
+slidesEl.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive: true});
+slidesEl.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - sx;
+  if (Math.abs(dx) > 40) { goTo(dx < 0 ? idx + 1 : idx - 1); resetTimer(); }
+}, {passive: true});
+
+/* ---- SEARCH ---- */
+const searchInput = document.getElementById('SearchInput');
+const clearBtn = document.getElementById('clearSearch');
+let allProducts = [];
+
+searchInput.addEventListener('input', function() {
+  clearBtn.style.display = this.value ? 'block' : 'none';
+  filterProducts(this.value);
+});
+searchInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && this.value.trim())
+    location.href = 'search.html?q=' + encodeURIComponent(this.value.trim());
+});
+clearBtn.onclick = () => {
+  searchInput.value = ''; clearBtn.style.display = 'none';
+  renderProducts(allProducts);
+};
+
+function norm(t) { return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+function filterProducts(q) {
+  if (!q.trim()) { renderProducts(allProducts); return; }
+  const nq = norm(q);
+  renderProducts(allProducts.filter(p =>
+    norm(`${p.name} ${p.category} ${p.type} ${p.price} ${(p.options?.color||[]).join(' ')} ${(p.options?.size||[]).join(' ')}`).includes(nq)
+  ));
+}
+
+/* ---- PRODUCTS ---- */
+const container = document.getElementById('productsContainer');
+
+function isNew(p) {
+  if (!p.createdAt) return false;
+  return (Date.now() - new Date(p.createdAt)) / 86400000 <= 14;
+}
+
+fetch('/api/products')
+  .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+  .then(data => {
+    allProducts = Object.values(data).sort(() => Math.random() - 0.5);
+    renderProducts(allProducts);
+  })
+  .catch(() => {
+    container.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:60px;color:#aaa">Erreur de chargement</p>';
+  });
+
+function renderProducts(arr) {
+  container.innerHTML = '';
+  if (!arr.length) {
+    container.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:60px;color:#aaa">Aucun produit trouvé</p>';
+    return;
+  }
+  arr.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'product';
+    div.innerHTML = `
+      <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.background='#f0efed';this.style.minHeight='160px'" />
+      <div class="product-info">
+        <div class="product-name">${p.name}</div>
+        <div class="product-price">
+          <span ${p.price < 40 ? 'style="color:#128C7E"' : ''}>$${p.price}</span>
+          ${p.price < 40 ? '<span class="badge-promo"><i class="fa fa-fire"></i></span>' : ''}
+          ${isNew(p) ? '<span class="badge-new">Nouveau</span>' : ''}
         </div>
       </div>
-      <h3><strong>My dressing by amida</strong></h3>
-      <div
-        class="cart"
-        onclick="location.href = 'cart.html'"
-        style="cursor: pointer"
-      >
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span class="badge" id="cartCount"></span>
-      </div>
-    </header>
+      <button>Voir produit</button>`;
+    div.onclick = () => location.href = `product.html?id=${p.id}`;
+    container.appendChild(div);
+  });
+}
 
-    <section class="carousel">
-      <div class="slides">
-        <div class="slide">
-          <img
-            src="https://i.pinimg.com/1200x/6e/3b/6c/6e3b6cff7af0c7e6445103d02f2bef5e.jpg"
-            alt=""
-          />
-          <div class="caption">
-            <h2>Shopping</h2>
-            <p>Beneficier de 10% de reduction sur notre site</p>
-          </div>
-        </div>
+/* ---- REVEAL ---- */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting));
+});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-        <div class="slide">
-          <img
-            src="https://i.pinimg.com/736x/7d/b8/4a/7db84aba851e96846229e42d6535a42a.jpg"
-            alt=""
-          />
-          <div class="caption">
-            <h2>Arrivage</h2>
-            <p>Trendy fashion for everyone</p>
-          </div>
-        </div>
-
-        <div class="slide">
-          <img
-            src="https://i.pinimg.com/736x/51/4d/22/514d22430ca8a0badf0598751eef49b8.jpg"
-            alt=""
-          />
-          <div class="caption">
-            <h2>Best Deals</h2>
-            <p>Save more on top brands</p>
-          </div>
-        </div>
-
-        <div class="slide">
-          <img
-            src="https://i.pinimg.com/736x/7f/9d/95/7f9d9562949f1e8f278e9ceed2968eb9.jpg"
-            alt=""
-          />
-          <div class="caption">
-            <h2>Beauté & Skincare</h2>
-            <p>La peau parle. Offrez-lui ce qui la fait briller.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </section>
-    <section class="Body">
-      <div class="search-wrapper">
-        <div class="search-container">
-          <svg class="search-icon" viewBox="0 0 24 24">
-            <path
-              d="M21 21l-4.35-4.35m1.35-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
-              stroke="currentColor"
-              stroke-width="2"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-
-          <input
-            type="text"
-            id="SearchInput"
-            autocomplete="off"
-            aria-label="Search products"
-            placeholder="Rechercher un produit..."
-          />
-
-          <button id="clearSearch" aria-label="Clear search">✕</button>
-        </div>
-      </div>
-
-      <section class="categories">
-        <h3>Categories</h3>
-        <div class="category-container">
-          <div class="grid">
-            <div class="category" onclick="location.href = 'FashionH.html'">
-              <p>Fashion Homme</p>
-            </div>
-
-            <div class="category" onclick="location.href = 'FashionF.html'">
-              <p>Fashion Femme</p>
-            </div>
-
-            <div class="category" onclick="location.href = 'beaute.html'">
-              <p>
-                beauté & <br />
-                Skin care
-              </p>
-            </div>
-          </div>
-          <div class="flex">
-            <div
-              class="category"
-              onclick="location.href = 'gift.html'"
-              style="
-                width: 50%;
-                background: url(https://res.cloudinary.com/dpsewpbqa/image/upload/v1779387472/04cacd0c-c2cd-421a-9cf8-c9d9f009278b_bamniq.jpg);
-                background-repeat: round;
-              "
-            >
-              <p>Cadeau</p>
-            </div>
-            <div
-              class="category"
-              onclick="location.href = 'accessoires.html'"
-              style="
-                width: 50%;
-                background: url(https://res.cloudinary.com/dpsewpbqa/image/upload/v1779387474/ee789332-4edb-4ab6-9a6e-1b5ce9f86639_ee37b6.jpg);
-                background-repeat: round;
-              "
-            >
-              <p>Accessoires</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <h2 class="section-head">Explorez</h2>
-
-      <section class="products" id="productsContainer"></section>
-
-      <div class="texts">
-        <div class="slide-from-left reveal">Jusqu’à -30% sur vos achats</div>
-        <div class="slide-from-left reveal">Stock disponible immédiatement</div>
-        <div class="slide-from-left reveal">
-          Des milliers de clients satisfaits
-        </div>
-        <div class="slide-from-left reveal">
-          Cadeaux uniques pour vos proches
-        </div>
-      </div>
-
-      <footer>
-        <p>
-          © <span id="year"></span> My Dressing by Amida. <br />
-          All rights reserved.
-        </p>
-      </footer>
-    </section>
-    <script src="search.js"></script>
-    <script src="script.js"></script>
-    <script src="product-link.js"></script>
-    <script src="cart.js"></script>
-    <script src="cart-core.js"></script>
-  </body>
+/* ---- MISC ---- */
+document.getElementById('year').textContent = new Date().getFullYear();
+updateCartBadge();
+</script>
+</body>
 </html>
