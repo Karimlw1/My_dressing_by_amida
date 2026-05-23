@@ -182,9 +182,10 @@
         justify-content: space-between;
         align-items: center;
         padding: 8px 0;
-        font-size: 14px;
+        font-size: 17px;
         color: #666;
         border-bottom: 1px solid #f0efed;
+        font: initial;
       }
       .summary-row:last-child {
         border-bottom: none;
@@ -258,8 +259,8 @@
       .btn-continue {
         display: block;
         text-align: center;
-        color: #888;
-        font-size: 13px;
+        color: #ff0000;
+        font-size: 17px;
         text-decoration: none;
         padding: 4px;
         transition: color 0.2s ease;
@@ -386,7 +387,7 @@
 
         html += `
     <div class="cart-summary">
-      <div class="summary-row"><span>${count} article(s)</span><span>$${total}</span></div>
+      <div class="summary-row"><span>${count} article(s)</span><span style = "color: red">$${total}</span></div>
       <div class="summary-row"><span>Livraison</span><span style="color:#128C7E">A confirmer</span></div>
       <div class="summary-row total"><span>Total</span><span>$${total}</span></div>
     </div>
