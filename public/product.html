@@ -1,493 +1,674 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="header.css" />
-  <title>Détail Produit — My Dressing by Amida</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Cormorant Garamond', serif; background: #fafaf9; color: #1a1a1a; -webkit-font-smoothing: antialiased; }
-
-    /* ---- LAYOUT ---- */
-    .product-page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 16px 120px;
-    }
-    @media (min-width: 720px) {
-      .product-page {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
-        padding: 40px 40px 100px;
-        align-items: start;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="header.css" />
+    <title>Détail Produit — My Dressing by Amida</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
-    }
-    @media (min-width: 1100px) {
-      .product-page { grid-template-columns: 55% 1fr; }
-    }
+      body {
+        font-family: "Cormorant Garamond", serif;
+        background: #fafaf9;
+        color: #1a1a1a;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    /* ---- GALLERY ---- */
-    .gallery { position: relative; }
+      /* ---- LAYOUT ---- */
+      .product-page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px 16px 120px;
+      }
+      @media (min-width: 720px) {
+        .product-page {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 48px;
+          padding: 40px 40px 100px;
+          align-items: start;
+        }
+      }
+      @media (min-width: 1100px) {
+        .product-page {
+          grid-template-columns: 55% 1fr;
+        }
+      }
 
-    .gallery-main {
-      border-radius: 14px;
-      overflow: hidden;
-      background: #f0efed;
-      position: relative;
-      aspect-ratio: 4/5;
-    }
-    @media (min-width: 720px) { .gallery-main { aspect-ratio: 3/4; } }
+      /* ---- GALLERY ---- */
+      .gallery {
+        position: relative;
+      }
 
-    #mainImage {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-      transition: opacity 0.18s ease;
-    }
+      .gallery-main {
+        border-radius: 14px;
+        overflow: hidden;
+        background: #f0efed;
+        position: relative;
+        aspect-ratio: 4/5;
+      }
+      @media (min-width: 720px) {
+        .gallery-main {
+          aspect-ratio: 3/4;
+        }
+      }
 
-    .gallery-btn {
-      position: absolute;
-      top: 50%; transform: translateY(-50%);
-      width: 36px; height: 36px;
-      border-radius: 7px;
-      background: rgba(255,255,255,0.88);
-      border: 1px solid rgba(0,0,0,0.08);
-      color: #1a1a1a;
-      font-size: 13px;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s ease;
-      z-index: 2;
-    }
-    .gallery-btn:hover { background: #fff; }
-    .gallery-btn.prev { left: 10px; }
-    .gallery-btn.next { right: 10px; }
+      #mainImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+        transition: opacity 0.18s ease;
+      }
 
-    .thumbs {
-      display: flex; gap: 8px; margin-top: 12px;
-      overflow-x: auto; padding-bottom: 2px;
-      scrollbar-width: none;
-    }
-    .thumbs::-webkit-scrollbar { display: none; }
+      .gallery-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        color: #1a1a1a;
+        font-size: 13px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s ease;
+        z-index: 2;
+      }
+      .gallery-btn:hover {
+        background: #fff;
+      }
+      .gallery-btn.prev {
+        left: 10px;
+      }
+      .gallery-btn.next {
+        right: 10px;
+      }
 
-    .thumb {
-      width: 60px; height: 60px;
-      border-radius: 8px; overflow: hidden; flex-shrink: 0;
-      cursor: pointer;
-      border: 2px solid transparent;
-      opacity: 0.65;
-      transition: all 0.2s ease;
-    }
-    .thumb:hover, .thumb.active { border-color: #1a1a1a; opacity: 1; }
-    .thumb img { width: 100%; height: 100%; object-fit: cover; }
+      .thumbs {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+      .thumbs::-webkit-scrollbar {
+        display: none;
+      }
 
-    /* ---- PRODUCT INFO ---- */
-    .product-info { display: flex; flex-direction: column; gap: 18px; padding-top: 4px; }
+      .thumb {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        overflow: hidden;
+        flex-shrink: 0;
+        cursor: pointer;
+        border: 2px solid transparent;
+        opacity: 0.65;
+        transition: all 0.2s ease;
+      }
+      .thumb:hover,
+      .thumb.active {
+        border-color: #1a1a1a;
+        opacity: 1;
+      }
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-    .pi-category {
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: #888;
-    }
+      /* ---- PRODUCT INFO ---- */
+      .product-info {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding-top: 4px;
+      }
 
-    #name {
-      font-size: clamp(1.2rem, 3vw, 1.7rem);
-      font-weight: 600;
-      line-height: 1.25;
-      color: #1a1a1a;
-    }
+      .pi-category {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #888;
+      }
 
-    #price {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #1a1a1a;
-    }
+      #name {
+        font-size: clamp(1.2rem, 3vw, 1.7rem);
+        font-weight: 600;
+        line-height: 1.25;
+        color: #1a1a1a;
+      }
 
-    .divider { height: 1px; background: #E8E5E0; }
+      #price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
 
-    /* ---- OPTION GROUPS ---- */
-    .option-group { display: flex; flex-direction: column; gap: 10px; }
+      .divider {
+        height: 1px;
+        background: #e8e5e0;
+      }
 
-    .option-label {
-      font-size: 12px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 1px;
-      color: #555;
-    }
-    .option-label span { font-weight: 400; color: #999; text-transform: none; letter-spacing: 0; margin-left: 6px; }
+      /* ---- OPTION GROUPS ---- */
+      .option-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
 
-    /* CHIPS */
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+      .option-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #555;
+      }
+      .option-label span {
+        font-weight: 400;
+        color: #999;
+        text-transform: none;
+        letter-spacing: 0;
+        margin-left: 6px;
+      }
 
-    .chip {
-      padding: 7px 16px;
-      border-radius: 6px;
-      border: 1.5px solid #E0DDD8;
-      background: #fff;
-      font-size: 14px;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      cursor: pointer;
-      color: #1a1a1a;
-      transition: all 0.18s ease;
-      user-select: none;
-    }
-    .chip:hover { border-color: #999; }
-    .chip.selected {
-      border-color: #1a1a1a;
-      background: #1a1a1a;
-      color: #fff;
-    }
+      /* CHIPS */
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
 
-    /* ---- DELIVERY ---- */
-    #lieuDeLIvraison { display: flex; flex-direction: column; gap: 10px; }
+      .chip {
+        padding: 7px 16px;
+        border-radius: 6px;
+        border: 1.5px solid #e0ddd8;
+        background: #fff;
+        font-size: 14px;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        cursor: pointer;
+        color: #1a1a1a;
+        transition: all 0.18s ease;
+        user-select: none;
+      }
+      .chip:hover {
+        border-color: #999;
+      }
+      .chip.selected {
+        border-color: #1a1a1a;
+        background: #1a1a1a;
+        color: #fff;
+      }
 
-    /* ---- DESCRIPTION ---- */
-    .pi-desc {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.65;
-      border-top: 1px solid #E8E5E0;
-      padding-top: 16px;
-    }
+      /* ---- DELIVERY ---- */
+      #lieuDeLIvraison {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
 
-    .pi-id { font-size: 11px; color: #bbb; }
+      /* ---- DESCRIPTION ---- */
+      .pi-desc {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.65;
+        border-top: 1px solid #e8e5e0;
+        padding-top: 16px;
+      }
 
-    /* ---- ADD TO CART ---- */
-    .cta-bar {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-      background: rgba(255,255,255,0.95);
-      border-top: 1px solid #E8E5E0;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      z-index: 50;
-      backdrop-filter: blur(8px);
-    }
+      .pi-id {
+        font-size: 11px;
+        color: #bbb;
+      }
 
-    @media (min-width: 720px) {
-      .cta-bar { position: static; background: none; border: none; padding: 0; backdrop-filter: none; }
-    }
+      /* ---- ADD TO CART ---- */
+      .cta-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, 0.95);
+        border-top: 1px solid #e8e5e0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        z-index: 50;
+        backdrop-filter: blur(8px);
+      }
 
-    .btn-atc {
-      flex: 1;
-      padding: 15px 24px;
-      border-radius: 8px;
-      border: none;
-      background: #1a1a1a;
-      color: #fff;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-    }
-    .btn-atc:hover { background: #333; }
-    .btn-atc:active { transform: scale(0.98); }
-    .btn-atc:disabled { background: #aaa; cursor: not-allowed; }
+      @media (min-width: 720px) {
+        .cta-bar {
+          position: static;
+          background: none;
+          border: none;
+          padding: 0;
+          backdrop-filter: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
 
-    /* ---- TOTAL ---- */
-    .pi-total {
-      font-size: 1rem;
-      color: #555;
-    }
-    .pi-total strong { font-size: 1.3rem; color: #1a1a1a; font-weight: 700; }
+      .btn-atc {
+        flex: 1;
+        padding: 15px 24px;
+        border-radius: 8px;
+        border: none;
+        background: #1a1a1a;
+        color: #fff;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .btn-atc:hover {
+        background: #333;
+      }
+      .btn-atc:active {
+        transform: scale(0.98);
+      }
+      .btn-atc:disabled {
+        background: #aaa;
+        cursor: not-allowed;
+      }
 
-    /* ---- TOAST ---- */
-    .toast {
-      position: fixed; bottom: 80px; left: 50%;
-      transform: translateX(-50%) translateY(10px);
-      background: #1a1a1a; color: #fff;
-      padding: 10px 22px; border-radius: 6px;
-      font-size: 13px; font-weight: 600;
-      opacity: 0; transition: all 0.25s ease;
-      z-index: 999; white-space: nowrap; pointer-events: none;
-    }
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+      /* ---- TOTAL ---- */
+      .pi-total {
+        font-size: 1rem;
+        color: #555;
+      }
+      .pi-total strong {
+        font-size: 1.3rem;
+        color: #1a1a1a;
+        font-weight: 700;
+      }
 
-    @media (min-width: 720px) {
-      .toast { bottom: 24px; }
-    }
-  </style>
-</head>
-<body>
+      /* ---- TOAST ---- */
+      .toast {
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: #1a1a1a;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        opacity: 0;
+        transition: all 0.25s ease;
+        z-index: 999;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
 
-<header class="navbar">
-  <div style="cursor:pointer;font-size:20px" onclick="history.back()">←</div>
-  <h3>Détail Produit</h3>
-  <div class="cart" onclick="location.href='cart.html'" style="cursor:pointer">
-    <i class="fa-solid fa-cart-shopping"></i>
-    <span class="badge" id="cartCount"></span>
-  </div>
-</header>
+      @media (min-width: 720px) {
+        .toast {
+          bottom: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div style="cursor: pointer; font-size: 20px" onclick="history.back()">
+        ←
+      </div>
+      <h3>Détail Produit</h3>
+    </header>
 
-<main class="product-page">
+    <main class="product-page">
+      <!-- GALLERY -->
+      <div class="gallery">
+        <div class="gallery-main">
+          <img id="mainImage" alt="Produit" />
+          <button class="gallery-btn prev" id="prevBtn">
+            <i class="fa fa-chevron-left"></i>
+          </button>
+          <button class="gallery-btn next" id="nextBtn">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
 
-  <!-- GALLERY -->
-  <div class="gallery">
-    <div class="gallery-main">
-      <img id="mainImage" alt="Produit" />
-      <button class="gallery-btn prev" id="prevBtn"><i class="fa fa-chevron-left"></i></button>
-      <button class="gallery-btn next" id="nextBtn"><i class="fa fa-chevron-right"></i></button>
-    </div>
-    <div class="thumbs" id="thumbs"></div>
-  </div>
+      <!-- INFO -->
+      <div class="product-info">
+        <div class="pi-category" id="category"></div>
+        <h1 id="name"></h1>
+        <div id="price"></div>
 
-  <!-- INFO -->
-  <div class="product-info">
-    <div class="pi-category" id="category"></div>
-    <h1 id="name"></h1>
-    <div id="price"></div>
+        <div class="divider"></div>
 
-    <div class="divider"></div>
+        <div id="options"></div>
+        <div id="lieuDeLIvraison"></div>
 
-    <div id="options"></div>
-    <div id="lieuDeLIvraison"></div>
+        <div class="divider"></div>
 
-    <div class="divider"></div>
+        <div class="pi-total" id="totalLine"></div>
 
-    <div class="pi-total" id="totalLine"></div>
+        <!-- CTA (inline on desktop, fixed bar on mobile) -->
+        <div class="cta-bar">
+          <button class="btn-atc" id="addToCart">
+            <i class="fa fa-shopping-bag"></i> Ajouter au panier
+          </button>
+          <div
+            class="cart"
+            onclick="location.href = 'cart.html'"
+            style="cursor: pointer"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge" id="cartCount"></span>
+          </div>
+        </div>
 
-    <!-- CTA (inline on desktop, fixed bar on mobile) -->
-    <div class="cta-bar">
-      <button class="btn-atc" id="addToCart">
-        <i class="fa fa-shopping-bag"></i> Ajouter au panier
-      </button>
-    </div>
+        <div class="pi-id" id="product-id"></div>
+      </div>
+    </main>
 
-    <div class="pi-id" id="product-id"></div>
-  </div>
+    <div class="toast" id="toast"></div>
 
-</main>
+    <script src="cart.js"></script>
+    <script src="cart-core.js"></script>
+    <script>
+      // ---- STATE ----
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      let product = null;
+      let images = [];
+      let currentIndex = 0;
+      let selectedSize = null;
+      let selectedColor = null;
+      let selectedVille = null;
 
-<div class="toast" id="toast"></div>
+      // ---- TOAST ----
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.className = "toast show";
+        setTimeout(() => (t.className = "toast"), 2400);
+      }
 
-<script src="cart.js"></script>
-<script src="cart-core.js"></script>
-<script>
-// ---- STATE ----
-const params = new URLSearchParams(window.location.search);
-const id = params.get('id');
-let product = null;
-let images = [];
-let currentIndex = 0;
-let selectedSize = null;
-let selectedColor = null;
-let selectedVille = null;
+      // ---- LOAD PRODUCT ----
+      fetch("/api/products")
+        .then((r) => r.json())
+        .then((data) => {
+          product = data[id];
+          if (!product) {
+            alert("Produit introuvable");
+            return;
+          }
+          if (!product.id) product.id = id;
+          render();
+          updateCartBadge();
+        })
+        .catch(() => alert("Erreur de chargement"));
 
-// ---- TOAST ----
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.className = 'toast show';
-  setTimeout(() => t.className = 'toast', 2400);
-}
+      // ---- RENDER ----
+      function render() {
+        document.title = product.name + " — My Dressing by Amida";
 
-// ---- LOAD PRODUCT ----
-fetch('/api/products')
-  .then(r => r.json())
-  .then(data => {
-    product = data[id];
-    if (!product) { alert('Produit introuvable'); return; }
-    if (!product.id) product.id = id;
-    render();
-    updateCartBadge();
-  })
-  .catch(() => alert('Erreur de chargement'));
+        document.getElementById("category").textContent =
+          product.category || "";
+        document.getElementById("name").textContent = product.name || "";
+        document.getElementById("price").textContent = "$" + product.price;
+        document.getElementById("product-id").textContent =
+          "Réf: " + product.id;
 
-// ---- RENDER ----
-function render() {
-  document.title = product.name + ' — My Dressing by Amida';
+        // Images
+        images = product.images?.length
+          ? product.images
+          : [product.image].filter(Boolean);
+        const mainImg = document.getElementById("mainImage");
+        const thumbsEl = document.getElementById("thumbs");
 
-  document.getElementById('category').textContent = product.category || '';
-  document.getElementById('name').textContent = product.name || '';
-  document.getElementById('price').textContent = '$' + product.price;
-  document.getElementById('product-id').textContent = 'Réf: ' + product.id;
+        mainImg.src = images[0];
 
-  // Images
-  images = product.images?.length ? product.images : [product.image].filter(Boolean);
-  const mainImg = document.getElementById('mainImage');
-  const thumbsEl = document.getElementById('thumbs');
+        thumbsEl.innerHTML = images
+          .map(
+            (img, i) => `
+    <div class="thumb ${i === 0 ? "active" : ""}" data-i="${i}">
+      <img src="${img}" alt="Vue ${i + 1}" loading="lazy" />
+    </div>`,
+          )
+          .join("");
 
-  mainImg.src = images[0];
+        thumbsEl.querySelectorAll(".thumb").forEach((t) => {
+          t.addEventListener("click", () => {
+            currentIndex = +t.dataset.i;
+            updateGallery();
+          });
+        });
 
-  thumbsEl.innerHTML = images.map((img, i) => `
-    <div class="thumb ${i===0?'active':''}" data-i="${i}">
-      <img src="${img}" alt="Vue ${i+1}" loading="lazy" />
-    </div>`).join('');
+        document.getElementById("prevBtn").onclick = () => {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          updateGallery();
+        };
+        document.getElementById("nextBtn").onclick = () => {
+          currentIndex = (currentIndex + 1) % images.length;
+          updateGallery();
+        };
 
-  thumbsEl.querySelectorAll('.thumb').forEach(t => {
-    t.addEventListener('click', () => { currentIndex = +t.dataset.i; updateGallery(); });
-  });
+        // Swipe
+        let sx = 0;
+        mainImg.addEventListener(
+          "touchstart",
+          (e) => (sx = e.touches[0].clientX),
+          { passive: true },
+        );
+        mainImg.addEventListener(
+          "touchend",
+          (e) => {
+            const dx = e.changedTouches[0].clientX - sx;
+            if (Math.abs(dx) < 40) return;
+            currentIndex =
+              dx < 0
+                ? (currentIndex + 1) % images.length
+                : (currentIndex - 1 + images.length) % images.length;
+            updateGallery();
+          },
+          { passive: true },
+        );
 
-  document.getElementById('prevBtn').onclick = () => { currentIndex = (currentIndex - 1 + images.length) % images.length; updateGallery(); };
-  document.getElementById('nextBtn').onclick = () => { currentIndex = (currentIndex + 1) % images.length; updateGallery(); };
+        // Options
+        const optsEl = document.getElementById("options");
+        optsEl.innerHTML = "";
 
-  // Swipe
-  let sx = 0;
-  mainImg.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
-  mainImg.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - sx;
-    if (Math.abs(dx) < 40) return;
-    currentIndex = dx < 0 ? (currentIndex+1)%images.length : (currentIndex-1+images.length)%images.length;
-    updateGallery();
-  }, {passive:true});
-
-  // Options
-  const optsEl = document.getElementById('options');
-  optsEl.innerHTML = '';
-
-  if (product.options?.size?.length) {
-    selectedSize = product.options.size[0];
-    optsEl.innerHTML += `
+        if (product.options?.size?.length) {
+          selectedSize = product.options.size[0];
+          optsEl.innerHTML += `
       <div class="option-group">
         <div class="option-label">Taille <span id="selectedSizeLabel">${selectedSize}</span></div>
         <div class="chips" id="sizeChips">
-          ${product.options.size.map((s,i) => `<button class="chip ${i===0?'selected':''}" data-val="${s}">${s}</button>`).join('')}
+          ${product.options.size.map((s, i) => `<button class="chip ${i === 0 ? "selected" : ""}" data-val="${s}">${s}</button>`).join("")}
         </div>
       </div>`;
-  }
+        }
 
-  if (product.options?.color?.length) {
-    selectedColor = product.options.color[0];
-    optsEl.innerHTML += `
+        if (product.options?.color?.length) {
+          selectedColor = product.options.color[0];
+          optsEl.innerHTML += `
       <div class="option-group">
         <div class="option-label">Couleur <span id="selectedColorLabel">${selectedColor}</span></div>
         <div class="chips" id="colorChips">
-          ${product.options.color.map((c,i) => `<button class="chip ${i===0?'selected':''}" data-val="${c}">${c}</button>`).join('')}
+          ${product.options.color.map((c, i) => `<button class="chip ${i === 0 ? "selected" : ""}" data-val="${c}">${c}</button>`).join("")}
         </div>
       </div>`;
-  }
+        }
 
-  // Chip click handlers
-  optsEl.querySelectorAll('#sizeChips .chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      optsEl.querySelectorAll('#sizeChips .chip').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      selectedSize = btn.dataset.val;
-      const lbl = document.getElementById('selectedSizeLabel');
-      if (lbl) lbl.textContent = selectedSize;
-      updateTotal();
-    });
-  });
+        // Chip click handlers
+        optsEl.querySelectorAll("#sizeChips .chip").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            optsEl
+              .querySelectorAll("#sizeChips .chip")
+              .forEach((b) => b.classList.remove("selected"));
+            btn.classList.add("selected");
+            selectedSize = btn.dataset.val;
+            const lbl = document.getElementById("selectedSizeLabel");
+            if (lbl) lbl.textContent = selectedSize;
+            updateTotal();
+          });
+        });
 
-  optsEl.querySelectorAll('#colorChips .chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      optsEl.querySelectorAll('#colorChips .chip').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      selectedColor = btn.dataset.val;
-      const lbl = document.getElementById('selectedColorLabel');
-      if (lbl) lbl.textContent = selectedColor;
-    });
-  });
+        optsEl.querySelectorAll("#colorChips .chip").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            optsEl
+              .querySelectorAll("#colorChips .chip")
+              .forEach((b) => b.classList.remove("selected"));
+            btn.classList.add("selected");
+            selectedColor = btn.dataset.val;
+            const lbl = document.getElementById("selectedColorLabel");
+            if (lbl) lbl.textContent = selectedColor;
+          });
+        });
 
-  // Delivery
-  const lieuEl = document.getElementById('lieuDeLIvraison');
-  lieuEl.innerHTML = '';
+        // Delivery
+        const lieuEl = document.getElementById("lieuDeLIvraison");
+        lieuEl.innerHTML = "";
 
-  if (product.lieuDeLIvraison?.ville?.length) {
-    selectedVille = product.lieuDeLIvraison.ville[0];
-    lieuEl.innerHTML = `
+        if (product.lieuDeLIvraison?.ville?.length) {
+          selectedVille = product.lieuDeLIvraison.ville[0];
+          lieuEl.innerHTML = `
       <div class="option-group">
         <div class="option-label">Lieu de livraison <span id="selectedVilleLabel">${selectedVille}</span></div>
         <div class="chips" id="villeChips">
-          ${product.lieuDeLIvraison.ville.map((v,i) => `<button class="chip ${i===0?'selected':''}" data-val="${v}">${v}</button>`).join('')}
+          ${product.lieuDeLIvraison.ville.map((v, i) => `<button class="chip ${i === 0 ? "selected" : ""}" data-val="${v}">${v}</button>`).join("")}
         </div>
       </div>`;
 
-    lieuEl.querySelectorAll('#villeChips .chip').forEach(btn => {
-      btn.addEventListener('click', () => {
-        lieuEl.querySelectorAll('#villeChips .chip').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        selectedVille = btn.dataset.val;
-        const lbl = document.getElementById('selectedVilleLabel');
-        if (lbl) lbl.textContent = selectedVille;
-      });
-    });
-  }
+          lieuEl.querySelectorAll("#villeChips .chip").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              lieuEl
+                .querySelectorAll("#villeChips .chip")
+                .forEach((b) => b.classList.remove("selected"));
+              btn.classList.add("selected");
+              selectedVille = btn.dataset.val;
+              const lbl = document.getElementById("selectedVilleLabel");
+              if (lbl) lbl.textContent = selectedVille;
+            });
+          });
+        }
 
-  updateTotal();
-  setupAddToCart();
-}
-
-function updateGallery() {
-  const mainImg = document.getElementById('mainImage');
-  mainImg.style.opacity = '0';
-  setTimeout(() => { mainImg.src = images[currentIndex]; mainImg.style.opacity = '1'; }, 150);
-  document.querySelectorAll('.thumb').forEach((t,i) => t.classList.toggle('active', i === currentIndex));
-}
-
-function updateTotal() {
-  const el = document.getElementById('totalLine');
-  if (el) el.innerHTML = `Total : <strong>$${product.price}</strong>`;
-}
-
-function setupAddToCart() {
-  const btn = document.getElementById('addToCart');
-
-  if (product.epuised) {
-    btn.disabled = true;
-    btn.innerHTML = 'Indisponible';
-    return;
-  }
-
-  btn.addEventListener('click', () => {
-    // Validate delivery city is chosen
-    if (product.lieuDeLIvraison?.ville?.length && !selectedVille) {
-      showToast('Choisissez un lieu de livraison');
-      return;
-    }
-
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Ajout...';
-
-    setTimeout(() => {
-      // BUG FIX: use addToCartFixed so we don't double-push same item
-      const cart = getCart();
-      const existing = cart.find(item =>
-        item.id === product.id &&
-        item.size === selectedSize &&
-        item.color === selectedColor &&
-        item.ville === selectedVille
-      );
-
-      if (existing) {
-        existing.qty = (existing.qty || 1) + 1;
-      } else {
-        cart.push({
-          id: product.id,
-          name: product.name,
-          category: product.category,
-          price: Number(product.price),
-          image: images[currentIndex] || images[0],
-          size: selectedSize || null,
-          color: selectedColor || null,
-          ville: selectedVille || null,
-          qty: 1
-        });
+        updateTotal();
+        setupAddToCart();
       }
 
-      saveCart(cart);
-      updateCartBadge();
+      function updateGallery() {
+        const mainImg = document.getElementById("mainImage");
+        mainImg.style.opacity = "0";
+        setTimeout(() => {
+          mainImg.src = images[currentIndex];
+          mainImg.style.opacity = "1";
+        }, 150);
+        document
+          .querySelectorAll(".thumb")
+          .forEach((t, i) => t.classList.toggle("active", i === currentIndex));
+      }
 
-      btn.disabled = false;
-      btn.innerHTML = '<i class="fa fa-check"></i> Ajouté !';
-      showToast('Produit ajouté au panier');
+      function updateTotal() {
+        const el = document.getElementById("totalLine");
+        if (el) el.innerHTML = `Total : <strong>$${product.price}</strong>`;
+      }
 
-      setTimeout(() => {
-        btn.innerHTML = '<i class="fa fa-shopping-bag"></i> Ajouter au panier';
-      }, 2000);
-    }, 500);
-  });
-}
-</script>
-</body>
+      function setupAddToCart() {
+        const btn = document.getElementById("addToCart");
+
+        if (product.epuised) {
+          btn.disabled = true;
+          btn.innerHTML = "Indisponible";
+          return;
+        }
+
+        btn.addEventListener("click", () => {
+          // Validate delivery city is chosen
+          if (product.lieuDeLIvraison?.ville?.length && !selectedVille) {
+            showToast("Choisissez un lieu de livraison");
+            return;
+          }
+
+          btn.disabled = true;
+          btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Ajout...';
+
+          setTimeout(() => {
+            // BUG FIX: use addToCartFixed so we don't double-push same item
+            const cart = getCart();
+            const existing = cart.find(
+              (item) =>
+                item.id === product.id &&
+                item.size === selectedSize &&
+                item.color === selectedColor &&
+                item.ville === selectedVille,
+            );
+
+            if (existing) {
+              existing.qty = (existing.qty || 1) + 1;
+            } else {
+              cart.push({
+                id: product.id,
+                name: product.name,
+                category: product.category,
+                price: Number(product.price),
+                image: images[currentIndex] || images[0],
+                size: selectedSize || null,
+                color: selectedColor || null,
+                ville: selectedVille || null,
+                qty: 1,
+              });
+            }
+
+            saveCart(cart);
+            updateCartBadge();
+
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fa fa-check"></i> Ajouté !';
+            showToast("Produit ajouté au panier");
+
+            setTimeout(() => {
+              btn.innerHTML =
+                '<i class="fa fa-shopping-bag"></i> Ajouter au panier';
+            }, 2000);
+          }, 500);
+        });
+      }
+    </script>
+  </body>
 </html>
