@@ -182,7 +182,6 @@ button.voir {
 }
 
 .category {
-  height: 140px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -195,13 +194,18 @@ button.voir {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   overflow: hidden;
+  place-items: center;
+}
+
+#complet{
+  margin-left:230px;
 }
 
 .category::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
+  background: linear-gradient(to top, rgb(143 143 143 / 55%) 0%, transparent 60%);
 }
 
 .category:hover {
