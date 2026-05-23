@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="My Dressing By Amida is a fashion brand offering elegant dresses and modern clothing for women."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My dressing by amida Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="generals.css" />
+    <link rel="stylesheet" href="footer.css" />
+
+    <link rel="icon" type="image/png" href="images/MDamida-logo.png" />
+    <link rel="shortcut icon" href="images/MDamida-logo.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="menu">
+        <strong
+          onclick="showMenu()"
+          style="
+            color: rgb(255, 252, 252);
+            background-color: black;
+            padding: 8px 10px;
+            border-radius: 50%;
+            font-size: 15px;
+          "
+          ><i class="fa fa-phone"></i>
+        </strong>
+
+        <div class="socials">
+          <button class="exitMenu" onclick="exitMenu()">←</button>
+
+          <a href="https://wa.me/243986007232" class="button whatsapp"
+            ><i class="fa-brands fa-whatsapp"></i> whatsapp</a
+          >
+          <a
+            href="https://www.instagram.com/md_by_amida?igsh=N3czZGdnaTAwZ2w4"
+            class="button instagram"
+            ><i class="fa-brands fa-instagram"></i> instagram</a
+          >
+          <a
+            href="https://www.tiktok.com/@mdbyamida?_r=1&_t=ZS-93zjfbF5iMf"
+            class="button tiktok"
+            ><i class="fa-brands fa-tiktok"></i> tiktok</a
+          >
+          <a href="" class="button facebook"
+            ><i class="fa-brands fa-facebook"></i> facebook</a
+          >
+          <a href="privacy&policy.html" class="conf"
+            >Politique de confidentialité</a
+          >
+        </div>
+      </div>
+      <h3><strong>My dressing by amida</strong></h3>
+      <div
+        class="cart"
+        onclick="location.href = 'cart.html'"
+        style="cursor: pointer"
+      >
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge" id="cartCount"></span>
+      </div>
+    </header>
+
+    <section class="carousel">
+      <div class="slides">
+        <div class="slide">
+          <img
+            src="https://i.pinimg.com/1200x/6e/3b/6c/6e3b6cff7af0c7e6445103d02f2bef5e.jpg"
+            alt=""
+          />
+          <div class="caption">
+            <h2>Shopping</h2>
+            <p>Beneficier de 10% de reduction sur notre site</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://i.pinimg.com/736x/7d/b8/4a/7db84aba851e96846229e42d6535a42a.jpg"
+            alt=""
+          />
+          <div class="caption">
+            <h2>Arrivage</h2>
+            <p>Trendy fashion for everyone</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://i.pinimg.com/736x/51/4d/22/514d22430ca8a0badf0598751eef49b8.jpg"
+            alt=""
+          />
+          <div class="caption">
+            <h2>Best Deals</h2>
+            <p>Save more on top brands</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="https://i.pinimg.com/736x/7f/9d/95/7f9d9562949f1e8f278e9ceed2968eb9.jpg"
+            alt=""
+          />
+          <div class="caption">
+            <h2>Beauté & Skincare</h2>
+            <p>La peau parle. Offrez-lui ce qui la fait briller.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+    <section class="Body">
+      <div class="search-wrapper">
+        <div class="search-container">
+          <svg class="search-icon" viewBox="0 0 24 24">
+            <path
+              d="M21 21l-4.35-4.35m1.35-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <input
+            type="text"
+            id="SearchInput"
+            autocomplete="off"
+            aria-label="Search products"
+            placeholder="Rechercher un produit..."
+          />
+
+          <button id="clearSearch" aria-label="Clear search">✕</button>
+        </div>
+      </div>
+
+      <section class="categories">
+        <h3>Categories</h3>
+        <div class="category-container">
+          <div class="grid">
+            <div class="category" onclick="location.href = 'FashionH.html'">
+              <p>Fashion Homme</p>
+            </div>
+
+            <div class="category" onclick="location.href = 'FashionF.html'">
+              <p>Fashion Femme</p>
+            </div>
+
+            <div class="category" onclick="location.href = 'beaute.html'">
+              <p>
+                beauté & <br />
+                Skin care
+              </p>
+            </div>
+          </div>
+          <div class="flex">
+            <div
+              class="category"
+              onclick="location.href = 'gift.html'"
+              style="
+                width: 50%;
+                background: url(https://res.cloudinary.com/dpsewpbqa/image/upload/v1779387472/04cacd0c-c2cd-421a-9cf8-c9d9f009278b_bamniq.jpg);
+                background-repeat: round;
+              "
+            >
+              <p>Cadeau</p>
+            </div>
+            <div
+              class="category"
+              onclick="location.href = 'accessoires.html'"
+              style="
+                width: 50%;
+                background: url(https://res.cloudinary.com/dpsewpbqa/image/upload/v1779387474/ee789332-4edb-4ab6-9a6e-1b5ce9f86639_ee37b6.jpg);
+                background-repeat: round;
+              "
+            >
+              <p>Accessoires</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="section-head">Explorez</h2>
+
+      <section class="products" id="productsContainer"></section>
+
+      <div class="texts">
+        <div class="slide-from-left reveal">Jusqu’à -30% sur vos achats</div>
+        <div class="slide-from-left reveal">Stock disponible immédiatement</div>
+        <div class="slide-from-left reveal">
+          Des milliers de clients satisfaits
+        </div>
+        <div class="slide-from-left reveal">
+          Cadeaux uniques pour vos proches
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          © <span id="year"></span> My Dressing by Amida. <br />
+          All rights reserved.
+        </p>
+      </footer>
+    </section>
+    <script src="search.js"></script>
+    <script src="script.js"></script>
+    <script src="product-link.js"></script>
+    <script src="cart.js"></script>
+    <script src="cart-core.js"></script>
+  </body>
+</html>

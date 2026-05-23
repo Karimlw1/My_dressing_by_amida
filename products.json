@@ -1,0 +1,863 @@
+{
+  "Produit6": {
+    "id": "Produit6",
+    "name": "Chemise satinée manches longues",
+    "category": "Femme",
+    "type": "haut",
+    "price": 20,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391843/mydressing_products/dke6y4vnshulrheo80ms.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391843/mydressing_products/dke6y4vnshulrheo80ms.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391852/mydressing_products/ecgpue7qf4wntnb4ofhf.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391862/mydressing_products/ahajsbx6natkoh30icp8.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391871/mydressing_products/ngb0iu7zbyqglpezmdrs.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770391878/mydressing_products/mzj3neaigh9rbgzvwjid.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "color": [
+        "Noir",
+        "Blanc",
+        "beige",
+        "vert"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma",
+        "kampala"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit 10": {
+    "id": "Produit 10",
+    "name": "Chemise élégante pour femme à manches longues avec motif floral",
+    "category": "Femme",
+    "type": "haut",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394101/mydressing_products/no7kwrzkeo0gkibobllm.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394101/mydressing_products/no7kwrzkeo0gkibobllm.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394110/mydressing_products/nsclgo0kwisggm7eivfm.jpg"
+    ],
+    "options": {
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL",
+        "6XL"
+      ],
+      "color": [
+        "Beige",
+        "Noire"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma",
+        "kampala"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit15": {
+    "id": "Produit15",
+    "name": "Top de gilet asymétrique à un bouton avec texture tissée",
+    "category": "Femme",
+    "type": "haut",
+    "price": 35,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470051/mydressing_products/aqearchv3fuquqsfrdtr.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470051/mydressing_products/aqearchv3fuquqsfrdtr.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470060/mydressing_products/brfp8lxloj0x2ad04nbz.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470068/mydressing_products/ihjrbp7dthgowi8djwut.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470078/mydressing_products/z7fknelg48rawuuzlsow.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470087/mydressing_products/zt73efom9qhcmdqmd6jh.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470097/mydressing_products/ybvqikrrpskwi5mdobqc.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "color": [
+        "Beige",
+        "noir",
+        "blanc",
+        "gris pÃÂ¢le",
+        "vert",
+        "rose pÃÂ¢le"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma",
+        "kampala"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit 16": {
+    "id": "Produit 16",
+    "name": "Ensemble 2 pièces t-shirt et short pour homme",
+    "category": "Homme",
+    "type": "complet",
+    "price": 40,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470802/mydressing_products/kid63tieisas23rr2yra.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470802/mydressing_products/kid63tieisas23rr2yra.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470819/mydressing_products/klulsryaskaxnxdqbi79.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470835/mydressing_products/qugvc94vqqjuqpa5j6ic.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770470836/mydressing_products/aakaewey2kcvct2a7ptq.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "L",
+        "M",
+        "XL"
+      ],
+      "color": [
+        "Beige",
+        "Marron"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma",
+        "kampala"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit17": {
+    "id": "Produit17",
+    "name": "Montre-bracelet en bois avec 22mm de longueur de bande",
+    "category": "Accessoire",
+    "type": "accessoire",
+    "price": 60,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471365/mydressing_products/piyofsur5jp39oyz8ner.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471365/mydressing_products/piyofsur5jp39oyz8ner.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471377/mydressing_products/dxdmld71dtdwleszjboo.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471386/mydressing_products/cwijznqwicfbhoeugiez.jpg"
+    ],
+    "options": {
+      "size": [
+        "22mm de longueur de bande"
+      ],
+      "color": [
+        "Chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma",
+        "kampala"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit18": {
+    "id": "Produit18",
+    "name": "Basket décontractée en cuir de vachette de première qualité",
+    "category": "Accessoire",
+    "type": "chaussure",
+    "price": 70,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471792/mydressing_products/rd4leqx1aundcc5fwtjh.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471792/mydressing_products/rd4leqx1aundcc5fwtjh.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471841/mydressing_products/hlrcjeiynjoptq6aj1sg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471852/mydressing_products/pn4nwwftjwn7ikk5ixkz.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471861/mydressing_products/plm6epxifilmjss3381m.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770471871/mydressing_products/gyqoqbzaoksgftnwwolu.jpg"
+    ],
+    "options": {
+      "size": [
+        "Euro 38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "color": [
+        "Chocolat",
+        "Blanc",
+        "Noir",
+        "marron",
+        "vert"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma",
+        "kampala"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit19": {
+    "id": "Produit19",
+    "name": "Robe plissée à manches longues col en V",
+    "category": "Femme",
+    "type": "robe",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527257/mydressing_products/rkcofzzm8ld016zvlaqr.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527257/mydressing_products/rkcofzzm8ld016zvlaqr.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527265/mydressing_products/eyuqifejbnhekmaoxkwf.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527275/mydressing_products/f1xxpwy3v89mst8wyfqb.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Blanc"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Goma",
+        "Kampala"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit20": {
+    "id": "Produit20",
+    "name": "Blouse en popeline avec manche large et col en V",
+    "category": "Femme",
+    "type": "haut",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527908/mydressing_products/tfbsj9ynitcvpbsleerm.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527908/mydressing_products/tfbsj9ynitcvpbsleerm.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527920/mydressing_products/wqrm52puamudsecvuegn.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527928/mydressing_products/l3gz9a9yftuhlnjeocub.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527938/mydressing_products/wua80synpncplxz6oh7j.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770527951/mydressing_products/leoxs2inkrzjb5qdavnz.jpg"
+    ],
+    "options": {
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "color": [
+        "Blanc"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit21": {
+    "id": "Produit21",
+    "name": "Polo à manches courtes pour homme avec col revers",
+    "category": "Homme",
+    "type": "haut",
+    "price": 20,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528179/mydressing_products/yg61cvhxweiv7ztju1hn.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528179/mydressing_products/yg61cvhxweiv7ztju1hn.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528188/mydressing_products/oqsatu9y6kk6baum7qes.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770528205/mydressing_products/hmywr70yncfcgsewhpki.jpg"
+    ],
+    "options": {
+      "size": [
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL"
+      ],
+      "color": [
+        "Chocolat",
+        "bleue marine",
+        "noire"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit22": {
+    "id": "Produit22",
+    "name": "T-shirt homme manches courtes,col chemise",
+    "category": "Homme",
+    "type": "haut",
+    "price": 15,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770925808/mydressing_products/ccisbmcqkupsz4tnsoek.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770925808/mydressing_products/ccisbmcqkupsz4tnsoek.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770925829/mydressing_products/ycemugu7ptyly9sv1m4x.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770925867/mydressing_products/bkvraix6bxqi2cmdzg2y.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770925874/mydressing_products/eieu3jsrggnmrwnhjbpa.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "color": [
+        "Blanc",
+        "bleu marine",
+        "chocolat",
+        "noir"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit23": {
+    "id": "Produit23",
+    "name": "Robe longue de luxe",
+    "category": "Femme",
+    "type": "robe",
+    "price": 120,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770926051/mydressing_products/x8wgglzrrwiexty2nusu.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770926051/mydressing_products/x8wgglzrrwiexty2nusu.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770926059/mydressing_products/ynvkaebejvesn49hh95s.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "color": [
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit24": {
+    "id": "Produit24",
+    "name": "Robe de luxe longue élégante pour femme",
+    "category": "Femme",
+    "type": "robe",
+    "price": 120,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770926252/mydressing_products/w2bac0on1wz38uznfn7n.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770926252/mydressing_products/w2bac0on1wz38uznfn7n.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770926261/mydressing_products/a48stkb50nyr17vfijsm.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "color": [
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit25": {
+    "id": "Produit25",
+    "name": "Talons aiguilles en dentelle épais et bout pointu",
+    "category": "Accessoire",
+    "type": "chaussure",
+    "price": 80,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770970587/mydressing_products/aqa0zodtwekkkyne4d8p.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770970587/mydressing_products/aqa0zodtwekkkyne4d8p.jpg"
+    ],
+    "options": {
+      "size": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "color": [
+        "Noir"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit26": {
+    "id": "Produit26",
+    "name": "Talons hauts noirs ,bouts pointus",
+    "category": "Accessoire",
+    "type": "chaussure",
+    "price": 60,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770970760/mydressing_products/hztnje5wdelysk8yjvmm.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770970760/mydressing_products/hztnje5wdelysk8yjvmm.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770970785/mydressing_products/yfcymkcvxdcbxvcqmag9.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770970793/mydressing_products/z3gdsmw94emesttcy2ei.jpg"
+    ],
+    "options": {
+      "size": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "color": [
+        "Noir"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit27": {
+    "id": "Produit27",
+    "name": "Sac fourre-tout en cuir véritable pour femmes",
+    "category": "Accessoire",
+    "type": "Sac",
+    "price": 60,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096424/mydressing_products/ahcbbooq4crnyqfjhmjk.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096424/mydressing_products/ahcbbooq4crnyqfjhmjk.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096441/mydressing_products/qwjqpijrh226ghqqfya8.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096451/mydressing_products/mi23hiw1fidphri5857h.jpg"
+    ],
+    "options": {
+      "size": [
+        "Normale"
+      ],
+      "color": [
+        "Rouge sombre",
+        "noire",
+        "chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit28": {
+    "id": "Produit28",
+    "name": "Robe de luxe sérieperlée incarptée des diamants et fendue devant",
+    "category": "Femme",
+    "type": "robe",
+    "price": 150,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772122984/mydressing_products/jzqkh9wpnnsdb4zsdpyg.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772122984/mydressing_products/jzqkh9wpnnsdb4zsdpyg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772122994/mydressing_products/xhaygama2ixax2vamrjn.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "color": [
+        "Rose"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit29": {
+    "id": "Produit28",
+    "name": "Sac bandoulière en cuir veritable pour femme",
+    "category": "Accessoire",
+    "type": "Sac",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096680/mydressing_products/egul1knuceminyqrwdly.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096680/mydressing_products/egul1knuceminyqrwdly.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096690/mydressing_products/sj4g3swbx5nmbme06ikg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771096699/mydressing_products/wxcd3ymvib7ocrl0ib5z.jpg"
+    ],
+    "options": {
+      "size": [
+        "Normale"
+      ],
+      "color": [
+        "Noire",
+        "chocolat",
+        "vert clair"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Lubumbashi",
+        "Kinshasa",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit1": {
+    "id": "Produit1",
+    "name": "Ensemble de marque alo pour femme",
+    "category": "Femme",
+    "type": "complet",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968246/mydressing_products/bw13qzy6irkvcsom24lj.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968246/mydressing_products/bw13qzy6irkvcsom24lj.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968255/mydressing_products/aha9jdbs1dod9g0uatuz.jpg"
+    ],
+    "options": {
+      "size": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "color": [
+        "Beige",
+        "rouge",
+        "vert",
+        "noir",
+        "gris",
+        "rouge bordeau"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit2": {
+    "id": "Produit2",
+    "name": "Polo Ralph homme",
+    "category": "Homme",
+    "type": "haut",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968637/mydressing_products/mwdjrpshct58fj9thnny.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968637/mydressing_products/mwdjrpshct58fj9thnny.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968650/mydressing_products/vw4db3qaimqdfj2hybjr.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968659/mydressing_products/ky30u7ms8faegvi6gmv6.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771968666/mydressing_products/agzh6tuqrqwykf8macur.jpg"
+    ],
+    "options": {
+      "size": [
+        "M",
+        "L",
+        "X",
+        "XXL"
+      ],
+      "color": [
+        "Blanc",
+        "bleu de nuit",
+        "gris",
+        "chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit3": {
+    "id": "Produit3",
+    "name": "New Stanley cup",
+    "category": "CadeauSpecial",
+    "type": "",
+    "price": 50,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970061/mydressing_products/q0lfaprb2wizstshwhu4.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970061/mydressing_products/q0lfaprb2wizstshwhu4.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970081/mydressing_products/ipszi8ce8zeja20uhmkg.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970090/mydressing_products/jvtqbfqhjd0s58i9dloy.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970098/mydressing_products/gf0fryojh2ecpvycuvn4.jpg"
+    ],
+    "options": {
+      "size": [
+        "1.18L"
+      ],
+      "color": [
+        "Bleu",
+        "rose foncée",
+        "rose blanc"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "lubumbashi",
+        "Kampala",
+        "goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit4": {
+    "id": "Produit4",
+    "name": "Stanley cup ancienne version",
+    "category": "Cadeau",
+    "type": "",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970536/mydressing_products/hfhcxxx5whdibm18of5w.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970536/mydressing_products/hfhcxxx5whdibm18of5w.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970545/mydressing_products/axyoyw1bvdnqzm9lyjm5.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970667/mydressing_products/v7udxvkgedew2mgh0ltt.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970700/mydressing_products/hcikx9l4ztnnpoibt4sa.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970709/mydressing_products/fouarabhjxu9gvwhi2d7.jpg"
+    ],
+    "options": {
+      "size": [
+        "1.80L"
+      ],
+      "color": [
+        "Beige",
+        "rose",
+        "bleu",
+        "noire",
+        "rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit30": {
+    "id": "Produit30",
+    "name": "Robe de luxe noir perlée",
+    "category": "Femme",
+    "type": "robe",
+    "price": 120,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772123216/mydressing_products/kzx2nmulyxcddmy7oicf.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772123216/mydressing_products/kzx2nmulyxcddmy7oicf.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772123229/mydressing_products/yapakgjgkoey6pggc4yt.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772123236/mydressing_products/bowptrsbchsuenhrb7xh.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "L",
+        "M",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "color": [
+        "Noir",
+        "blanc",
+        "bleu"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit31": {
+    "id": "Produit31",
+    "name": "Robe de luxe perles de goujons avec col fleuri",
+    "category": "Femme",
+    "type": "robe",
+    "price": 120,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772123713/mydressing_products/ap1kvmncvpyayswizygs.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772123713/mydressing_products/ap1kvmncvpyayswizygs.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772123723/mydressing_products/ajgyqm78b0zoll8m2mai.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772123730/mydressing_products/owrttrnykb8ygc831ydz.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1772123737/mydressing_products/nomoc3ydnjlyfdobubfw.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "color": [
+        "Beige",
+        "rouge bordeaux",
+        "noir"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit 32": {
+    "id": "Produit 32",
+    "name": "Sac grand",
+    "category": "Accessoire",
+    "type": "Sac",
+    "price": 35,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1778865277/mydressing_products/ej7k4vnufgrcr5jisnbr.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1778865277/mydressing_products/ej7k4vnufgrcr5jisnbr.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1778865288/mydressing_products/hnmr8swsvccewq0adlhk.jpg"
+    ],
+    "options": {
+      "size": [
+        "Normal"
+      ],
+      "color": [
+        "Chocolat",
+        "Noir",
+        "vert",
+        "chocolat cuire"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Goma",
+        "Kampala",
+        "Lubumbashi"
+      ]
+    },
+    "createdAt": "2026-05-21T15:16:46.678Z"
+  }
+}

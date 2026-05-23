@@ -1,0 +1,24 @@
+name: Update Products from Webhook
+
+on:
+  repository_dispatch:
+    types: [update-products]
+
+jobs:
+  update-products:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Update products.json
+        run: |
+          echo "$PRODUCTS_JSON" > products.json
+          git config user.name "Render Bot"
+          git config user.email "render-bot@example.com"
+          git add products.json
+          git commit -m "Update products via Render webhook"
+          git push origin main
+        env:
+          PRODUCTS_JSON: ${{ github.event.client_payload.products }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

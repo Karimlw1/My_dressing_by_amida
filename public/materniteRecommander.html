@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadeau personnalisé</title>
+  <link rel="stylesheet" href="cadeau-recommande.css">
+</head>
+<body>
+
+<section class="gift-builder">
+<a href="https://mydressingbyamida.onrender.com" class="back-button">← Retour</a>
+
+  <header>
+    <h1>Cadeau personnalisé</h1>
+    <p>Décrivez la personne, nous nous occupons du reste.</p>
+  </header>
+
+  <form id="giftForm">
+
+    <div class="block">
+      <h2>Client</h2>
+      <input name="clientName" placeholder="Votre nom" required>
+      <input name="clientPhone" placeholder="Téléphone WhatsApp" required>
+      <input name="clienTown" placeholder="Adresse quartier (lubumbashi)">
+    </div>
+
+    <div class="block">
+      <h2>Personne à gâter</h2>
+      <input name="receiverName" placeholder="Nom de la personne" required>
+
+      <div class="grid">
+        <input name="receiverAge" placeholder="Âge">
+        <select name="receiverGender">
+          <option value="">Genre</option>
+          <option>F</option>
+          <option>H</option>
+          <option>Enfant</option>
+        </select>
+      </div>
+
+      <input name="relation" placeholder="Relation (mère, ami, épouse...)">
+    </div>
+
+    <div class="block">
+      <h2>Cadeau</h2>
+      <p> occasion :</p>
+      <input name="occasion" type="text" placeholder="occasion">
+      <p> type de Cadeau :</p>
+      <select name="giftType">
+        <option value="Coffret">Coffret prêt à offrir</option>
+        <option value="Recommandé">Cadeau recommandé</option>
+      </select>
+
+    <p>Choissez un Budget : </p>
+      <select name="budget">
+        <option>50$</option>
+        <option>100$</option>
+        <option>200$</option>
+        <option>300$</option>
+        <option>300$</option>
+        <option>500$</option>
+        <option>unlimited</option>
+      </select>
+      <p>date limite</p>
+      <input type="date" name="deadline" id="">
+
+      <p>style:</p>
+      <select name="style" id="">
+         <option>simple</option>
+         <option>coloré</option>
+         <option>responsable</option>
+         <option>enfentin</option>
+      </select>
+      <p>Information a savoir : </p>
+      <textarea name="details" placeholder="Préférences, message, occasion..."></textarea>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="addGift">+ Ajouter un autre cadeau</button>
+      <button type="submit" class="send">Envoyer la demande</button>
+    </div>
+
+  </form>
+
+</section>
+
+<script src="cadeau-recommande.js"></script>
+</body>
+</html>

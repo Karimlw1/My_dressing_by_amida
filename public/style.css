@@ -1,0 +1,150 @@
+/* ============================================
+   STYLE.CSS — Carousel, Search, Layout
+   ============================================ */
+
+/* ---- CAROUSEL ---- */
+.carousel {
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  position: relative;
+  background: #111;
+  touch-action: pan-y;
+}
+
+@media (min-width: 600px)  { .carousel { height: 420px; } }
+@media (min-width: 900px)  { .carousel { height: 520px; } }
+@media (min-width: 1200px) { .carousel { height: 600px; } }
+
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  pointer-events: none;
+  user-select: none;
+}
+
+.caption {
+  position: absolute;
+  bottom: 28px;
+  left: 24px;
+  right: 24px;
+  color: #fff;
+}
+
+.caption h2 {
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  color: #E8C97A;
+  font-variant-caps: small-caps;
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.caption p {
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  margin-top: 4px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  margin: 0 4px;
+  background: rgba(255,255,255,0.45);
+  border-radius: 50%;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.dot.active {
+  background: #E8C97A;
+  width: 22px;
+  border-radius: 4px;
+}
+
+/* ---- BODY WRAPPER ---- */
+.Body {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---- SEARCH — override style.css to keep it static/in-flow ---- */
+.search-wrapper {
+  padding: 14px 16px 0;
+}
+
+@media (min-width: 900px) { .search-wrapper { padding: 20px 40px 0; } }
+
+.search-container {
+  position: static !important;
+  top: auto !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  background: #fff !important;
+  border: 1px solid #E0DDD8 !important;
+  border-radius: 8px !important;
+  height: 44px !important;
+  color: #1a1a1a !important;
+  font-weight: normal !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+  max-width: 520px;
+}
+
+.search-container:focus-within { border-color: #1a1a1a !important; box-shadow: none !important; }
+
+#SearchInput {
+  background: transparent !important;
+  color: #1a1a1a !important;
+  font-size: 14px !important;
+  height: auto !important;
+}
+
+#SearchInput::placeholder { color: #aaa !important; }
+
+/* ---- FAKE PLACEHOLDER ---- */
+.marquee-input { position: relative; flex: 1; }
+.fake-placeholder {
+  position: absolute;
+  top: 50%; left: 0;
+  transform: translateY(-50%);
+  color: #aaa;
+  pointer-events: none;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ---- SECTION HEADING ---- */
+h2.section-head {
+  font-size: 1rem;
+  margin: 16px 16px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+@media (min-width: 900px) { h2.section-head { margin: 16px 40px 0; } }
