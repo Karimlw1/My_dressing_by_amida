@@ -132,14 +132,17 @@
     /* ======== SOCIALS PANEL ======== */
     .socials-panel {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: min(340px, 85vw);
       height: 100vh;
       background: #fff;
       box-shadow: 4px 0 24px rgba(0,0,0,0.12);
       z-index: 200;
-      display: flex; flex-direction: column; align-items: center;
-      padding: 60px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 107px 20px 40px;
       gap: 10px;
       transform: translateX(-110%);
       transition: transform 0.32s cubic-bezier(0.25,0.46,0.45,0.94);
@@ -148,11 +151,19 @@
     .socials-panel.open { transform: translateX(0); }
 
     .socials-close {
-      position: absolute; top: 14px; left: 14px;
-      width: 34px; height: 34px;
-      border-radius: 7px; background: #f2f2f0;
-      border: none; font-size: 16px; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      width: 34px;
+      height: 34px;
+      border-radius: 7px;
+      background: #f2f2f0;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .socials-close:hover { background: #e8e5e0; }
 
@@ -172,13 +183,18 @@
     }
     .soc-link:hover { border-color: #1a1a1a; transform: translateY(-2px); }
     .soc-link i {
-      width: 34px; height: 34px; border-radius: 7px;
-      background: #f5f4f2;
-      display: flex; align-items: center; justify-content: center; font-size: 16px;
+      width: 34px;
+      height: 34px;
+      border-radius: 7px;
+      /* background: #f5f4f2; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
     }
     .soc-link.wa { color: #128C7E; }
     .soc-link.ig { background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .soc-link.ig i { background: #f5f4f2; }
+    .soc-link.ig i {/* background: #f5f4f2; *//* color: red; */}
     .soc-link.tt { color: #010101; }
     .soc-link.fb { color: #2d80ce; }
 
@@ -519,7 +535,7 @@
 
   <!-- REVEAL TEXTS -->
   <div class="texts">
-    <div class="slide-from-left reveal">Jusqu'à -30% sur vos achats</div>
+    <div class="slide-from-left reveal">Jusqu'à -10% sur vos achats</div>
     <div class="slide-from-left reveal">Stock disponible immédiatement</div>
     <div class="slide-from-left reveal">Des milliers de clients satisfaits</div>
     <div class="slide-from-left reveal">Cadeaux uniques pour vos proches</div>
