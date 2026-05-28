@@ -39,45 +39,6 @@
     },
     "createdAt": "2026-05-21T15:16:46.678Z"
   },
-  "Produit 10": {
-    "id": "Produit 10",
-    "name": "Chemise élégante pour femme à manches longues avec motif floral",
-    "category": "Femme",
-    "type": "haut",
-    "price": 25,
-    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394101/mydressing_products/no7kwrzkeo0gkibobllm.jpg",
-    "images": [
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394101/mydressing_products/no7kwrzkeo0gkibobllm.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1770394110/mydressing_products/nsclgo0kwisggm7eivfm.jpg"
-    ],
-    "options": {
-      "size": [
-        "XS",
-        "S",
-        "M",
-        "L",
-        "XL",
-        "2XL",
-        "3XL",
-        "4XL",
-        "5XL",
-        "6XL"
-      ],
-      "color": [
-        "Beige",
-        "Noire"
-      ]
-    },
-    "lieuDeLIvraison": {
-      "ville": [
-        "Lubumbashi",
-        "Kinshasa",
-        "Goma",
-        "kampala"
-      ]
-    },
-    "createdAt": "2026-05-21T15:16:46.678Z"
-  },
   "Produit15": {
     "id": "Produit15",
     "name": "Top de gilet asymétrique à un bouton avec texture tissée",
@@ -684,75 +645,6 @@
     },
     "createdAt": "2026-05-21T15:16:46.678Z"
   },
-  "Produit3": {
-    "id": "Produit3",
-    "name": "New Stanley cup",
-    "category": "CadeauSpecial",
-    "type": "",
-    "price": 50,
-    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970061/mydressing_products/q0lfaprb2wizstshwhu4.jpg",
-    "images": [
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970061/mydressing_products/q0lfaprb2wizstshwhu4.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970081/mydressing_products/ipszi8ce8zeja20uhmkg.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970090/mydressing_products/jvtqbfqhjd0s58i9dloy.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970098/mydressing_products/gf0fryojh2ecpvycuvn4.jpg"
-    ],
-    "options": {
-      "size": [
-        "1.18L"
-      ],
-      "color": [
-        "Bleu",
-        "rose foncée",
-        "rose blanc"
-      ]
-    },
-    "lieuDeLIvraison": {
-      "ville": [
-        "Kinshasa",
-        "lubumbashi",
-        "Kampala",
-        "goma"
-      ]
-    },
-    "createdAt": "2026-05-21T15:16:46.678Z"
-  },
-  "Produit4": {
-    "id": "Produit4",
-    "name": "Stanley cup ancienne version",
-    "category": "Cadeau",
-    "type": "",
-    "price": 25,
-    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970536/mydressing_products/hfhcxxx5whdibm18of5w.jpg",
-    "images": [
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970536/mydressing_products/hfhcxxx5whdibm18of5w.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970545/mydressing_products/axyoyw1bvdnqzm9lyjm5.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970667/mydressing_products/v7udxvkgedew2mgh0ltt.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970700/mydressing_products/hcikx9l4ztnnpoibt4sa.jpg",
-      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1771970709/mydressing_products/fouarabhjxu9gvwhi2d7.jpg"
-    ],
-    "options": {
-      "size": [
-        "1.80L"
-      ],
-      "color": [
-        "Beige",
-        "rose",
-        "bleu",
-        "noire",
-        "rouge"
-      ]
-    },
-    "lieuDeLIvraison": {
-      "ville": [
-        "Kinshasa",
-        "Lubumbashi",
-        "Kampala",
-        "Goma"
-      ]
-    },
-    "createdAt": "2026-05-21T15:16:46.678Z"
-  },
   "Produit30": {
     "id": "Produit30",
     "name": "Robe de luxe noir perlée",
@@ -859,5 +751,105 @@
       ]
     },
     "createdAt": "2026-05-21T15:16:46.678Z"
+  },
+  "Produit B": {
+    "id": "Produit B",
+    "name": "Puma speed cat OG",
+    "category": "Homme",
+    "type": "chaussure",
+    "price": 200,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1779968704/mydressing_products/cwxxihsvee4jmlbt7qzf.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1779968704/mydressing_products/cwxxihsvee4jmlbt7qzf.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1779968713/mydressing_products/zvatfazecgxiqaah0cgd.jpg"
+    ],
+    "options": {
+      "size": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46"
+      ],
+      "color": [
+        "Rouge"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-28T11:45:18.960Z"
+  },
+  "Produit c": {
+    "id": "Produit c",
+    "name": "Débardeur à bretelles fines",
+    "category": "Femme",
+    "type": "haut",
+    "price": 25,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1779969005/mydressing_products/hgazw997ueo1qc4wkkib.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1779969005/mydressing_products/hgazw997ueo1qc4wkkib.jpg",
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1779969013/mydressing_products/rd9tqbf1hrl5tnkogvzv.jpg"
+    ],
+    "options": {
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "color": [
+        "Chocolat"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-28T11:50:16.122Z"
+  },
+  "Produit D": {
+    "id": "Produit D",
+    "name": "Mini sac à main perlé",
+    "category": "Femme",
+    "type": "Sac",
+    "price": 35,
+    "image": "https://res.cloudinary.com/dpsewpbqa/image/upload/v1779969399/mydressing_products/ij04kl2vlmsgveutd6qn.jpg",
+    "images": [
+      "https://res.cloudinary.com/dpsewpbqa/image/upload/v1779969399/mydressing_products/ij04kl2vlmsgveutd6qn.jpg"
+    ],
+    "options": {
+      "size": [
+        "Unique"
+      ],
+      "color": [
+        "Noire"
+      ]
+    },
+    "lieuDeLIvraison": {
+      "ville": [
+        "Kinshasa",
+        "Lubumbashi",
+        "Kampala",
+        "Goma"
+      ]
+    },
+    "createdAt": "2026-05-28T11:56:42.507Z"
   }
 }
